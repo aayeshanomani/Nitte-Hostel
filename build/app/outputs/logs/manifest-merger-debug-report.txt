@@ -1,0 +1,123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:2:5-35
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:9:5-32:19
+MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:11:9-33
+	android:icon
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:12:9-43
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:10:9-57
+activity#com.example.test_one.MainActivity
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:13:9-31:20
+	android:launchMode
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:15:13-43
+	android:hardwareAccelerated
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:18:13-47
+	android:windowSoftInputMode
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:19:13-55
+	android:configChanges
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:17:13-144
+	android:theme
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:16:13-47
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:14:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:24:13-26:40
+	android:value
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:26:17-37
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:25:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /home/aayesha/codes/Hostel-Management/android/app/src/debug/AndroidManifest.xml:6:22-64

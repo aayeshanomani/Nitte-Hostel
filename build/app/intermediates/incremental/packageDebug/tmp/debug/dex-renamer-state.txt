@@ -1,0 +1,4 @@
+#Tue Jul 06 23:09:25 IST 2021
+base.0=/home/aayesha/codes/Hostel-Management/build/app/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+path.0=classes.dex
