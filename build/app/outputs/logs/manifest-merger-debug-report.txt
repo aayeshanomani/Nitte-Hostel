@@ -5,6 +5,7 @@ INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/Android
 INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
 INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
 MERGED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [:path_provider] /home/aayesha/codes/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:17:1-22:12
@@ -83,6 +84,8 @@ uses-sdk
 INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/aayesha/codes/Hostel-Management/android/app/src/main/AndroidManifest.xml
+MERGED from [:path_provider] /home/aayesha/codes/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/aayesha/codes/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:20:5-22:41

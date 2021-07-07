@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_one/information.dart';
 import 'login_page.dart';
 import './signup_page.dart';
 import './home_page.dart';
@@ -20,9 +21,11 @@ class MyApp extends StatelessWidget {
       home: new LoginPage(),
       routes: <String,WidgetBuilder>{
         '/landingpage' : (BuildContext context)=> MyApp(),
+        '/login' : (BuildContext context)=> LoginPage(),
         '/signup' : (BuildContext context)=> SignupPage(),
         '/homePage' : (BuildContext context)=> HomePage(),
-        '/splash' : (BuildContext context)=> SplashPage()
+        '/splash' : (BuildContext context)=> SplashPage(),
+        '/information' : (BuildContext context)=> Information()
       },
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
   @override
@@ -8,7 +7,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String _email,_password;
+  String _email, _password;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -20,64 +19,83 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      initialValue: '',style: new TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),
-      decoration: InputDecoration(
-        hintText: 'CoerID/Username',
-        hintStyle: new TextStyle(color: Colors.lightBlueAccent.shade100),
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-      onSaved: (value){
-        setState(() {
-         _email=value; 
-        });
-      },
-    );
+    final email = Theme(
+        data: ThemeData(
+          primaryColor: Color(0xff1B98E0),
+          primaryColorDark: Color(0xffE7DFC6),
+        ),
+        child: TextFormField(
+          keyboardType: TextInputType.emailAddress,
+          autofocus: true,
+          initialValue: '',
+          style: new TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.white),
+          decoration: InputDecoration(
+            hintText: 'Reg. No.',
+            hintStyle: new TextStyle(color: Color(0xffE8F1F2)),
+            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xffE8F1F2), width: 2.0),
+                borderRadius: BorderRadius.circular(32.0)),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          ),
+          onChanged: (value) {
+            setState(() {
+              _email = value;
+            });
+          },
+        ));
 
-    final password = TextFormField(
-      autofocus: false,
-      initialValue: '',style: new TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),
-      obscureText: true,
-      decoration: InputDecoration(
-        hintText: 'Password',
-        hintStyle: new TextStyle(color: Colors.lightBlueAccent.shade100),
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-      onSaved: (value){
-        setState(() {
-         _password = value; 
-        });
-      },
-    );
+    final password = Theme(
+        data: ThemeData(
+          primaryColor: Color(0xff1B98E0),
+          primaryColorDark: Color(0xffE7DFC6),
+        ),
+        child: TextFormField(
+          keyboardType: TextInputType.emailAddress,
+          autofocus: true,
+          initialValue: '',
+          style: new TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.white),
+          decoration: InputDecoration(
+            hintText: 'Password',
+            hintStyle: new TextStyle(color: Color(0xffE8F1F2)),
+            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xffE8F1F2), width: 2.0),
+                borderRadius: BorderRadius.circular(32.0)),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          ),
+          onChanged: (value) {
+            setState(() {
+              _password = value;
+            });
+          },
+        ));
 
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(30.0),
-        shadowColor: Colors.lightBlueAccent.shade100,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 47.0,
-          onPressed: () {
-            
-              Navigator.of(context).popAndPushNamed('/splash');
-          },
-          splashColor: Colors.redAccent,
-          color: Colors.lightBlueAccent,
-          child: Text('Log In', style: TextStyle(color: Colors.white,fontSize: 15.0)),
-        ),
+      child: MaterialButton(
+        height: 47.0,
+        onPressed: () {
+          Navigator.of(context).popAndPushNamed('/splash');
+        },
+        splashColor: Color(0xff006494),
+        color: Color(0xff247BA0),
+        child: Text('Log In',
+            style: TextStyle(color: Color(0xffE8F1F2), fontSize: 15.0)),
       ),
     );
 
     final forgotLabel = FlatButton(
       child: Text(
         'Create New Account',
-        style: TextStyle(color: Colors.lightBlueAccent.shade100,fontSize: 15.0,fontWeight: FontWeight.bold ),
+        style: TextStyle(
+            color: Color(0xffffffff),
+            fontSize: 15.0,
+            fontWeight: FontWeight.bold),
       ),
       onPressed: () {
         Navigator.of(context).pushNamed('/signup');
@@ -114,5 +132,5 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
-  }     
-}   
+  }
+}
