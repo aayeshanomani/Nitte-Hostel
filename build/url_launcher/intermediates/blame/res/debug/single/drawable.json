@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/aayesha/codes/Hostel-Management/build/url_launcher/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/home/aayesha/codes/Hostel-Management/build/url_launcher/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/aayesha/codes/Hostel-Management/build/url_launcher/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/aayesha/codes/Hostel-Management/build/url_launcher/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/drawable/notification_tile_bg.xml"
+    }
+]
