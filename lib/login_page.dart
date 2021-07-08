@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
       child: MaterialButton(
         height: 47.0,
         onPressed: () {
-          Navigator.of(context).popAndPushNamed('/adminLogin');
+          Navigator.of(context).popAndPushNamed('/homePage');
         },
         splashColor: Color(0xff006494),
         color: Color(0xff247BA0),

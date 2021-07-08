@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/aayesha/codes/College/Projects/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/res/values-zh-rHK/values.xml",

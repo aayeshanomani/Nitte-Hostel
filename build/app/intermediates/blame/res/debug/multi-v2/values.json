@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/aayesha/codes/College/Projects/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/res/values/values.xml",
@@ -20,25 +20,6 @@
                         "endLines": "3,4,5,6,7,8,9,10,153,172,245,246,247,248,249,250,251,252,254,255,256,257,258,259,260,261,262",
                         "endColumns": "89,79,89,89,79,80,79,79,20,20,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
                         "endOffsets": "229,309,399,489,569,650,730,810,8795,9212,13674,13855,13980,14087,14267,14390,14506,14609,14964,15069,15250,15375,15550,15698,15761,15823,15902"
-                    }
-                },
-                {
-                    "source": "/home/aayesha/codes/Hostel-Management/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "264",
-                        "startColumns": "4",
-                        "startOffsets": "15978",
-                        "endLines": "268",
-                        "endColumns": "12",
-                        "endOffsets": "16270"
                     }
                 },
                 {
@@ -75,6 +56,25 @@
                         "startOffsets": "13436,14614",
                         "endColumns": "67,166",
                         "endOffsets": "13499,14776"
+                    }
+                },
+                {
+                    "source": "/home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "264",
+                        "startColumns": "4",
+                        "startOffsets": "15978",
+                        "endLines": "268",
+                        "endColumns": "12",
+                        "endOffsets": "16270"
                     }
                 },
                 {

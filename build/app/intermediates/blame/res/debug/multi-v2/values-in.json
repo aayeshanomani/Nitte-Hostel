@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
+            "outputFile": "/home/aayesha/codes/College/Projects/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
             "map": [
                 {
                     "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/res/values-in/values.xml",
