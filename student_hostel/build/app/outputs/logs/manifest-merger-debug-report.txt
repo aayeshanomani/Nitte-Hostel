@@ -1,18 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-22:12
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/Hostel-Management/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/Hostel-Management/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/Hostel-Management/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/Hostel-Management/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
+MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
+MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:17:1-24:12
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:2:1-32:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:17:1-39:12
@@ -34,31 +34,31 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gr
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:2:5-35
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:2:5-35
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:9:5-32:19
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:9:5-32:19
+MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
+MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:11:5-30:19
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:11:5-30:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:22:5-37:19
@@ -76,61 +76,61 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayes
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:11:9-33
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:11:9-33
 	android:icon
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:12:9-43
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:10:9-57
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:10:9-57
 activity#com.example.test_one.MainActivity
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:13:9-31:20
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:13:9-31:20
 	android:launchMode
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:15:13-43
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:15:13-43
 	android:hardwareAccelerated
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:18:13-47
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:18:13-47
 	android:windowSoftInputMode
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:19:13-55
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:19:13-55
 	android:configChanges
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:17:13-144
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:17:13-144
 	android:theme
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:16:13-47
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:16:13-47
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:14:13-41
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:14:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:24:13-26:40
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:24:13-26:40
 	android:value
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:26:17-37
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:26:17-37
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:25:17-82
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:25:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:27:13-30:29
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:27:13-30:29
 action#android.intent.action.MAIN
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:28:17-68
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:28:17-68
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:28:25-66
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:29:17-76
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:29:17-76
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:29:27-74
 uses-sdk
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/Hostel-Management/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/Hostel-Management/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/Hostel-Management/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/Hostel-Management/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/Hostel-Management/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/Hostel-Management/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/Hostel-Management/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/Hostel-Management/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/Hostel-Management/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:20:5-22:41
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:5:5-7:41
@@ -173,64 +173,64 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayes
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:6:5-66
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:9:5-67
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-80
+ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:22-77
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-81
+ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:22-78
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:22-78
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:9-19:20
+ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:13-47
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:13-47
 	android:authorities
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:13:13-74
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:13:13-74
 	android:exported
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:14:13-37
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:13-82
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:16:13-18:75
+ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:16:13-18:75
 	android:resource
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:18:17-72
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:18:17-72
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/Hostel-Management/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:17:17-67
+		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:17:17-67
 activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
+ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
 	android:exported
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
+		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
 	android:theme
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
+		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
 	android:name
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/Hostel-Management/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-74
+		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-74
 activity#com.razorpay.CheckoutActivity
-ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:20
+ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:20
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:18:9-29:20
 MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:18:9-29:20
 	android:label
-		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-46
+		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-46
 	android:configChanges
 		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:20:13-83
 	android:theme
 		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:21:13-49
 	android:name
-		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/Hostel-Management/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-57
+		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-57
 receiver#com.razorpay.RzpTokenReceiver
 ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:12:9-16:20
 	android:name

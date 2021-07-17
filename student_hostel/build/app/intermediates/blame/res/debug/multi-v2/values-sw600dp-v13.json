@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/res/values-sw600dp-v13/values-sw600dp-v13.xml",

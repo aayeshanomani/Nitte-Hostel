@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/Hostel-Management/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
+                {
+                    "source": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "264",
+                        "startColumns": "4",
+                        "startOffsets": "15978",
+                        "endLines": "268",
+                        "endColumns": "12",
+                        "endOffsets": "16270"
+                    }
+                },
                 {
                     "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/res/values/values.xml",
                     "from": {
@@ -56,25 +75,6 @@
                         "startOffsets": "13436,14614",
                         "endColumns": "67,166",
                         "endOffsets": "13499,14776"
-                    }
-                },
-                {
-                    "source": "/home/aayesha/codes/College/Projects/Hostel-Management/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "264",
-                        "startColumns": "4",
-                        "startOffsets": "15978",
-                        "endLines": "268",
-                        "endColumns": "12",
-                        "endOffsets": "16270"
                     }
                 },
                 {

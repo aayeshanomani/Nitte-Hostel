@@ -11,6 +11,8 @@ class Information extends StatefulWidget {
   _InformationState createState() => _InformationState();
 }
 
+Map<String, dynamic> info = {};
+
 class _InformationState extends State<Information> {
   Widget _backButton() {
     return InkWell(
@@ -47,11 +49,17 @@ class _InformationState extends State<Information> {
             height: 10,
           ),
           TextField(
-            style: TextStyle(color: Colors.white),
+              onChanged: (value) {
+                setState(() {
+                  info[title.replaceAll(" ", "").replaceAll("'s", "")] = value;
+                });
+                print(info);
+              },
+              style: TextStyle(color: Colors.white),
               obscureText: isPassword,
               decoration: InputDecoration(
-                  border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
                   fillColor: Color(0xff247BA0),
                   filled: true))
         ],
@@ -86,9 +94,7 @@ class _InformationState extends State<Information> {
 
   Widget _loginAccountLabel() {
     return InkWell(
-      onTap: () {
-        
-      },
+      onTap: () {},
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20),
         padding: EdgeInsets.all(15),
