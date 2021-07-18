@@ -1,0 +1,1325 @@
+define(['dart_sdk', 'packages/charts_common/src/common/proxy_gesture_listener.dart', 'packages/charts_common/src/chart/common/selection_model/selection_model.dart', 'packages/charts_common/src/chart/layout/layout_manager_impl.dart', 'packages/charts_common/src/common/graphics_factory.dart', 'packages/charts_common/src/chart/layout/layout_view.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/charts_common/src/chart/common/series_datum.dart', 'packages/charts_common/src/chart/common/chart_context.dart', 'packages/charts_common/src/common/gesture_listener.dart', 'packages/charts_common/src/chart/common/canvas_shapes.dart', 'packages/charts_common/src/chart/layout/layout_manager.dart', 'packages/charts_common/src/common/color.dart', 'packages/charts_common/src/common/typed_registry.dart'], (function load__packages__charts_common__src__chart__common__behavior__chart_behavior_dart(dart_sdk, packages__charts_common__src__common__proxy_gesture_listener$46dart, packages__charts_common__src__chart__common__selection_model__selection_model$46dart, packages__charts_common__src__chart__layout__layout_manager_impl$46dart, packages__charts_common__src__common__graphics_factory$46dart, packages__charts_common__src__chart__layout__layout_view$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__charts_common__src__chart__common__series_datum$46dart, packages__charts_common__src__chart__common__chart_context$46dart, packages__charts_common__src__common__gesture_listener$46dart, packages__charts_common__src__chart__common__canvas_shapes$46dart, packages__charts_common__src__chart__layout__layout_manager$46dart, packages__charts_common__src__common__color$46dart, packages__charts_common__src__common__typed_registry$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const proxy_gesture_listener = packages__charts_common__src__common__proxy_gesture_listener$46dart.src__common__proxy_gesture_listener;
+  const selection_model = packages__charts_common__src__chart__common__selection_model__selection_model$46dart.src__chart__common__selection_model__selection_model;
+  const layout_manager_impl = packages__charts_common__src__chart__layout__layout_manager_impl$46dart.src__chart__layout__layout_manager_impl;
+  const graphics_factory = packages__charts_common__src__common__graphics_factory$46dart.src__common__graphics_factory;
+  const layout_view = packages__charts_common__src__chart__layout__layout_view$46dart.src__chart__layout__layout_view;
+  const datum_details = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__datum_details;
+  const series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__data__series;
+  const processed_series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__processed_series;
+  const style_factory = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__common__style__style_factory;
+  const symbol_renderer = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__common__symbol_renderer;
+  const series_datum = packages__charts_common__src__chart__common__series_datum$46dart.src__chart__common__series_datum;
+  const chart_context = packages__charts_common__src__chart__common__chart_context$46dart.src__chart__common__chart_context;
+  const gesture_listener = packages__charts_common__src__common__gesture_listener$46dart.src__common__gesture_listener;
+  const chart_canvas = packages__charts_common__src__chart__common__canvas_shapes$46dart.src__chart__common__chart_canvas;
+  const layout_manager = packages__charts_common__src__chart__layout__layout_manager$46dart.src__chart__layout__layout_manager;
+  const color = packages__charts_common__src__common__color$46dart.src__common__color;
+  const typed_registry = packages__charts_common__src__common__typed_registry$46dart.src__common__typed_registry;
+  var chart_behavior = Object.create(dart.library);
+  var base_chart = Object.create(dart.library);
+  var series_renderer = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $add = dartx.add;
+  var $remove = dartx.remove;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $containsPoint = dartx.containsPoint;
+  var $any = dartx.any;
+  var $addAll = dartx.addAll;
+  var $forEach = dartx.forEach;
+  var $compareTo = dartx.compareTo;
+  var $sort = dartx.sort;
+  var $contains = dartx.contains;
+  var $values = dartx.values;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $length = dartx.length;
+  var $clear = dartx.clear;
+  var $modulo = dartx['%'];
+  var $keys = dartx.keys;
+  var $toDouble = dartx.toDouble;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    BehaviorPositionL: () => (T.BehaviorPositionL = dart.constFn(dart.legacy(chart_behavior.BehaviorPosition)))(),
+    OutsideJustificationL: () => (T.OutsideJustificationL = dart.constFn(dart.legacy(chart_behavior.OutsideJustification)))(),
+    InsideJustificationL: () => (T.InsideJustificationL = dart.constFn(dart.legacy(chart_behavior.InsideJustification)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    _IdentityHashSetOfStringL: () => (T._IdentityHashSetOfStringL = dart.constFn(collection._IdentityHashSet$(T.StringL())))(),
+    SelectionModelTypeL: () => (T.SelectionModelTypeL = dart.constFn(dart.legacy(selection_model.SelectionModelType)))(),
+    GraphicsFactoryL: () => (T.GraphicsFactoryL = dart.constFn(dart.legacy(graphics_factory.GraphicsFactory)))(),
+    LayoutViewL: () => (T.LayoutViewL = dart.constFn(dart.legacy(layout_view.LayoutView)))(),
+    LayoutViewLToGraphicsFactoryL: () => (T.LayoutViewLToGraphicsFactoryL = dart.constFn(dart.fnType(T.GraphicsFactoryL(), [T.LayoutViewL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    SeriesRendererL: () => (T.SeriesRendererL = dart.constFn(dart.legacy(series_renderer.SeriesRenderer)))(),
+    LayoutViewLToNull: () => (T.LayoutViewLToNull = dart.constFn(dart.fnType(core.Null, [T.LayoutViewL()])))(),
+    MutableSelectionModelL: () => (T.MutableSelectionModelL = dart.constFn(dart.legacy(selection_model.MutableSelectionModel)))(),
+    MutableSelectionModelLTovoid: () => (T.MutableSelectionModelLTovoid = dart.constFn(dart.fnType(dart.void, [T.MutableSelectionModelL()])))(),
+    IdentityMapOfStringL$intL: () => (T.IdentityMapOfStringL$intL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.intL())))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(color.Color)))(),
+    intLToColorL: () => (T.intLToColorL = dart.constFn(dart.fnType(T.ColorL(), [T.intL()])))(),
+    MutableSeriesL: () => (T.MutableSeriesL = dart.constFn(dart.legacy(processed_series.MutableSeries)))(),
+    MutableSeriesLToNull: () => (T.MutableSeriesLToNull = dart.constFn(dart.fnType(core.Null, [T.MutableSeriesL()])))(),
+    ListOfColorL: () => (T.ListOfColorL = dart.constFn(core.List$(T.ColorL())))(),
+    ListLOfColorL: () => (T.ListLOfColorL = dart.constFn(dart.legacy(T.ListOfColorL())))(),
+    IdentityMapOfStringL$ListLOfColorL: () => (T.IdentityMapOfStringL$ListLOfColorL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.ListLOfColorL())))(),
+    AttributeKeyOfStringL: () => (T.AttributeKeyOfStringL = dart.constFn(series.AttributeKey$(T.StringL())))(),
+    AttributeKeyOfSeriesRendererL: () => (T.AttributeKeyOfSeriesRendererL = dart.constFn(series.AttributeKey$(T.SeriesRendererL())))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name$]: "BehaviorPosition.top",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name$]: "BehaviorPosition.bottom",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name$]: "BehaviorPosition.start",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name$]: "BehaviorPosition.end",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name$]: "BehaviorPosition.inside",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T.BehaviorPositionL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.startDrawArea",
+        index: 0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.start",
+        index: 1
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.middleDrawArea",
+        index: 2
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.middle",
+        index: 3
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.endDrawArea",
+        index: 4
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: chart_behavior.OutsideJustification.prototype,
+        [_name$]: "OutsideJustification.end",
+        index: 5
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11], T.OutsideJustificationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: chart_behavior.InsideJustification.prototype,
+        [_name$]: "InsideJustification.topStart",
+        index: 0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: chart_behavior.InsideJustification.prototype,
+        [_name$]: "InsideJustification.topEnd",
+        index: 1
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[13] || CT.C13, C[14] || CT.C14], T.InsideJustificationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 300000
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: T.AttributeKeyOfStringL().prototype,
+        [TypedKey_uniqueKey]: "SeriesRenderer.rendererId"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: T.AttributeKeyOfSeriesRendererL().prototype,
+        [TypedKey_uniqueKey]: "SeriesRenderer.renderer"
+      });
+    }
+  }, false);
+  var C = Array(19).fill(void 0);
+  var I = [
+    "package:charts_common/src/chart/common/behavior/chart_behavior.dart",
+    "package:charts_common/src/chart/common/base_chart.dart",
+    "package:charts_common/src/chart/common/series_renderer.dart"
+  ];
+  const _is_ChartBehavior_default = Symbol('_is_ChartBehavior_default');
+  chart_behavior.ChartBehavior$ = dart.generic(D => {
+    class ChartBehavior extends core.Object {}
+    (ChartBehavior.new = function() {
+      ;
+    }).prototype = ChartBehavior.prototype;
+    dart.addTypeTests(ChartBehavior);
+    ChartBehavior.prototype[_is_ChartBehavior_default] = true;
+    dart.addTypeCaches(ChartBehavior);
+    dart.setLibraryUri(ChartBehavior, I[0]);
+    return ChartBehavior;
+  });
+  chart_behavior.ChartBehavior = chart_behavior.ChartBehavior$();
+  dart.addTypeTests(chart_behavior.ChartBehavior, _is_ChartBehavior_default);
+  var _name$ = dart.privateName(chart_behavior, "_name");
+  chart_behavior.BehaviorPosition = class BehaviorPosition extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (chart_behavior.BehaviorPosition.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = chart_behavior.BehaviorPosition.prototype;
+  dart.addTypeTests(chart_behavior.BehaviorPosition);
+  dart.addTypeCaches(chart_behavior.BehaviorPosition);
+  dart.setMethodSignature(chart_behavior.BehaviorPosition, () => ({
+    __proto__: dart.getMethods(chart_behavior.BehaviorPosition.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(chart_behavior.BehaviorPosition, I[0]);
+  dart.setFieldSignature(chart_behavior.BehaviorPosition, () => ({
+    __proto__: dart.getFields(chart_behavior.BehaviorPosition.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(chart_behavior.BehaviorPosition, ['toString']);
+  chart_behavior.BehaviorPosition.top = C[0] || CT.C0;
+  chart_behavior.BehaviorPosition.bottom = C[1] || CT.C1;
+  chart_behavior.BehaviorPosition.start = C[2] || CT.C2;
+  chart_behavior.BehaviorPosition.end = C[3] || CT.C3;
+  chart_behavior.BehaviorPosition.inside = C[4] || CT.C4;
+  chart_behavior.BehaviorPosition.values = C[5] || CT.C5;
+  chart_behavior.OutsideJustification = class OutsideJustification extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (chart_behavior.OutsideJustification.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = chart_behavior.OutsideJustification.prototype;
+  dart.addTypeTests(chart_behavior.OutsideJustification);
+  dart.addTypeCaches(chart_behavior.OutsideJustification);
+  dart.setMethodSignature(chart_behavior.OutsideJustification, () => ({
+    __proto__: dart.getMethods(chart_behavior.OutsideJustification.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(chart_behavior.OutsideJustification, I[0]);
+  dart.setFieldSignature(chart_behavior.OutsideJustification, () => ({
+    __proto__: dart.getFields(chart_behavior.OutsideJustification.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(chart_behavior.OutsideJustification, ['toString']);
+  chart_behavior.OutsideJustification.startDrawArea = C[6] || CT.C6;
+  chart_behavior.OutsideJustification.start = C[7] || CT.C7;
+  chart_behavior.OutsideJustification.middleDrawArea = C[8] || CT.C8;
+  chart_behavior.OutsideJustification.middle = C[9] || CT.C9;
+  chart_behavior.OutsideJustification.endDrawArea = C[10] || CT.C10;
+  chart_behavior.OutsideJustification.end = C[11] || CT.C11;
+  chart_behavior.OutsideJustification.values = C[12] || CT.C12;
+  chart_behavior.InsideJustification = class InsideJustification extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (chart_behavior.InsideJustification.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = chart_behavior.InsideJustification.prototype;
+  dart.addTypeTests(chart_behavior.InsideJustification);
+  dart.addTypeCaches(chart_behavior.InsideJustification);
+  dart.setMethodSignature(chart_behavior.InsideJustification, () => ({
+    __proto__: dart.getMethods(chart_behavior.InsideJustification.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(chart_behavior.InsideJustification, I[0]);
+  dart.setFieldSignature(chart_behavior.InsideJustification, () => ({
+    __proto__: dart.getFields(chart_behavior.InsideJustification.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(chart_behavior.InsideJustification, ['toString']);
+  chart_behavior.InsideJustification.topStart = C[13] || CT.C13;
+  chart_behavior.InsideJustification.topEnd = C[14] || CT.C14;
+  chart_behavior.InsideJustification.values = C[15] || CT.C15;
+  var context = dart.privateName(base_chart, "BaseChart.context");
+  var graphicsFactory = dart.privateName(base_chart, "BaseChart.graphicsFactory");
+  var transition = dart.privateName(base_chart, "BaseChart.transition");
+  var animationPercent = dart.privateName(base_chart, "BaseChart.animationPercent");
+  var _layoutManager = dart.privateName(base_chart, "_layoutManager");
+  var _chartWidth = dart.privateName(base_chart, "_chartWidth");
+  var _chartHeight = dart.privateName(base_chart, "_chartHeight");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _animationsTemporarilyDisabled = dart.privateName(base_chart, "_animationsTemporarilyDisabled");
+  var _originalSeriesList = dart.privateName(base_chart, "_originalSeriesList");
+  var _currentSeriesList = dart.privateName(base_chart, "_currentSeriesList");
+  var _usingRenderers = dart.privateName(base_chart, "_usingRenderers");
+  var _rendererToSeriesList = dart.privateName(base_chart, "_rendererToSeriesList");
+  var _seriesRenderers = dart.privateName(base_chart, "_seriesRenderers");
+  var _behaviorRoleMap = dart.privateName(base_chart, "_behaviorRoleMap");
+  var _behaviorStack = dart.privateName(base_chart, "_behaviorStack");
+  var _behaviorTappableMap = dart.privateName(base_chart, "_behaviorTappableMap");
+  var _gestureProxy = dart.privateName(base_chart, "_gestureProxy");
+  var _selectionModels = dart.privateName(base_chart, "_selectionModels");
+  var _lifecycleListeners = dart.privateName(base_chart, "_lifecycleListeners");
+  const _is_BaseChart_default = Symbol('_is_BaseChart_default');
+  base_chart.BaseChart$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var SeriesRendererOfDL = () => (SeriesRendererOfDL = dart.constFn(series_renderer.SeriesRenderer$(DL())))();
+    var SeriesRendererLOfDL = () => (SeriesRendererLOfDL = dart.constFn(dart.legacy(SeriesRendererOfDL())))();
+    var IdentityMapOfStringL$SeriesRendererLOfDL = () => (IdentityMapOfStringL$SeriesRendererLOfDL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), SeriesRendererLOfDL())))();
+    var ChartBehaviorOfDL = () => (ChartBehaviorOfDL = dart.constFn(chart_behavior.ChartBehavior$(DL())))();
+    var ChartBehaviorLOfDL = () => (ChartBehaviorLOfDL = dart.constFn(dart.legacy(ChartBehaviorOfDL())))();
+    var IdentityMapOfStringL$ChartBehaviorLOfDL = () => (IdentityMapOfStringL$ChartBehaviorLOfDL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), ChartBehaviorLOfDL())))();
+    var JSArrayOfChartBehaviorLOfDL = () => (JSArrayOfChartBehaviorLOfDL = dart.constFn(_interceptors.JSArray$(ChartBehaviorLOfDL())))();
+    var MutableSelectionModelOfDL = () => (MutableSelectionModelOfDL = dart.constFn(selection_model.MutableSelectionModel$(DL())))();
+    var MutableSelectionModelLOfDL = () => (MutableSelectionModelLOfDL = dart.constFn(dart.legacy(MutableSelectionModelOfDL())))();
+    var LinkedMapOfSelectionModelTypeL$MutableSelectionModelLOfDL = () => (LinkedMapOfSelectionModelTypeL$MutableSelectionModelLOfDL = dart.constFn(_js_helper.LinkedMap$(T.SelectionModelTypeL(), MutableSelectionModelLOfDL())))();
+    var LifecycleListenerOfDL = () => (LifecycleListenerOfDL = dart.constFn(base_chart.LifecycleListener$(DL())))();
+    var LifecycleListenerLOfDL = () => (LifecycleListenerLOfDL = dart.constFn(dart.legacy(LifecycleListenerOfDL())))();
+    var JSArrayOfLifecycleListenerLOfDL = () => (JSArrayOfLifecycleListenerLOfDL = dart.constFn(_interceptors.JSArray$(LifecycleListenerLOfDL())))();
+    var VoidToMutableSelectionModelLOfDL = () => (VoidToMutableSelectionModelLOfDL = dart.constFn(dart.fnType(MutableSelectionModelLOfDL(), [])))();
+    var DatumDetailsOfDL = () => (DatumDetailsOfDL = dart.constFn(datum_details.DatumDetails$(DL())))();
+    var DatumDetailsLOfDL = () => (DatumDetailsLOfDL = dart.constFn(dart.legacy(DatumDetailsOfDL())))();
+    var JSArrayOfDatumDetailsLOfDL = () => (JSArrayOfDatumDetailsLOfDL = dart.constFn(_interceptors.JSArray$(DatumDetailsLOfDL())))();
+    var DatumDetailsLOfDLAndDatumDetailsLOfDLTointL = () => (DatumDetailsLOfDLAndDatumDetailsLOfDLTointL = dart.constFn(dart.fnType(T.intL(), [DatumDetailsLOfDL(), DatumDetailsLOfDL()])))();
+    var SeriesDatumOfDL = () => (SeriesDatumOfDL = dart.constFn(series_datum.SeriesDatum$(DL())))();
+    var ListOfChartBehaviorLOfDL = () => (ListOfChartBehaviorLOfDL = dart.constFn(core.List$(ChartBehaviorLOfDL())))();
+    var SeriesOfdynamic$DL = () => (SeriesOfdynamic$DL = dart.constFn(series.Series$(dart.dynamic, DL())))();
+    var SeriesLOfdynamic$DL = () => (SeriesLOfdynamic$DL = dart.constFn(dart.legacy(SeriesOfdynamic$DL())))();
+    var ListOfSeriesLOfdynamic$DL = () => (ListOfSeriesLOfdynamic$DL = dart.constFn(core.List$(SeriesLOfdynamic$DL())))();
+    var ListLOfSeriesLOfdynamic$DL = () => (ListLOfSeriesLOfdynamic$DL = dart.constFn(dart.legacy(ListOfSeriesLOfdynamic$DL())))();
+    var MutableSeriesOfDL = () => (MutableSeriesOfDL = dart.constFn(processed_series.MutableSeries$(DL())))();
+    var MutableSeriesLOfDL = () => (MutableSeriesLOfDL = dart.constFn(dart.legacy(MutableSeriesOfDL())))();
+    var ListOfMutableSeriesLOfDL = () => (ListOfMutableSeriesLOfDL = dart.constFn(core.List$(MutableSeriesLOfDL())))();
+    var MutableSeriesLOfDLTointL = () => (MutableSeriesLOfDLTointL = dart.constFn(dart.fnType(T.intL(), [MutableSeriesLOfDL()])))();
+    var ListLOfMutableSeriesLOfDL = () => (ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfMutableSeriesLOfDL())))();
+    var MutableSeriesLOfDLToMutableSeriesLOfDL = () => (MutableSeriesLOfDLToMutableSeriesLOfDL = dart.constFn(dart.fnType(MutableSeriesLOfDL(), [MutableSeriesLOfDL()])))();
+    var IdentityMapOfStringL$ListLOfMutableSeriesLOfDL = () => (IdentityMapOfStringL$ListLOfMutableSeriesLOfDL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), ListLOfMutableSeriesLOfDL())))();
+    var JSArrayOfMutableSeriesLOfDL = () => (JSArrayOfMutableSeriesLOfDL = dart.constFn(_interceptors.JSArray$(MutableSeriesLOfDL())))();
+    var VoidToListLOfMutableSeriesLOfDL = () => (VoidToListLOfMutableSeriesLOfDL = dart.constFn(dart.fnType(ListLOfMutableSeriesLOfDL(), [])))();
+    var MutableSeriesLOfDLToNull = () => (MutableSeriesLOfDLToNull = dart.constFn(dart.fnType(core.Null, [MutableSeriesLOfDL()])))();
+    var StringLAndListLOfMutableSeriesLOfDLToNull = () => (StringLAndListLOfMutableSeriesLOfDLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL(), ListLOfMutableSeriesLOfDL()])))();
+    var StringLToListLOfMutableSeriesLOfDL = () => (StringLToListLOfMutableSeriesLOfDL = dart.constFn(dart.fnType(ListLOfMutableSeriesLOfDL(), [T.StringL()])))();
+    var MapOfStringL$ListLOfMutableSeriesLOfDL = () => (MapOfStringL$ListLOfMutableSeriesLOfDL = dart.constFn(core.Map$(T.StringL(), ListLOfMutableSeriesLOfDL())))();
+    var MapLOfStringL$ListLOfMutableSeriesLOfDL = () => (MapLOfStringL$ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(MapOfStringL$ListLOfMutableSeriesLOfDL())))();
+    var LifecycleListenerLOfDLToNull = () => (LifecycleListenerLOfDLToNull = dart.constFn(dart.fnType(core.Null, [LifecycleListenerLOfDL()])))();
+    class BaseChart extends core.Object {
+      get context() {
+        return this[context];
+      }
+      set context(value) {
+        this[context] = value;
+      }
+      get graphicsFactory() {
+        return this[graphicsFactory];
+      }
+      set graphicsFactory(value) {
+        this[graphicsFactory] = value;
+      }
+      get transition() {
+        return this[transition];
+      }
+      set transition(value) {
+        this[transition] = value;
+      }
+      get animationPercent() {
+        return this[animationPercent];
+      }
+      set animationPercent(value) {
+        this[animationPercent] = value;
+      }
+      get isTappable() {
+        return this[_behaviorTappableMap][$isNotEmpty];
+      }
+      get selectNearestByDomain() {
+        return true;
+      }
+      init(context, graphicsFactory) {
+        this.context = context;
+        if (!dart.equals(this.graphicsFactory, graphicsFactory)) {
+          this.graphicsFactory = graphicsFactory;
+          this[_layoutManager].applyToViews(dart.fn(view => view.graphicsFactory = graphicsFactory, T.LayoutViewLToGraphicsFactoryL()));
+        }
+        this.configurationChanged();
+      }
+      configurationChanged() {
+      }
+      get chartWidth() {
+        return this[_chartWidth];
+      }
+      get chartHeight() {
+        return this[_chartHeight];
+      }
+      get gestureProxy() {
+        return this[_gestureProxy];
+      }
+      addGestureListener(listener) {
+        this[_gestureProxy].add(listener);
+        return listener;
+      }
+      removeGestureListener(listener) {
+        this[_gestureProxy].remove(listener);
+      }
+      addLifecycleListener(listener) {
+        LifecycleListenerLOfDL().as(listener);
+        this[_lifecycleListeners][$add](listener);
+        return listener;
+      }
+      removeLifecycleListener(listener) {
+        LifecycleListenerLOfDL().as(listener);
+        return this[_lifecycleListeners][$remove](listener);
+      }
+      getSelectionModel(type) {
+        return this[_selectionModels][$putIfAbsent](type, dart.fn(() => new (MutableSelectionModelOfDL()).new(), VoidToMutableSelectionModelLOfDL()));
+      }
+      set defaultRenderer(renderer) {
+        SeriesRendererLOfDL().as(renderer);
+        renderer.rendererId = "default";
+        this.addSeriesRenderer(renderer);
+      }
+      get defaultRenderer() {
+        return this.getSeriesRenderer("default");
+      }
+      addSeriesRenderer(renderer) {
+        let rendererId = renderer.rendererId;
+        let previousRenderer = this[_seriesRenderers][$_get](rendererId);
+        if (previousRenderer != null) {
+          this.removeView(previousRenderer);
+          previousRenderer.onDetach(this);
+        }
+        this.addView(renderer);
+        renderer.onAttach(this);
+        this[_seriesRenderers][$_set](rendererId, SeriesRendererLOfDL().as(renderer));
+      }
+      getSeriesRenderer(rendererId) {
+        let renderer = this[_seriesRenderers][$_get](rendererId);
+        if (renderer == null) {
+          if (rendererId === "default") {
+            renderer = this.makeDefaultRenderer();
+            this.defaultRenderer = renderer;
+          }
+        }
+        return renderer;
+      }
+      pointWithinRenderer(chartPosition) {
+        return this[_usingRenderers][$any](dart.fn(rendererId => this.getSeriesRenderer(rendererId).componentBounds[$containsPoint](chartPosition), T.StringLToboolL()));
+      }
+      getNearestDatumDetailPerSeries(drawAreaPoint, selectAcrossAllDrawAreaComponents) {
+        let boundsOverride = dart.test(selectAcrossAllDrawAreaComponents) ? this.drawableLayoutAreaBounds : null;
+        let details = JSArrayOfDatumDetailsLOfDL().of([]);
+        this[_usingRenderers][$forEach](dart.fn(rendererId => {
+          details[$addAll](this.getSeriesRenderer(rendererId).getNearestDatumDetailPerSeries(drawAreaPoint, this.selectNearestByDomain, boundsOverride));
+        }, T.StringLToNull()));
+        details[$sort](dart.fn((a, b) => {
+          if (dart.test(this.selectNearestByDomain)) {
+            let domainDiff = a.domainDistance[$compareTo](b.domainDistance);
+            if (domainDiff === 0) {
+              return a.measureDistance[$compareTo](b.measureDistance);
+            }
+            return domainDiff;
+          } else {
+            return a.relativeDistance[$compareTo](b.relativeDistance);
+          }
+        }, DatumDetailsLOfDLAndDatumDetailsLOfDLTointL()));
+        return details;
+      }
+      getSelectedDatumDetails(selectionModelType) {
+        let details = JSArrayOfDatumDetailsLOfDL().of([]);
+        if (this[_currentSeriesList] == null) {
+          return details;
+        }
+        let selectionModel = this.getSelectionModel(selectionModelType);
+        if (selectionModel == null || !dart.test(selectionModel.hasDatumSelection)) {
+          return details;
+        }
+        for (let seriesDatum of selectionModel.selectedDatum) {
+          let rendererId = seriesDatum.series.getAttr(T.StringL(), series_renderer.rendererIdKey);
+          details[$add](this.getSeriesRenderer(rendererId).getDetailsForSeriesDatum(seriesDatum));
+        }
+        return details;
+      }
+      getAllDatumDetails(opts) {
+        let includeOverlaySeries = opts && 'includeOverlaySeries' in opts ? opts.includeOverlaySeries : false;
+        let details = JSArrayOfDatumDetailsLOfDL().of([]);
+        if (this[_currentSeriesList] == null) {
+          return details;
+        }
+        for (let series of this[_currentSeriesList]) {
+          let rendererId = series.getAttr(T.StringL(), series_renderer.rendererIdKey);
+          if (!dart.test(includeOverlaySeries) && dart.test(series.overlaySeries)) {
+            continue;
+          }
+          for (let datum of series.data) {
+            details[$add](this.getSeriesRenderer(rendererId).getDetailsForSeriesDatum(new (SeriesDatumOfDL()).new(series, datum)));
+          }
+        }
+        return details;
+      }
+      createBehavior(creator) {
+        return creator(DL());
+      }
+      addBehavior(behavior) {
+        ChartBehaviorLOfDL().as(behavior);
+        let role = behavior.role;
+        if (role != null && !dart.equals(this[_behaviorRoleMap][$_get](role), behavior)) {
+          this.removeBehavior(this[_behaviorRoleMap][$_get](role));
+          this[_behaviorRoleMap][$_set](role, behavior);
+        }
+        if (!dart.test(this[_behaviorStack][$contains](behavior))) {
+          this[_behaviorStack][$add](behavior);
+          behavior.attachTo(this);
+        }
+      }
+      removeBehavior(behavior) {
+        let t0;
+        ChartBehaviorLOfDL().as(behavior);
+        if (behavior == null) {
+          return false;
+        }
+        let role = (t0 = behavior, t0 == null ? null : t0.role);
+        if (role != null && dart.equals(this[_behaviorRoleMap][$_get](role), behavior)) {
+          this[_behaviorRoleMap][$remove](role);
+        }
+        this.unregisterTappable(behavior);
+        let wasAttached = this[_behaviorStack][$remove](behavior);
+        behavior.removeFrom(this);
+        return wasAttached;
+      }
+      registerTappable(behavior) {
+        ChartBehaviorLOfDL().as(behavior);
+        let role = behavior.role;
+        if (role != null && dart.equals(this[_behaviorRoleMap][$_get](role), behavior) && !dart.equals(this[_behaviorTappableMap][$_get](role), behavior)) {
+          this[_behaviorTappableMap][$_set](role, behavior);
+        }
+      }
+      unregisterTappable(behavior) {
+        let t0;
+        ChartBehaviorLOfDL().as(behavior);
+        let role = (t0 = behavior, t0 == null ? null : t0.role);
+        if (role != null && dart.equals(this[_behaviorTappableMap][$_get](role), behavior)) {
+          this[_behaviorTappableMap][$remove](role);
+        }
+      }
+      get behaviors() {
+        return ListOfChartBehaviorLOfDL().unmodifiable(this[_behaviorStack]);
+      }
+      measure(width, height) {
+        if (this[_rendererToSeriesList] != null) {
+          this[_layoutManager].measure(width, height);
+        }
+      }
+      layout(width, height) {
+        if (this[_rendererToSeriesList] != null) {
+          this.layoutInternal(width, height);
+          this.onPostLayout(this[_rendererToSeriesList]);
+        }
+      }
+      layoutInternal(width, height) {
+        this[_chartWidth] = width;
+        this[_chartHeight] = height;
+        this[_layoutManager].layout(width, height);
+      }
+      addView(view) {
+        if (this[_layoutManager].isAttached(view) === false) {
+          view.graphicsFactory = this.graphicsFactory;
+          this[_layoutManager].addView(view);
+        }
+      }
+      removeView(view) {
+        this[_layoutManager].removeView(view);
+      }
+      withinDrawArea(point) {
+        return this[_layoutManager].withinDrawArea(point);
+      }
+      get drawAreaBounds() {
+        return this[_layoutManager].drawAreaBounds;
+      }
+      get marginBottom() {
+        return this[_layoutManager].marginBottom;
+      }
+      get marginLeft() {
+        return this[_layoutManager].marginLeft;
+      }
+      get marginRight() {
+        return this[_layoutManager].marginRight;
+      }
+      get marginTop() {
+        return this[_layoutManager].marginTop;
+      }
+      get drawableLayoutAreaBounds() {
+        return this[_layoutManager].drawableLayoutAreaBounds;
+      }
+      draw(seriesList) {
+        ListLOfSeriesLOfdynamic$DL().as(seriesList);
+        for (let selectionModel of this[_selectionModels][$values]) {
+          selectionModel.clearSelection({notifyListeners: false});
+        }
+        let processedSeriesList = ListOfMutableSeriesLOfDL().from(seriesList[$map](dart.dynamic, dart.bind(this, 'makeSeries')));
+        this.fireOnDraw(processedSeriesList);
+        let seriesIndex = 0;
+        processedSeriesList[$forEach](dart.fn(series => {
+          let t0;
+          return series.seriesIndex = (t0 = seriesIndex, seriesIndex = t0 + 1, t0);
+        }, MutableSeriesLOfDLTointL()));
+        this[_currentSeriesList] = processedSeriesList;
+        this[_originalSeriesList] = processedSeriesList;
+        this.drawInternal(processedSeriesList, {skipAnimation: false, skipLayout: false});
+      }
+      redraw(opts) {
+        let skipAnimation = opts && 'skipAnimation' in opts ? opts.skipAnimation : false;
+        let skipLayout = opts && 'skipLayout' in opts ? opts.skipLayout : false;
+        this.drawInternal(this[_originalSeriesList], {skipAnimation: skipAnimation, skipLayout: skipLayout});
+        if (!dart.test(skipLayout)) {
+          this.measure(this[_chartWidth], this[_chartHeight]);
+          this.layout(this[_chartWidth], this[_chartHeight]);
+        } else {
+          this.onSkipLayout();
+        }
+      }
+      drawInternal(seriesList, opts) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        let skipAnimation = opts && 'skipAnimation' in opts ? opts.skipAnimation : null;
+        let skipLayout = opts && 'skipLayout' in opts ? opts.skipLayout : null;
+        seriesList = seriesList[$map](MutableSeriesLOfDL(), dart.fn(series => new (MutableSeriesOfDL()).clone(series), MutableSeriesLOfDLToMutableSeriesLOfDL()))[$toList]();
+        this[_animationsTemporarilyDisabled] = skipAnimation;
+        this.configureSeries(seriesList);
+        this.fireOnPreprocess(seriesList);
+        this[_rendererToSeriesList] = this.preprocessSeries(seriesList);
+        this.fireOnPostprocess(seriesList);
+        this[_currentSeriesList] = seriesList;
+      }
+      get currentSeriesList() {
+        return this[_currentSeriesList];
+      }
+      makeSeries(series) {
+        let t0;
+        SeriesLOfdynamic$DL().as(series);
+        let s = new (MutableSeriesOfDL()).new(series);
+        let rendererId = (t0 = series.getAttribute(T.StringL(), series_renderer.rendererIdKey), t0 == null ? "default" : t0);
+        s.setAttr(T.StringL(), series_renderer.rendererIdKey, rendererId);
+        s.setAttr(T.SeriesRendererL(), series_renderer.rendererKey, this.getSeriesRenderer(rendererId));
+        return s;
+      }
+      configureSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        let rendererToSeriesList = new (IdentityMapOfStringL$ListLOfMutableSeriesLOfDL()).new();
+        seriesList[$forEach](dart.fn(series => {
+          let rendererId = series.getAttr(T.StringL(), series_renderer.rendererIdKey);
+          rendererToSeriesList[$putIfAbsent](rendererId, dart.fn(() => JSArrayOfMutableSeriesLOfDL().of([]), VoidToListLOfMutableSeriesLOfDL()))[$add](series);
+        }, MutableSeriesLOfDLToNull()));
+        rendererToSeriesList[$forEach](dart.fn((rendererId, seriesList) => {
+          this.getSeriesRenderer(rendererId).configureSeries(seriesList);
+        }, StringLAndListLOfMutableSeriesLOfDLToNull()));
+      }
+      preprocessSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        let rendererToSeriesList = new (IdentityMapOfStringL$ListLOfMutableSeriesLOfDL()).new();
+        let unusedRenderers = this[_usingRenderers];
+        this[_usingRenderers] = new (T._IdentityHashSetOfStringL()).new();
+        seriesList[$forEach](dart.fn(series => {
+          let rendererId = series.getAttr(T.StringL(), series_renderer.rendererIdKey);
+          rendererToSeriesList[$putIfAbsent](rendererId, dart.fn(() => JSArrayOfMutableSeriesLOfDL().of([]), VoidToListLOfMutableSeriesLOfDL()))[$add](series);
+          this[_usingRenderers].add(rendererId);
+          unusedRenderers.remove(rendererId);
+        }, MutableSeriesLOfDLToNull()));
+        unusedRenderers[$forEach](dart.fn(rendererId => {
+          let t2, t1, t0;
+          t0 = rendererToSeriesList;
+          t1 = rendererId;
+          t2 = JSArrayOfMutableSeriesLOfDL().of([]);
+          t0[$_set](t1, t2);
+          return t2;
+        }, StringLToListLOfMutableSeriesLOfDL()));
+        rendererToSeriesList[$forEach](dart.fn((rendererId, seriesList) => {
+          this.getSeriesRenderer(rendererId).preprocessSeries(seriesList);
+        }, StringLAndListLOfMutableSeriesLOfDLToNull()));
+        return rendererToSeriesList;
+      }
+      onSkipLayout() {
+        this.onPostLayout(this[_rendererToSeriesList]);
+      }
+      onPostLayout(rendererToSeriesList) {
+        MapLOfStringL$ListLOfMutableSeriesLOfDL().as(rendererToSeriesList);
+        rendererToSeriesList[$forEach](dart.fn((rendererId, seriesList) => {
+          this.getSeriesRenderer(rendererId).update(seriesList, this.animatingThisDraw);
+        }, StringLAndListLOfMutableSeriesLOfDLToNull()));
+        if (dart.test(this.animatingThisDraw)) {
+          this.animationPercent = 0.0;
+          this.context.requestAnimation(this.transition);
+        } else {
+          this.animationPercent = 1.0;
+          this.context.requestPaint();
+        }
+        this[_animationsTemporarilyDisabled] = false;
+      }
+      paint(canvas) {
+        canvas.drawingView = "BaseView";
+        this[_layoutManager].paintOrderedViews[$forEach](dart.fn(view => {
+          canvas.drawingView = dart.toString(dart.runtimeType(view));
+          view.paint(canvas, dart.test(this.animatingThisDraw) ? this.animationPercent : 1.0);
+        }, T.LayoutViewLToNull()));
+        canvas.drawingView = "PostRender";
+        this.fireOnPostrender(canvas);
+        canvas.drawingView = null;
+        if (this.animationPercent === 1.0) {
+          this.fireOnAnimationComplete();
+        }
+      }
+      get animatingThisDraw() {
+        return this.transition != null && dart.notNull(this.transition.inMilliseconds) > 0 && !dart.test(this[_animationsTemporarilyDisabled]);
+      }
+      fireOnDraw(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          let t1, t0;
+          if (listener.onData != null) {
+            t0 = listener;
+            t1 = seriesList;
+            t0.onData(t1);
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      fireOnPreprocess(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          let t1, t0;
+          if (listener.onPreprocess != null) {
+            t0 = listener;
+            t1 = seriesList;
+            t0.onPreprocess(t1);
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      fireOnPostprocess(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          let t1, t0;
+          if (listener.onPostprocess != null) {
+            t0 = listener;
+            t1 = seriesList;
+            t0.onPostprocess(t1);
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      fireOnAxisConfigured() {
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          if (listener.onAxisConfigured != null) {
+            listener.onAxisConfigured();
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      fireOnPostrender(canvas) {
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          let t1, t0;
+          if (listener.onPostrender != null) {
+            t0 = listener;
+            t1 = canvas;
+            t0.onPostrender(t1);
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      fireOnAnimationComplete() {
+        this[_lifecycleListeners][$forEach](dart.fn(listener => {
+          if (listener.onAnimationComplete != null) {
+            listener.onAnimationComplete();
+          }
+        }, LifecycleListenerLOfDLToNull()));
+      }
+      destroy() {
+        for (let i = 0; i < dart.notNull(this[_behaviorStack][$length]); i = i + 1) {
+          this[_behaviorStack][$_get](i).removeFrom(this);
+        }
+        this[_behaviorStack][$clear]();
+        this[_behaviorRoleMap][$clear]();
+        this[_selectionModels][$values][$forEach](dart.fn(selectionModel => selectionModel.clearAllListeners(), T.MutableSelectionModelLTovoid()));
+      }
+    }
+    (BaseChart.new = function(opts) {
+      let layoutConfig = opts && 'layoutConfig' in opts ? opts.layoutConfig : null;
+      this[context] = null;
+      this[graphicsFactory] = null;
+      this[_layoutManager] = null;
+      this[_chartWidth] = null;
+      this[_chartHeight] = null;
+      this[transition] = C[16] || CT.C16;
+      this[animationPercent] = null;
+      this[_animationsTemporarilyDisabled] = false;
+      this[_originalSeriesList] = null;
+      this[_currentSeriesList] = null;
+      this[_usingRenderers] = new (T._IdentityHashSetOfStringL()).new();
+      this[_rendererToSeriesList] = null;
+      this[_seriesRenderers] = new (IdentityMapOfStringL$SeriesRendererLOfDL()).new();
+      this[_behaviorRoleMap] = new (IdentityMapOfStringL$ChartBehaviorLOfDL()).new();
+      this[_behaviorStack] = JSArrayOfChartBehaviorLOfDL().of([]);
+      this[_behaviorTappableMap] = new (IdentityMapOfStringL$ChartBehaviorLOfDL()).new();
+      this[_gestureProxy] = new proxy_gesture_listener.ProxyGestureListener.new();
+      this[_selectionModels] = new (LinkedMapOfSelectionModelTypeL$MutableSelectionModelLOfDL()).new();
+      this[_lifecycleListeners] = JSArrayOfLifecycleListenerLOfDL().of([]);
+      this[_layoutManager] = new layout_manager_impl.LayoutManagerImpl.new({config: layoutConfig});
+    }).prototype = BaseChart.prototype;
+    dart.addTypeTests(BaseChart);
+    BaseChart.prototype[_is_BaseChart_default] = true;
+    dart.addTypeCaches(BaseChart);
+    dart.setMethodSignature(BaseChart, () => ({
+      __proto__: dart.getMethods(BaseChart.__proto__),
+      init: dart.fnType(dart.void, [dart.legacy(chart_context.ChartContext), dart.legacy(graphics_factory.GraphicsFactory)]),
+      configurationChanged: dart.fnType(dart.void, []),
+      addGestureListener: dart.fnType(dart.legacy(gesture_listener.GestureListener), [dart.legacy(gesture_listener.GestureListener)]),
+      removeGestureListener: dart.fnType(dart.void, [dart.legacy(gesture_listener.GestureListener)]),
+      addLifecycleListener: dart.fnType(dart.legacy(base_chart.LifecycleListener), [dart.legacy(core.Object)]),
+      removeLifecycleListener: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+      getSelectionModel: dart.fnType(dart.legacy(selection_model.MutableSelectionModel$(dart.legacy(D))), [dart.legacy(selection_model.SelectionModelType)]),
+      addSeriesRenderer: dart.fnType(dart.void, [dart.legacy(series_renderer.SeriesRenderer)]),
+      getSeriesRenderer: dart.fnType(dart.legacy(series_renderer.SeriesRenderer$(dart.legacy(D))), [dart.legacy(core.String)]),
+      pointWithinRenderer: dart.fnType(dart.legacy(core.bool), [dart.legacy(math.Point$(dart.legacy(core.double)))]),
+      getNearestDatumDetailPerSeries: dart.fnType(dart.legacy(core.List$(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))))), [dart.legacy(math.Point$(dart.legacy(core.double))), dart.legacy(core.bool)]),
+      getSelectedDatumDetails: dart.fnType(dart.legacy(core.List$(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))))), [dart.legacy(selection_model.SelectionModelType)]),
+      getAllDatumDetails: dart.fnType(dart.legacy(core.List$(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))))), [], {includeOverlaySeries: dart.legacy(core.bool)}, {}),
+      createBehavior: dart.fnType(dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D))), [dart.legacy(dart.gFnType(D => [dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D))), []]))]),
+      addBehavior: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      removeBehavior: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+      registerTappable: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      unregisterTappable: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      measure: dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]),
+      layout: dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]),
+      layoutInternal: dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]),
+      addView: dart.fnType(dart.void, [dart.legacy(layout_view.LayoutView)]),
+      removeView: dart.fnType(dart.void, [dart.legacy(layout_view.LayoutView)]),
+      withinDrawArea: dart.fnType(dart.legacy(core.bool), [dart.legacy(math.Point$(dart.legacy(core.num)))]),
+      draw: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      redraw: dart.fnType(dart.void, [], {skipAnimation: dart.legacy(core.bool), skipLayout: dart.legacy(core.bool)}, {}),
+      drawInternal: dart.fnType(dart.void, [dart.legacy(core.Object)], {skipAnimation: dart.legacy(core.bool), skipLayout: dart.legacy(core.bool)}, {}),
+      makeSeries: dart.fnType(dart.legacy(processed_series.MutableSeries$(dart.legacy(D))), [dart.legacy(core.Object)]),
+      configureSeries: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      preprocessSeries: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D))))))), [dart.legacy(core.Object)]),
+      onSkipLayout: dart.fnType(dart.void, []),
+      onPostLayout: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      paint: dart.fnType(dart.void, [dart.legacy(chart_canvas.ChartCanvas)]),
+      fireOnDraw: dart.fnType(dart.dynamic, [dart.legacy(core.Object)]),
+      fireOnPreprocess: dart.fnType(dart.dynamic, [dart.legacy(core.Object)]),
+      fireOnPostprocess: dart.fnType(dart.dynamic, [dart.legacy(core.Object)]),
+      fireOnAxisConfigured: dart.fnType(dart.dynamic, []),
+      fireOnPostrender: dart.fnType(dart.dynamic, [dart.legacy(chart_canvas.ChartCanvas)]),
+      fireOnAnimationComplete: dart.fnType(dart.dynamic, []),
+      destroy: dart.fnType(dart.dynamic, [])
+    }));
+    dart.setGetterSignature(BaseChart, () => ({
+      __proto__: dart.getGetters(BaseChart.__proto__),
+      isTappable: dart.legacy(core.bool),
+      selectNearestByDomain: dart.legacy(core.bool),
+      chartWidth: dart.legacy(core.int),
+      chartHeight: dart.legacy(core.int),
+      gestureProxy: dart.legacy(proxy_gesture_listener.ProxyGestureListener),
+      defaultRenderer: dart.legacy(series_renderer.SeriesRenderer$(dart.legacy(D))),
+      behaviors: dart.legacy(core.List$(dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D))))),
+      drawAreaBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+      marginBottom: dart.legacy(core.int),
+      marginLeft: dart.legacy(core.int),
+      marginRight: dart.legacy(core.int),
+      marginTop: dart.legacy(core.int),
+      drawableLayoutAreaBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+      currentSeriesList: dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D))))),
+      animatingThisDraw: dart.legacy(core.bool)
+    }));
+    dart.setSetterSignature(BaseChart, () => ({
+      __proto__: dart.getSetters(BaseChart.__proto__),
+      defaultRenderer: dart.legacy(core.Object)
+    }));
+    dart.setLibraryUri(BaseChart, I[1]);
+    dart.setFieldSignature(BaseChart, () => ({
+      __proto__: dart.getFields(BaseChart.__proto__),
+      context: dart.fieldType(dart.legacy(chart_context.ChartContext)),
+      graphicsFactory: dart.fieldType(dart.legacy(graphics_factory.GraphicsFactory)),
+      [_layoutManager]: dart.fieldType(dart.legacy(layout_manager.LayoutManager)),
+      [_chartWidth]: dart.fieldType(dart.legacy(core.int)),
+      [_chartHeight]: dart.fieldType(dart.legacy(core.int)),
+      transition: dart.fieldType(dart.legacy(core.Duration)),
+      animationPercent: dart.fieldType(dart.legacy(core.double)),
+      [_animationsTemporarilyDisabled]: dart.fieldType(dart.legacy(core.bool)),
+      [_originalSeriesList]: dart.fieldType(dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D)))))),
+      [_currentSeriesList]: dart.fieldType(dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D)))))),
+      [_usingRenderers]: dart.fieldType(dart.legacy(core.Set$(dart.legacy(core.String)))),
+      [_rendererToSeriesList]: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D)))))))),
+      [_seriesRenderers]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(series_renderer.SeriesRenderer$(dart.legacy(D)))))),
+      [_behaviorRoleMap]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D)))))),
+      [_behaviorStack]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D)))))),
+      [_behaviorTappableMap]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(chart_behavior.ChartBehavior$(dart.legacy(D)))))),
+      [_gestureProxy]: dart.finalFieldType(dart.legacy(proxy_gesture_listener.ProxyGestureListener)),
+      [_selectionModels]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(selection_model.SelectionModelType), dart.legacy(selection_model.MutableSelectionModel$(dart.legacy(D)))))),
+      [_lifecycleListeners]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(base_chart.LifecycleListener$(dart.legacy(D))))))
+    }));
+    return BaseChart;
+  });
+  base_chart.BaseChart = base_chart.BaseChart$();
+  dart.addTypeTests(base_chart.BaseChart, _is_BaseChart_default);
+  var onData$ = dart.privateName(base_chart, "LifecycleListener.onData");
+  var onPreprocess$ = dart.privateName(base_chart, "LifecycleListener.onPreprocess");
+  var onPostprocess$ = dart.privateName(base_chart, "LifecycleListener.onPostprocess");
+  var onAxisConfigured$ = dart.privateName(base_chart, "LifecycleListener.onAxisConfigured");
+  var onPostrender$ = dart.privateName(base_chart, "LifecycleListener.onPostrender");
+  var onAnimationComplete$ = dart.privateName(base_chart, "LifecycleListener.onAnimationComplete");
+  const _is_LifecycleListener_default = Symbol('_is_LifecycleListener_default');
+  base_chart.LifecycleListener$ = dart.generic(D => {
+    class LifecycleListener extends core.Object {
+      get onData() {
+        return this[onData$];
+      }
+      set onData(value) {
+        super.onData = value;
+      }
+      get onPreprocess() {
+        return this[onPreprocess$];
+      }
+      set onPreprocess(value) {
+        super.onPreprocess = value;
+      }
+      get onPostprocess() {
+        return this[onPostprocess$];
+      }
+      set onPostprocess(value) {
+        super.onPostprocess = value;
+      }
+      get onAxisConfigured() {
+        return this[onAxisConfigured$];
+      }
+      set onAxisConfigured(value) {
+        super.onAxisConfigured = value;
+      }
+      get onPostrender() {
+        return this[onPostrender$];
+      }
+      set onPostrender(value) {
+        super.onPostrender = value;
+      }
+      get onAnimationComplete() {
+        return this[onAnimationComplete$];
+      }
+      set onAnimationComplete(value) {
+        super.onAnimationComplete = value;
+      }
+    }
+    (LifecycleListener.new = function(opts) {
+      let onData = opts && 'onData' in opts ? opts.onData : null;
+      let onPreprocess = opts && 'onPreprocess' in opts ? opts.onPreprocess : null;
+      let onPostprocess = opts && 'onPostprocess' in opts ? opts.onPostprocess : null;
+      let onAxisConfigured = opts && 'onAxisConfigured' in opts ? opts.onAxisConfigured : null;
+      let onPostrender = opts && 'onPostrender' in opts ? opts.onPostrender : null;
+      let onAnimationComplete = opts && 'onAnimationComplete' in opts ? opts.onAnimationComplete : null;
+      this[onData$] = onData;
+      this[onPreprocess$] = onPreprocess;
+      this[onPostprocess$] = onPostprocess;
+      this[onAxisConfigured$] = onAxisConfigured;
+      this[onPostrender$] = onPostrender;
+      this[onAnimationComplete$] = onAnimationComplete;
+      ;
+    }).prototype = LifecycleListener.prototype;
+    dart.addTypeTests(LifecycleListener);
+    LifecycleListener.prototype[_is_LifecycleListener_default] = true;
+    dart.addTypeCaches(LifecycleListener);
+    dart.setLibraryUri(LifecycleListener, I[1]);
+    dart.setFieldSignature(LifecycleListener, () => ({
+      __proto__: dart.getFields(LifecycleListener.__proto__),
+      onData: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries)))]))),
+      onPreprocess: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries)))]))),
+      onPostprocess: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries)))]))),
+      onAxisConfigured: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, []))),
+      onPostrender: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(chart_canvas.ChartCanvas)]))),
+      onAnimationComplete: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [])))
+    }));
+    return LifecycleListener;
+  });
+  base_chart.LifecycleListener = base_chart.LifecycleListener$();
+  dart.addTypeTests(base_chart.LifecycleListener, _is_LifecycleListener_default);
+  const _is_SeriesRenderer_default = Symbol('_is_SeriesRenderer_default');
+  series_renderer.SeriesRenderer$ = dart.generic(D => {
+    class SeriesRenderer extends layout_view.LayoutView {}
+    (SeriesRenderer.new = function() {
+      ;
+    }).prototype = SeriesRenderer.prototype;
+    dart.addTypeTests(SeriesRenderer);
+    SeriesRenderer.prototype[_is_SeriesRenderer_default] = true;
+    dart.addTypeCaches(SeriesRenderer);
+    dart.setLibraryUri(SeriesRenderer, I[2]);
+    return SeriesRenderer;
+  });
+  series_renderer.SeriesRenderer = series_renderer.SeriesRenderer$();
+  dart.defineLazy(series_renderer.SeriesRenderer, {
+    /*series_renderer.SeriesRenderer.defaultRendererId*/get defaultRendererId() {
+      return "default";
+    }
+  }, true);
+  dart.addTypeTests(series_renderer.SeriesRenderer, _is_SeriesRenderer_default);
+  var layoutConfig = dart.privateName(series_renderer, "BaseSeriesRenderer.layoutConfig");
+  var rendererId$ = dart.privateName(series_renderer, "BaseSeriesRenderer.rendererId");
+  var symbolRenderer$ = dart.privateName(series_renderer, "BaseSeriesRenderer.symbolRenderer");
+  var _drawAreaBounds = dart.privateName(series_renderer, "_drawAreaBounds");
+  var _graphicsFactory = dart.privateName(series_renderer, "_graphicsFactory");
+  const _is_BaseSeriesRenderer_default = Symbol('_is_BaseSeriesRenderer_default');
+  series_renderer.BaseSeriesRenderer$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var BaseChartOfDL = () => (BaseChartOfDL = dart.constFn(base_chart.BaseChart$(DL())))();
+    var BaseChartLOfDL = () => (BaseChartLOfDL = dart.constFn(dart.legacy(BaseChartOfDL())))();
+    var MutableSeriesOfDL = () => (MutableSeriesOfDL = dart.constFn(processed_series.MutableSeries$(DL())))();
+    var MutableSeriesLOfDL = () => (MutableSeriesLOfDL = dart.constFn(dart.legacy(MutableSeriesOfDL())))();
+    var IterableOfMutableSeriesLOfDL = () => (IterableOfMutableSeriesLOfDL = dart.constFn(core.Iterable$(MutableSeriesLOfDL())))();
+    var IterableLOfMutableSeriesLOfDL = () => (IterableLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(IterableOfMutableSeriesLOfDL())))();
+    var MutableSeriesLOfDLToNull = () => (MutableSeriesLOfDLToNull = dart.constFn(dart.fnType(core.Null, [MutableSeriesLOfDL()])))();
+    var ListOfMutableSeriesLOfDL = () => (ListOfMutableSeriesLOfDL = dart.constFn(core.List$(MutableSeriesLOfDL())))();
+    var ListLOfMutableSeriesLOfDL = () => (ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfMutableSeriesLOfDL())))();
+    var SeriesDatumOfDL = () => (SeriesDatumOfDL = dart.constFn(series_datum.SeriesDatum$(DL())))();
+    var SeriesDatumLOfDL = () => (SeriesDatumLOfDL = dart.constFn(dart.legacy(SeriesDatumOfDL())))();
+    var DatumDetailsOfDL = () => (DatumDetailsOfDL = dart.constFn(datum_details.DatumDetails$(DL())))();
+    class BaseSeriesRenderer extends core.Object {
+      get layoutConfig() {
+        return this[layoutConfig];
+      }
+      set layoutConfig(value) {
+        super.layoutConfig = value;
+      }
+      get rendererId() {
+        return this[rendererId$];
+      }
+      set rendererId(value) {
+        this[rendererId$] = value;
+      }
+      get symbolRenderer() {
+        return this[symbolRenderer$];
+      }
+      set symbolRenderer(value) {
+        this[symbolRenderer$] = value;
+      }
+      get drawBounds() {
+        return this[_drawAreaBounds];
+      }
+      get graphicsFactory() {
+        return this[_graphicsFactory];
+      }
+      set graphicsFactory(value) {
+        this[_graphicsFactory] = value;
+      }
+      onAttach(chart) {
+        BaseChartLOfDL().as(chart);
+      }
+      onDetach(chart) {
+        BaseChartLOfDL().as(chart);
+      }
+      assignMissingColors(seriesList, opts) {
+        IterableLOfMutableSeriesLOfDL().as(seriesList);
+        let emptyCategoryUsesSinglePalette = opts && 'emptyCategoryUsesSinglePalette' in opts ? opts.emptyCategoryUsesSinglePalette : null;
+        let missingColorCountPerCategory = new (T.IdentityMapOfStringL$intL()).new();
+        let maxMissing = 0;
+        let hasSpecifiedCategory = false;
+        seriesList[$forEach](dart.fn(series => {
+          let t0;
+          if (series.colorFn == null && series.seriesColor != null) {
+            series.colorFn = dart.fn(_ => series.seriesColor, T.intLToColorL());
+          }
+          if (series.colorFn == null) {
+            let category = series.seriesCategory;
+            if (category == null) {
+              category = "__default__";
+            } else {
+              hasSpecifiedCategory = true;
+            }
+            let missingCnt = dart.notNull((t0 = missingColorCountPerCategory[$_get](category), t0 == null ? 0 : t0)) + 1;
+            missingColorCountPerCategory[$_set](category, missingCnt);
+            maxMissing = math.max(T.intL(), maxMissing, missingCnt);
+          }
+        }, MutableSeriesLOfDLToNull()));
+        if (maxMissing > 0) {
+          if (!dart.test(emptyCategoryUsesSinglePalette) && !hasSpecifiedCategory) {
+            let palettes = style_factory.StyleFactory.style.getOrderedPalettes(maxMissing);
+            let index = 0;
+            seriesList[$forEach](dart.fn(series => {
+              let t0, t1, t0$;
+              if (series.colorFn == null) {
+                let color = palettes[$_get](index[$modulo](palettes[$length])).shadeDefault;
+                index = index + 1;
+                series.colorFn = dart.fn(_ => color, T.intLToColorL());
+                t0 = series;
+                t0.seriesColor == null ? t0.seriesColor = color : null;
+              } else {
+                if (series.seriesColor == null) {
+                  try {
+                    series.seriesColor = (t0$ = series, t1 = 0, t0$.colorFn(t1));
+                  } catch (e) {
+                    let exception = dart.getThrown(e);
+                    series.seriesColor = style_factory.StyleFactory.style.defaultSeriesColor;
+                  }
+                }
+              }
+            }, T.MutableSeriesLToNull()));
+            return;
+          }
+          let colorPalettes = style_factory.StyleFactory.style.getOrderedPalettes(missingColorCountPerCategory[$length]);
+          let colorsByCategory = new (T.IdentityMapOfStringL$ListLOfColorL()).new();
+          let index = 0;
+          missingColorCountPerCategory[$keys][$forEach](dart.fn(category => {
+            colorsByCategory[$_set](category, colorPalettes[$_get](index[$modulo](colorPalettes[$length])).makeShades(maxMissing));
+            index = index + 1;
+            missingColorCountPerCategory[$_set](category, 0);
+          }, T.StringLToNull()));
+          seriesList[$forEach](dart.fn(series => {
+            let t1, t1$;
+            if (series.colorFn == null) {
+              let category = (t1 = series.seriesCategory, t1 == null ? "__default__" : t1);
+              let colorIndex = missingColorCountPerCategory[$_get](category);
+              missingColorCountPerCategory[$_set](category, dart.notNull(colorIndex) + 1);
+              let color = colorsByCategory[$_get](category)[$_get](colorIndex);
+              series.colorFn = dart.fn(_ => color, T.intLToColorL());
+            }
+            t1$ = series;
+            t1$.fillColorFn == null ? t1$.fillColorFn = dart.fn(index => {
+              let t3, t2;
+              t2 = series;
+              t3 = index;
+              return t2.colorFn(t3);
+            }, T.intLToColorL()) : null;
+          }, T.MutableSeriesLToNull()));
+        } else {
+          seriesList[$forEach](dart.fn(series => {
+            let t1;
+            t1 = series;
+            t1.fillColorFn == null ? t1.fillColorFn = dart.fn(index => {
+              let t3, t2;
+              t2 = series;
+              t3 = index;
+              return t2.colorFn(t3);
+            }, T.intLToColorL()) : null;
+          }, T.MutableSeriesLToNull()));
+        }
+        seriesList[$forEach](dart.fn(series => {
+          let t2, t1;
+          if (series.seriesColor == null) {
+            try {
+              series.seriesColor = (t1 = series, t2 = 0, t1.colorFn(t2));
+            } catch (e) {
+              let exception = dart.getThrown(e);
+              series.seriesColor = style_factory.StyleFactory.style.defaultSeriesColor;
+            }
+          }
+        }, T.MutableSeriesLToNull()));
+      }
+      measure(maxWidth, maxHeight) {
+        return null;
+      }
+      layout(componentBounds, drawAreaBounds) {
+        this[_drawAreaBounds] = drawAreaBounds;
+      }
+      get componentBounds() {
+        return this[_drawAreaBounds];
+      }
+      get isSeriesRenderer() {
+        return true;
+      }
+      configureSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      preprocessSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      configureDomainAxes(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      configureMeasureAxes(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      getDetailsForSeriesDatum(seriesDatum) {
+        let t2, t2$, t2$0, t2$1;
+        SeriesDatumLOfDL().as(seriesDatum);
+        let series = seriesDatum.series;
+        let index = seriesDatum.index;
+        let domainFn = series.domainFn;
+        let domainLowerBoundFn = series.domainLowerBoundFn;
+        let domainUpperBoundFn = series.domainUpperBoundFn;
+        let measureFn = series.measureFn;
+        let measureLowerBoundFn = series.measureLowerBoundFn;
+        let measureUpperBoundFn = series.measureUpperBoundFn;
+        let measureOffsetFn = series.measureOffsetFn;
+        let rawMeasureFn = series.rawMeasureFn;
+        let rawMeasureLowerBoundFn = series.rawMeasureLowerBoundFn;
+        let rawMeasureUpperBoundFn = series.rawMeasureUpperBoundFn;
+        let colorFn = series.colorFn;
+        let areaColorFn = (t2 = series.areaColorFn, t2 == null ? colorFn : t2);
+        let fillColorFn = (t2$ = series.fillColorFn, t2$ == null ? colorFn : t2$);
+        let radiusPxFn = series.radiusPxFn;
+        let strokeWidthPxFn = series.strokeWidthPxFn;
+        let domainValue = domainFn(index);
+        let domainLowerBoundValue = domainLowerBoundFn != null ? domainLowerBoundFn(index) : null;
+        let domainUpperBoundValue = domainUpperBoundFn != null ? domainUpperBoundFn(index) : null;
+        let measureValue = measureFn(index);
+        let measureLowerBoundValue = measureLowerBoundFn != null ? measureLowerBoundFn(index) : null;
+        let measureUpperBoundValue = measureUpperBoundFn != null ? measureUpperBoundFn(index) : null;
+        let measureOffsetValue = measureOffsetFn != null ? measureOffsetFn(index) : null;
+        let rawMeasureValue = rawMeasureFn(index);
+        let rawMeasureLowerBoundValue = rawMeasureLowerBoundFn != null ? rawMeasureLowerBoundFn(index) : null;
+        let rawMeasureUpperBoundValue = rawMeasureUpperBoundFn != null ? rawMeasureUpperBoundFn(index) : null;
+        let color = colorFn(index);
+        let fillColor = fillColorFn(index);
+        fillColor == null ? fillColor = color : null;
+        let areaColor = areaColorFn(index);
+        let radiusPx = radiusPxFn != null ? radiusPxFn(index) : null;
+        radiusPx = (t2$0 = radiusPx, t2$0 == null ? null : t2$0[$toDouble]());
+        let strokeWidthPx = strokeWidthPxFn != null ? strokeWidthPxFn(index) : null;
+        strokeWidthPx = (t2$1 = strokeWidthPx, t2$1 == null ? null : t2$1[$toDouble]());
+        let details = new (DatumDetailsOfDL()).new({datum: seriesDatum.datum, index: seriesDatum.index, domain: domainValue, domainLowerBound: domainLowerBoundValue, domainUpperBound: domainUpperBoundValue, measure: measureValue, measureLowerBound: measureLowerBoundValue, measureUpperBound: measureUpperBoundValue, measureOffset: measureOffsetValue, rawMeasure: rawMeasureValue, rawMeasureLowerBound: rawMeasureLowerBoundValue, rawMeasureUpperBound: rawMeasureUpperBoundValue, series: series, color: color, fillColor: fillColor, areaColor: areaColor, radiusPx: radiusPx, strokeWidthPx: strokeWidthPx});
+        return this.addPositionToDetailsForSeriesDatum(details, seriesDatum);
+      }
+      isPointWithinBounds(chartPoint, bounds) {
+        if (bounds != null) {
+          if (!dart.test(bounds[$containsPoint](chartPoint))) {
+            return false;
+          }
+        } else if (this.componentBounds == null || !dart.test(this.componentBounds[$containsPoint](chartPoint))) {
+          return false;
+        }
+        return true;
+      }
+    }
+    (BaseSeriesRenderer.new = function(opts) {
+      let rendererId = opts && 'rendererId' in opts ? opts.rendererId : null;
+      let layoutPaintOrder = opts && 'layoutPaintOrder' in opts ? opts.layoutPaintOrder : null;
+      let symbolRenderer = opts && 'symbolRenderer' in opts ? opts.symbolRenderer : null;
+      this[_drawAreaBounds] = null;
+      this[_graphicsFactory] = null;
+      this[rendererId$] = rendererId;
+      this[symbolRenderer$] = symbolRenderer;
+      this[layoutConfig] = new layout_view.LayoutViewConfig.new({paintOrder: layoutPaintOrder, position: layout_view.LayoutPosition.DrawArea, positionOrder: 0});
+      ;
+    }).prototype = BaseSeriesRenderer.prototype;
+    dart.addTypeTests(BaseSeriesRenderer);
+    BaseSeriesRenderer.prototype[_is_BaseSeriesRenderer_default] = true;
+    dart.addTypeCaches(BaseSeriesRenderer);
+    BaseSeriesRenderer[dart.implements] = () => [series_renderer.SeriesRenderer$(dart.legacy(D))];
+    dart.setMethodSignature(BaseSeriesRenderer, () => ({
+      __proto__: dart.getMethods(BaseSeriesRenderer.__proto__),
+      onAttach: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      onDetach: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      assignMissingColors: dart.fnType(dart.dynamic, [dart.legacy(core.Object)], {emptyCategoryUsesSinglePalette: dart.legacy(core.bool)}, {}),
+      measure: dart.fnType(dart.legacy(layout_view.ViewMeasuredSizes), [dart.legacy(core.int), dart.legacy(core.int)]),
+      layout: dart.fnType(dart.void, [dart.legacy(math.Rectangle$(dart.legacy(core.int))), dart.legacy(math.Rectangle$(dart.legacy(core.int)))]),
+      configureSeries: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      preprocessSeries: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      configureDomainAxes: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      configureMeasureAxes: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      getDetailsForSeriesDatum: dart.fnType(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))), [dart.legacy(core.Object)]),
+      isPointWithinBounds: dart.fnType(dart.legacy(core.bool), [dart.legacy(math.Point$(dart.legacy(core.double))), dart.legacy(math.Rectangle$(dart.legacy(core.int)))])
+    }));
+    dart.setGetterSignature(BaseSeriesRenderer, () => ({
+      __proto__: dart.getGetters(BaseSeriesRenderer.__proto__),
+      drawBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+      graphicsFactory: dart.legacy(graphics_factory.GraphicsFactory),
+      componentBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+      isSeriesRenderer: dart.legacy(core.bool)
+    }));
+    dart.setSetterSignature(BaseSeriesRenderer, () => ({
+      __proto__: dart.getSetters(BaseSeriesRenderer.__proto__),
+      graphicsFactory: dart.legacy(graphics_factory.GraphicsFactory)
+    }));
+    dart.setLibraryUri(BaseSeriesRenderer, I[2]);
+    dart.setFieldSignature(BaseSeriesRenderer, () => ({
+      __proto__: dart.getFields(BaseSeriesRenderer.__proto__),
+      layoutConfig: dart.finalFieldType(dart.legacy(layout_view.LayoutViewConfig)),
+      rendererId: dart.fieldType(dart.legacy(core.String)),
+      symbolRenderer: dart.fieldType(dart.legacy(symbol_renderer.SymbolRenderer)),
+      [_drawAreaBounds]: dart.fieldType(dart.legacy(math.Rectangle$(dart.legacy(core.int)))),
+      [_graphicsFactory]: dart.fieldType(dart.legacy(graphics_factory.GraphicsFactory))
+    }));
+    return BaseSeriesRenderer;
+  });
+  series_renderer.BaseSeriesRenderer = series_renderer.BaseSeriesRenderer$();
+  dart.addTypeTests(series_renderer.BaseSeriesRenderer, _is_BaseSeriesRenderer_default);
+  var TypedKey_uniqueKey = dart.privateName(typed_registry, "TypedKey.uniqueKey");
+  dart.defineLazy(series_renderer, {
+    /*series_renderer.rendererIdKey*/get rendererIdKey() {
+      return C[17] || CT.C17;
+    },
+    /*series_renderer.rendererKey*/get rendererKey() {
+      return C[18] || CT.C18;
+    }
+  }, true);
+  dart.trackLibraries("packages/charts_common/src/chart/common/behavior/chart_behavior.dart", {
+    "package:charts_common/src/chart/common/behavior/chart_behavior.dart": chart_behavior,
+    "package:charts_common/src/chart/common/base_chart.dart": base_chart,
+    "package:charts_common/src/chart/common/series_renderer.dart": series_renderer
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["chart_behavior.dart","../base_chart.dart","../series_renderer.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../D:/packages/charts_common/src/chart/common/behavior/chart_behavior.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__common__behavior__chart_behavior: chart_behavior,
+    src__chart__common__base_chart: base_chart,
+    src__chart__common__series_renderer: series_renderer
+  };
+}));
+
+//# sourceMappingURL=chart_behavior.dart.lib.js.map

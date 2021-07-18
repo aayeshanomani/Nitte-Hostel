@@ -1,0 +1,326 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/common/series_datum.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/collection/src/equality.dart'], (function load__packages__charts_common__src__chart__common__selection_model__selection_model_dart(dart_sdk, packages__charts_common__src__chart__common__series_datum$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__collection__src__equality$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const series_datum = packages__charts_common__src__chart__common__series_datum$46dart.src__chart__common__series_datum;
+  const processed_series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__processed_series;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  var selection_model = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $add = dartx.add;
+  var $keys = dartx.keys;
+  var $contains = dartx.contains;
+  var $where = dartx.where;
+  var $addAll = dartx.addAll;
+  var $containsKey = dartx.containsKey;
+  var $length = dartx.length;
+  var $toList = dartx.toList;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  var $forEach = dartx.forEach;
+  var $remove = dartx.remove;
+  var $clear = dartx.clear;
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
+    SelectionModelL: () => (T.SelectionModelL = dart.constFn(dart.legacy(selection_model.SelectionModel)))(),
+    SelectionModelTypeL: () => (T.SelectionModelTypeL = dart.constFn(dart.legacy(selection_model.SelectionModelType)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: selection_model.SelectionModelType.prototype,
+        [_name$]: "SelectionModelType.info",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: selection_model.SelectionModelType.prototype,
+        [_name$]: "SelectionModelType.action",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], T.SelectionModelTypeL());
+    }
+  }, false);
+  var C = Array(3).fill(void 0);
+  var I = ["package:charts_common/src/chart/common/selection_model/selection_model.dart"];
+  var _selectedDatum = dart.privateName(selection_model, "_selectedDatum");
+  var _selectedSeries = dart.privateName(selection_model, "_selectedSeries");
+  const _is_SelectionModel_default = Symbol('_is_SelectionModel_default');
+  selection_model.SelectionModel$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var SeriesDatumOfDL = () => (SeriesDatumOfDL = dart.constFn(series_datum.SeriesDatum$(DL())))();
+    var SeriesDatumLOfDL = () => (SeriesDatumLOfDL = dart.constFn(dart.legacy(SeriesDatumOfDL())))();
+    var JSArrayOfSeriesDatumLOfDL = () => (JSArrayOfSeriesDatumLOfDL = dart.constFn(_interceptors.JSArray$(SeriesDatumLOfDL())))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    var JSArrayOfImmutableSeriesLOfDL = () => (JSArrayOfImmutableSeriesLOfDL = dart.constFn(_interceptors.JSArray$(ImmutableSeriesLOfDL())))();
+    var ListOfSeriesDatumLOfDL = () => (ListOfSeriesDatumLOfDL = dart.constFn(core.List$(SeriesDatumLOfDL())))();
+    var ListOfImmutableSeriesLOfDL = () => (ListOfImmutableSeriesLOfDL = dart.constFn(core.List$(ImmutableSeriesLOfDL())))();
+    var ListOfDL = () => (ListOfDL = dart.constFn(core.List$(DL())))();
+    var ListLOfDL = () => (ListLOfDL = dart.constFn(dart.legacy(ListOfDL())))();
+    var IdentityMapOfStringL$ListLOfDL = () => (IdentityMapOfStringL$ListLOfDL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), ListLOfDL())))();
+    var JSArrayOfDL = () => (JSArrayOfDL = dart.constFn(_interceptors.JSArray$(DL())))();
+    var ImmutableSeriesLOfDLToboolL = () => (ImmutableSeriesLOfDLToboolL = dart.constFn(dart.fnType(T.boolL(), [ImmutableSeriesLOfDL()])))();
+    class SelectionModel extends core.Object {
+      get hasDatumSelection() {
+        return this[_selectedDatum][$isNotEmpty];
+      }
+      isDatumSelected(series, index) {
+        ImmutableSeriesLOfDL().as(series);
+        let datum = index == null ? null : series.data[$_get](index);
+        return this[_selectedDatum][$contains](new (SeriesDatumOfDL()).new(series, datum));
+      }
+      get selectedDatum() {
+        return ListOfSeriesDatumLOfDL().unmodifiable(this[_selectedDatum]);
+      }
+      get hasSeriesSelection() {
+        return this[_selectedSeries][$isNotEmpty];
+      }
+      get selectedSeries() {
+        return ListOfImmutableSeriesLOfDL().unmodifiable(this[_selectedSeries]);
+      }
+      get hasAnySelection() {
+        return dart.test(this[_selectedDatum][$isNotEmpty]) || dart.test(this.selectedSeries[$isNotEmpty]);
+      }
+      _equals(other) {
+        if (other == null) return false;
+        return T.SelectionModelL().is(other) && dart.test(new equality.ListEquality.new().equals(this[_selectedDatum], other.selectedDatum)) && dart.test(new equality.ListEquality.new().equals(this[_selectedSeries], other.selectedSeries));
+      }
+      get hashCode() {
+        let hashcode = new equality.ListEquality.new().hash(this[_selectedDatum]);
+        hashcode = dart.notNull(hashcode) * 37 + dart.notNull(new equality.ListEquality.new().hash(this[_selectedSeries]));
+        return hashcode;
+      }
+    }
+    (SelectionModel.new = function(opts) {
+      let selectedData = opts && 'selectedData' in opts ? opts.selectedData : null;
+      let selectedSeries = opts && 'selectedSeries' in opts ? opts.selectedSeries : null;
+      this[_selectedDatum] = JSArrayOfSeriesDatumLOfDL().of([]);
+      this[_selectedSeries] = JSArrayOfImmutableSeriesLOfDL().of([]);
+      if (selectedData != null) {
+        this[_selectedDatum] = selectedData;
+      }
+      if (selectedSeries != null) {
+        this[_selectedSeries] = selectedSeries;
+      }
+    }).prototype = SelectionModel.prototype;
+    (SelectionModel.fromOther = function(other) {
+      this[_selectedDatum] = JSArrayOfSeriesDatumLOfDL().of([]);
+      this[_selectedSeries] = JSArrayOfImmutableSeriesLOfDL().of([]);
+      this[_selectedDatum] = ListOfSeriesDatumLOfDL().from(other[_selectedDatum]);
+      this[_selectedSeries] = ListOfImmutableSeriesLOfDL().from(other[_selectedSeries]);
+    }).prototype = SelectionModel.prototype;
+    (SelectionModel.fromConfig = function(selectedDataConfig, selectedSeriesConfig, seriesList) {
+      let t0;
+      this[_selectedDatum] = JSArrayOfSeriesDatumLOfDL().of([]);
+      this[_selectedSeries] = JSArrayOfImmutableSeriesLOfDL().of([]);
+      let selectedDataMap = new (IdentityMapOfStringL$ListLOfDL()).new();
+      if (selectedDataConfig != null) {
+        for (let config of selectedDataConfig) {
+          t0 = config.seriesId;
+          selectedDataMap[$_get](t0) == null ? selectedDataMap[$_set](t0, JSArrayOfDL().of([])) : null;
+          selectedDataMap[$_get](config.seriesId)[$add](DL().as(config.domainValue));
+        }
+        this[_selectedSeries][$addAll](seriesList[$where](dart.fn(series => selectedDataMap[$keys][$contains](series.id), ImmutableSeriesLOfDLToboolL())));
+        for (let series of seriesList) {
+          if (dart.test(selectedDataMap[$containsKey](series.id))) {
+            let domainFn = series.domainFn;
+            for (let i = 0; i < dart.notNull(series.data[$length]); i = i + 1) {
+              let datum = series.data[$_get](i);
+              if (dart.test(selectedDataMap[$_get](series.id)[$contains](domainFn(i)))) {
+                this[_selectedDatum][$add](new (SeriesDatumOfDL()).new(series, datum));
+              }
+            }
+          }
+        }
+      }
+      if (selectedSeriesConfig != null) {
+        let remainingSeriesToAdd = selectedSeriesConfig[$where](dart.fn(seriesId => !dart.test(this.selectedSeries[$contains](seriesId)), T.StringLToboolL()))[$toList]();
+        this[_selectedSeries][$addAll](seriesList[$where](dart.fn(series => remainingSeriesToAdd[$contains](series.id), ImmutableSeriesLOfDLToboolL())));
+      }
+    }).prototype = SelectionModel.prototype;
+    dart.addTypeTests(SelectionModel);
+    SelectionModel.prototype[_is_SelectionModel_default] = true;
+    dart.addTypeCaches(SelectionModel);
+    dart.setMethodSignature(SelectionModel, () => ({
+      __proto__: dart.getMethods(SelectionModel.__proto__),
+      isDatumSelected: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object), dart.legacy(core.int)]),
+      _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+      [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+    }));
+    dart.setGetterSignature(SelectionModel, () => ({
+      __proto__: dart.getGetters(SelectionModel.__proto__),
+      hasDatumSelection: dart.legacy(core.bool),
+      selectedDatum: dart.legacy(core.List$(dart.legacy(series_datum.SeriesDatum$(dart.legacy(D))))),
+      hasSeriesSelection: dart.legacy(core.bool),
+      selectedSeries: dart.legacy(core.List$(dart.legacy(processed_series.ImmutableSeries$(dart.legacy(D))))),
+      hasAnySelection: dart.legacy(core.bool),
+      hashCode: dart.legacy(core.int),
+      [$hashCode]: dart.legacy(core.int)
+    }));
+    dart.setLibraryUri(SelectionModel, I[0]);
+    dart.setFieldSignature(SelectionModel, () => ({
+      __proto__: dart.getFields(SelectionModel.__proto__),
+      [_selectedDatum]: dart.fieldType(dart.legacy(core.List$(dart.legacy(series_datum.SeriesDatum$(dart.legacy(D)))))),
+      [_selectedSeries]: dart.fieldType(dart.legacy(core.List$(dart.legacy(processed_series.ImmutableSeries$(dart.legacy(D))))))
+    }));
+    dart.defineExtensionMethods(SelectionModel, ['_equals']);
+    dart.defineExtensionAccessors(SelectionModel, ['hashCode']);
+    return SelectionModel;
+  });
+  selection_model.SelectionModel = selection_model.SelectionModel$();
+  dart.addTypeTests(selection_model.SelectionModel, _is_SelectionModel_default);
+  var locked = dart.privateName(selection_model, "MutableSelectionModel.locked");
+  var _changedListeners = dart.privateName(selection_model, "_changedListeners");
+  var _updatedListeners = dart.privateName(selection_model, "_updatedListeners");
+  const _is_MutableSelectionModel_default = Symbol('_is_MutableSelectionModel_default');
+  selection_model.MutableSelectionModel$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var SelectionModelOfDL = () => (SelectionModelOfDL = dart.constFn(selection_model.SelectionModel$(DL())))();
+    var SelectionModelLOfDL = () => (SelectionModelLOfDL = dart.constFn(dart.legacy(SelectionModelOfDL())))();
+    var SelectionModelLOfDLTodynamic = () => (SelectionModelLOfDLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [SelectionModelLOfDL()])))();
+    var SelectionModelLOfDLToLdynamic = () => (SelectionModelLOfDLToLdynamic = dart.constFn(dart.legacy(SelectionModelLOfDLTodynamic())))();
+    var JSArrayOfSelectionModelLOfDLToLdynamic = () => (JSArrayOfSelectionModelLOfDLToLdynamic = dart.constFn(_interceptors.JSArray$(SelectionModelLOfDLToLdynamic())))();
+    var SeriesDatumOfDL = () => (SeriesDatumOfDL = dart.constFn(series_datum.SeriesDatum$(DL())))();
+    var SeriesDatumLOfDL = () => (SeriesDatumLOfDL = dart.constFn(dart.legacy(SeriesDatumOfDL())))();
+    var JSArrayOfSeriesDatumLOfDL = () => (JSArrayOfSeriesDatumLOfDL = dart.constFn(_interceptors.JSArray$(SeriesDatumLOfDL())))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    var JSArrayOfImmutableSeriesLOfDL = () => (JSArrayOfImmutableSeriesLOfDL = dart.constFn(_interceptors.JSArray$(ImmutableSeriesLOfDL())))();
+    var ListOfSeriesDatumLOfDL = () => (ListOfSeriesDatumLOfDL = dart.constFn(core.List$(SeriesDatumLOfDL())))();
+    var ListLOfSeriesDatumLOfDL = () => (ListLOfSeriesDatumLOfDL = dart.constFn(dart.legacy(ListOfSeriesDatumLOfDL())))();
+    var ListOfImmutableSeriesLOfDL = () => (ListOfImmutableSeriesLOfDL = dart.constFn(core.List$(ImmutableSeriesLOfDL())))();
+    var ListLOfImmutableSeriesLOfDL = () => (ListLOfImmutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfImmutableSeriesLOfDL())))();
+    var FnTodynamic = () => (FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [SelectionModelLOfDLToLdynamic()])))();
+    class MutableSelectionModel extends selection_model.SelectionModel$(dart.legacy(D)) {
+      get locked() {
+        return this[locked];
+      }
+      set locked(value) {
+        this[locked] = value;
+      }
+      clearSelection(opts) {
+        let notifyListeners = opts && 'notifyListeners' in opts ? opts.notifyListeners : true;
+        return this.updateSelection(JSArrayOfSeriesDatumLOfDL().of([]), JSArrayOfImmutableSeriesLOfDL().of([]), {notifyListeners: notifyListeners});
+      }
+      updateSelection(datumSelection, seriesList, opts) {
+        ListLOfSeriesDatumLOfDL().as(datumSelection);
+        ListLOfImmutableSeriesLOfDL().as(seriesList);
+        let notifyListeners = opts && 'notifyListeners' in opts ? opts.notifyListeners : true;
+        if (dart.test(this.locked)) {
+          return false;
+        }
+        let origSelectedDatum = this[_selectedDatum];
+        let origSelectedSeries = this[_selectedSeries];
+        this[_selectedDatum] = datumSelection;
+        this[_selectedSeries] = seriesList;
+        let copyOfSelectionModel = new (SelectionModelOfDL()).fromOther(this);
+        this[_updatedListeners][$forEach](dart.fn(listener => listener(copyOfSelectionModel), FnTodynamic()));
+        let changed = !dart.test(new equality.ListEquality.new().equals(origSelectedDatum, this[_selectedDatum])) || !dart.test(new equality.ListEquality.new().equals(origSelectedSeries, this[_selectedSeries]));
+        if (dart.test(notifyListeners) && changed) {
+          this[_changedListeners][$forEach](dart.fn(listener => listener(copyOfSelectionModel), FnTodynamic()));
+        }
+        return changed;
+      }
+      addSelectionChangedListener(listener) {
+        this[_changedListeners][$add](listener);
+      }
+      removeSelectionChangedListener(listener) {
+        this[_changedListeners][$remove](listener);
+      }
+      addSelectionUpdatedListener(listener) {
+        this[_updatedListeners][$add](listener);
+      }
+      removeSelectionUpdatedListener(listener) {
+        this[_updatedListeners][$remove](listener);
+      }
+      clearAllListeners() {
+        this[_changedListeners][$clear]();
+        this[_updatedListeners][$clear]();
+      }
+    }
+    (MutableSelectionModel.new = function() {
+      this[_changedListeners] = JSArrayOfSelectionModelLOfDLToLdynamic().of([]);
+      this[_updatedListeners] = JSArrayOfSelectionModelLOfDLToLdynamic().of([]);
+      this[locked] = false;
+      MutableSelectionModel.__proto__.new.call(this);
+      ;
+    }).prototype = MutableSelectionModel.prototype;
+    dart.addTypeTests(MutableSelectionModel);
+    MutableSelectionModel.prototype[_is_MutableSelectionModel_default] = true;
+    dart.addTypeCaches(MutableSelectionModel);
+    dart.setMethodSignature(MutableSelectionModel, () => ({
+      __proto__: dart.getMethods(MutableSelectionModel.__proto__),
+      clearSelection: dart.fnType(dart.legacy(core.bool), [], {notifyListeners: dart.legacy(core.bool)}, {}),
+      updateSelection: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object), dart.legacy(core.Object)], {notifyListeners: dart.legacy(core.bool)}, {}),
+      addSelectionChangedListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))]),
+      removeSelectionChangedListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))]),
+      addSelectionUpdatedListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))]),
+      removeSelectionUpdatedListener: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))]),
+      clearAllListeners: dart.fnType(dart.void, [])
+    }));
+    dart.setLibraryUri(MutableSelectionModel, I[0]);
+    dart.setFieldSignature(MutableSelectionModel, () => ({
+      __proto__: dart.getFields(MutableSelectionModel.__proto__),
+      [_changedListeners]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))))),
+      [_updatedListeners]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]))))),
+      locked: dart.fieldType(dart.legacy(core.bool))
+    }));
+    return MutableSelectionModel;
+  });
+  selection_model.MutableSelectionModel = selection_model.MutableSelectionModel$();
+  dart.addTypeTests(selection_model.MutableSelectionModel, _is_MutableSelectionModel_default);
+  var _name$ = dart.privateName(selection_model, "_name");
+  selection_model.SelectionModelType = class SelectionModelType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (selection_model.SelectionModelType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = selection_model.SelectionModelType.prototype;
+  dart.addTypeTests(selection_model.SelectionModelType);
+  dart.addTypeCaches(selection_model.SelectionModelType);
+  dart.setMethodSignature(selection_model.SelectionModelType, () => ({
+    __proto__: dart.getMethods(selection_model.SelectionModelType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(selection_model.SelectionModelType, I[0]);
+  dart.setFieldSignature(selection_model.SelectionModelType, () => ({
+    __proto__: dart.getFields(selection_model.SelectionModelType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(selection_model.SelectionModelType, ['toString']);
+  selection_model.SelectionModelType.info = C[0] || CT.C0;
+  selection_model.SelectionModelType.action = C[1] || CT.C1;
+  selection_model.SelectionModelType.values = C[2] || CT.C2;
+  dart.trackLibraries("packages/charts_common/src/chart/common/selection_model/selection_model.dart", {
+    "package:charts_common/src/chart/common/selection_model/selection_model.dart": selection_model
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["selection_model.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../D:/packages/charts_common/src/chart/common/selection_model/selection_model.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__common__selection_model__selection_model: selection_model
+  };
+}));
+
+//# sourceMappingURL=selection_model.dart.lib.js.map

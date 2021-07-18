@@ -1,283 +1,288 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-22:12
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:17:1-24:12
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:2:1-32:12
-MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:17:1-39:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.1.0.aar/400d3e5481bcd5053b467f48901c8968/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/852a82781880b176213e754e97c22a44/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/b431d981d1827a8eaa379efae091e257/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:17:1-28:12
-MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+MERGED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+MERGED from [:flutter_secure_storage] D:\Nitte-Hostel\student_hostel\build\flutter_secure_storage\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
+MERGED from [:fluttertoast] D:\Nitte-Hostel\student_hostel\build\fluttertoast\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] D:\Nitte-Hostel\student_hostel\build\flutter_plugin_android_lifecycle\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-14:12
+MERGED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-14:12
+MERGED from [:path_provider] D:\Nitte-Hostel\student_hostel\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences] D:\Nitte-Hostel\student_hostel\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:launch_review] D:\Nitte-Hostel\student_hostel\build\launch_review\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\exifinterface-1.3.0.aar\1816ba365e55e44e9a077167ece7911f\AndroidManifest.xml:17:1-24:12
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:2:1-32:12
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.1.0.aar\9adb9573fccf9048528319924cca6434\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b305a6bea62d3f8993d3366275df66ca\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\84b92b013b5b719050cff30667fc14fd\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\d9be81371e37d00e0c8904a8fce9efcc\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\eb6ce5d8061e44b2388690eb44f4ce06\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\392fe4d8333e61fd38e883c90de8b511\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\5f32e049e36d57226e543a50abab8662\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\ee1e03042acdd63d81f9de723adf3721\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.2.0.aar\4193b270f469e2e9a60a4eaec790dae7\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\1b995c0dc23936a8ad0c3787d9da761b\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\7062312d722e0c8aec98a599306d5abe\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\eae2595edfe64c3d0b325522c1fb63f4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\4deccd10da8637fc245f2aef4974d508\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\bcbc8b5750ac7543961093b4670eb5a1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\11f900d620d24adbcc0f5f8480698992\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:2:5-35
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:2:5-35
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:1:11-69
 application
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:9:5-32:19
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:11:5-30:19
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:11:5-30:19
-MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/b431d981d1827a8eaa379efae091e257/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/b431d981d1827a8eaa379efae091e257/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:24:5-25:19
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:9:5-33:19
+MERGED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:10:5-20:19
+MERGED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
+MERGED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:11:5-30:19
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:11:5-30:19
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\84b92b013b5b719050cff30667fc14fd\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\84b92b013b5b719050cff30667fc14fd\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\bcbc8b5750ac7543961093b4670eb5a1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\bcbc8b5750ac7543961093b4670eb5a1\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:11:9-33
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:12:9-33
 	android:icon
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:13:9-43
+	android:usesCleartextTraffic
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:11:9-44
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:10:9-57
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:10:9-57
 activity#com.example.test_one.MainActivity
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:13:9-31:20
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:14:9-32:20
 	android:launchMode
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:15:13-43
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:16:13-43
 	android:hardwareAccelerated
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:18:13-47
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:19:13-47
 	android:windowSoftInputMode
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:19:13-55
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:20:13-55
 	android:configChanges
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:17:13-144
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:18:13-144
 	android:theme
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:16:13-47
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:17:13-47
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:14:13-41
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:15:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:24:13-26:40
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:25:13-27:40
 	android:value
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:26:17-37
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:27:17-37
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:25:17-82
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:26:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:27:13-30:29
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:28:13-31:29
 action#android.intent.action.MAIN
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:28:17-68
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:29:17-68
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:28:25-66
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:29:17-76
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:30:17-76
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml:30:27-74
 uses-sdk
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/flutter_plugin_android_lifecycle/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/fluttertoast/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/path_provider/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:launch_review] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/launch_review/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/exifinterface-1.3.0.aar/b055725592235a2aaaae058ac1ec5eb4/AndroidManifest.xml:20:5-22:41
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:5:5-7:41
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.1.0.aar/400d3e5481bcd5053b467f48901c8968/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.1.0.aar/400d3e5481bcd5053b467f48901c8968/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/852a82781880b176213e754e97c22a44/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/852a82781880b176213e754e97c22a44/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/b431d981d1827a8eaa379efae091e257/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/b431d981d1827a8eaa379efae091e257/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/b5d060b13f8a28a94efa76130879fa66/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1c02ffd69e84f4deb1cb0d4819d27faf/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/477234dd72f2f29e7120cf08bbd882b3/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/eeb48fe69db65857d25c25f4417bfcab/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/83a1972bfbf93f623979bed7a2ac05ef/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/ac7c1c4abc396e9c459c8e041660e67c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/96ae2380350ed774bc1a34e170b29935/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/f186ed2c0174e1694aea2124f8d52119/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/22a863734130306aece1ea391aa81ad9/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/37377aaa41e0e9f87cc2d94a273ab414/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/d4073b38f81de8cc760f80e547f57568/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/ebccedbee4f9e1630d0b547d540e2610/AndroidManifest.xml:20:5-44
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+MERGED from [:flutter_secure_storage] D:\Nitte-Hostel\student_hostel\build\flutter_secure_storage\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_secure_storage] D:\Nitte-Hostel\student_hostel\build\flutter_secure_storage\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:fluttertoast] D:\Nitte-Hostel\student_hostel\build\fluttertoast\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] D:\Nitte-Hostel\student_hostel\build\fluttertoast\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] D:\Nitte-Hostel\student_hostel\build\flutter_plugin_android_lifecycle\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] D:\Nitte-Hostel\student_hostel\build\flutter_plugin_android_lifecycle\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] D:\Nitte-Hostel\student_hostel\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] D:\Nitte-Hostel\student_hostel\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] D:\Nitte-Hostel\student_hostel\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] D:\Nitte-Hostel\student_hostel\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:launch_review] D:\Nitte-Hostel\student_hostel\build\launch_review\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:launch_review] D:\Nitte-Hostel\student_hostel\build\launch_review\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\exifinterface-1.3.0.aar\1816ba365e55e44e9a077167ece7911f\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\exifinterface-1.3.0.aar\1816ba365e55e44e9a077167ece7911f\AndroidManifest.xml:20:5-22:41
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.1.0.aar\9adb9573fccf9048528319924cca6434\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.1.0.aar\9adb9573fccf9048528319924cca6434\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b305a6bea62d3f8993d3366275df66ca\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b305a6bea62d3f8993d3366275df66ca\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\84b92b013b5b719050cff30667fc14fd\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\84b92b013b5b719050cff30667fc14fd\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\d9be81371e37d00e0c8904a8fce9efcc\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\d9be81371e37d00e0c8904a8fce9efcc\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\eb6ce5d8061e44b2388690eb44f4ce06\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\eb6ce5d8061e44b2388690eb44f4ce06\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\392fe4d8333e61fd38e883c90de8b511\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\392fe4d8333e61fd38e883c90de8b511\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\5f32e049e36d57226e543a50abab8662\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\5f32e049e36d57226e543a50abab8662\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\ee1e03042acdd63d81f9de723adf3721\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\ee1e03042acdd63d81f9de723adf3721\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\acdd9847aaa1c6bb0c5e85043c3c44c5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.2.0.aar\4193b270f469e2e9a60a4eaec790dae7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.2.0.aar\4193b270f469e2e9a60a4eaec790dae7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\1b995c0dc23936a8ad0c3787d9da761b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\1b995c0dc23936a8ad0c3787d9da761b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\7062312d722e0c8aec98a599306d5abe\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\7062312d722e0c8aec98a599306d5abe\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\eae2595edfe64c3d0b325522c1fb63f4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\eae2595edfe64c3d0b325522c1fb63f4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\4deccd10da8637fc245f2aef4974d508\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\4deccd10da8637fc245f2aef4974d508\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\bcbc8b5750ac7543961093b4670eb5a1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\bcbc8b5750ac7543961093b4670eb5a1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\11f900d620d24adbcc0f5f8480698992\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\11f900d620d24adbcc0f5f8480698992\AndroidManifest.xml:20:5-44
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
+INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:6:5-66
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:9:5-67
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:9:5-67
+ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml:6:5-66
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:9:5-67
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from D:\Nitte-Hostel\student_hostel\android\app\src\debug\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-80
+ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:22-77
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-81
+ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:22-78
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:22-78
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:9-19:20
+ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:13-47
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:15:13-47
 	android:authorities
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:13:13-74
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:13:13-74
 	android:exported
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:14:13-37
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:13-82
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:12:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:16:13-18:75
+ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:16:13-18:75
 	android:resource
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:18:17-72
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:18:17-72
 	android:name
-		ADDED from [:image_picker] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:17:17-67
-activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
-	android:exported
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
-	android:theme
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
-	android:name
-		ADDED from [:url_launcher] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-74
+		ADDED from [:image_picker] D:\Nitte-Hostel\student_hostel\build\image_picker\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:17:17-67
 activity#com.razorpay.CheckoutActivity
-ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:20
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:18:9-29:20
-MERGED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:18:9-29:20
+ADDED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:9-11:20
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:18:9-29:20
+MERGED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:18:9-29:20
 	android:label
-		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-46
+		ADDED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:10:13-46
 	android:configChanges
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:20:13-83
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:20:13-83
 	android:theme
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:21:13-49
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:21:13-49
 	android:name
-		ADDED from [:razorpay_flutter] /home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/razorpay_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-57
+		ADDED from [:razorpay_flutter] D:\Nitte-Hostel\student_hostel\build\razorpay_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:9:13-57
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] D:\Nitte-Hostel\student_hostel\build\url_launcher\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:9:13-74
 receiver#com.razorpay.RzpTokenReceiver
-ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:12:9-16:20
+ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:12:9-16:20
 	android:name
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:12:19-63
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:12:19-63
 intent-filter#action:name:rzp.device_token.share
-ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:13:13-15:29
+ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:13:13-15:29
 action#rzp.device_token.share
-ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:14:17-65
+ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:14:17-65
 	android:name
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:14:25-62
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:14:25-62
 intent-filter#action:name:android.intent.action.MAIN+data:host:rzp.io+data:scheme:io.rzp
-ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:22:13-28:29
+ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:22:13-28:29
 data
-ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:25:17-27:47
+ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:25:17-27:47
 	android:host
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:26:21-42
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:26:21-42
 	android:scheme
-		ADDED from [com.razorpay:checkout:1.6.10] /home/aayesha/.gradle/caches/transforms-1/files-1.1/checkout-1.6.10.aar/07963dd8674bea3917bdb9c6fa8d5b3d/AndroidManifest.xml:27:21-44
+		ADDED from [com.razorpay:checkout:1.6.10] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\checkout-1.6.10.aar\6cc3e679a4b3eb886883cc44e55d671b\AndroidManifest.xml:27:21-44
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:23:9-27:75
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:25:13-46
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:26:13-37
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:27:13-72
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:24:13-93
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:24:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:33:9-36:110
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:33:9-36:110
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:35:13-36
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:35:13-36
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:36:13-107
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:36:13-107
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/2d96ee95c0be26b1627cec6906ec345d/AndroidManifest.xml:34:13-89
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\1fef092cc33724948c7efd07115c313c\AndroidManifest.xml:34:13-89
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\0b0529ba7dd6626bc8b1d52b7cfb0d3a\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Avani Bhardwaj\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b4328a3f3399832dc36b262dbc4f9fff\AndroidManifest.xml:24:13-58

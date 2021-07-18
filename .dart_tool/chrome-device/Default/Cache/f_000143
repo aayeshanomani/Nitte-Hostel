@@ -1,0 +1,2974 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/icon_data.dart'], (function load__packages__test_one__admin__utils__models_dart(dart_sdk, packages__flutter__src__widgets__icon_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  var models = Object.create(dart.library);
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    AdminL: () => (T.AdminL = dart.constFn(dart.legacy(models.Admin)))(),
+    ListOfAdminL: () => (T.ListOfAdminL = dart.constFn(core.List$(T.AdminL())))(),
+    dynamicToAdminL: () => (T.dynamicToAdminL = dart.constFn(dart.fnType(T.AdminL(), [dart.dynamic])))(),
+    JSArrayOfAdminL: () => (T.JSArrayOfAdminL = dart.constFn(_interceptors.JSArray$(T.AdminL())))(),
+    BillL: () => (T.BillL = dart.constFn(dart.legacy(models.Bill)))(),
+    ListOfBillL: () => (T.ListOfBillL = dart.constFn(core.List$(T.BillL())))(),
+    dynamicToBillL: () => (T.dynamicToBillL = dart.constFn(dart.fnType(T.BillL(), [dart.dynamic])))(),
+    JSArrayOfBillL: () => (T.JSArrayOfBillL = dart.constFn(_interceptors.JSArray$(T.BillL())))(),
+    GraphL: () => (T.GraphL = dart.constFn(dart.legacy(models.Graph)))(),
+    ListOfGraphL: () => (T.ListOfGraphL = dart.constFn(core.List$(T.GraphL())))(),
+    dynamicToGraphL: () => (T.dynamicToGraphL = dart.constFn(dart.fnType(T.GraphL(), [dart.dynamic])))(),
+    JSArrayOfGraphL: () => (T.JSArrayOfGraphL = dart.constFn(_interceptors.JSArray$(T.GraphL())))(),
+    DashboardL: () => (T.DashboardL = dart.constFn(dart.legacy(models.Dashboard)))(),
+    ListOfDashboardL: () => (T.ListOfDashboardL = dart.constFn(core.List$(T.DashboardL())))(),
+    dynamicToDashboardL: () => (T.dynamicToDashboardL = dart.constFn(dart.fnType(T.DashboardL(), [dart.dynamic])))(),
+    JSArrayOfDashboardL: () => (T.JSArrayOfDashboardL = dart.constFn(_interceptors.JSArray$(T.DashboardL())))(),
+    EmployeeL: () => (T.EmployeeL = dart.constFn(dart.legacy(models.Employee)))(),
+    ListOfEmployeeL: () => (T.ListOfEmployeeL = dart.constFn(core.List$(T.EmployeeL())))(),
+    dynamicToEmployeeL: () => (T.dynamicToEmployeeL = dart.constFn(dart.fnType(T.EmployeeL(), [dart.dynamic])))(),
+    JSArrayOfEmployeeL: () => (T.JSArrayOfEmployeeL = dart.constFn(_interceptors.JSArray$(T.EmployeeL())))(),
+    FoodL: () => (T.FoodL = dart.constFn(dart.legacy(models.Food)))(),
+    ListOfFoodL: () => (T.ListOfFoodL = dart.constFn(core.List$(T.FoodL())))(),
+    dynamicToFoodL: () => (T.dynamicToFoodL = dart.constFn(dart.fnType(T.FoodL(), [dart.dynamic])))(),
+    JSArrayOfFoodL: () => (T.JSArrayOfFoodL = dart.constFn(_interceptors.JSArray$(T.FoodL())))(),
+    InvoiceL: () => (T.InvoiceL = dart.constFn(dart.legacy(models.Invoice)))(),
+    ListOfInvoiceL: () => (T.ListOfInvoiceL = dart.constFn(core.List$(T.InvoiceL())))(),
+    dynamicToInvoiceL: () => (T.dynamicToInvoiceL = dart.constFn(dart.fnType(T.InvoiceL(), [dart.dynamic])))(),
+    JSArrayOfInvoiceL: () => (T.JSArrayOfInvoiceL = dart.constFn(_interceptors.JSArray$(T.InvoiceL())))(),
+    IssueL: () => (T.IssueL = dart.constFn(dart.legacy(models.Issue)))(),
+    ListOfIssueL: () => (T.ListOfIssueL = dart.constFn(core.List$(T.IssueL())))(),
+    dynamicToIssueL: () => (T.dynamicToIssueL = dart.constFn(dart.fnType(T.IssueL(), [dart.dynamic])))(),
+    JSArrayOfIssueL: () => (T.JSArrayOfIssueL = dart.constFn(_interceptors.JSArray$(T.IssueL())))(),
+    HostelL: () => (T.HostelL = dart.constFn(dart.legacy(models.Hostel)))(),
+    ListOfHostelL: () => (T.ListOfHostelL = dart.constFn(core.List$(T.HostelL())))(),
+    dynamicToHostelL: () => (T.dynamicToHostelL = dart.constFn(dart.fnType(T.HostelL(), [dart.dynamic])))(),
+    JSArrayOfHostelL: () => (T.JSArrayOfHostelL = dart.constFn(_interceptors.JSArray$(T.HostelL())))(),
+    LogL: () => (T.LogL = dart.constFn(dart.legacy(models.Log)))(),
+    ListOfLogL: () => (T.ListOfLogL = dart.constFn(core.List$(T.LogL())))(),
+    dynamicToLogL: () => (T.dynamicToLogL = dart.constFn(dart.fnType(T.LogL(), [dart.dynamic])))(),
+    JSArrayOfLogL: () => (T.JSArrayOfLogL = dart.constFn(_interceptors.JSArray$(T.LogL())))(),
+    NoteL: () => (T.NoteL = dart.constFn(dart.legacy(models.Note)))(),
+    ListOfNoteL: () => (T.ListOfNoteL = dart.constFn(core.List$(T.NoteL())))(),
+    dynamicToNoteL: () => (T.dynamicToNoteL = dart.constFn(dart.fnType(T.NoteL(), [dart.dynamic])))(),
+    JSArrayOfNoteL: () => (T.JSArrayOfNoteL = dart.constFn(_interceptors.JSArray$(T.NoteL())))(),
+    NoticeL: () => (T.NoticeL = dart.constFn(dart.legacy(models.Notice)))(),
+    ListOfNoticeL: () => (T.ListOfNoticeL = dart.constFn(core.List$(T.NoticeL())))(),
+    dynamicToNoticeL: () => (T.dynamicToNoticeL = dart.constFn(dart.fnType(T.NoticeL(), [dart.dynamic])))(),
+    JSArrayOfNoticeL: () => (T.JSArrayOfNoticeL = dart.constFn(_interceptors.JSArray$(T.NoticeL())))(),
+    RoomL: () => (T.RoomL = dart.constFn(dart.legacy(models.Room)))(),
+    ListOfRoomL: () => (T.ListOfRoomL = dart.constFn(core.List$(T.RoomL())))(),
+    dynamicToRoomL: () => (T.dynamicToRoomL = dart.constFn(dart.fnType(T.RoomL(), [dart.dynamic])))(),
+    JSArrayOfRoomL: () => (T.JSArrayOfRoomL = dart.constFn(_interceptors.JSArray$(T.RoomL())))(),
+    UserL: () => (T.UserL = dart.constFn(dart.legacy(models.User)))(),
+    ListOfUserL: () => (T.ListOfUserL = dart.constFn(core.List$(T.UserL())))(),
+    dynamicToUserL: () => (T.dynamicToUserL = dart.constFn(dart.fnType(T.UserL(), [dart.dynamic])))(),
+    JSArrayOfUserL: () => (T.JSArrayOfUserL = dart.constFn(_interceptors.JSArray$(T.UserL())))(),
+    ChartType2L: () => (T.ChartType2L = dart.constFn(dart.legacy(models.ChartType2)))(),
+    ListOfChartType2L: () => (T.ListOfChartType2L = dart.constFn(core.List$(T.ChartType2L())))(),
+    dynamicToChartType2L: () => (T.dynamicToChartType2L = dart.constFn(dart.fnType(T.ChartType2L(), [dart.dynamic])))(),
+    JSArrayOfChartType2L: () => (T.JSArrayOfChartType2L = dart.constFn(_interceptors.JSArray$(T.ChartType2L())))(),
+    ChartDataL: () => (T.ChartDataL = dart.constFn(dart.legacy(models.ChartData)))(),
+    ListOfChartDataL: () => (T.ListOfChartDataL = dart.constFn(core.List$(T.ChartDataL())))(),
+    dynamicToChartDataL: () => (T.dynamicToChartDataL = dart.constFn(dart.fnType(T.ChartDataL(), [dart.dynamic])))(),
+    JSArrayOfChartDataL: () => (T.JSArrayOfChartDataL = dart.constFn(_interceptors.JSArray$(T.ChartDataL())))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = ["package:test_one/admin/utils/models.dart"];
+  var year$ = dart.privateName(models, "OrdinalSales.year");
+  var sales$ = dart.privateName(models, "OrdinalSales.sales");
+  models.OrdinalSales = class OrdinalSales extends core.Object {
+    get year() {
+      return this[year$];
+    }
+    set year(value) {
+      super.year = value;
+    }
+    get sales() {
+      return this[sales$];
+    }
+    set sales(value) {
+      super.sales = value;
+    }
+  };
+  (models.OrdinalSales.new = function(year, sales) {
+    this[year$] = year;
+    this[sales$] = sales;
+    ;
+  }).prototype = models.OrdinalSales.prototype;
+  dart.addTypeTests(models.OrdinalSales);
+  dart.addTypeCaches(models.OrdinalSales);
+  dart.setLibraryUri(models.OrdinalSales, I[0]);
+  dart.setFieldSignature(models.OrdinalSales, () => ({
+    __proto__: dart.getFields(models.OrdinalSales.__proto__),
+    year: dart.finalFieldType(dart.legacy(core.String)),
+    sales: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  var id$ = dart.privateName(models, "Post.id");
+  var meta$ = dart.privateName(models, "Post.meta");
+  models.Post = class Post extends core.Object {
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get meta() {
+      return this[meta$];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    static fromJson(json) {
+      return new models.Post.new({id: T.StringL().as(json[$_get]("id")), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta")))});
+    }
+  };
+  (models.Post.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    this[id$] = id;
+    this[meta$] = meta;
+    ;
+  }).prototype = models.Post.prototype;
+  dart.addTypeTests(models.Post);
+  dart.addTypeCaches(models.Post);
+  dart.setLibraryUri(models.Post, I[0]);
+  dart.setFieldSignature(models.Post, () => ({
+    __proto__: dart.getFields(models.Post.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    meta: dart.finalFieldType(dart.legacy(models.Meta))
+  }));
+  var admins$ = dart.privateName(models, "Admins.admins");
+  var meta$0 = dart.privateName(models, "Admins.meta");
+  var pagination$ = dart.privateName(models, "Admins.pagination");
+  models.Admins = class Admins extends core.Object {
+    get admins() {
+      return this[admins$];
+    }
+    set admins(value) {
+      super.admins = value;
+    }
+    get meta() {
+      return this[meta$0];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Admins.new({admins: json[$_get]("data") != null ? T.ListOfAdminL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Admin.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToAdminL())]))) : T.JSArrayOfAdminL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Admins.new = function(opts) {
+    let admins = opts && 'admins' in opts ? opts.admins : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[admins$] = admins;
+    this[meta$0] = meta;
+    this[pagination$] = pagination;
+    ;
+  }).prototype = models.Admins.prototype;
+  dart.addTypeTests(models.Admins);
+  dart.addTypeCaches(models.Admins);
+  dart.setLibraryUri(models.Admins, I[0]);
+  dart.setFieldSignature(models.Admins, () => ({
+    __proto__: dart.getFields(models.Admins.__proto__),
+    admins: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Admin)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$0 = dart.privateName(models, "Admin.id");
+  var username$ = dart.privateName(models, "Admin.username");
+  var password$ = dart.privateName(models, "Admin.password");
+  var email$ = dart.privateName(models, "Admin.email");
+  var hostels$ = dart.privateName(models, "Admin.hostels");
+  var amenities$ = dart.privateName(models, "Admin.amenities");
+  var admin$ = dart.privateName(models, "Admin.admin");
+  var status$ = dart.privateName(models, "Admin.status");
+  var createdBy$ = dart.privateName(models, "Admin.createdBy");
+  var modifiedBy$ = dart.privateName(models, "Admin.modifiedBy");
+  var createdDateTime$ = dart.privateName(models, "Admin.createdDateTime");
+  var modifiedDateTime$ = dart.privateName(models, "Admin.modifiedDateTime");
+  models.Admin = class Admin extends core.Object {
+    get id() {
+      return this[id$0];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get username() {
+      return this[username$];
+    }
+    set username(value) {
+      super.username = value;
+    }
+    get password() {
+      return this[password$];
+    }
+    set password(value) {
+      super.password = value;
+    }
+    get email() {
+      return this[email$];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get hostels() {
+      return this[hostels$];
+    }
+    set hostels(value) {
+      super.hostels = value;
+    }
+    get amenities() {
+      return this[amenities$];
+    }
+    set amenities(value) {
+      super.amenities = value;
+    }
+    get admin() {
+      return this[admin$];
+    }
+    set admin(value) {
+      super.admin = value;
+    }
+    get status() {
+      return this[status$];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Admin.new({id: T.StringL().as(json[$_get]("id")), username: T.StringL().as(json[$_get]("username")), password: T.StringL().as(json[$_get]("password")), email: T.StringL().as(json[$_get]("email")), hostels: T.StringL().as(json[$_get]("hostels")), amenities: T.StringL().as(json[$_get]("amenities")), admin: T.StringL().as(json[$_get]("admin")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Admin.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let username = opts && 'username' in opts ? opts.username : null;
+    let password = opts && 'password' in opts ? opts.password : null;
+    let email = opts && 'email' in opts ? opts.email : null;
+    let hostels = opts && 'hostels' in opts ? opts.hostels : null;
+    let amenities = opts && 'amenities' in opts ? opts.amenities : null;
+    let admin = opts && 'admin' in opts ? opts.admin : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$0] = id;
+    this[username$] = username;
+    this[password$] = password;
+    this[email$] = email;
+    this[hostels$] = hostels;
+    this[amenities$] = amenities;
+    this[admin$] = admin;
+    this[status$] = status;
+    this[createdBy$] = createdBy;
+    this[modifiedBy$] = modifiedBy;
+    this[createdDateTime$] = createdDateTime;
+    this[modifiedDateTime$] = modifiedDateTime;
+    ;
+  }).prototype = models.Admin.prototype;
+  dart.addTypeTests(models.Admin);
+  dart.addTypeCaches(models.Admin);
+  dart.setLibraryUri(models.Admin, I[0]);
+  dart.setFieldSignature(models.Admin, () => ({
+    __proto__: dart.getFields(models.Admin.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    username: dart.finalFieldType(dart.legacy(core.String)),
+    password: dart.finalFieldType(dart.legacy(core.String)),
+    email: dart.finalFieldType(dart.legacy(core.String)),
+    hostels: dart.finalFieldType(dart.legacy(core.String)),
+    amenities: dart.finalFieldType(dart.legacy(core.String)),
+    admin: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var bills$ = dart.privateName(models, "Bills.bills");
+  var meta$1 = dart.privateName(models, "Bills.meta");
+  var pagination$0 = dart.privateName(models, "Bills.pagination");
+  models.Bills = class Bills extends core.Object {
+    get bills() {
+      return this[bills$];
+    }
+    set bills(value) {
+      super.bills = value;
+    }
+    get meta() {
+      return this[meta$1];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$0];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Bills.new({bills: json[$_get]("data") != null ? T.ListOfBillL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Bill.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToBillL())]))) : T.JSArrayOfBillL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Bills.new = function(opts) {
+    let bills = opts && 'bills' in opts ? opts.bills : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[bills$] = bills;
+    this[meta$1] = meta;
+    this[pagination$0] = pagination;
+    ;
+  }).prototype = models.Bills.prototype;
+  dart.addTypeTests(models.Bills);
+  dart.addTypeCaches(models.Bills);
+  dart.setLibraryUri(models.Bills, I[0]);
+  dart.setFieldSignature(models.Bills, () => ({
+    __proto__: dart.getFields(models.Bills.__proto__),
+    bills: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Bill)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  models.ListItem = class ListItem extends core.Object {};
+  (models.ListItem.new = function() {
+    ;
+  }).prototype = models.ListItem.prototype;
+  dart.addTypeTests(models.ListItem);
+  dart.addTypeCaches(models.ListItem);
+  dart.setLibraryUri(models.ListItem, I[0]);
+  var heading$ = dart.privateName(models, "HeadingItem.heading");
+  models.HeadingItem = class HeadingItem extends core.Object {
+    get heading() {
+      return this[heading$];
+    }
+    set heading(value) {
+      super.heading = value;
+    }
+  };
+  (models.HeadingItem.new = function(heading) {
+    this[heading$] = heading;
+    ;
+  }).prototype = models.HeadingItem.prototype;
+  dart.addTypeTests(models.HeadingItem);
+  dart.addTypeCaches(models.HeadingItem);
+  models.HeadingItem[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.HeadingItem, I[0]);
+  dart.setFieldSignature(models.HeadingItem, () => ({
+    __proto__: dart.getFields(models.HeadingItem.__proto__),
+    heading: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var id$1 = dart.privateName(models, "Bill.id");
+  var hostelID$ = dart.privateName(models, "Bill.hostelID");
+  var title$ = dart.privateName(models, "Bill.title");
+  var userID$ = dart.privateName(models, "Bill.userID");
+  var employeeID$ = dart.privateName(models, "Bill.employeeID");
+  var description$ = dart.privateName(models, "Bill.description");
+  var type$ = dart.privateName(models, "Bill.type");
+  var payment$ = dart.privateName(models, "Bill.payment");
+  var transactionID$ = dart.privateName(models, "Bill.transactionID");
+  var billID$ = dart.privateName(models, "Bill.billID");
+  var document$ = dart.privateName(models, "Bill.document");
+  var amount$ = dart.privateName(models, "Bill.amount");
+  var paid$ = dart.privateName(models, "Bill.paid");
+  var paidDateTime$ = dart.privateName(models, "Bill.paidDateTime");
+  var status$0 = dart.privateName(models, "Bill.status");
+  var createdBy$0 = dart.privateName(models, "Bill.createdBy");
+  var modifiedBy$0 = dart.privateName(models, "Bill.modifiedBy");
+  var createdDateTime$0 = dart.privateName(models, "Bill.createdDateTime");
+  var modifiedDateTime$0 = dart.privateName(models, "Bill.modifiedDateTime");
+  models.Bill = class Bill extends core.Object {
+    get id() {
+      return this[id$1];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get userID() {
+      return this[userID$];
+    }
+    set userID(value) {
+      super.userID = value;
+    }
+    get employeeID() {
+      return this[employeeID$];
+    }
+    set employeeID(value) {
+      super.employeeID = value;
+    }
+    get description() {
+      return this[description$];
+    }
+    set description(value) {
+      super.description = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get payment() {
+      return this[payment$];
+    }
+    set payment(value) {
+      super.payment = value;
+    }
+    get transactionID() {
+      return this[transactionID$];
+    }
+    set transactionID(value) {
+      super.transactionID = value;
+    }
+    get billID() {
+      return this[billID$];
+    }
+    set billID(value) {
+      super.billID = value;
+    }
+    get document() {
+      return this[document$];
+    }
+    set document(value) {
+      super.document = value;
+    }
+    get amount() {
+      return this[amount$];
+    }
+    set amount(value) {
+      super.amount = value;
+    }
+    get paid() {
+      return this[paid$];
+    }
+    set paid(value) {
+      super.paid = value;
+    }
+    get paidDateTime() {
+      return this[paidDateTime$];
+    }
+    set paidDateTime(value) {
+      super.paidDateTime = value;
+    }
+    get status() {
+      return this[status$0];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$0];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$0];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$0];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$0];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Bill.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostel_id")), title: T.StringL().as(json[$_get]("title")), userID: T.StringL().as(json[$_get]("user_id")), employeeID: T.StringL().as(json[$_get]("employee_id")), description: T.StringL().as(json[$_get]("description")), type: T.StringL().as(json[$_get]("type")), payment: T.StringL().as(json[$_get]("payment")), transactionID: T.StringL().as(json[$_get]("transaction_id")), billID: T.StringL().as(json[$_get]("billid")), document: T.StringL().as(json[$_get]("document")), amount: T.StringL().as(json[$_get]("amount")), paid: T.StringL().as(json[$_get]("paid")), paidDateTime: T.StringL().as(json[$_get]("paid_date_time")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Bill.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let userID = opts && 'userID' in opts ? opts.userID : null;
+    let employeeID = opts && 'employeeID' in opts ? opts.employeeID : null;
+    let description = opts && 'description' in opts ? opts.description : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let payment = opts && 'payment' in opts ? opts.payment : null;
+    let transactionID = opts && 'transactionID' in opts ? opts.transactionID : null;
+    let billID = opts && 'billID' in opts ? opts.billID : null;
+    let document = opts && 'document' in opts ? opts.document : null;
+    let amount = opts && 'amount' in opts ? opts.amount : null;
+    let paid = opts && 'paid' in opts ? opts.paid : null;
+    let paidDateTime = opts && 'paidDateTime' in opts ? opts.paidDateTime : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$1] = id;
+    this[hostelID$] = hostelID;
+    this[title$] = title;
+    this[userID$] = userID;
+    this[employeeID$] = employeeID;
+    this[description$] = description;
+    this[type$] = type;
+    this[payment$] = payment;
+    this[transactionID$] = transactionID;
+    this[billID$] = billID;
+    this[document$] = document;
+    this[amount$] = amount;
+    this[paid$] = paid;
+    this[paidDateTime$] = paidDateTime;
+    this[status$0] = status;
+    this[createdBy$0] = createdBy;
+    this[modifiedBy$0] = modifiedBy;
+    this[createdDateTime$0] = createdDateTime;
+    this[modifiedDateTime$0] = modifiedDateTime;
+    ;
+  }).prototype = models.Bill.prototype;
+  dart.addTypeTests(models.Bill);
+  dart.addTypeCaches(models.Bill);
+  models.Bill[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.Bill, I[0]);
+  dart.setFieldSignature(models.Bill, () => ({
+    __proto__: dart.getFields(models.Bill.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    userID: dart.finalFieldType(dart.legacy(core.String)),
+    employeeID: dart.finalFieldType(dart.legacy(core.String)),
+    description: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(core.String)),
+    payment: dart.finalFieldType(dart.legacy(core.String)),
+    transactionID: dart.finalFieldType(dart.legacy(core.String)),
+    billID: dart.finalFieldType(dart.legacy(core.String)),
+    document: dart.finalFieldType(dart.legacy(core.String)),
+    amount: dart.finalFieldType(dart.legacy(core.String)),
+    paid: dart.finalFieldType(dart.legacy(core.String)),
+    paidDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var graphs$ = dart.privateName(models, "Dashboards.graphs");
+  var dashboards$ = dart.privateName(models, "Dashboards.dashboards");
+  var meta$2 = dart.privateName(models, "Dashboards.meta");
+  models.Dashboards = class Dashboards extends core.Object {
+    get graphs() {
+      return this[graphs$];
+    }
+    set graphs(value) {
+      super.graphs = value;
+    }
+    get dashboards() {
+      return this[dashboards$];
+    }
+    set dashboards(value) {
+      super.dashboards = value;
+    }
+    get meta() {
+      return this[meta$2];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    static fromJson(json) {
+      return new models.Dashboards.new({graphs: json[$_get]("graphs") != null ? T.ListOfGraphL().from(core.Iterable.as(dart.dsend(json[$_get]("graphs"), 'map', [dart.fn(i => models.Graph.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToGraphL())]))) : T.JSArrayOfGraphL().of([]), dashboards: json[$_get]("data") != null ? T.ListOfDashboardL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Dashboard.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToDashboardL())]))) : T.JSArrayOfDashboardL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta")))});
+    }
+  };
+  (models.Dashboards.new = function(opts) {
+    let graphs = opts && 'graphs' in opts ? opts.graphs : null;
+    let dashboards = opts && 'dashboards' in opts ? opts.dashboards : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    this[graphs$] = graphs;
+    this[dashboards$] = dashboards;
+    this[meta$2] = meta;
+    ;
+  }).prototype = models.Dashboards.prototype;
+  dart.addTypeTests(models.Dashboards);
+  dart.addTypeCaches(models.Dashboards);
+  dart.setLibraryUri(models.Dashboards, I[0]);
+  dart.setFieldSignature(models.Dashboards, () => ({
+    __proto__: dart.getFields(models.Dashboards.__proto__),
+    graphs: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Graph)))),
+    dashboards: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Dashboard)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta))
+  }));
+  var user$ = dart.privateName(models, "Dashboard.user");
+  var room$ = dart.privateName(models, "Dashboard.room");
+  var bill$ = dart.privateName(models, "Dashboard.bill");
+  var note$ = dart.privateName(models, "Dashboard.note");
+  var employee$ = dart.privateName(models, "Dashboard.employee");
+  models.Dashboard = class Dashboard extends core.Object {
+    get user() {
+      return this[user$];
+    }
+    set user(value) {
+      super.user = value;
+    }
+    get room() {
+      return this[room$];
+    }
+    set room(value) {
+      super.room = value;
+    }
+    get bill() {
+      return this[bill$];
+    }
+    set bill(value) {
+      super.bill = value;
+    }
+    get note() {
+      return this[note$];
+    }
+    set note(value) {
+      super.note = value;
+    }
+    get employee() {
+      return this[employee$];
+    }
+    set employee(value) {
+      super.employee = value;
+    }
+    static fromJson(json) {
+      return new models.Dashboard.new({user: T.StringL().as(json[$_get]("user")), room: T.StringL().as(json[$_get]("room")), bill: T.StringL().as(json[$_get]("bill")), note: T.StringL().as(json[$_get]("note")), employee: T.StringL().as(json[$_get]("employee"))});
+    }
+  };
+  (models.Dashboard.new = function(opts) {
+    let user = opts && 'user' in opts ? opts.user : null;
+    let room = opts && 'room' in opts ? opts.room : null;
+    let bill = opts && 'bill' in opts ? opts.bill : null;
+    let note = opts && 'note' in opts ? opts.note : null;
+    let employee = opts && 'employee' in opts ? opts.employee : null;
+    this[user$] = user;
+    this[room$] = room;
+    this[bill$] = bill;
+    this[note$] = note;
+    this[employee$] = employee;
+    ;
+  }).prototype = models.Dashboard.prototype;
+  dart.addTypeTests(models.Dashboard);
+  dart.addTypeCaches(models.Dashboard);
+  dart.setLibraryUri(models.Dashboard, I[0]);
+  dart.setFieldSignature(models.Dashboard, () => ({
+    __proto__: dart.getFields(models.Dashboard.__proto__),
+    user: dart.finalFieldType(dart.legacy(core.String)),
+    room: dart.finalFieldType(dart.legacy(core.String)),
+    bill: dart.finalFieldType(dart.legacy(core.String)),
+    note: dart.finalFieldType(dart.legacy(core.String)),
+    employee: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var employees$ = dart.privateName(models, "Employees.employees");
+  var meta$3 = dart.privateName(models, "Employees.meta");
+  var pagination$1 = dart.privateName(models, "Employees.pagination");
+  models.Employees = class Employees extends core.Object {
+    get employees() {
+      return this[employees$];
+    }
+    set employees(value) {
+      super.employees = value;
+    }
+    get meta() {
+      return this[meta$3];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$1];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Employees.new({employees: json[$_get]("data") != null ? T.ListOfEmployeeL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Employee.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToEmployeeL())]))) : T.JSArrayOfEmployeeL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Employees.new = function(opts) {
+    let employees = opts && 'employees' in opts ? opts.employees : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[employees$] = employees;
+    this[meta$3] = meta;
+    this[pagination$1] = pagination;
+    ;
+  }).prototype = models.Employees.prototype;
+  dart.addTypeTests(models.Employees);
+  dart.addTypeCaches(models.Employees);
+  dart.setLibraryUri(models.Employees, I[0]);
+  dart.setFieldSignature(models.Employees, () => ({
+    __proto__: dart.getFields(models.Employees.__proto__),
+    employees: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Employee)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$2 = dart.privateName(models, "Employee.id");
+  var name$ = dart.privateName(models, "Employee.name");
+  var designation$ = dart.privateName(models, "Employee.designation");
+  var phone$ = dart.privateName(models, "Employee.phone");
+  var email$0 = dart.privateName(models, "Employee.email");
+  var address$ = dart.privateName(models, "Employee.address");
+  var document$0 = dart.privateName(models, "Employee.document");
+  var salary$ = dart.privateName(models, "Employee.salary");
+  var joiningDateTime$ = dart.privateName(models, "Employee.joiningDateTime");
+  var lastPaidDateTime$ = dart.privateName(models, "Employee.lastPaidDateTime");
+  var expiryDateTime$ = dart.privateName(models, "Employee.expiryDateTime");
+  var leaveDateTime$ = dart.privateName(models, "Employee.leaveDateTime");
+  var status$1 = dart.privateName(models, "Employee.status");
+  var createdBy$1 = dart.privateName(models, "Employee.createdBy");
+  var modifiedBy$1 = dart.privateName(models, "Employee.modifiedBy");
+  var createdDateTime$1 = dart.privateName(models, "Employee.createdDateTime");
+  var modifiedDateTime$1 = dart.privateName(models, "Employee.modifiedDateTime");
+  models.Employee = class Employee extends core.Object {
+    get id() {
+      return this[id$2];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get designation() {
+      return this[designation$];
+    }
+    set designation(value) {
+      super.designation = value;
+    }
+    get phone() {
+      return this[phone$];
+    }
+    set phone(value) {
+      super.phone = value;
+    }
+    get email() {
+      return this[email$0];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get address() {
+      return this[address$];
+    }
+    set address(value) {
+      super.address = value;
+    }
+    get document() {
+      return this[document$0];
+    }
+    set document(value) {
+      super.document = value;
+    }
+    get salary() {
+      return this[salary$];
+    }
+    set salary(value) {
+      super.salary = value;
+    }
+    get joiningDateTime() {
+      return this[joiningDateTime$];
+    }
+    set joiningDateTime(value) {
+      super.joiningDateTime = value;
+    }
+    get lastPaidDateTime() {
+      return this[lastPaidDateTime$];
+    }
+    set lastPaidDateTime(value) {
+      super.lastPaidDateTime = value;
+    }
+    get expiryDateTime() {
+      return this[expiryDateTime$];
+    }
+    set expiryDateTime(value) {
+      super.expiryDateTime = value;
+    }
+    get leaveDateTime() {
+      return this[leaveDateTime$];
+    }
+    set leaveDateTime(value) {
+      super.leaveDateTime = value;
+    }
+    get status() {
+      return this[status$1];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$1];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$1];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$1];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$1];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Employee.new({id: T.StringL().as(json[$_get]("id")), name: T.StringL().as(json[$_get]("name")), designation: T.StringL().as(json[$_get]("designation")), phone: T.StringL().as(json[$_get]("phone")), email: T.StringL().as(json[$_get]("email")), address: T.StringL().as(json[$_get]("address")), document: T.StringL().as(json[$_get]("document")), salary: T.StringL().as(json[$_get]("salary")), joiningDateTime: T.StringL().as(json[$_get]("joining_date_time")), lastPaidDateTime: T.StringL().as(json[$_get]("last_paid_date_time")), expiryDateTime: T.StringL().as(json[$_get]("expiry_date_time")), leaveDateTime: T.StringL().as(json[$_get]("leave_date_time")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Employee.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let designation = opts && 'designation' in opts ? opts.designation : null;
+    let phone = opts && 'phone' in opts ? opts.phone : null;
+    let email = opts && 'email' in opts ? opts.email : null;
+    let address = opts && 'address' in opts ? opts.address : null;
+    let document = opts && 'document' in opts ? opts.document : null;
+    let salary = opts && 'salary' in opts ? opts.salary : null;
+    let joiningDateTime = opts && 'joiningDateTime' in opts ? opts.joiningDateTime : null;
+    let lastPaidDateTime = opts && 'lastPaidDateTime' in opts ? opts.lastPaidDateTime : null;
+    let expiryDateTime = opts && 'expiryDateTime' in opts ? opts.expiryDateTime : null;
+    let leaveDateTime = opts && 'leaveDateTime' in opts ? opts.leaveDateTime : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$2] = id;
+    this[name$] = name;
+    this[designation$] = designation;
+    this[phone$] = phone;
+    this[email$0] = email;
+    this[address$] = address;
+    this[document$0] = document;
+    this[salary$] = salary;
+    this[joiningDateTime$] = joiningDateTime;
+    this[lastPaidDateTime$] = lastPaidDateTime;
+    this[expiryDateTime$] = expiryDateTime;
+    this[leaveDateTime$] = leaveDateTime;
+    this[status$1] = status;
+    this[createdBy$1] = createdBy;
+    this[modifiedBy$1] = modifiedBy;
+    this[createdDateTime$1] = createdDateTime;
+    this[modifiedDateTime$1] = modifiedDateTime;
+    ;
+  }).prototype = models.Employee.prototype;
+  dart.addTypeTests(models.Employee);
+  dart.addTypeCaches(models.Employee);
+  dart.setLibraryUri(models.Employee, I[0]);
+  dart.setFieldSignature(models.Employee, () => ({
+    __proto__: dart.getFields(models.Employee.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    designation: dart.finalFieldType(dart.legacy(core.String)),
+    phone: dart.finalFieldType(dart.legacy(core.String)),
+    email: dart.finalFieldType(dart.legacy(core.String)),
+    address: dart.finalFieldType(dart.legacy(core.String)),
+    document: dart.finalFieldType(dart.legacy(core.String)),
+    salary: dart.finalFieldType(dart.legacy(core.String)),
+    joiningDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    lastPaidDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    expiryDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    leaveDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var foods$ = dart.privateName(models, "Foods.foods");
+  var meta$4 = dart.privateName(models, "Foods.meta");
+  var pagination$2 = dart.privateName(models, "Foods.pagination");
+  models.Foods = class Foods extends core.Object {
+    get foods() {
+      return this[foods$];
+    }
+    set foods(value) {
+      super.foods = value;
+    }
+    get meta() {
+      return this[meta$4];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$2];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Foods.new({foods: json[$_get]("data") != null ? T.ListOfFoodL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Food.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToFoodL())]))) : T.JSArrayOfFoodL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Foods.new = function(opts) {
+    let foods = opts && 'foods' in opts ? opts.foods : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[foods$] = foods;
+    this[meta$4] = meta;
+    this[pagination$2] = pagination;
+    ;
+  }).prototype = models.Foods.prototype;
+  dart.addTypeTests(models.Foods);
+  dart.addTypeCaches(models.Foods);
+  dart.setLibraryUri(models.Foods, I[0]);
+  dart.setFieldSignature(models.Foods, () => ({
+    __proto__: dart.getFields(models.Foods.__proto__),
+    foods: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Food)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$3 = dart.privateName(models, "Food.id");
+  var hostelID$0 = dart.privateName(models, "Food.hostelID");
+  var date$ = dart.privateName(models, "Food.date");
+  var breakfast$ = dart.privateName(models, "Food.breakfast");
+  var lunch$ = dart.privateName(models, "Food.lunch");
+  var dinner$ = dart.privateName(models, "Food.dinner");
+  var status$2 = dart.privateName(models, "Food.status");
+  var createdBy$2 = dart.privateName(models, "Food.createdBy");
+  var modifiedBy$2 = dart.privateName(models, "Food.modifiedBy");
+  var createdDateTime$2 = dart.privateName(models, "Food.createdDateTime");
+  var modifiedDateTime$2 = dart.privateName(models, "Food.modifiedDateTime");
+  models.Food = class Food extends core.Object {
+    get id() {
+      return this[id$3];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$0];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get date() {
+      return this[date$];
+    }
+    set date(value) {
+      super.date = value;
+    }
+    get breakfast() {
+      return this[breakfast$];
+    }
+    set breakfast(value) {
+      super.breakfast = value;
+    }
+    get lunch() {
+      return this[lunch$];
+    }
+    set lunch(value) {
+      super.lunch = value;
+    }
+    get dinner() {
+      return this[dinner$];
+    }
+    set dinner(value) {
+      super.dinner = value;
+    }
+    get status() {
+      return this[status$2];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$2];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$2];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$2];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$2];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Food.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostel_id")), date: T.StringL().as(json[$_get]("date")), breakfast: T.StringL().as(json[$_get]("breakfast")), lunch: T.StringL().as(json[$_get]("lunch")), dinner: T.StringL().as(json[$_get]("dinner")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Food.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let date = opts && 'date' in opts ? opts.date : null;
+    let breakfast = opts && 'breakfast' in opts ? opts.breakfast : null;
+    let lunch = opts && 'lunch' in opts ? opts.lunch : null;
+    let dinner = opts && 'dinner' in opts ? opts.dinner : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$3] = id;
+    this[hostelID$0] = hostelID;
+    this[date$] = date;
+    this[breakfast$] = breakfast;
+    this[lunch$] = lunch;
+    this[dinner$] = dinner;
+    this[status$2] = status;
+    this[createdBy$2] = createdBy;
+    this[modifiedBy$2] = modifiedBy;
+    this[createdDateTime$2] = createdDateTime;
+    this[modifiedDateTime$2] = modifiedDateTime;
+    ;
+  }).prototype = models.Food.prototype;
+  dart.addTypeTests(models.Food);
+  dart.addTypeCaches(models.Food);
+  dart.setLibraryUri(models.Food, I[0]);
+  dart.setFieldSignature(models.Food, () => ({
+    __proto__: dart.getFields(models.Food.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    date: dart.finalFieldType(dart.legacy(core.String)),
+    breakfast: dart.finalFieldType(dart.legacy(core.String)),
+    lunch: dart.finalFieldType(dart.legacy(core.String)),
+    dinner: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var invoices$ = dart.privateName(models, "Invoices.invoices");
+  var meta$5 = dart.privateName(models, "Invoices.meta");
+  var pagination$3 = dart.privateName(models, "Invoices.pagination");
+  models.Invoices = class Invoices extends core.Object {
+    get invoices() {
+      return this[invoices$];
+    }
+    set invoices(value) {
+      super.invoices = value;
+    }
+    get meta() {
+      return this[meta$5];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$3];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Invoices.new({invoices: json[$_get]("data") != null ? T.ListOfInvoiceL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Invoice.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToInvoiceL())]))) : T.JSArrayOfInvoiceL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Invoices.new = function(opts) {
+    let invoices = opts && 'invoices' in opts ? opts.invoices : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[invoices$] = invoices;
+    this[meta$5] = meta;
+    this[pagination$3] = pagination;
+    ;
+  }).prototype = models.Invoices.prototype;
+  dart.addTypeTests(models.Invoices);
+  dart.addTypeCaches(models.Invoices);
+  dart.setLibraryUri(models.Invoices, I[0]);
+  dart.setFieldSignature(models.Invoices, () => ({
+    __proto__: dart.getFields(models.Invoices.__proto__),
+    invoices: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Invoice)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$4 = dart.privateName(models, "Invoice.id");
+  var hostelID$1 = dart.privateName(models, "Invoice.hostelID");
+  var paymentID$ = dart.privateName(models, "Invoice.paymentID");
+  var amount$0 = dart.privateName(models, "Invoice.amount");
+  var description$0 = dart.privateName(models, "Invoice.description");
+  var status$3 = dart.privateName(models, "Invoice.status");
+  var createdBy$3 = dart.privateName(models, "Invoice.createdBy");
+  var modifiedBy$3 = dart.privateName(models, "Invoice.modifiedBy");
+  var createdDateTime$3 = dart.privateName(models, "Invoice.createdDateTime");
+  var modifiedDateTime$3 = dart.privateName(models, "Invoice.modifiedDateTime");
+  models.Invoice = class Invoice extends core.Object {
+    get id() {
+      return this[id$4];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$1];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get paymentID() {
+      return this[paymentID$];
+    }
+    set paymentID(value) {
+      super.paymentID = value;
+    }
+    get amount() {
+      return this[amount$0];
+    }
+    set amount(value) {
+      super.amount = value;
+    }
+    get description() {
+      return this[description$0];
+    }
+    set description(value) {
+      super.description = value;
+    }
+    get status() {
+      return this[status$3];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$3];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$3];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$3];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$3];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Invoice.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostelID")), paymentID: T.StringL().as(json[$_get]("payment_id")), amount: T.StringL().as(json[$_get]("amount")), description: T.StringL().as(json[$_get]("description")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Invoice.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let paymentID = opts && 'paymentID' in opts ? opts.paymentID : null;
+    let amount = opts && 'amount' in opts ? opts.amount : null;
+    let description = opts && 'description' in opts ? opts.description : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$4] = id;
+    this[hostelID$1] = hostelID;
+    this[paymentID$] = paymentID;
+    this[amount$0] = amount;
+    this[description$0] = description;
+    this[status$3] = status;
+    this[createdBy$3] = createdBy;
+    this[modifiedBy$3] = modifiedBy;
+    this[createdDateTime$3] = createdDateTime;
+    this[modifiedDateTime$3] = modifiedDateTime;
+    ;
+  }).prototype = models.Invoice.prototype;
+  dart.addTypeTests(models.Invoice);
+  dart.addTypeCaches(models.Invoice);
+  dart.setLibraryUri(models.Invoice, I[0]);
+  dart.setFieldSignature(models.Invoice, () => ({
+    __proto__: dart.getFields(models.Invoice.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    paymentID: dart.finalFieldType(dart.legacy(core.String)),
+    amount: dart.finalFieldType(dart.legacy(core.String)),
+    description: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var issues$ = dart.privateName(models, "Issues.issues");
+  var meta$6 = dart.privateName(models, "Issues.meta");
+  var pagination$4 = dart.privateName(models, "Issues.pagination");
+  models.Issues = class Issues extends core.Object {
+    get issues() {
+      return this[issues$];
+    }
+    set issues(value) {
+      super.issues = value;
+    }
+    get meta() {
+      return this[meta$6];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$4];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Issues.new({issues: json[$_get]("data") != null ? T.ListOfIssueL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Issue.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToIssueL())]))) : T.JSArrayOfIssueL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Issues.new = function(opts) {
+    let issues = opts && 'issues' in opts ? opts.issues : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[issues$] = issues;
+    this[meta$6] = meta;
+    this[pagination$4] = pagination;
+    ;
+  }).prototype = models.Issues.prototype;
+  dart.addTypeTests(models.Issues);
+  dart.addTypeCaches(models.Issues);
+  dart.setLibraryUri(models.Issues, I[0]);
+  dart.setFieldSignature(models.Issues, () => ({
+    __proto__: dart.getFields(models.Issues.__proto__),
+    issues: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Issue)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$5 = dart.privateName(models, "Issue.id");
+  var hostelID$2 = dart.privateName(models, "Issue.hostelID");
+  var userID$0 = dart.privateName(models, "Issue.userID");
+  var type$0 = dart.privateName(models, "Issue.type");
+  var title$0 = dart.privateName(models, "Issue.title");
+  var username$0 = dart.privateName(models, "Issue.username");
+  var phone$0 = dart.privateName(models, "Issue.phone");
+  var resolve$ = dart.privateName(models, "Issue.resolve");
+  var roomno$ = dart.privateName(models, "Issue.roomno");
+  var status$4 = dart.privateName(models, "Issue.status");
+  var createdBy$4 = dart.privateName(models, "Issue.createdBy");
+  var modifiedBy$4 = dart.privateName(models, "Issue.modifiedBy");
+  var createdDateTime$4 = dart.privateName(models, "Issue.createdDateTime");
+  var modifiedDateTime$4 = dart.privateName(models, "Issue.modifiedDateTime");
+  models.Issue = class Issue extends core.Object {
+    get id() {
+      return this[id$5];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$2];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get userID() {
+      return this[userID$0];
+    }
+    set userID(value) {
+      super.userID = value;
+    }
+    get type() {
+      return this[type$0];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get title() {
+      return this[title$0];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get username() {
+      return this[username$0];
+    }
+    set username(value) {
+      super.username = value;
+    }
+    get phone() {
+      return this[phone$0];
+    }
+    set phone(value) {
+      super.phone = value;
+    }
+    get resolve() {
+      return this[resolve$];
+    }
+    set resolve(value) {
+      super.resolve = value;
+    }
+    get roomno() {
+      return this[roomno$];
+    }
+    set roomno(value) {
+      super.roomno = value;
+    }
+    get status() {
+      return this[status$4];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$4];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$4];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$4];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$4];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Issue.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostelID")), userID: T.StringL().as(json[$_get]("user_id")), type: T.StringL().as(json[$_get]("type")), title: T.StringL().as(json[$_get]("title")), username: T.StringL().as(json[$_get]("username")), phone: T.StringL().as(json[$_get]("phone")), resolve: T.StringL().as(json[$_get]("resolve")), roomno: T.StringL().as(json[$_get]("roomno")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Issue.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let userID = opts && 'userID' in opts ? opts.userID : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let username = opts && 'username' in opts ? opts.username : null;
+    let phone = opts && 'phone' in opts ? opts.phone : null;
+    let resolve = opts && 'resolve' in opts ? opts.resolve : null;
+    let roomno = opts && 'roomno' in opts ? opts.roomno : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$5] = id;
+    this[hostelID$2] = hostelID;
+    this[userID$0] = userID;
+    this[type$0] = type;
+    this[title$0] = title;
+    this[username$0] = username;
+    this[phone$0] = phone;
+    this[resolve$] = resolve;
+    this[roomno$] = roomno;
+    this[status$4] = status;
+    this[createdBy$4] = createdBy;
+    this[modifiedBy$4] = modifiedBy;
+    this[createdDateTime$4] = createdDateTime;
+    this[modifiedDateTime$4] = modifiedDateTime;
+    ;
+  }).prototype = models.Issue.prototype;
+  dart.addTypeTests(models.Issue);
+  dart.addTypeCaches(models.Issue);
+  models.Issue[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.Issue, I[0]);
+  dart.setFieldSignature(models.Issue, () => ({
+    __proto__: dart.getFields(models.Issue.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    userID: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(core.String)),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    username: dart.finalFieldType(dart.legacy(core.String)),
+    phone: dart.finalFieldType(dart.legacy(core.String)),
+    resolve: dart.finalFieldType(dart.legacy(core.String)),
+    roomno: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var hostels$0 = dart.privateName(models, "Hostels.hostels");
+  var meta$7 = dart.privateName(models, "Hostels.meta");
+  var pagination$5 = dart.privateName(models, "Hostels.pagination");
+  models.Hostels = class Hostels extends core.Object {
+    get hostels() {
+      return this[hostels$0];
+    }
+    set hostels(value) {
+      super.hostels = value;
+    }
+    get meta() {
+      return this[meta$7];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$5];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Hostels.new({hostels: json[$_get]("data") != null ? T.ListOfHostelL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Hostel.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToHostelL())]))) : T.JSArrayOfHostelL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Hostels.new = function(opts) {
+    let hostels = opts && 'hostels' in opts ? opts.hostels : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[hostels$0] = hostels;
+    this[meta$7] = meta;
+    this[pagination$5] = pagination;
+    ;
+  }).prototype = models.Hostels.prototype;
+  dart.addTypeTests(models.Hostels);
+  dart.addTypeCaches(models.Hostels);
+  dart.setLibraryUri(models.Hostels, I[0]);
+  dart.setFieldSignature(models.Hostels, () => ({
+    __proto__: dart.getFields(models.Hostels.__proto__),
+    hostels: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Hostel)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$6 = dart.privateName(models, "Hostel.id");
+  var name$0 = dart.privateName(models, "Hostel.name");
+  var phone$1 = dart.privateName(models, "Hostel.phone");
+  var email$1 = dart.privateName(models, "Hostel.email");
+  var address$0 = dart.privateName(models, "Hostel.address");
+  var amenities$0 = dart.privateName(models, "Hostel.amenities");
+  var status$5 = dart.privateName(models, "Hostel.status");
+  var createdBy$5 = dart.privateName(models, "Hostel.createdBy");
+  var modifiedBy$5 = dart.privateName(models, "Hostel.modifiedBy");
+  var expiryDateTime$0 = dart.privateName(models, "Hostel.expiryDateTime");
+  var createdDateTime$5 = dart.privateName(models, "Hostel.createdDateTime");
+  var modifiedDateTime$5 = dart.privateName(models, "Hostel.modifiedDateTime");
+  models.Hostel = class Hostel extends core.Object {
+    get id() {
+      return this[id$6];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get name() {
+      return this[name$0];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get phone() {
+      return this[phone$1];
+    }
+    set phone(value) {
+      super.phone = value;
+    }
+    get email() {
+      return this[email$1];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get address() {
+      return this[address$0];
+    }
+    set address(value) {
+      super.address = value;
+    }
+    get amenities() {
+      return this[amenities$0];
+    }
+    set amenities(value) {
+      super.amenities = value;
+    }
+    get status() {
+      return this[status$5];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$5];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$5];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get expiryDateTime() {
+      return this[expiryDateTime$0];
+    }
+    set expiryDateTime(value) {
+      super.expiryDateTime = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$5];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$5];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Hostel.new({id: T.StringL().as(json[$_get]("id")), name: T.StringL().as(json[$_get]("name")), phone: T.StringL().as(json[$_get]("phone")), email: T.StringL().as(json[$_get]("email")), address: T.StringL().as(json[$_get]("address")), amenities: T.StringL().as(json[$_get]("amenities")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), expiryDateTime: T.StringL().as(json[$_get]("expiry_date_time")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Hostel.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let phone = opts && 'phone' in opts ? opts.phone : null;
+    let email = opts && 'email' in opts ? opts.email : null;
+    let address = opts && 'address' in opts ? opts.address : null;
+    let amenities = opts && 'amenities' in opts ? opts.amenities : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let expiryDateTime = opts && 'expiryDateTime' in opts ? opts.expiryDateTime : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$6] = id;
+    this[name$0] = name;
+    this[phone$1] = phone;
+    this[email$1] = email;
+    this[address$0] = address;
+    this[amenities$0] = amenities;
+    this[status$5] = status;
+    this[createdBy$5] = createdBy;
+    this[modifiedBy$5] = modifiedBy;
+    this[expiryDateTime$0] = expiryDateTime;
+    this[createdDateTime$5] = createdDateTime;
+    this[modifiedDateTime$5] = modifiedDateTime;
+    ;
+  }).prototype = models.Hostel.prototype;
+  dart.addTypeTests(models.Hostel);
+  dart.addTypeCaches(models.Hostel);
+  dart.setLibraryUri(models.Hostel, I[0]);
+  dart.setFieldSignature(models.Hostel, () => ({
+    __proto__: dart.getFields(models.Hostel.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    phone: dart.finalFieldType(dart.legacy(core.String)),
+    email: dart.finalFieldType(dart.legacy(core.String)),
+    address: dart.finalFieldType(dart.legacy(core.String)),
+    amenities: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    expiryDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var logs$ = dart.privateName(models, "Logs.logs");
+  var meta$8 = dart.privateName(models, "Logs.meta");
+  var pagination$6 = dart.privateName(models, "Logs.pagination");
+  models.Logs = class Logs extends core.Object {
+    get logs() {
+      return this[logs$];
+    }
+    set logs(value) {
+      super.logs = value;
+    }
+    get meta() {
+      return this[meta$8];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$6];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Logs.new({logs: json[$_get]("data") != null ? T.ListOfLogL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Log.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToLogL())]))) : T.JSArrayOfLogL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Logs.new = function(opts) {
+    let logs = opts && 'logs' in opts ? opts.logs : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[logs$] = logs;
+    this[meta$8] = meta;
+    this[pagination$6] = pagination;
+    ;
+  }).prototype = models.Logs.prototype;
+  dart.addTypeTests(models.Logs);
+  dart.addTypeCaches(models.Logs);
+  dart.setLibraryUri(models.Logs, I[0]);
+  dart.setFieldSignature(models.Logs, () => ({
+    __proto__: dart.getFields(models.Logs.__proto__),
+    logs: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Log)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$7 = dart.privateName(models, "Log.id");
+  var log$ = dart.privateName(models, "Log.log");
+  var by$ = dart.privateName(models, "Log.by");
+  var type$1 = dart.privateName(models, "Log.type");
+  var color = dart.privateName(models, "Log.color");
+  var icon = dart.privateName(models, "Log.icon");
+  var title = dart.privateName(models, "Log.title");
+  var status$6 = dart.privateName(models, "Log.status");
+  var createdBy$6 = dart.privateName(models, "Log.createdBy");
+  var modifiedBy$6 = dart.privateName(models, "Log.modifiedBy");
+  var createdDateTime$6 = dart.privateName(models, "Log.createdDateTime");
+  var modifiedDateTime$6 = dart.privateName(models, "Log.modifiedDateTime");
+  models.Log = class Log extends core.Object {
+    get id() {
+      return this[id$7];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get log() {
+      return this[log$];
+    }
+    set log(value) {
+      super.log = value;
+    }
+    get by() {
+      return this[by$];
+    }
+    set by(value) {
+      super.by = value;
+    }
+    get type() {
+      return this[type$1];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get color() {
+      return this[color];
+    }
+    set color(value) {
+      this[color] = value;
+    }
+    get icon() {
+      return this[icon];
+    }
+    set icon(value) {
+      this[icon] = value;
+    }
+    get title() {
+      return this[title];
+    }
+    set title(value) {
+      this[title] = value;
+    }
+    get status() {
+      return this[status$6];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$6];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$6];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$6];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$6];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Log.new({id: T.StringL().as(json[$_get]("id")), log: T.StringL().as(json[$_get]("log")), by: T.StringL().as(json[$_get]("by")), type: T.StringL().as(json[$_get]("type")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Log.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let log = opts && 'log' in opts ? opts.log : null;
+    let by = opts && 'by' in opts ? opts.by : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[color] = null;
+    this[icon] = null;
+    this[title] = null;
+    this[id$7] = id;
+    this[log$] = log;
+    this[by$] = by;
+    this[type$1] = type;
+    this[status$6] = status;
+    this[createdBy$6] = createdBy;
+    this[modifiedBy$6] = modifiedBy;
+    this[createdDateTime$6] = createdDateTime;
+    this[modifiedDateTime$6] = modifiedDateTime;
+    ;
+  }).prototype = models.Log.prototype;
+  dart.addTypeTests(models.Log);
+  dart.addTypeCaches(models.Log);
+  models.Log[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.Log, I[0]);
+  dart.setFieldSignature(models.Log, () => ({
+    __proto__: dart.getFields(models.Log.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    log: dart.finalFieldType(dart.legacy(core.String)),
+    by: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(core.String)),
+    color: dart.fieldType(dart.legacy(core.String)),
+    icon: dart.fieldType(dart.legacy(icon_data.IconData)),
+    title: dart.fieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var notes$ = dart.privateName(models, "Notes.notes");
+  var meta$9 = dart.privateName(models, "Notes.meta");
+  var pagination$7 = dart.privateName(models, "Notes.pagination");
+  models.Notes = class Notes extends core.Object {
+    get notes() {
+      return this[notes$];
+    }
+    set notes(value) {
+      super.notes = value;
+    }
+    get meta() {
+      return this[meta$9];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$7];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Notes.new({notes: json[$_get]("data") != null ? T.ListOfNoteL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Note.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToNoteL())]))) : T.JSArrayOfNoteL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Notes.new = function(opts) {
+    let notes = opts && 'notes' in opts ? opts.notes : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[notes$] = notes;
+    this[meta$9] = meta;
+    this[pagination$7] = pagination;
+    ;
+  }).prototype = models.Notes.prototype;
+  dart.addTypeTests(models.Notes);
+  dart.addTypeCaches(models.Notes);
+  dart.setLibraryUri(models.Notes, I[0]);
+  dart.setFieldSignature(models.Notes, () => ({
+    __proto__: dart.getFields(models.Notes.__proto__),
+    notes: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Note)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$8 = dart.privateName(models, "Note.id");
+  var note$0 = dart.privateName(models, "Note.note");
+  var status$7 = dart.privateName(models, "Note.status");
+  var createdBy$7 = dart.privateName(models, "Note.createdBy");
+  var modifiedBy$7 = dart.privateName(models, "Note.modifiedBy");
+  var createdDateTime$7 = dart.privateName(models, "Note.createdDateTime");
+  var modifiedDateTime$7 = dart.privateName(models, "Note.modifiedDateTime");
+  models.Note = class Note extends core.Object {
+    get id() {
+      return this[id$8];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get note() {
+      return this[note$0];
+    }
+    set note(value) {
+      super.note = value;
+    }
+    get status() {
+      return this[status$7];
+    }
+    set status(value) {
+      this[status$7] = value;
+    }
+    get createdBy() {
+      return this[createdBy$7];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$7];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$7];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$7];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Note.new({id: T.StringL().as(json[$_get]("id")), note: T.StringL().as(json[$_get]("note")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Note.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let note = opts && 'note' in opts ? opts.note : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$8] = id;
+    this[note$0] = note;
+    this[status$7] = status;
+    this[createdBy$7] = createdBy;
+    this[modifiedBy$7] = modifiedBy;
+    this[createdDateTime$7] = createdDateTime;
+    this[modifiedDateTime$7] = modifiedDateTime;
+    ;
+  }).prototype = models.Note.prototype;
+  dart.addTypeTests(models.Note);
+  dart.addTypeCaches(models.Note);
+  models.Note[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.Note, I[0]);
+  dart.setFieldSignature(models.Note, () => ({
+    __proto__: dart.getFields(models.Note.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    note: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.fieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var notices$ = dart.privateName(models, "Notices.notices");
+  var meta$10 = dart.privateName(models, "Notices.meta");
+  var pagination$8 = dart.privateName(models, "Notices.pagination");
+  models.Notices = class Notices extends core.Object {
+    get notices() {
+      return this[notices$];
+    }
+    set notices(value) {
+      super.notices = value;
+    }
+    get meta() {
+      return this[meta$10];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$8];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Notices.new({notices: json[$_get]("data") != null ? T.ListOfNoticeL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Notice.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToNoticeL())]))) : T.JSArrayOfNoticeL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Notices.new = function(opts) {
+    let notices = opts && 'notices' in opts ? opts.notices : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[notices$] = notices;
+    this[meta$10] = meta;
+    this[pagination$8] = pagination;
+    ;
+  }).prototype = models.Notices.prototype;
+  dart.addTypeTests(models.Notices);
+  dart.addTypeCaches(models.Notices);
+  dart.setLibraryUri(models.Notices, I[0]);
+  dart.setFieldSignature(models.Notices, () => ({
+    __proto__: dart.getFields(models.Notices.__proto__),
+    notices: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Notice)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$9 = dart.privateName(models, "Notice.id");
+  var title$1 = dart.privateName(models, "Notice.title");
+  var description$1 = dart.privateName(models, "Notice.description");
+  var img$ = dart.privateName(models, "Notice.img");
+  var hostelID$3 = dart.privateName(models, "Notice.hostelID");
+  var type$2 = dart.privateName(models, "Notice.type");
+  var date$0 = dart.privateName(models, "Notice.date");
+  var status$8 = dart.privateName(models, "Notice.status");
+  var createdBy$8 = dart.privateName(models, "Notice.createdBy");
+  var modifiedBy$8 = dart.privateName(models, "Notice.modifiedBy");
+  var createdDateTime$8 = dart.privateName(models, "Notice.createdDateTime");
+  var modifiedDateTime$8 = dart.privateName(models, "Notice.modifiedDateTime");
+  models.Notice = class Notice extends core.Object {
+    get id() {
+      return this[id$9];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get title() {
+      return this[title$1];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get description() {
+      return this[description$1];
+    }
+    set description(value) {
+      super.description = value;
+    }
+    get img() {
+      return this[img$];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    get hostelID() {
+      return this[hostelID$3];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get type() {
+      return this[type$2];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get date() {
+      return this[date$0];
+    }
+    set date(value) {
+      super.date = value;
+    }
+    get status() {
+      return this[status$8];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$8];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$8];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$8];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$8];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Notice.new({id: T.StringL().as(json[$_get]("id")), title: T.StringL().as(json[$_get]("title")), description: T.StringL().as(json[$_get]("description")), img: T.StringL().as(json[$_get]("img")), hostelID: T.StringL().as(json[$_get]("hostelID")), type: T.StringL().as(json[$_get]("type")), date: T.StringL().as(json[$_get]("date")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Notice.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let description = opts && 'description' in opts ? opts.description : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let date = opts && 'date' in opts ? opts.date : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$9] = id;
+    this[title$1] = title;
+    this[description$1] = description;
+    this[img$] = img;
+    this[hostelID$3] = hostelID;
+    this[type$2] = type;
+    this[date$0] = date;
+    this[status$8] = status;
+    this[createdBy$8] = createdBy;
+    this[modifiedBy$8] = modifiedBy;
+    this[createdDateTime$8] = createdDateTime;
+    this[modifiedDateTime$8] = modifiedDateTime;
+    ;
+  }).prototype = models.Notice.prototype;
+  dart.addTypeTests(models.Notice);
+  dart.addTypeCaches(models.Notice);
+  models.Notice[dart.implements] = () => [models.ListItem];
+  dart.setLibraryUri(models.Notice, I[0]);
+  dart.setFieldSignature(models.Notice, () => ({
+    __proto__: dart.getFields(models.Notice.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    description: dart.finalFieldType(dart.legacy(core.String)),
+    img: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(core.String)),
+    date: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var rooms$ = dart.privateName(models, "Rooms.rooms");
+  var meta$11 = dart.privateName(models, "Rooms.meta");
+  var pagination$9 = dart.privateName(models, "Rooms.pagination");
+  models.Rooms = class Rooms extends core.Object {
+    get rooms() {
+      return this[rooms$];
+    }
+    set rooms(value) {
+      super.rooms = value;
+    }
+    get meta() {
+      return this[meta$11];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$9];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Rooms.new({rooms: json[$_get]("data") != null ? T.ListOfRoomL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.Room.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToRoomL())]))) : T.JSArrayOfRoomL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Rooms.new = function(opts) {
+    let rooms = opts && 'rooms' in opts ? opts.rooms : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[rooms$] = rooms;
+    this[meta$11] = meta;
+    this[pagination$9] = pagination;
+    ;
+  }).prototype = models.Rooms.prototype;
+  dart.addTypeTests(models.Rooms);
+  dart.addTypeCaches(models.Rooms);
+  dart.setLibraryUri(models.Rooms, I[0]);
+  dart.setFieldSignature(models.Rooms, () => ({
+    __proto__: dart.getFields(models.Rooms.__proto__),
+    rooms: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Room)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$10 = dart.privateName(models, "Room.id");
+  var hostelID$4 = dart.privateName(models, "Room.hostelID");
+  var roomno$0 = dart.privateName(models, "Room.roomno");
+  var rent$ = dart.privateName(models, "Room.rent");
+  var floor$ = dart.privateName(models, "Room.floor");
+  var filled$ = dart.privateName(models, "Room.filled");
+  var capacity$ = dart.privateName(models, "Room.capacity");
+  var amenities$1 = dart.privateName(models, "Room.amenities");
+  var joining$ = dart.privateName(models, "Room.joining");
+  var vacating$ = dart.privateName(models, "Room.vacating");
+  var status$9 = dart.privateName(models, "Room.status");
+  var createdBy$9 = dart.privateName(models, "Room.createdBy");
+  var modifiedBy$9 = dart.privateName(models, "Room.modifiedBy");
+  var createdDateTime$9 = dart.privateName(models, "Room.createdDateTime");
+  var modifiedDateTime$9 = dart.privateName(models, "Room.modifiedDateTime");
+  models.Room = class Room extends core.Object {
+    get id() {
+      return this[id$10];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$4];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get roomno() {
+      return this[roomno$0];
+    }
+    set roomno(value) {
+      super.roomno = value;
+    }
+    get rent() {
+      return this[rent$];
+    }
+    set rent(value) {
+      super.rent = value;
+    }
+    get floor() {
+      return this[floor$];
+    }
+    set floor(value) {
+      super.floor = value;
+    }
+    get filled() {
+      return this[filled$];
+    }
+    set filled(value) {
+      super.filled = value;
+    }
+    get capacity() {
+      return this[capacity$];
+    }
+    set capacity(value) {
+      super.capacity = value;
+    }
+    get amenities() {
+      return this[amenities$1];
+    }
+    set amenities(value) {
+      super.amenities = value;
+    }
+    get joining() {
+      return this[joining$];
+    }
+    set joining(value) {
+      super.joining = value;
+    }
+    get vacating() {
+      return this[vacating$];
+    }
+    set vacating(value) {
+      super.vacating = value;
+    }
+    get status() {
+      return this[status$9];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$9];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$9];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$9];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$9];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.Room.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostel_id")), roomno: T.StringL().as(json[$_get]("roomno")), rent: T.StringL().as(json[$_get]("rent")), floor: T.StringL().as(json[$_get]("floor")), filled: T.StringL().as(json[$_get]("filled")), capacity: T.StringL().as(json[$_get]("capacity")), amenities: T.StringL().as(json[$_get]("amenities")), joining: T.StringL().as(json[$_get]("room_joining")), vacating: T.StringL().as(json[$_get]("room_vacating")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.Room.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let roomno = opts && 'roomno' in opts ? opts.roomno : null;
+    let rent = opts && 'rent' in opts ? opts.rent : null;
+    let floor = opts && 'floor' in opts ? opts.floor : null;
+    let filled = opts && 'filled' in opts ? opts.filled : null;
+    let capacity = opts && 'capacity' in opts ? opts.capacity : null;
+    let amenities = opts && 'amenities' in opts ? opts.amenities : null;
+    let joining = opts && 'joining' in opts ? opts.joining : null;
+    let vacating = opts && 'vacating' in opts ? opts.vacating : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$10] = id;
+    this[hostelID$4] = hostelID;
+    this[roomno$0] = roomno;
+    this[rent$] = rent;
+    this[floor$] = floor;
+    this[filled$] = filled;
+    this[capacity$] = capacity;
+    this[amenities$1] = amenities;
+    this[joining$] = joining;
+    this[vacating$] = vacating;
+    this[status$9] = status;
+    this[createdBy$9] = createdBy;
+    this[modifiedBy$9] = modifiedBy;
+    this[createdDateTime$9] = createdDateTime;
+    this[modifiedDateTime$9] = modifiedDateTime;
+    ;
+  }).prototype = models.Room.prototype;
+  dart.addTypeTests(models.Room);
+  dart.addTypeCaches(models.Room);
+  dart.setLibraryUri(models.Room, I[0]);
+  dart.setFieldSignature(models.Room, () => ({
+    __proto__: dart.getFields(models.Room.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    roomno: dart.finalFieldType(dart.legacy(core.String)),
+    rent: dart.finalFieldType(dart.legacy(core.String)),
+    floor: dart.finalFieldType(dart.legacy(core.String)),
+    filled: dart.finalFieldType(dart.legacy(core.String)),
+    capacity: dart.finalFieldType(dart.legacy(core.String)),
+    amenities: dart.finalFieldType(dart.legacy(core.String)),
+    joining: dart.finalFieldType(dart.legacy(core.String)),
+    vacating: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var users$ = dart.privateName(models, "Users.users");
+  var meta$12 = dart.privateName(models, "Users.meta");
+  var pagination$10 = dart.privateName(models, "Users.pagination");
+  models.Users = class Users extends core.Object {
+    get users() {
+      return this[users$];
+    }
+    set users(value) {
+      super.users = value;
+    }
+    get meta() {
+      return this[meta$12];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    get pagination() {
+      return this[pagination$10];
+    }
+    set pagination(value) {
+      super.pagination = value;
+    }
+    static fromJson(json) {
+      return new models.Users.new({users: json[$_get]("data") != null ? T.ListOfUserL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.User.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToUserL())]))) : T.JSArrayOfUserL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta"))), pagination: json[$_get]("pagination") != null ? models.Pagination.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("pagination"))) : null});
+    }
+  };
+  (models.Users.new = function(opts) {
+    let users = opts && 'users' in opts ? opts.users : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    let pagination = opts && 'pagination' in opts ? opts.pagination : null;
+    this[users$] = users;
+    this[meta$12] = meta;
+    this[pagination$10] = pagination;
+    ;
+  }).prototype = models.Users.prototype;
+  dart.addTypeTests(models.Users);
+  dart.addTypeCaches(models.Users);
+  dart.setLibraryUri(models.Users, I[0]);
+  dart.setFieldSignature(models.Users, () => ({
+    __proto__: dart.getFields(models.Users.__proto__),
+    users: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.User)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta)),
+    pagination: dart.finalFieldType(dart.legacy(models.Pagination))
+  }));
+  var id$11 = dart.privateName(models, "User.id");
+  var hostelID$5 = dart.privateName(models, "User.hostelID");
+  var name$1 = dart.privateName(models, "User.name");
+  var phone$2 = dart.privateName(models, "User.phone");
+  var email$2 = dart.privateName(models, "User.email");
+  var address$1 = dart.privateName(models, "User.address");
+  var roomID$ = dart.privateName(models, "User.roomID");
+  var roomno$1 = dart.privateName(models, "User.roomno");
+  var rent$0 = dart.privateName(models, "User.rent");
+  var emerContact$ = dart.privateName(models, "User.emerContact");
+  var emerPhone$ = dart.privateName(models, "User.emerPhone");
+  var food$ = dart.privateName(models, "User.food");
+  var document$1 = dart.privateName(models, "User.document");
+  var paymentStatus$ = dart.privateName(models, "User.paymentStatus");
+  var joiningDateTime$0 = dart.privateName(models, "User.joiningDateTime");
+  var vacateDateTime$ = dart.privateName(models, "User.vacateDateTime");
+  var joining$0 = dart.privateName(models, "User.joining");
+  var vacating$0 = dart.privateName(models, "User.vacating");
+  var lastPaidDateTime$0 = dart.privateName(models, "User.lastPaidDateTime");
+  var expiryDateTime$1 = dart.privateName(models, "User.expiryDateTime");
+  var leaveDateTime$0 = dart.privateName(models, "User.leaveDateTime");
+  var status$10 = dart.privateName(models, "User.status");
+  var createdBy$10 = dart.privateName(models, "User.createdBy");
+  var modifiedBy$10 = dart.privateName(models, "User.modifiedBy");
+  var createdDateTime$10 = dart.privateName(models, "User.createdDateTime");
+  var modifiedDateTime$10 = dart.privateName(models, "User.modifiedDateTime");
+  models.User = class User extends core.Object {
+    get id() {
+      return this[id$11];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get hostelID() {
+      return this[hostelID$5];
+    }
+    set hostelID(value) {
+      super.hostelID = value;
+    }
+    get name() {
+      return this[name$1];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get phone() {
+      return this[phone$2];
+    }
+    set phone(value) {
+      super.phone = value;
+    }
+    get email() {
+      return this[email$2];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get address() {
+      return this[address$1];
+    }
+    set address(value) {
+      super.address = value;
+    }
+    get roomID() {
+      return this[roomID$];
+    }
+    set roomID(value) {
+      super.roomID = value;
+    }
+    get roomno() {
+      return this[roomno$1];
+    }
+    set roomno(value) {
+      super.roomno = value;
+    }
+    get rent() {
+      return this[rent$0];
+    }
+    set rent(value) {
+      super.rent = value;
+    }
+    get emerContact() {
+      return this[emerContact$];
+    }
+    set emerContact(value) {
+      super.emerContact = value;
+    }
+    get emerPhone() {
+      return this[emerPhone$];
+    }
+    set emerPhone(value) {
+      super.emerPhone = value;
+    }
+    get food() {
+      return this[food$];
+    }
+    set food(value) {
+      super.food = value;
+    }
+    get document() {
+      return this[document$1];
+    }
+    set document(value) {
+      super.document = value;
+    }
+    get paymentStatus() {
+      return this[paymentStatus$];
+    }
+    set paymentStatus(value) {
+      super.paymentStatus = value;
+    }
+    get joiningDateTime() {
+      return this[joiningDateTime$0];
+    }
+    set joiningDateTime(value) {
+      super.joiningDateTime = value;
+    }
+    get vacateDateTime() {
+      return this[vacateDateTime$];
+    }
+    set vacateDateTime(value) {
+      super.vacateDateTime = value;
+    }
+    get joining() {
+      return this[joining$0];
+    }
+    set joining(value) {
+      super.joining = value;
+    }
+    get vacating() {
+      return this[vacating$0];
+    }
+    set vacating(value) {
+      super.vacating = value;
+    }
+    get lastPaidDateTime() {
+      return this[lastPaidDateTime$0];
+    }
+    set lastPaidDateTime(value) {
+      super.lastPaidDateTime = value;
+    }
+    get expiryDateTime() {
+      return this[expiryDateTime$1];
+    }
+    set expiryDateTime(value) {
+      super.expiryDateTime = value;
+    }
+    get leaveDateTime() {
+      return this[leaveDateTime$0];
+    }
+    set leaveDateTime(value) {
+      super.leaveDateTime = value;
+    }
+    get status() {
+      return this[status$10];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get createdBy() {
+      return this[createdBy$10];
+    }
+    set createdBy(value) {
+      super.createdBy = value;
+    }
+    get modifiedBy() {
+      return this[modifiedBy$10];
+    }
+    set modifiedBy(value) {
+      super.modifiedBy = value;
+    }
+    get createdDateTime() {
+      return this[createdDateTime$10];
+    }
+    set createdDateTime(value) {
+      super.createdDateTime = value;
+    }
+    get modifiedDateTime() {
+      return this[modifiedDateTime$10];
+    }
+    set modifiedDateTime(value) {
+      super.modifiedDateTime = value;
+    }
+    static fromJson(json) {
+      return new models.User.new({id: T.StringL().as(json[$_get]("id")), hostelID: T.StringL().as(json[$_get]("hostel_id")), name: T.StringL().as(json[$_get]("name")), phone: T.StringL().as(json[$_get]("phone")), email: T.StringL().as(json[$_get]("email")), address: T.StringL().as(json[$_get]("address")), roomID: T.StringL().as(json[$_get]("room_id")), roomno: T.StringL().as(json[$_get]("roomno")), rent: T.StringL().as(json[$_get]("rent")), emerContact: T.StringL().as(json[$_get]("emer_contact")), emerPhone: T.StringL().as(json[$_get]("emer_phone")), food: T.StringL().as(json[$_get]("food")), document: T.StringL().as(json[$_get]("document")), paymentStatus: T.StringL().as(json[$_get]("payment_status")), joiningDateTime: T.StringL().as(json[$_get]("joining_date_time")), vacateDateTime: T.StringL().as(json[$_get]("vacate_date_time")), joining: T.StringL().as(json[$_get]("joining")), vacating: T.StringL().as(json[$_get]("vacating")), lastPaidDateTime: T.StringL().as(json[$_get]("last_paid_date_time")), expiryDateTime: T.StringL().as(json[$_get]("expiry_date_time")), leaveDateTime: T.StringL().as(json[$_get]("leave_date_time")), status: T.StringL().as(json[$_get]("status")), createdBy: T.StringL().as(json[$_get]("created_by")), modifiedBy: T.StringL().as(json[$_get]("modified_by")), createdDateTime: T.StringL().as(json[$_get]("created_date_time")), modifiedDateTime: T.StringL().as(json[$_get]("modified_date_time"))});
+    }
+  };
+  (models.User.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let hostelID = opts && 'hostelID' in opts ? opts.hostelID : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let phone = opts && 'phone' in opts ? opts.phone : null;
+    let email = opts && 'email' in opts ? opts.email : null;
+    let address = opts && 'address' in opts ? opts.address : null;
+    let roomID = opts && 'roomID' in opts ? opts.roomID : null;
+    let roomno = opts && 'roomno' in opts ? opts.roomno : null;
+    let rent = opts && 'rent' in opts ? opts.rent : null;
+    let emerContact = opts && 'emerContact' in opts ? opts.emerContact : null;
+    let emerPhone = opts && 'emerPhone' in opts ? opts.emerPhone : null;
+    let food = opts && 'food' in opts ? opts.food : null;
+    let document = opts && 'document' in opts ? opts.document : null;
+    let paymentStatus = opts && 'paymentStatus' in opts ? opts.paymentStatus : null;
+    let joiningDateTime = opts && 'joiningDateTime' in opts ? opts.joiningDateTime : null;
+    let vacateDateTime = opts && 'vacateDateTime' in opts ? opts.vacateDateTime : null;
+    let joining = opts && 'joining' in opts ? opts.joining : null;
+    let vacating = opts && 'vacating' in opts ? opts.vacating : null;
+    let lastPaidDateTime = opts && 'lastPaidDateTime' in opts ? opts.lastPaidDateTime : null;
+    let expiryDateTime = opts && 'expiryDateTime' in opts ? opts.expiryDateTime : null;
+    let leaveDateTime = opts && 'leaveDateTime' in opts ? opts.leaveDateTime : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let createdBy = opts && 'createdBy' in opts ? opts.createdBy : null;
+    let modifiedBy = opts && 'modifiedBy' in opts ? opts.modifiedBy : null;
+    let createdDateTime = opts && 'createdDateTime' in opts ? opts.createdDateTime : null;
+    let modifiedDateTime = opts && 'modifiedDateTime' in opts ? opts.modifiedDateTime : null;
+    this[id$11] = id;
+    this[hostelID$5] = hostelID;
+    this[name$1] = name;
+    this[phone$2] = phone;
+    this[email$2] = email;
+    this[address$1] = address;
+    this[roomID$] = roomID;
+    this[roomno$1] = roomno;
+    this[rent$0] = rent;
+    this[emerContact$] = emerContact;
+    this[emerPhone$] = emerPhone;
+    this[food$] = food;
+    this[document$1] = document;
+    this[paymentStatus$] = paymentStatus;
+    this[joiningDateTime$0] = joiningDateTime;
+    this[vacateDateTime$] = vacateDateTime;
+    this[joining$0] = joining;
+    this[vacating$0] = vacating;
+    this[lastPaidDateTime$0] = lastPaidDateTime;
+    this[expiryDateTime$1] = expiryDateTime;
+    this[leaveDateTime$0] = leaveDateTime;
+    this[status$10] = status;
+    this[createdBy$10] = createdBy;
+    this[modifiedBy$10] = modifiedBy;
+    this[createdDateTime$10] = createdDateTime;
+    this[modifiedDateTime$10] = modifiedDateTime;
+    ;
+  }).prototype = models.User.prototype;
+  dart.addTypeTests(models.User);
+  dart.addTypeCaches(models.User);
+  dart.setLibraryUri(models.User, I[0]);
+  dart.setFieldSignature(models.User, () => ({
+    __proto__: dart.getFields(models.User.__proto__),
+    id: dart.finalFieldType(dart.legacy(core.String)),
+    hostelID: dart.finalFieldType(dart.legacy(core.String)),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    phone: dart.finalFieldType(dart.legacy(core.String)),
+    email: dart.finalFieldType(dart.legacy(core.String)),
+    address: dart.finalFieldType(dart.legacy(core.String)),
+    roomID: dart.finalFieldType(dart.legacy(core.String)),
+    roomno: dart.finalFieldType(dart.legacy(core.String)),
+    rent: dart.finalFieldType(dart.legacy(core.String)),
+    emerContact: dart.finalFieldType(dart.legacy(core.String)),
+    emerPhone: dart.finalFieldType(dart.legacy(core.String)),
+    food: dart.finalFieldType(dart.legacy(core.String)),
+    document: dart.finalFieldType(dart.legacy(core.String)),
+    paymentStatus: dart.finalFieldType(dart.legacy(core.String)),
+    joiningDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    vacateDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    joining: dart.finalFieldType(dart.legacy(core.String)),
+    vacating: dart.finalFieldType(dart.legacy(core.String)),
+    lastPaidDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    expiryDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    leaveDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    createdBy: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedBy: dart.finalFieldType(dart.legacy(core.String)),
+    createdDateTime: dart.finalFieldType(dart.legacy(core.String)),
+    modifiedDateTime: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var status$11 = dart.privateName(models, "Meta.status");
+  var message$ = dart.privateName(models, "Meta.message");
+  var messageType$ = dart.privateName(models, "Meta.messageType");
+  models.Meta = class Meta extends core.Object {
+    get status() {
+      return this[status$11];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get message() {
+      return this[message$];
+    }
+    set message(value) {
+      super.message = value;
+    }
+    get messageType() {
+      return this[messageType$];
+    }
+    set messageType(value) {
+      super.messageType = value;
+    }
+    static fromJson(json) {
+      return new models.Meta.new({status: T.StringL().as(json[$_get]("status")), message: T.StringL().as(json[$_get]("message")), messageType: T.StringL().as(json[$_get]("message_type"))});
+    }
+  };
+  (models.Meta.new = function(opts) {
+    let status = opts && 'status' in opts ? opts.status : null;
+    let message = opts && 'message' in opts ? opts.message : null;
+    let messageType = opts && 'messageType' in opts ? opts.messageType : null;
+    this[status$11] = status;
+    this[message$] = message;
+    this[messageType$] = messageType;
+    ;
+  }).prototype = models.Meta.prototype;
+  dart.addTypeTests(models.Meta);
+  dart.addTypeCaches(models.Meta);
+  dart.setLibraryUri(models.Meta, I[0]);
+  dart.setFieldSignature(models.Meta, () => ({
+    __proto__: dart.getFields(models.Meta.__proto__),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    message: dart.finalFieldType(dart.legacy(core.String)),
+    messageType: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var count$ = dart.privateName(models, "Pagination.count");
+  var offset$ = dart.privateName(models, "Pagination.offset");
+  var totalCount$ = dart.privateName(models, "Pagination.totalCount");
+  models.Pagination = class Pagination extends core.Object {
+    get count() {
+      return this[count$];
+    }
+    set count(value) {
+      super.count = value;
+    }
+    get offset() {
+      return this[offset$];
+    }
+    set offset(value) {
+      super.offset = value;
+    }
+    get totalCount() {
+      return this[totalCount$];
+    }
+    set totalCount(value) {
+      super.totalCount = value;
+    }
+    static fromJson(json) {
+      return new models.Pagination.new({count: T.StringL().as(json[$_get]("count")), offset: T.StringL().as(json[$_get]("offset")), totalCount: T.StringL().as(json[$_get]("total_count"))});
+    }
+  };
+  (models.Pagination.new = function(opts) {
+    let count = opts && 'count' in opts ? opts.count : null;
+    let offset = opts && 'offset' in opts ? opts.offset : null;
+    let totalCount = opts && 'totalCount' in opts ? opts.totalCount : null;
+    this[count$] = count;
+    this[offset$] = offset;
+    this[totalCount$] = totalCount;
+    ;
+  }).prototype = models.Pagination.prototype;
+  dart.addTypeTests(models.Pagination);
+  dart.addTypeCaches(models.Pagination);
+  dart.setLibraryUri(models.Pagination, I[0]);
+  dart.setFieldSignature(models.Pagination, () => ({
+    __proto__: dart.getFields(models.Pagination.__proto__),
+    count: dart.finalFieldType(dart.legacy(core.String)),
+    offset: dart.finalFieldType(dart.legacy(core.String)),
+    totalCount: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var graphs$0 = dart.privateName(models, "Charts.graphs");
+  var meta$13 = dart.privateName(models, "Charts.meta");
+  models.Charts = class Charts extends core.Object {
+    get graphs() {
+      return this[graphs$0];
+    }
+    set graphs(value) {
+      super.graphs = value;
+    }
+    get meta() {
+      return this[meta$13];
+    }
+    set meta(value) {
+      super.meta = value;
+    }
+    static fromJson(json) {
+      return new models.Charts.new({graphs: json[$_get]("graphs") != null ? T.ListOfGraphL().from(core.Iterable.as(dart.dsend(json[$_get]("graphs"), 'map', [dart.fn(i => models.Graph.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToGraphL())]))) : T.JSArrayOfGraphL().of([]), meta: models.Meta.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("meta")))});
+    }
+  };
+  (models.Charts.new = function(opts) {
+    let graphs = opts && 'graphs' in opts ? opts.graphs : null;
+    let meta = opts && 'meta' in opts ? opts.meta : null;
+    this[graphs$0] = graphs;
+    this[meta$13] = meta;
+    ;
+  }).prototype = models.Charts.prototype;
+  dart.addTypeTests(models.Charts);
+  dart.addTypeCaches(models.Charts);
+  dart.setLibraryUri(models.Charts, I[0]);
+  dart.setFieldSignature(models.Charts, () => ({
+    __proto__: dart.getFields(models.Charts.__proto__),
+    graphs: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.Graph)))),
+    meta: dart.finalFieldType(dart.legacy(models.Meta))
+  }));
+  var title$2 = dart.privateName(models, "Graph.title");
+  var color$ = dart.privateName(models, "Graph.color");
+  var dataTitle$ = dart.privateName(models, "Graph.dataTitle");
+  var type$3 = dart.privateName(models, "Graph.type");
+  var horizontal$ = dart.privateName(models, "Graph.horizontal");
+  var steps$ = dart.privateName(models, "Graph.steps");
+  var data$ = dart.privateName(models, "Graph.data");
+  models.Graph = class Graph extends core.Object {
+    get title() {
+      return this[title$2];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get dataTitle() {
+      return this[dataTitle$];
+    }
+    set dataTitle(value) {
+      super.dataTitle = value;
+    }
+    get type() {
+      return this[type$3];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get horizontal() {
+      return this[horizontal$];
+    }
+    set horizontal(value) {
+      super.horizontal = value;
+    }
+    get steps() {
+      return this[steps$];
+    }
+    set steps(value) {
+      super.steps = value;
+    }
+    get data() {
+      return this[data$];
+    }
+    set data(value) {
+      super.data = value;
+    }
+    static fromJson(json) {
+      return new models.Graph.new({title: T.StringL().as(json[$_get]("title")), color: T.StringL().as(json[$_get]("color")), dataTitle: T.StringL().as(json[$_get]("data_title")), type: T.StringL().as(json[$_get]("type")), horizontal: T.StringL().as(json[$_get]("horizontal")), steps: T.StringL().as(json[$_get]("steps")), data: json[$_get]("data") != null ? T.ListOfChartType2L().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.ChartType2.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToChartType2L())]))) : T.JSArrayOfChartType2L().of([])});
+    }
+  };
+  (models.Graph.new = function(opts) {
+    let title = opts && 'title' in opts ? opts.title : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let dataTitle = opts && 'dataTitle' in opts ? opts.dataTitle : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let horizontal = opts && 'horizontal' in opts ? opts.horizontal : null;
+    let steps = opts && 'steps' in opts ? opts.steps : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    this[title$2] = title;
+    this[color$] = color;
+    this[dataTitle$] = dataTitle;
+    this[type$3] = type;
+    this[horizontal$] = horizontal;
+    this[steps$] = steps;
+    this[data$] = data;
+    ;
+  }).prototype = models.Graph.prototype;
+  dart.addTypeTests(models.Graph);
+  dart.addTypeCaches(models.Graph);
+  dart.setLibraryUri(models.Graph, I[0]);
+  dart.setFieldSignature(models.Graph, () => ({
+    __proto__: dart.getFields(models.Graph.__proto__),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    color: dart.finalFieldType(dart.legacy(core.String)),
+    dataTitle: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(core.String)),
+    horizontal: dart.finalFieldType(dart.legacy(core.String)),
+    steps: dart.finalFieldType(dart.legacy(core.String)),
+    data: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.ChartType2))))
+  }));
+  var title$3 = dart.privateName(models, "ChartType2.title");
+  var color$0 = dart.privateName(models, "ChartType2.color");
+  var data$0 = dart.privateName(models, "ChartType2.data");
+  models.ChartType2 = class ChartType2 extends core.Object {
+    get title() {
+      return this[title$3];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get color() {
+      return this[color$0];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get data() {
+      return this[data$0];
+    }
+    set data(value) {
+      super.data = value;
+    }
+    static fromJson(json) {
+      return new models.ChartType2.new({title: T.StringL().as(json[$_get]("title")), color: T.StringL().as(json[$_get]("color")), data: json[$_get]("data") != null ? T.ListOfChartDataL().from(core.Iterable.as(dart.dsend(json[$_get]("data"), 'map', [dart.fn(i => models.ChartData.fromJson(T.MapLOfStringL$dynamic().as(i)), T.dynamicToChartDataL())]))) : T.JSArrayOfChartDataL().of([])});
+    }
+  };
+  (models.ChartType2.new = function(opts) {
+    let title = opts && 'title' in opts ? opts.title : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    this[title$3] = title;
+    this[color$0] = color;
+    this[data$0] = data;
+    ;
+  }).prototype = models.ChartType2.prototype;
+  dart.addTypeTests(models.ChartType2);
+  dart.addTypeCaches(models.ChartType2);
+  dart.setLibraryUri(models.ChartType2, I[0]);
+  dart.setFieldSignature(models.ChartType2, () => ({
+    __proto__: dart.getFields(models.ChartType2.__proto__),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    color: dart.finalFieldType(dart.legacy(core.String)),
+    data: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(models.ChartData))))
+  }));
+  var title$4 = dart.privateName(models, "ChartData.title");
+  var value$ = dart.privateName(models, "ChartData.value");
+  var color$1 = dart.privateName(models, "ChartData.color");
+  var shown$ = dart.privateName(models, "ChartData.shown");
+  models.ChartData = class ChartData extends core.Object {
+    get title() {
+      return this[title$4];
+    }
+    set title(value) {
+      this[title$4] = value;
+    }
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      this[value$] = value;
+    }
+    get color() {
+      return this[color$1];
+    }
+    set color(value) {
+      this[color$1] = value;
+    }
+    get shown() {
+      return this[shown$];
+    }
+    set shown(value) {
+      this[shown$] = value;
+    }
+    static fromJson(json) {
+      return new models.ChartData.new({title: T.StringL().as(json[$_get]("title")), value: T.StringL().as(json[$_get]("value")), color: T.StringL().as(json[$_get]("color")), shown: T.StringL().as(json[$_get]("shown"))});
+    }
+    toJson() {
+      return new (T.IdentityMapOfStringL$dynamic()).from(["title", this.title, "value", this.value, "color", this.color, "shown", this.shown]);
+    }
+  };
+  (models.ChartData.new = function(opts) {
+    let title = opts && 'title' in opts ? opts.title : null;
+    let value = opts && 'value' in opts ? opts.value : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let shown = opts && 'shown' in opts ? opts.shown : null;
+    this[title$4] = title;
+    this[value$] = value;
+    this[color$1] = color;
+    this[shown$] = shown;
+    ;
+  }).prototype = models.ChartData.prototype;
+  dart.addTypeTests(models.ChartData);
+  dart.addTypeCaches(models.ChartData);
+  dart.setMethodSignature(models.ChartData, () => ({
+    __proto__: dart.getMethods(models.ChartData.__proto__),
+    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setLibraryUri(models.ChartData, I[0]);
+  dart.setFieldSignature(models.ChartData, () => ({
+    __proto__: dart.getFields(models.ChartData.__proto__),
+    title: dart.fieldType(dart.legacy(core.String)),
+    value: dart.fieldType(dart.legacy(core.String)),
+    color: dart.fieldType(dart.legacy(core.String)),
+    shown: dart.fieldType(dart.legacy(core.String))
+  }));
+  dart.trackLibraries("packages/test_one/admin/utils/models.dart", {
+    "package:test_one/admin/utils/models.dart": models
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["models.dart"],"names":[],"mappings":"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","file":"../../../../packages/test_one/admin/utils/models.dart.lib.js"}');
+  // Exports:
+  return {
+    admin__utils__models: models
+  };
+}));
+
+//# sourceMappingURL=models.dart.lib.js.map

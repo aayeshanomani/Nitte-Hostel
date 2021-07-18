@@ -1,0 +1,1050 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/common/series_renderer_config.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/charts_common/src/chart/layout/layout_view.dart', 'packages/charts_common/src/common/color.dart', 'packages/charts_common/src/chart/common/behavior/chart_behavior.dart', 'packages/charts_common/src/chart/common/canvas_shapes.dart', 'packages/charts_common/src/chart/common/series_datum.dart', 'packages/charts_common/src/common/typed_registry.dart'], (function load__packages__charts_common__src__chart__pie__arc_renderer_decorator_dart(dart_sdk, packages__charts_common__src__chart__common__series_renderer_config$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__charts_common__src__chart__layout__layout_view$46dart, packages__charts_common__src__common__color$46dart, packages__charts_common__src__chart__common__behavior__chart_behavior$46dart, packages__charts_common__src__chart__common__canvas_shapes$46dart, packages__charts_common__src__chart__common__series_datum$46dart, packages__charts_common__src__common__typed_registry$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
+  const collection = dart_sdk.collection;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const series_renderer_config = packages__charts_common__src__chart__common__series_renderer_config$46dart.src__chart__common__series_renderer_config;
+  const style_factory = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__common__style__style_factory;
+  const symbol_renderer = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__common__symbol_renderer;
+  const processed_series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__processed_series;
+  const datum_details = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__datum_details;
+  const series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__data__series;
+  const layout_view = packages__charts_common__src__chart__layout__layout_view$46dart.src__chart__layout__layout_view;
+  const color = packages__charts_common__src__common__color$46dart.src__common__color;
+  const base_chart = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__base_chart;
+  const series_renderer = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__series_renderer;
+  const canvas_shapes = packages__charts_common__src__chart__common__canvas_shapes$46dart.src__chart__common__canvas_shapes;
+  const chart_canvas = packages__charts_common__src__chart__common__canvas_shapes$46dart.src__chart__common__chart_canvas;
+  const series_datum = packages__charts_common__src__chart__common__series_datum$46dart.src__chart__common__series_datum;
+  const typed_registry = packages__charts_common__src__common__typed_registry$46dart.src__common__typed_registry;
+  var arc_renderer_decorator = Object.create(dart.library);
+  var arc_renderer_config = Object.create(dart.library);
+  var arc_renderer = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $add = dartx.add;
+  var $length = dartx.length;
+  var $forEach = dartx.forEach;
+  var $clear = dartx.clear;
+  var $left = dartx.left;
+  var $width = dartx.width;
+  var $toDouble = dartx.toDouble;
+  var $top = dartx.top;
+  var $height = dartx.height;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $_get = dartx._get;
+  var $firstWhere = dartx.firstWhere;
+  var $toString = dartx.toString;
+  var $contains = dartx.contains;
+  var $where = dartx.where;
+  var $removeWhere = dartx.removeWhere;
+  var $remove = dartx.remove;
+  var $map = dartx.map;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $first = dartx.first;
+  var $values = dartx.values;
+  var $round = dartx.round;
+  var $floor = dartx.floor;
+  var $isNaN = dartx.isNaN;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    ArcRendererDecoratorL: () => (T.ArcRendererDecoratorL = dart.constFn(dart.legacy(arc_renderer_decorator.ArcRendererDecorator)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    JSArrayOfStringL: () => (T.JSArrayOfStringL = dart.constFn(_interceptors.JSArray$(T.StringL())))(),
+    JSArrayOfArcRendererDecoratorL: () => (T.JSArrayOfArcRendererDecoratorL = dart.constFn(_interceptors.JSArray$(T.ArcRendererDecoratorL())))(),
+    ArcRendererElementL: () => (T.ArcRendererElementL = dart.constFn(dart.legacy(arc_renderer.ArcRendererElement)))(),
+    ListOfArcRendererElementL: () => (T.ListOfArcRendererElementL = dart.constFn(core.List$(T.ArcRendererElementL())))(),
+    ListLOfArcRendererElementL: () => (T.ListLOfArcRendererElementL = dart.constFn(dart.legacy(T.ListOfArcRendererElementL())))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    PointOfdoubleL: () => (T.PointOfdoubleL = dart.constFn(math.Point$(T.doubleL())))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    _AnimatedArcL: () => (T._AnimatedArcL = dart.constFn(dart.legacy(arc_renderer._AnimatedArc)))(),
+    _AnimatedArcLToboolL: () => (T._AnimatedArcLToboolL = dart.constFn(dart.fnType(T.boolL(), [T._AnimatedArcL()])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    CanvasPieSliceL: () => (T.CanvasPieSliceL = dart.constFn(dart.legacy(canvas_shapes.CanvasPieSlice)))(),
+    JSArrayOfCanvasPieSliceL: () => (T.JSArrayOfCanvasPieSliceL = dart.constFn(_interceptors.JSArray$(T.CanvasPieSliceL())))(),
+    ArcRendererElementLToNull: () => (T.ArcRendererElementLToNull = dart.constFn(dart.fnType(core.Null, [T.ArcRendererElementL()])))(),
+    ArcRendererDecoratorLToboolL: () => (T.ArcRendererDecoratorLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.ArcRendererDecoratorL()])))(),
+    ArcRendererDecoratorLToNull: () => (T.ArcRendererDecoratorLToNull = dart.constFn(dart.fnType(core.Null, [T.ArcRendererDecoratorL()])))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    RectangleOfintL: () => (T.RectangleOfintL = dart.constFn(math.Rectangle$(T.intL())))(),
+    MutableSeriesL: () => (T.MutableSeriesL = dart.constFn(dart.legacy(processed_series.MutableSeries)))(),
+    IterableOfMutableSeriesL: () => (T.IterableOfMutableSeriesL = dart.constFn(core.Iterable$(T.MutableSeriesL())))(),
+    IterableLOfMutableSeriesL: () => (T.IterableLOfMutableSeriesL = dart.constFn(dart.legacy(T.IterableOfMutableSeriesL())))(),
+    MutableSeriesLToNull: () => (T.MutableSeriesLToNull = dart.constFn(dart.fnType(core.Null, [T.MutableSeriesL()])))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(color.Color)))(),
+    intLToColorL: () => (T.intLToColorL = dart.constFn(dart.fnType(T.ColorL(), [T.intL()])))(),
+    AttributeKeyOfListLOfArcRendererElementL: () => (T.AttributeKeyOfListLOfArcRendererElementL = dart.constFn(series.AttributeKey$(T.ListLOfArcRendererElementL())))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.constList([], T.ArcRendererDecoratorL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: T.AttributeKeyOfListLOfArcRendererElementL().prototype,
+        [TypedKey_uniqueKey]: "ArcRenderer.elements"
+      });
+    }
+  }, false);
+  var C = Array(2).fill(void 0);
+  var I = [
+    "package:charts_common/src/chart/pie/arc_renderer_decorator.dart",
+    "package:charts_common/src/chart/pie/arc_renderer_config.dart",
+    "package:charts_common/src/chart/pie/arc_renderer.dart"
+  ];
+  const _is_ArcRendererDecorator_default = Symbol('_is_ArcRendererDecorator_default');
+  arc_renderer_decorator.ArcRendererDecorator$ = dart.generic(D => {
+    class ArcRendererDecorator extends core.Object {}
+    (ArcRendererDecorator.new = function() {
+      ;
+    }).prototype = ArcRendererDecorator.prototype;
+    dart.addTypeTests(ArcRendererDecorator);
+    ArcRendererDecorator.prototype[_is_ArcRendererDecorator_default] = true;
+    dart.addTypeCaches(ArcRendererDecorator);
+    dart.setLibraryUri(ArcRendererDecorator, I[0]);
+    return ArcRendererDecorator;
+  });
+  arc_renderer_decorator.ArcRendererDecorator = arc_renderer_decorator.ArcRendererDecorator$();
+  dart.addTypeTests(arc_renderer_decorator.ArcRendererDecorator, _is_ArcRendererDecorator_default);
+  var customRendererId$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.customRendererId");
+  var arcRendererDecorators$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.arcRendererDecorators");
+  var symbolRenderer$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.symbolRenderer");
+  var rendererAttributes = dart.privateName(arc_renderer_config, "ArcRendererConfig.rendererAttributes");
+  var arcLength$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.arcLength");
+  var arcRatio$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.arcRatio");
+  var arcWidth$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.arcWidth");
+  var layoutPaintOrder$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.layoutPaintOrder");
+  var minHoleWidthForCenterContent$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.minHoleWidthForCenterContent");
+  var startAngle$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.startAngle");
+  var strokeWidthPx$ = dart.privateName(arc_renderer_config, "ArcRendererConfig.strokeWidthPx");
+  var stroke = dart.privateName(arc_renderer_config, "ArcRendererConfig.stroke");
+  var noDataColor = dart.privateName(arc_renderer_config, "ArcRendererConfig.noDataColor");
+  const _is_ArcRendererConfig_default = Symbol('_is_ArcRendererConfig_default');
+  arc_renderer_config.ArcRendererConfig$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var ArcRendererOfDL = () => (ArcRendererOfDL = dart.constFn(arc_renderer.ArcRenderer$(DL())))();
+    class ArcRendererConfig extends layout_view.LayoutViewConfig {
+      get customRendererId() {
+        return this[customRendererId$];
+      }
+      set customRendererId(value) {
+        super.customRendererId = value;
+      }
+      get arcRendererDecorators() {
+        return this[arcRendererDecorators$];
+      }
+      set arcRendererDecorators(value) {
+        super.arcRendererDecorators = value;
+      }
+      get symbolRenderer() {
+        return this[symbolRenderer$];
+      }
+      set symbolRenderer(value) {
+        super.symbolRenderer = value;
+      }
+      get rendererAttributes() {
+        return this[rendererAttributes];
+      }
+      set rendererAttributes(value) {
+        super.rendererAttributes = value;
+      }
+      get arcLength() {
+        return this[arcLength$];
+      }
+      set arcLength(value) {
+        super.arcLength = value;
+      }
+      get arcRatio() {
+        return this[arcRatio$];
+      }
+      set arcRatio(value) {
+        super.arcRatio = value;
+      }
+      get arcWidth() {
+        return this[arcWidth$];
+      }
+      set arcWidth(value) {
+        super.arcWidth = value;
+      }
+      get layoutPaintOrder() {
+        return this[layoutPaintOrder$];
+      }
+      set layoutPaintOrder(value) {
+        super.layoutPaintOrder = value;
+      }
+      get minHoleWidthForCenterContent() {
+        return this[minHoleWidthForCenterContent$];
+      }
+      set minHoleWidthForCenterContent(value) {
+        super.minHoleWidthForCenterContent = value;
+      }
+      get startAngle() {
+        return this[startAngle$];
+      }
+      set startAngle(value) {
+        super.startAngle = value;
+      }
+      get strokeWidthPx() {
+        return this[strokeWidthPx$];
+      }
+      set strokeWidthPx(value) {
+        super.strokeWidthPx = value;
+      }
+      get stroke() {
+        return this[stroke];
+      }
+      set stroke(value) {
+        super.stroke = value;
+      }
+      get noDataColor() {
+        return this[noDataColor];
+      }
+      set noDataColor(value) {
+        super.noDataColor = value;
+      }
+      build() {
+        return ArcRendererOfDL().new({config: this, rendererId: this.customRendererId});
+      }
+    }
+    (ArcRendererConfig.new = function(opts) {
+      let t0;
+      let customRendererId = opts && 'customRendererId' in opts ? opts.customRendererId : null;
+      let arcLength = opts && 'arcLength' in opts ? opts.arcLength : 6.283185307179586;
+      let arcRendererDecorators = opts && 'arcRendererDecorators' in opts ? opts.arcRendererDecorators : C[0] || CT.C0;
+      let arcRatio = opts && 'arcRatio' in opts ? opts.arcRatio : null;
+      let arcWidth = opts && 'arcWidth' in opts ? opts.arcWidth : null;
+      let layoutPaintOrder = opts && 'layoutPaintOrder' in opts ? opts.layoutPaintOrder : 10;
+      let minHoleWidthForCenterContent = opts && 'minHoleWidthForCenterContent' in opts ? opts.minHoleWidthForCenterContent : 30;
+      let startAngle = opts && 'startAngle' in opts ? opts.startAngle : -1.5707963267948966;
+      let strokeWidthPx = opts && 'strokeWidthPx' in opts ? opts.strokeWidthPx : 2;
+      let symbolRenderer = opts && 'symbolRenderer' in opts ? opts.symbolRenderer : null;
+      this[rendererAttributes] = new series_renderer_config.RendererAttributes.new();
+      this[customRendererId$] = customRendererId;
+      this[arcLength$] = arcLength;
+      this[arcRendererDecorators$] = arcRendererDecorators;
+      this[arcRatio$] = arcRatio;
+      this[arcWidth$] = arcWidth;
+      this[layoutPaintOrder$] = layoutPaintOrder;
+      this[minHoleWidthForCenterContent$] = minHoleWidthForCenterContent;
+      this[startAngle$] = startAngle;
+      this[strokeWidthPx$] = strokeWidthPx;
+      this[noDataColor] = style_factory.StyleFactory.style.noDataColor;
+      this[stroke] = style_factory.StyleFactory.style.arcStrokeColor;
+      this[symbolRenderer$] = (t0 = symbolRenderer, t0 == null ? new symbol_renderer.CircleSymbolRenderer.new() : t0);
+      ArcRendererConfig.__proto__.new.call(this);
+      ;
+    }).prototype = ArcRendererConfig.prototype;
+    dart.addTypeTests(ArcRendererConfig);
+    ArcRendererConfig.prototype[_is_ArcRendererConfig_default] = true;
+    dart.addTypeCaches(ArcRendererConfig);
+    ArcRendererConfig[dart.implements] = () => [series_renderer_config.SeriesRendererConfig$(dart.legacy(D))];
+    dart.setMethodSignature(ArcRendererConfig, () => ({
+      __proto__: dart.getMethods(ArcRendererConfig.__proto__),
+      build: dart.fnType(dart.legacy(arc_renderer.ArcRenderer$(dart.legacy(D))), [])
+    }));
+    dart.setLibraryUri(ArcRendererConfig, I[1]);
+    dart.setFieldSignature(ArcRendererConfig, () => ({
+      __proto__: dart.getFields(ArcRendererConfig.__proto__),
+      customRendererId: dart.finalFieldType(dart.legacy(core.String)),
+      arcRendererDecorators: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(arc_renderer_decorator.ArcRendererDecorator)))),
+      symbolRenderer: dart.finalFieldType(dart.legacy(symbol_renderer.SymbolRenderer)),
+      rendererAttributes: dart.finalFieldType(dart.legacy(series_renderer_config.RendererAttributes)),
+      arcLength: dart.finalFieldType(dart.legacy(core.double)),
+      arcRatio: dart.finalFieldType(dart.legacy(core.double)),
+      arcWidth: dart.finalFieldType(dart.legacy(core.int)),
+      layoutPaintOrder: dart.finalFieldType(dart.legacy(core.int)),
+      minHoleWidthForCenterContent: dart.finalFieldType(dart.legacy(core.int)),
+      startAngle: dart.finalFieldType(dart.legacy(core.double)),
+      strokeWidthPx: dart.finalFieldType(dart.legacy(core.double)),
+      stroke: dart.finalFieldType(dart.legacy(color.Color)),
+      noDataColor: dart.finalFieldType(dart.legacy(color.Color))
+    }));
+    return ArcRendererConfig;
+  });
+  arc_renderer_config.ArcRendererConfig = arc_renderer_config.ArcRendererConfig$();
+  dart.addTypeTests(arc_renderer_config.ArcRendererConfig, _is_ArcRendererConfig_default);
+  var config$ = dart.privateName(arc_renderer, "ArcRenderer.config");
+  var arcRendererDecorators = dart.privateName(arc_renderer, "ArcRenderer.arcRendererDecorators");
+  var _chart = dart.privateName(arc_renderer, "_chart");
+  var _seriesArcMap = dart.privateName(arc_renderer, "_seriesArcMap");
+  var _currentKeys = dart.privateName(arc_renderer, "_currentKeys");
+  var _calculateInnerRadius = dart.privateName(arc_renderer, "_calculateInnerRadius");
+  var _getChartPosition = dart.privateName(arc_renderer, "_getChartPosition");
+  const _is_ArcRenderer_default = Symbol('_is_ArcRenderer_default');
+  arc_renderer.ArcRenderer$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var _AnimatedArcListOfDL = () => (_AnimatedArcListOfDL = dart.constFn(arc_renderer._AnimatedArcList$(DL())))();
+    var _AnimatedArcListLOfDL = () => (_AnimatedArcListLOfDL = dart.constFn(dart.legacy(_AnimatedArcListOfDL())))();
+    var IdentityMapOfStringL$_AnimatedArcListLOfDL = () => (IdentityMapOfStringL$_AnimatedArcListLOfDL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), _AnimatedArcListLOfDL())))();
+    var BaseChartOfDL = () => (BaseChartOfDL = dart.constFn(base_chart.BaseChart$(DL())))();
+    var BaseChartLOfDL = () => (BaseChartLOfDL = dart.constFn(dart.legacy(BaseChartOfDL())))();
+    var MutableSeriesOfDL = () => (MutableSeriesOfDL = dart.constFn(processed_series.MutableSeries$(DL())))();
+    var MutableSeriesLOfDL = () => (MutableSeriesLOfDL = dart.constFn(dart.legacy(MutableSeriesOfDL())))();
+    var ListOfMutableSeriesLOfDL = () => (ListOfMutableSeriesLOfDL = dart.constFn(core.List$(MutableSeriesLOfDL())))();
+    var ListLOfMutableSeriesLOfDL = () => (ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfMutableSeriesLOfDL())))();
+    var ArcRendererElementOfDL = () => (ArcRendererElementOfDL = dart.constFn(arc_renderer.ArcRendererElement$(DL())))();
+    var ArcRendererElementLOfDL = () => (ArcRendererElementLOfDL = dart.constFn(dart.legacy(ArcRendererElementOfDL())))();
+    var JSArrayOfArcRendererElementLOfDL = () => (JSArrayOfArcRendererElementLOfDL = dart.constFn(_interceptors.JSArray$(ArcRendererElementLOfDL())))();
+    var MutableSeriesLOfDLToNull = () => (MutableSeriesLOfDLToNull = dart.constFn(dart.fnType(core.Null, [MutableSeriesLOfDL()])))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    var ListOfImmutableSeriesLOfDL = () => (ListOfImmutableSeriesLOfDL = dart.constFn(core.List$(ImmutableSeriesLOfDL())))();
+    var ListLOfImmutableSeriesLOfDL = () => (ListLOfImmutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfImmutableSeriesLOfDL())))();
+    var VoidTo_AnimatedArcListLOfDL = () => (VoidTo_AnimatedArcListLOfDL = dart.constFn(dart.fnType(_AnimatedArcListLOfDL(), [])))();
+    var _AnimatedArcOfDL = () => (_AnimatedArcOfDL = dart.constFn(arc_renderer._AnimatedArc$(DL())))();
+    var ImmutableSeriesLOfDLToNull = () => (ImmutableSeriesLOfDLToNull = dart.constFn(dart.fnType(core.Null, [ImmutableSeriesLOfDL()])))();
+    var _AnimatedArcLOfDL = () => (_AnimatedArcLOfDL = dart.constFn(dart.legacy(_AnimatedArcOfDL())))();
+    var _AnimatedArcLOfDLToboolL = () => (_AnimatedArcLOfDLToboolL = dart.constFn(dart.fnType(T.boolL(), [_AnimatedArcLOfDL()])))();
+    var StringLAnd_AnimatedArcListLOfDLToNull = () => (StringLAnd_AnimatedArcListLOfDLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL(), _AnimatedArcListLOfDL()])))();
+    var ArcRendererElementListOfDL = () => (ArcRendererElementListOfDL = dart.constFn(arc_renderer.ArcRendererElementList$(DL())))();
+    var _AnimatedArcLOfDLToArcRendererElementLOfDL = () => (_AnimatedArcLOfDLToArcRendererElementLOfDL = dart.constFn(dart.fnType(ArcRendererElementLOfDL(), [_AnimatedArcLOfDL()])))();
+    var SeriesDatumOfDL = () => (SeriesDatumOfDL = dart.constFn(series_datum.SeriesDatum$(DL())))();
+    var SeriesDatumLOfDL = () => (SeriesDatumLOfDL = dart.constFn(dart.legacy(SeriesDatumOfDL())))();
+    var DatumDetailsOfDL = () => (DatumDetailsOfDL = dart.constFn(datum_details.DatumDetails$(DL())))();
+    var DatumDetailsLOfDL = () => (DatumDetailsLOfDL = dart.constFn(dart.legacy(DatumDetailsOfDL())))();
+    var JSArrayOfDatumDetailsLOfDL = () => (JSArrayOfDatumDetailsLOfDL = dart.constFn(_interceptors.JSArray$(DatumDetailsLOfDL())))();
+    var _AnimatedArcLOfDLToNull = () => (_AnimatedArcLOfDLToNull = dart.constFn(dart.fnType(core.Null, [_AnimatedArcLOfDL()])))();
+    class ArcRenderer extends series_renderer.BaseSeriesRenderer$(dart.legacy(D)) {
+      get config() {
+        return this[config$];
+      }
+      set config(value) {
+        super.config = value;
+      }
+      get arcRendererDecorators() {
+        return this[arcRendererDecorators];
+      }
+      set arcRendererDecorators(value) {
+        super.arcRendererDecorators = value;
+      }
+      static new(opts) {
+        let t0, t0$;
+        let rendererId = opts && 'rendererId' in opts ? opts.rendererId : null;
+        let config = opts && 'config' in opts ? opts.config : null;
+        return new (arc_renderer.ArcRenderer$(dart.legacy(D)))._internal({rendererId: (t0 = rendererId, t0 == null ? "line" : t0), config: dart.legacy(arc_renderer_config.ArcRendererConfig$(dart.legacy(D))).as((t0$ = config, t0$ == null ? new (arc_renderer_config.ArcRendererConfig$(dart.legacy(D))).new() : t0$))});
+      }
+      onAttach(chart) {
+        BaseChartLOfDL().as(chart);
+        super.onAttach(chart);
+        this[_chart] = chart;
+      }
+      configureSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        this.assignMissingColors(seriesList, {emptyCategoryUsesSinglePalette: false});
+      }
+      preprocessSeries(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        seriesList[$forEach](dart.fn(series => {
+          let elements = JSArrayOfArcRendererElementLOfDL().of([]);
+          let domainFn = series.domainFn;
+          let measureFn = series.measureFn;
+          let seriesMeasureTotal = series.seriesMeasureTotal;
+          let startAngle = this.config.startAngle;
+          let arcLength = this.config.arcLength;
+          let totalAngle = 0.0;
+          let measures = [];
+          if (dart.test(series.data[$isEmpty])) {
+            let angle = arcLength === 2 * 3.141592653589793 ? dart.notNull(arcLength) * 0.999999 : arcLength;
+            let endAngle = dart.notNull(startAngle) + dart.notNull(angle);
+            let details = new (ArcRendererElementOfDL()).new();
+            details.startAngle = startAngle;
+            details.endAngle = endAngle;
+            details.index = 0;
+            details.key = 0;
+            details.series = series;
+            elements[$add](details);
+          } else {
+            for (let arcIndex = 0; arcIndex < dart.notNull(series.data[$length]); arcIndex = arcIndex + 1) {
+              let domain = domainFn(arcIndex);
+              let measure = measureFn(arcIndex);
+              measures[$add](measure);
+              if (measure == null) {
+                continue;
+              }
+              let percentOfSeries = dart.notNull(measure) / dart.notNull(seriesMeasureTotal);
+              let angle = dart.notNull(arcLength) * percentOfSeries;
+              let endAngle = dart.notNull(startAngle) + angle;
+              let details = new (ArcRendererElementOfDL()).new();
+              details.startAngle = startAngle;
+              details.endAngle = endAngle;
+              details.index = arcIndex;
+              details.key = arcIndex;
+              details.domain = domain;
+              details.series = series;
+              elements[$add](details);
+              startAngle = endAngle;
+              totalAngle = totalAngle + angle;
+            }
+          }
+          series.setAttr(T.ListLOfArcRendererElementL(), arc_renderer.arcElementsKey, elements);
+        }, MutableSeriesLOfDLToNull()));
+      }
+      update(seriesList, isAnimatingThisDraw) {
+        ListLOfImmutableSeriesLOfDL().as(seriesList);
+        this[_currentKeys][$clear]();
+        let bounds = this[_chart].drawAreaBounds;
+        let center = new (T.PointOfdoubleL()).new((dart.notNull(bounds[$left]) + dart.notNull(bounds[$width]) / 2)[$toDouble](), (dart.notNull(bounds[$top]) + dart.notNull(bounds[$height]) / 2)[$toDouble]());
+        let radius = dart.notNull(bounds[$height]) < dart.notNull(bounds[$width]) ? (dart.notNull(bounds[$height]) / 2)[$toDouble]() : (dart.notNull(bounds[$width]) / 2)[$toDouble]();
+        if (this.config.arcRatio != null) {
+          if (dart.notNull(this.config.arcRatio) < 0 || dart.notNull(this.config.arcRatio) > 1) {
+            dart.throw(new core.ArgumentError.new("arcRatio must be between 0 and 1"));
+          }
+        }
+        let innerRadius = this[_calculateInnerRadius](radius);
+        seriesList[$forEach](dart.fn(series => {
+          let t0, t1, t0$, t0$0, t0$1;
+          let colorFn = series.colorFn;
+          let arcListKey = series.id;
+          let arcList = this[_seriesArcMap][$putIfAbsent](arcListKey, dart.fn(() => new (_AnimatedArcListOfDL()).new(), VoidTo_AnimatedArcListLOfDL()));
+          let elementsList = series.getAttr(T.ListLOfArcRendererElementL(), arc_renderer.arcElementsKey);
+          if (dart.test(series.data[$isEmpty])) {
+            let details = elementsList[$_get](0);
+            let arcKey = "__no_data__";
+            let animatingArc = arcList.arcs[$firstWhere](dart.fn(arc => arc.key === arcKey, T._AnimatedArcLToboolL()), {orElse: dart.fn(() => null, T.VoidToNull())});
+            arcList.center = center;
+            arcList.radius = radius;
+            arcList.innerRadius = innerRadius;
+            arcList.series = series;
+            arcList.stroke = this.config.noDataColor;
+            arcList.strokeWidthPx = 0.0;
+            if (animatingArc == null) {
+              animatingArc = new (_AnimatedArcOfDL()).new(arcKey, null, null);
+              arcList.arcs[$add](animatingArc);
+            } else {
+              animatingArc.datum = null;
+              animatingArc.domain = null;
+            }
+            this[_currentKeys][$add](arcKey);
+            let arcElement = (t0 = new (ArcRendererElementOfDL()).new(), (() => {
+              t0.color = this.config.noDataColor;
+              t0.startAngle = details.startAngle;
+              t0.endAngle = details.endAngle;
+              t0.series = series;
+              return t0;
+            })());
+            animatingArc.setNewTarget(arcElement);
+          } else {
+            let previousEndAngle = this.config.startAngle;
+            for (let arcIndex = 0; arcIndex < dart.notNull(series.data[$length]); arcIndex = arcIndex + 1) {
+              let datum = series.data[$_get](arcIndex);
+              let details = elementsList[$_get](arcIndex);
+              let domainValue = DL().as(details.domain);
+              let arcKey = dart.toString(domainValue);
+              let animatingArc = arcList.arcs[$firstWhere](dart.fn(arc => arc.key == arcKey, T._AnimatedArcLToboolL()), {orElse: dart.fn(() => null, T.VoidToNull())});
+              arcList.center = center;
+              arcList.radius = radius;
+              arcList.innerRadius = innerRadius;
+              arcList.series = series;
+              arcList.stroke = this.config.stroke;
+              arcList.strokeWidthPx = this.config.strokeWidthPx;
+              if (animatingArc == null) {
+                animatingArc = (t0$ = new (_AnimatedArcOfDL()).new(arcKey, datum, domainValue), (() => {
+                  t0$.setNewTarget((t1 = new (ArcRendererElementOfDL()).new(), (() => {
+                    t1.color = colorFn(arcIndex);
+                    t1.startAngle = previousEndAngle;
+                    t1.endAngle = previousEndAngle;
+                    t1.index = arcIndex;
+                    t1.series = series;
+                    return t1;
+                  })()));
+                  return t0$;
+                })());
+                arcList.arcs[$add](animatingArc);
+              } else {
+                animatingArc.datum = datum;
+                previousEndAngle = (t0$0 = animatingArc.previousArcEndAngle, t0$0 == null ? 0.0 : t0$0);
+              }
+              animatingArc.domain = domainValue;
+              this[_currentKeys][$add](arcKey);
+              let arcElement = (t0$1 = new (ArcRendererElementOfDL()).new(), (() => {
+                t0$1.color = colorFn(arcIndex);
+                t0$1.startAngle = details.startAngle;
+                t0$1.endAngle = details.endAngle;
+                t0$1.index = arcIndex;
+                t0$1.series = series;
+                return t0$1;
+              })());
+              animatingArc.setNewTarget(arcElement);
+            }
+          }
+        }, ImmutableSeriesLOfDLToNull()));
+        this[_seriesArcMap][$forEach](dart.fn((key, arcList) => {
+          for (let arcIndex = 0; arcIndex < dart.notNull(arcList.arcs[$length]); arcIndex = arcIndex + 1) {
+            let arc = arcList.arcs[$_get](arcIndex);
+            let arcStartAngle = arc.previousArcStartAngle;
+            if (this[_currentKeys][$contains](arc.key) !== true) {
+              let targetArcAngle = 2 * 3.141592653589793 + dart.notNull(this.config.startAngle);
+              for (let nextArc of arcList.arcs[$where](dart.fn(arc => this[_currentKeys][$contains](arc.key), _AnimatedArcLOfDLToboolL()))) {
+                let nextArcStartAngle = nextArc.newTargetArcStartAngle;
+                if (dart.notNull(arcStartAngle) < dart.notNull(nextArcStartAngle) && dart.notNull(nextArcStartAngle) < dart.notNull(targetArcAngle)) {
+                  targetArcAngle = nextArcStartAngle;
+                }
+              }
+              arc.animateOut(targetArcAngle);
+            }
+          }
+        }, StringLAnd_AnimatedArcListLOfDLToNull()));
+      }
+      paint(canvas, animationPercent) {
+        if (animationPercent === 1.0) {
+          let keysToRemove = T.JSArrayOfStringL().of([]);
+          this[_seriesArcMap][$forEach](dart.fn((key, arcList) => {
+            arcList.arcs[$removeWhere](dart.fn(arc => arc.animatingOut, _AnimatedArcLOfDLToboolL()));
+            if (dart.test(arcList.arcs[$isEmpty])) {
+              keysToRemove[$add](key);
+            }
+          }, StringLAnd_AnimatedArcListLOfDLToNull()));
+          keysToRemove[$forEach](dart.bind(this[_seriesArcMap], $remove));
+        }
+        this[_seriesArcMap][$forEach](dart.fn((key, arcList) => {
+          let t0;
+          let circleSectors = T.JSArrayOfCanvasPieSliceL().of([]);
+          let arcElementsList = (t0 = new (ArcRendererElementListOfDL()).new(), (() => {
+            t0.arcs = JSArrayOfArcRendererElementLOfDL().of([]);
+            t0.center = arcList.center;
+            t0.innerRadius = arcList.innerRadius;
+            t0.radius = arcList.radius;
+            t0.startAngle = this.config.startAngle;
+            t0.stroke = arcList.stroke;
+            t0.strokeWidthPx = arcList.strokeWidthPx;
+            return t0;
+          })());
+          arcList.arcs[$map](ArcRendererElementLOfDL(), dart.fn(animatingArc => animatingArc.getCurrentArc(animationPercent), _AnimatedArcLOfDLToArcRendererElementLOfDL()))[$forEach](dart.fn(arc => {
+            circleSectors[$add](new canvas_shapes.CanvasPieSlice.new(arc.startAngle, arc.endAngle, {fill: arc.color}));
+            arcElementsList.arcs[$add](ArcRendererElementLOfDL().as(arc));
+          }, T.ArcRendererElementLToNull()));
+          this.arcRendererDecorators[$where](dart.fn(decorator => !dart.test(decorator.renderAbove), T.ArcRendererDecoratorLToboolL()))[$forEach](dart.fn(decorator => {
+            decorator.decorate(arcElementsList, canvas, this.graphicsFactory, {drawBounds: this.drawBounds, animationPercent: animationPercent, rtl: this.isRtl});
+          }, T.ArcRendererDecoratorLToNull()));
+          canvas.drawPie(new canvas_shapes.CanvasPie.new(circleSectors, arcList.center, arcList.radius, arcList.innerRadius, {stroke: arcList.stroke, strokeWidthPx: arcList.strokeWidthPx}));
+          this.arcRendererDecorators[$where](dart.fn(decorator => decorator.renderAbove, T.ArcRendererDecoratorLToboolL()))[$forEach](dart.fn(decorator => {
+            decorator.decorate(arcElementsList, canvas, this.graphicsFactory, {drawBounds: this.drawBounds, animationPercent: animationPercent, rtl: this.isRtl});
+          }, T.ArcRendererDecoratorLToNull()));
+        }, StringLAnd_AnimatedArcListLOfDLToNull()));
+      }
+      get isRtl() {
+        let t0, t0$, t0$0;
+        t0$0 = (t0$ = (t0 = this[_chart], t0 == null ? null : t0.context), t0$ == null ? null : t0$.isRtl);
+        return t0$0 == null ? false : t0$0;
+      }
+      get centerContentBounds() {
+        let arcList = dart.test(this[_seriesArcMap][$isNotEmpty]) ? this[_seriesArcMap][$values][$first] : null;
+        if (arcList == null || dart.notNull(arcList.innerRadius) < dart.notNull(this.config.minHoleWidthForCenterContent)) {
+          let bounds = this[_chart].drawAreaBounds;
+          return new (T.RectangleOfintL()).new((dart.notNull(bounds[$left]) + dart.notNull(bounds[$width]) / 2)[$round](), (dart.notNull(bounds[$top]) + dart.notNull(bounds[$height]) / 2)[$round](), 0, 0);
+        }
+        let width = (dart.notNull(arc_renderer.ArcRenderer._cosPIOver4) * dart.notNull(arcList.innerRadius))[$floor]();
+        return new (T.RectangleOfintL()).new((dart.notNull(arcList.center.x) - width)[$round](), (dart.notNull(arcList.center.y) - width)[$round](), width * 2, width * 2);
+      }
+      getExpandedDatumDetails(seriesDatum) {
+        let t1, t0, t1$, t0$, t1$0, t0$0;
+        SeriesDatumLOfDL().as(seriesDatum);
+        let series = seriesDatum.series;
+        let datum = seriesDatum.datum;
+        let datumIndex = seriesDatum.index;
+        let domain = (t0 = series, t1 = datumIndex, t0.domainFn(t1));
+        let measure = (t0$ = series, t1$ = datumIndex, t0$.measureFn(t1$));
+        let color = (t0$0 = series, t1$0 = datumIndex, t0$0.colorFn(t1$0));
+        let chartPosition = this[_getChartPosition](series.id, dart.toString(domain));
+        return new (DatumDetailsOfDL()).new({datum: datum, domain: domain, measure: measure, series: series, color: color, chartPosition: chartPosition});
+      }
+      [_getChartPosition](seriesId, key) {
+        let chartPosition = null;
+        let arcList = this[_seriesArcMap][$_get](seriesId);
+        if (arcList == null) {
+          return chartPosition;
+        }
+        for (let arc of arcList.arcs) {
+          if (arc.key == key) {
+            let centerAngle = dart.notNull(arc.currentArcStartAngle) + (dart.notNull(arc.currentArcEndAngle) - dart.notNull(arc.currentArcStartAngle)) / 2;
+            let centerPointRadius = dart.notNull(arcList.innerRadius) + (dart.notNull(arcList.radius) - dart.notNull(arcList.innerRadius)) / 2;
+            chartPosition = new (T.PointOfdoubleL()).new(centerPointRadius * math.cos(centerAngle) + dart.notNull(arcList.center.x), centerPointRadius * math.sin(centerAngle) + dart.notNull(arcList.center.y));
+            break;
+          }
+        }
+        return chartPosition;
+      }
+      getNearestDatumDetailPerSeries(chartPoint, byDomain, boundsOverride) {
+        let nearest = JSArrayOfDatumDetailsLOfDL().of([]);
+        if (!dart.test(this.isPointWithinBounds(chartPoint, boundsOverride))) {
+          return nearest;
+        }
+        this[_seriesArcMap][$forEach](dart.fn((key, arcList) => {
+          if (dart.test(arcList.series.overlaySeries)) {
+            return;
+          }
+          let center = arcList.center;
+          let innerRadius = arcList.innerRadius;
+          let radius = arcList.radius;
+          let distance = center.distanceTo(chartPoint);
+          let chartPointAngle = math.atan2(dart.notNull(chartPoint.y) - dart.notNull(center.y), dart.notNull(chartPoint.x) - dart.notNull(center.x));
+          if (chartPointAngle[$isNaN]) {
+            chartPointAngle = this.config.startAngle;
+          }
+          if (dart.notNull(chartPointAngle) < dart.notNull(this.config.startAngle) && dart.notNull(chartPointAngle) < 0) {
+            chartPointAngle = 2 * 3.141592653589793 + dart.notNull(chartPointAngle);
+          }
+          arcList.arcs[$forEach](dart.fn(arc => {
+            if (dart.notNull(innerRadius) <= dart.notNull(distance) && dart.notNull(distance) <= dart.notNull(radius)) {
+              if (dart.notNull(arc.currentArcStartAngle) <= dart.notNull(chartPointAngle) && dart.notNull(chartPointAngle) <= dart.notNull(arc.currentArcEndAngle)) {
+                nearest[$add](new (DatumDetailsOfDL()).new({series: arcList.series, datum: arc.datum, domain: arc.domain, domainDistance: 0.0, measureDistance: 0.0}));
+              }
+            }
+          }, _AnimatedArcLOfDLToNull()));
+        }, StringLAnd_AnimatedArcListLOfDLToNull()));
+        return nearest;
+      }
+      addPositionToDetailsForSeriesDatum(details, seriesDatum) {
+        DatumDetailsLOfDL().as(details);
+        SeriesDatumLOfDL().as(seriesDatum);
+        let chartPosition = this[_getChartPosition](details.series.id, dart.toString(details.domain));
+        return DatumDetailsOfDL().from(details, {chartPosition: chartPosition});
+      }
+      assignMissingColors(seriesList, opts) {
+        T.IterableLOfMutableSeriesL().as(seriesList);
+        let emptyCategoryUsesSinglePalette = opts && 'emptyCategoryUsesSinglePalette' in opts ? opts.emptyCategoryUsesSinglePalette : null;
+        let maxMissing = 0;
+        seriesList[$forEach](dart.fn(series => {
+          if (series.colorFn == null) {
+            maxMissing = math.max(T.intL(), maxMissing, series.data[$length]);
+          }
+        }, T.MutableSeriesLToNull()));
+        if (maxMissing > 0) {
+          let colorPalettes = style_factory.StyleFactory.style.getOrderedPalettes(1);
+          let colorPalette = colorPalettes[$_get](0).makeShades(maxMissing);
+          seriesList[$forEach](dart.fn(series => {
+            let t0;
+            t0 = series;
+            t0.colorFn == null ? t0.colorFn = dart.fn(index => colorPalette[$_get](index), T.intLToColorL()) : null;
+          }, T.MutableSeriesLToNull()));
+        }
+      }
+      [_calculateInnerRadius](radius) {
+        if (this.config.arcRatio != null) {
+          return math.max(T.doubleL(), dart.notNull(radius) - dart.notNull(radius) * dart.notNull(this.config.arcRatio), 0.0)[$toDouble]();
+        } else if (this.config.arcWidth != null) {
+          return math.max(T.doubleL(), dart.notNull(radius) - dart.notNull(this.config.arcWidth), 0.0)[$toDouble]();
+        } else {
+          return 0.0;
+        }
+      }
+    }
+    (ArcRenderer._internal = function(opts) {
+      let t0, t0$;
+      let rendererId = opts && 'rendererId' in opts ? opts.rendererId : null;
+      let config = opts && 'config' in opts ? opts.config : null;
+      this[_chart] = null;
+      this[_seriesArcMap] = new (IdentityMapOfStringL$_AnimatedArcListLOfDL()).new();
+      this[_currentKeys] = T.JSArrayOfStringL().of([]);
+      this[config$] = config;
+      this[arcRendererDecorators] = (t0$ = (t0 = config, t0 == null ? null : t0.arcRendererDecorators), t0$ == null ? T.JSArrayOfArcRendererDecoratorL().of([]) : t0$);
+      ArcRenderer.__proto__.new.call(this, {rendererId: rendererId, layoutPaintOrder: config.layoutPaintOrder, symbolRenderer: config.symbolRenderer});
+      ;
+    }).prototype = ArcRenderer.prototype;
+    dart.addTypeTests(ArcRenderer);
+    ArcRenderer.prototype[_is_ArcRenderer_default] = true;
+    dart.addTypeCaches(ArcRenderer);
+    dart.setMethodSignature(ArcRenderer, () => ({
+      __proto__: dart.getMethods(ArcRenderer.__proto__),
+      update: dart.fnType(dart.void, [dart.legacy(core.Object), dart.legacy(core.bool)]),
+      paint: dart.fnType(dart.void, [dart.legacy(chart_canvas.ChartCanvas), dart.legacy(core.double)]),
+      getExpandedDatumDetails: dart.fnType(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))), [dart.legacy(core.Object)]),
+      [_getChartPosition]: dart.fnType(dart.legacy(math.Point$(dart.legacy(core.double))), [dart.legacy(core.String), dart.legacy(core.String)]),
+      getNearestDatumDetailPerSeries: dart.fnType(dart.legacy(core.List$(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))))), [dart.legacy(math.Point$(dart.legacy(core.double))), dart.legacy(core.bool), dart.legacy(math.Rectangle$(dart.legacy(core.int)))]),
+      addPositionToDetailsForSeriesDatum: dart.fnType(dart.legacy(datum_details.DatumDetails$(dart.legacy(D))), [dart.legacy(core.Object), dart.legacy(core.Object)]),
+      [_calculateInnerRadius]: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)])
+    }));
+    dart.setGetterSignature(ArcRenderer, () => ({
+      __proto__: dart.getGetters(ArcRenderer.__proto__),
+      isRtl: dart.legacy(core.bool),
+      centerContentBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int)))
+    }));
+    dart.setLibraryUri(ArcRenderer, I[2]);
+    dart.setFieldSignature(ArcRenderer, () => ({
+      __proto__: dart.getFields(ArcRenderer.__proto__),
+      config: dart.finalFieldType(dart.legacy(arc_renderer_config.ArcRendererConfig$(dart.legacy(D)))),
+      arcRendererDecorators: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(arc_renderer_decorator.ArcRendererDecorator)))),
+      [_chart]: dart.fieldType(dart.legacy(base_chart.BaseChart$(dart.legacy(D)))),
+      [_seriesArcMap]: dart.finalFieldType(dart.legacy(collection.LinkedHashMap$(dart.legacy(core.String), dart.legacy(arc_renderer._AnimatedArcList$(dart.legacy(D)))))),
+      [_currentKeys]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
+    }));
+    return ArcRenderer;
+  });
+  arc_renderer.ArcRenderer = arc_renderer.ArcRenderer$();
+  dart.defineLazy(arc_renderer.ArcRenderer, {
+    /*arc_renderer.ArcRenderer._cosPIOver4*/get _cosPIOver4() {
+      return math.cos(3.141592653589793 / 4);
+    }
+  }, true);
+  dart.addTypeTests(arc_renderer.ArcRenderer, _is_ArcRenderer_default);
+  var arcs = dart.privateName(arc_renderer, "ArcRendererElementList.arcs");
+  var center = dart.privateName(arc_renderer, "ArcRendererElementList.center");
+  var innerRadius = dart.privateName(arc_renderer, "ArcRendererElementList.innerRadius");
+  var radius = dart.privateName(arc_renderer, "ArcRendererElementList.radius");
+  var startAngle = dart.privateName(arc_renderer, "ArcRendererElementList.startAngle");
+  var stroke$ = dart.privateName(arc_renderer, "ArcRendererElementList.stroke");
+  var strokeWidthPx = dart.privateName(arc_renderer, "ArcRendererElementList.strokeWidthPx");
+  const _is_ArcRendererElementList_default = Symbol('_is_ArcRendererElementList_default');
+  arc_renderer.ArcRendererElementList$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var ArcRendererElementOfDL = () => (ArcRendererElementOfDL = dart.constFn(arc_renderer.ArcRendererElement$(DL())))();
+    var ArcRendererElementLOfDL = () => (ArcRendererElementLOfDL = dart.constFn(dart.legacy(ArcRendererElementOfDL())))();
+    var ListOfArcRendererElementLOfDL = () => (ListOfArcRendererElementLOfDL = dart.constFn(core.List$(ArcRendererElementLOfDL())))();
+    var ListLOfArcRendererElementLOfDL = () => (ListLOfArcRendererElementLOfDL = dart.constFn(dart.legacy(ListOfArcRendererElementLOfDL())))();
+    class ArcRendererElementList extends core.Object {
+      get arcs() {
+        return this[arcs];
+      }
+      set arcs(value) {
+        this[arcs] = ListLOfArcRendererElementLOfDL().as(value);
+      }
+      get center() {
+        return this[center];
+      }
+      set center(value) {
+        this[center] = value;
+      }
+      get innerRadius() {
+        return this[innerRadius];
+      }
+      set innerRadius(value) {
+        this[innerRadius] = value;
+      }
+      get radius() {
+        return this[radius];
+      }
+      set radius(value) {
+        this[radius] = value;
+      }
+      get startAngle() {
+        return this[startAngle];
+      }
+      set startAngle(value) {
+        this[startAngle] = value;
+      }
+      get stroke() {
+        return this[stroke$];
+      }
+      set stroke(value) {
+        this[stroke$] = value;
+      }
+      get strokeWidthPx() {
+        return this[strokeWidthPx];
+      }
+      set strokeWidthPx(value) {
+        this[strokeWidthPx] = value;
+      }
+    }
+    (ArcRendererElementList.new = function() {
+      this[arcs] = null;
+      this[center] = null;
+      this[innerRadius] = null;
+      this[radius] = null;
+      this[startAngle] = null;
+      this[stroke$] = null;
+      this[strokeWidthPx] = null;
+      ;
+    }).prototype = ArcRendererElementList.prototype;
+    dart.addTypeTests(ArcRendererElementList);
+    ArcRendererElementList.prototype[_is_ArcRendererElementList_default] = true;
+    dart.addTypeCaches(ArcRendererElementList);
+    dart.setLibraryUri(ArcRendererElementList, I[2]);
+    dart.setFieldSignature(ArcRendererElementList, () => ({
+      __proto__: dart.getFields(ArcRendererElementList.__proto__),
+      arcs: dart.fieldType(dart.legacy(core.List$(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D)))))),
+      center: dart.fieldType(dart.legacy(math.Point$(dart.legacy(core.double)))),
+      innerRadius: dart.fieldType(dart.legacy(core.double)),
+      radius: dart.fieldType(dart.legacy(core.double)),
+      startAngle: dart.fieldType(dart.legacy(core.double)),
+      stroke: dart.fieldType(dart.legacy(color.Color)),
+      strokeWidthPx: dart.fieldType(dart.legacy(core.double))
+    }));
+    return ArcRendererElementList;
+  });
+  arc_renderer.ArcRendererElementList = arc_renderer.ArcRendererElementList$();
+  dart.addTypeTests(arc_renderer.ArcRendererElementList, _is_ArcRendererElementList_default);
+  var startAngle$0 = dart.privateName(arc_renderer, "ArcRendererElement.startAngle");
+  var endAngle = dart.privateName(arc_renderer, "ArcRendererElement.endAngle");
+  var color$ = dart.privateName(arc_renderer, "ArcRendererElement.color");
+  var index = dart.privateName(arc_renderer, "ArcRendererElement.index");
+  var key = dart.privateName(arc_renderer, "ArcRendererElement.key");
+  var domain = dart.privateName(arc_renderer, "ArcRendererElement.domain");
+  var series$ = dart.privateName(arc_renderer, "ArcRendererElement.series");
+  const _is_ArcRendererElement_default = Symbol('_is_ArcRendererElement_default');
+  arc_renderer.ArcRendererElement$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    var ArcRendererElementOfDL = () => (ArcRendererElementOfDL = dart.constFn(arc_renderer.ArcRendererElement$(DL())))();
+    class ArcRendererElement extends core.Object {
+      get startAngle() {
+        return this[startAngle$0];
+      }
+      set startAngle(value) {
+        this[startAngle$0] = value;
+      }
+      get endAngle() {
+        return this[endAngle];
+      }
+      set endAngle(value) {
+        this[endAngle] = value;
+      }
+      get color() {
+        return this[color$];
+      }
+      set color(value) {
+        this[color$] = value;
+      }
+      get index() {
+        return this[index];
+      }
+      set index(value) {
+        this[index] = value;
+      }
+      get key() {
+        return this[key];
+      }
+      set key(value) {
+        this[key] = value;
+      }
+      get domain() {
+        return this[domain];
+      }
+      set domain(value) {
+        this[domain] = DL().as(value);
+      }
+      get series() {
+        return this[series$];
+      }
+      set series(value) {
+        this[series$] = ImmutableSeriesLOfDL().as(value);
+      }
+      clone() {
+        let t0;
+        t0 = new (ArcRendererElementOfDL()).new();
+        return (() => {
+          t0.startAngle = this.startAngle;
+          t0.endAngle = this.endAngle;
+          t0.color = new color.Color.fromOther({color: this.color});
+          t0.index = this.index;
+          t0.key = this.key;
+          t0.series = this.series;
+          return t0;
+        })();
+      }
+      updateAnimationPercent(previous, target, animationPercent) {
+        this.startAngle = (dart.notNull(target.startAngle) - dart.notNull(previous.startAngle)) * dart.notNull(animationPercent) + dart.notNull(previous.startAngle);
+        this.endAngle = (dart.notNull(target.endAngle) - dart.notNull(previous.endAngle)) * dart.notNull(animationPercent) + dart.notNull(previous.endAngle);
+        this.color = chart_canvas.getAnimatedColor(previous.color, target.color, animationPercent);
+      }
+    }
+    (ArcRendererElement.new = function() {
+      this[startAngle$0] = null;
+      this[endAngle] = null;
+      this[color$] = null;
+      this[index] = null;
+      this[key] = null;
+      this[domain] = null;
+      this[series$] = null;
+      ;
+    }).prototype = ArcRendererElement.prototype;
+    dart.addTypeTests(ArcRendererElement);
+    ArcRendererElement.prototype[_is_ArcRendererElement_default] = true;
+    dart.addTypeCaches(ArcRendererElement);
+    dart.setMethodSignature(ArcRendererElement, () => ({
+      __proto__: dart.getMethods(ArcRendererElement.__proto__),
+      clone: dart.fnType(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D))), []),
+      updateAnimationPercent: dart.fnType(dart.void, [dart.legacy(arc_renderer.ArcRendererElement), dart.legacy(arc_renderer.ArcRendererElement), dart.legacy(core.double)])
+    }));
+    dart.setLibraryUri(ArcRendererElement, I[2]);
+    dart.setFieldSignature(ArcRendererElement, () => ({
+      __proto__: dart.getFields(ArcRendererElement.__proto__),
+      startAngle: dart.fieldType(dart.legacy(core.double)),
+      endAngle: dart.fieldType(dart.legacy(core.double)),
+      color: dart.fieldType(dart.legacy(color.Color)),
+      index: dart.fieldType(dart.legacy(core.int)),
+      key: dart.fieldType(dart.legacy(core.num)),
+      domain: dart.fieldType(dart.legacy(D)),
+      series: dart.fieldType(dart.legacy(processed_series.ImmutableSeries$(dart.legacy(D))))
+    }));
+    return ArcRendererElement;
+  });
+  arc_renderer.ArcRendererElement = arc_renderer.ArcRendererElement$();
+  dart.addTypeTests(arc_renderer.ArcRendererElement, _is_ArcRendererElement_default);
+  var arcs$ = dart.privateName(arc_renderer, "_AnimatedArcList.arcs");
+  var series$0 = dart.privateName(arc_renderer, "_AnimatedArcList.series");
+  const _is__AnimatedArcList_default = Symbol('_is__AnimatedArcList_default');
+  arc_renderer._AnimatedArcList$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var _AnimatedArcOfDL = () => (_AnimatedArcOfDL = dart.constFn(arc_renderer._AnimatedArc$(DL())))();
+    var _AnimatedArcLOfDL = () => (_AnimatedArcLOfDL = dart.constFn(dart.legacy(_AnimatedArcOfDL())))();
+    var JSArrayOf_AnimatedArcLOfDL = () => (JSArrayOf_AnimatedArcLOfDL = dart.constFn(_interceptors.JSArray$(_AnimatedArcLOfDL())))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    class _AnimatedArcList extends core.Object {
+      get arcs() {
+        return this[arcs$];
+      }
+      set arcs(value) {
+        super.arcs = value;
+      }
+      get series() {
+        return this[series$0];
+      }
+      set series(value) {
+        this[series$0] = ImmutableSeriesLOfDL().as(value);
+      }
+    }
+    (_AnimatedArcList.new = function() {
+      this[arcs$] = JSArrayOf_AnimatedArcLOfDL().of([]);
+      this.center = null;
+      this.innerRadius = null;
+      this.radius = null;
+      this[series$0] = null;
+      this.stroke = null;
+      this.strokeWidthPx = null;
+      ;
+    }).prototype = _AnimatedArcList.prototype;
+    dart.addTypeTests(_AnimatedArcList);
+    _AnimatedArcList.prototype[_is__AnimatedArcList_default] = true;
+    dart.addTypeCaches(_AnimatedArcList);
+    dart.setLibraryUri(_AnimatedArcList, I[2]);
+    dart.setFieldSignature(_AnimatedArcList, () => ({
+      __proto__: dart.getFields(_AnimatedArcList.__proto__),
+      arcs: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(arc_renderer._AnimatedArc$(dart.legacy(D)))))),
+      center: dart.fieldType(dart.legacy(math.Point$(dart.legacy(core.double)))),
+      innerRadius: dart.fieldType(dart.legacy(core.double)),
+      radius: dart.fieldType(dart.legacy(core.double)),
+      series: dart.fieldType(dart.legacy(processed_series.ImmutableSeries$(dart.legacy(D)))),
+      stroke: dart.fieldType(dart.legacy(color.Color)),
+      strokeWidthPx: dart.fieldType(dart.legacy(core.double))
+    }));
+    return _AnimatedArcList;
+  });
+  arc_renderer._AnimatedArcList = arc_renderer._AnimatedArcList$();
+  dart.addTypeTests(arc_renderer._AnimatedArcList, _is__AnimatedArcList_default);
+  var domain$ = dart.privateName(arc_renderer, "_AnimatedArc.domain");
+  var _previousArc = dart.privateName(arc_renderer, "_previousArc");
+  var _targetArc = dart.privateName(arc_renderer, "_targetArc");
+  var _currentArc = dart.privateName(arc_renderer, "_currentArc");
+  const _is__AnimatedArc_default = Symbol('_is__AnimatedArc_default');
+  arc_renderer._AnimatedArc$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var ArcRendererElementOfDL = () => (ArcRendererElementOfDL = dart.constFn(arc_renderer.ArcRendererElement$(DL())))();
+    var ArcRendererElementLOfDL = () => (ArcRendererElementLOfDL = dart.constFn(dart.legacy(ArcRendererElementOfDL())))();
+    class _AnimatedArc extends core.Object {
+      get domain() {
+        return this[domain$];
+      }
+      set domain(value) {
+        this[domain$] = DL().as(value);
+      }
+      animateOut(endAngle) {
+        let newTarget = this[_currentArc].clone();
+        newTarget.startAngle = T.doubleL().as(endAngle);
+        newTarget.endAngle = T.doubleL().as(endAngle);
+        this.setNewTarget(newTarget);
+        this.animatingOut = true;
+      }
+      setNewTarget(newTarget) {
+        ArcRendererElementLOfDL().as(newTarget);
+        this.animatingOut = false;
+        this[_currentArc] == null ? this[_currentArc] = newTarget.clone() : null;
+        this[_previousArc] = this[_currentArc].clone();
+        this[_targetArc] = newTarget;
+      }
+      getCurrentArc(animationPercent) {
+        if (animationPercent === 1.0 || this[_previousArc] == null) {
+          this[_currentArc] = this[_targetArc];
+          this[_previousArc] = this[_targetArc];
+          return this[_currentArc];
+        }
+        this[_currentArc].updateAnimationPercent(this[_previousArc], this[_targetArc], animationPercent);
+        return this[_currentArc];
+      }
+      get newTargetArcStartAngle() {
+        return this[_targetArc] != null ? this[_targetArc].startAngle : null;
+      }
+      get currentArcEndAngle() {
+        return this[_currentArc] != null ? this[_currentArc].endAngle : null;
+      }
+      get currentArcStartAngle() {
+        return this[_currentArc] != null ? this[_currentArc].startAngle : null;
+      }
+      get previousArcEndAngle() {
+        return this[_previousArc] != null ? this[_previousArc].endAngle : null;
+      }
+      get previousArcStartAngle() {
+        return this[_previousArc] != null ? this[_previousArc].startAngle : null;
+      }
+    }
+    (_AnimatedArc.new = function(key, datum, domain) {
+      this[_previousArc] = null;
+      this[_targetArc] = null;
+      this[_currentArc] = null;
+      this.animatingOut = false;
+      this.key = key;
+      this.datum = datum;
+      this[domain$] = domain;
+      ;
+    }).prototype = _AnimatedArc.prototype;
+    dart.addTypeTests(_AnimatedArc);
+    _AnimatedArc.prototype[_is__AnimatedArc_default] = true;
+    dart.addTypeCaches(_AnimatedArc);
+    dart.setMethodSignature(_AnimatedArc, () => ({
+      __proto__: dart.getMethods(_AnimatedArc.__proto__),
+      animateOut: dart.fnType(dart.void, [dart.dynamic]),
+      setNewTarget: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      getCurrentArc: dart.fnType(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D))), [dart.legacy(core.double)])
+    }));
+    dart.setGetterSignature(_AnimatedArc, () => ({
+      __proto__: dart.getGetters(_AnimatedArc.__proto__),
+      newTargetArcStartAngle: dart.legacy(core.double),
+      currentArcEndAngle: dart.legacy(core.double),
+      currentArcStartAngle: dart.legacy(core.double),
+      previousArcEndAngle: dart.legacy(core.double),
+      previousArcStartAngle: dart.legacy(core.double)
+    }));
+    dart.setLibraryUri(_AnimatedArc, I[2]);
+    dart.setFieldSignature(_AnimatedArc, () => ({
+      __proto__: dart.getFields(_AnimatedArc.__proto__),
+      key: dart.finalFieldType(dart.legacy(core.String)),
+      datum: dart.fieldType(dart.dynamic),
+      domain: dart.fieldType(dart.legacy(D)),
+      [_previousArc]: dart.fieldType(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D)))),
+      [_targetArc]: dart.fieldType(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D)))),
+      [_currentArc]: dart.fieldType(dart.legacy(arc_renderer.ArcRendererElement$(dart.legacy(D)))),
+      animatingOut: dart.fieldType(dart.legacy(core.bool))
+    }));
+    return _AnimatedArc;
+  });
+  arc_renderer._AnimatedArc = arc_renderer._AnimatedArc$();
+  dart.addTypeTests(arc_renderer._AnimatedArc, _is__AnimatedArc_default);
+  var TypedKey_uniqueKey = dart.privateName(typed_registry, "TypedKey.uniqueKey");
+  dart.defineLazy(arc_renderer, {
+    /*arc_renderer.arcElementsKey*/get arcElementsKey() {
+      return C[1] || CT.C1;
+    }
+  }, true);
+  dart.trackLibraries("packages/charts_common/src/chart/pie/arc_renderer_decorator.dart", {
+    "package:charts_common/src/chart/pie/arc_renderer_decorator.dart": arc_renderer_decorator,
+    "package:charts_common/src/chart/pie/arc_renderer_config.dart": arc_renderer_config,
+    "package:charts_common/src/chart/pie/arc_renderer.dart": arc_renderer
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["arc_renderer_decorator.dart","arc_renderer_config.dart","arc_renderer.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../D:/packages/charts_common/src/chart/pie/arc_renderer_decorator.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__pie__arc_renderer_decorator: arc_renderer_decorator,
+    src__chart__pie__arc_renderer_config: arc_renderer_config,
+    src__chart__pie__arc_renderer: arc_renderer
+  };
+}));
+
+//# sourceMappingURL=arc_renderer_decorator.dart.lib.js.map

@@ -1,4 +1,4 @@
-#Sat Jul 17 12:49:55 IST 2021
-base.0=/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/app/intermediates/transforms/dexMerger/debug/0
-renamed.0=classes.dex
+#Sun Jul 18 23:45:51 IST 2021
+base.0=D\:\\Nitte-Hostel\\student_hostel\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
+renamed.0=classes.dex

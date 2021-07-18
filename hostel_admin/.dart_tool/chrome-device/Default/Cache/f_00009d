@@ -1,0 +1,354 @@
+define(['dart_sdk', 'packages/charts_flutter/src/widget_layout_delegate.dart', 'packages/charts_common/src/chart/common/behavior/chart_behavior.dart', 'packages/charts_flutter/src/behaviors/legend/legend_layout.dart', 'packages/charts_flutter/src/behaviors/legend/legend_content_builder.dart', 'packages/charts_common/src/chart/common/selection_model/selection_model.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry_generator.dart', 'packages/charts_common/src/chart/common/behavior/legend/datum_legend.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry.dart', 'packages/charts_flutter/src/behaviors/legend/legend.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__charts_flutter__src__behaviors__legend__datum_legend_dart(dart_sdk, packages__charts_flutter__src__widget_layout_delegate$46dart, packages__charts_common__src__chart__common__behavior__chart_behavior$46dart, packages__charts_flutter__src__behaviors__legend__legend_layout$46dart, packages__charts_flutter__src__behaviors__legend__legend_content_builder$46dart, packages__charts_common__src__chart__common__selection_model__selection_model$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart, packages__charts_common__src__chart__common__behavior__legend__datum_legend$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart, packages__charts_flutter__src__behaviors__legend__legend$46dart, packages__flutter__src__widgets__widget_span$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const collection = dart_sdk.collection;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const chart_behavior = packages__charts_flutter__src__widget_layout_delegate$46dart.src__behaviors__chart_behavior;
+  const chart_container = packages__charts_flutter__src__widget_layout_delegate$46dart.src__chart_container;
+  const chart_behavior$ = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__behavior__chart_behavior;
+  const legend_layout = packages__charts_flutter__src__behaviors__legend__legend_layout$46dart.src__behaviors__legend__legend_layout;
+  const legend_content_builder = packages__charts_flutter__src__behaviors__legend__legend_content_builder$46dart.src__behaviors__legend__legend_content_builder;
+  const selection_model = packages__charts_common__src__chart__common__selection_model__selection_model$46dart.src__chart__common__selection_model__selection_model;
+  const legend_entry_generator = packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart.src__chart__common__behavior__legend__legend_entry_generator;
+  const datum_legend = packages__charts_common__src__chart__common__behavior__legend__datum_legend$46dart.src__chart__common__behavior__legend__datum_legend;
+  const axis_spec = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__spec__axis_spec;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const legend_entry = packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart.src__chart__common__behavior__legend__legend_entry;
+  const legend = packages__charts_flutter__src__behaviors__legend__legend$46dart.src__behaviors__legend__legend;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  var datum_legend$ = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  var $any = dartx.any;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    GestureTypeL: () => (T.GestureTypeL = dart.constFn(dart.legacy(chart_behavior.GestureType)))(),
+    _HashSetOfGestureTypeL: () => (T._HashSetOfGestureTypeL = dart.constFn(collection._HashSet$(T.GestureTypeL())))(),
+    DatumLegendL: () => (T.DatumLegendL = dart.constFn(dart.legacy(datum_legend.DatumLegend)))(),
+    _FlutterDatumLegendL: () => (T._FlutterDatumLegendL = dart.constFn(dart.legacy(datum_legend$._FlutterDatumLegend)))(),
+    DatumLegendL$1: () => (T.DatumLegendL$1 = dart.constFn(dart.legacy(datum_legend$.DatumLegend)))(),
+    ChartContainerRenderObjectL: () => (T.ChartContainerRenderObjectL = dart.constFn(dart.legacy(chart_container.ChartContainerRenderObject)))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: chart_behavior$.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.top",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: chart_behavior$.OutsideJustification.prototype,
+        [_name]: "OutsideJustification.startDrawArea",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: chart_behavior$.InsideJustification.prototype,
+        [_name]: "InsideJustification.topStart",
+        index: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 8
+      });
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = ["package:charts_flutter/src/behaviors/legend/datum_legend.dart"];
+  var desiredGestures = dart.privateName(datum_legend$, "DatumLegend.desiredGestures");
+  var selectionModelType$ = dart.privateName(datum_legend$, "DatumLegend.selectionModelType");
+  var contentBuilder$ = dart.privateName(datum_legend$, "DatumLegend.contentBuilder");
+  var position$ = dart.privateName(datum_legend$, "DatumLegend.position");
+  var outsideJustification$ = dart.privateName(datum_legend$, "DatumLegend.outsideJustification");
+  var insideJustification$ = dart.privateName(datum_legend$, "DatumLegend.insideJustification");
+  var showMeasures$ = dart.privateName(datum_legend$, "DatumLegend.showMeasures");
+  var legendDefaultMeasure$ = dart.privateName(datum_legend$, "DatumLegend.legendDefaultMeasure");
+  var measureFormatter$ = dart.privateName(datum_legend$, "DatumLegend.measureFormatter");
+  var secondaryMeasureFormatter$ = dart.privateName(datum_legend$, "DatumLegend.secondaryMeasureFormatter");
+  var entryTextStyle$ = dart.privateName(datum_legend$, "DatumLegend.entryTextStyle");
+  var _name = dart.privateName(chart_behavior$, "_name");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  datum_legend$.DatumLegend = class DatumLegend extends chart_behavior.ChartBehavior$(dart.legacy(datum_legend.DatumLegend)) {
+    get desiredGestures() {
+      return this[desiredGestures];
+    }
+    set desiredGestures(value) {
+      super.desiredGestures = value;
+    }
+    get selectionModelType() {
+      return this[selectionModelType$];
+    }
+    set selectionModelType(value) {
+      super.selectionModelType = value;
+    }
+    get contentBuilder() {
+      return this[contentBuilder$];
+    }
+    set contentBuilder(value) {
+      super.contentBuilder = value;
+    }
+    get position() {
+      return this[position$];
+    }
+    set position(value) {
+      super.position = value;
+    }
+    get outsideJustification() {
+      return this[outsideJustification$];
+    }
+    set outsideJustification(value) {
+      super.outsideJustification = value;
+    }
+    get insideJustification() {
+      return this[insideJustification$];
+    }
+    set insideJustification(value) {
+      super.insideJustification = value;
+    }
+    get showMeasures() {
+      return this[showMeasures$];
+    }
+    set showMeasures(value) {
+      super.showMeasures = value;
+    }
+    get legendDefaultMeasure() {
+      return this[legendDefaultMeasure$];
+    }
+    set legendDefaultMeasure(value) {
+      super.legendDefaultMeasure = value;
+    }
+    get measureFormatter() {
+      return this[measureFormatter$];
+    }
+    set measureFormatter(value) {
+      super.measureFormatter = value;
+    }
+    get secondaryMeasureFormatter() {
+      return this[secondaryMeasureFormatter$];
+    }
+    set secondaryMeasureFormatter(value) {
+      super.secondaryMeasureFormatter = value;
+    }
+    get entryTextStyle() {
+      return this[entryTextStyle$];
+    }
+    set entryTextStyle(value) {
+      super.entryTextStyle = value;
+    }
+    static new(opts) {
+      let t0, t0$;
+      let position = opts && 'position' in opts ? opts.position : null;
+      let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+      let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+      let horizontalFirst = opts && 'horizontalFirst' in opts ? opts.horizontalFirst : null;
+      let desiredMaxRows = opts && 'desiredMaxRows' in opts ? opts.desiredMaxRows : null;
+      let desiredMaxColumns = opts && 'desiredMaxColumns' in opts ? opts.desiredMaxColumns : null;
+      let cellPadding = opts && 'cellPadding' in opts ? opts.cellPadding : null;
+      let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+      let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+      let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+      let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+      let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+      position == null ? position = datum_legend$.DatumLegend.defaultBehaviorPosition : null;
+      outsideJustification == null ? outsideJustification = datum_legend$.DatumLegend.defaultOutsideJustification : null;
+      insideJustification == null ? insideJustification = datum_legend$.DatumLegend.defaultInsideJustification : null;
+      cellPadding == null ? cellPadding = datum_legend$.DatumLegend.defaultCellPadding : null;
+      horizontalFirst == null ? horizontalFirst = position == chart_behavior$.BehaviorPosition.top || position == chart_behavior$.BehaviorPosition.bottom || position == chart_behavior$.BehaviorPosition.inside : null;
+      let layoutBuilder = dart.test(horizontalFirst) ? legend_layout.TabularLegendLayout.horizontalFirst({desiredMaxColumns: desiredMaxColumns, cellPadding: cellPadding}) : legend_layout.TabularLegendLayout.verticalFirst({desiredMaxRows: desiredMaxRows, cellPadding: cellPadding});
+      return new datum_legend$.DatumLegend._internal({contentBuilder: new legend_content_builder.TabularLegendContentBuilder.new({legendLayout: layoutBuilder}), selectionModelType: selection_model.SelectionModelType.info, position: position, outsideJustification: outsideJustification, insideJustification: insideJustification, showMeasures: (t0 = showMeasures, t0 == null ? false : t0), legendDefaultMeasure: (t0$ = legendDefaultMeasure, t0$ == null ? legend_entry_generator.LegendDefaultMeasure.none : t0$), measureFormatter: measureFormatter, secondaryMeasureFormatter: secondaryMeasureFormatter, entryTextStyle: entryTextStyle});
+    }
+    static customLayout(contentBuilder, opts) {
+      let t0, t0$;
+      let position = opts && 'position' in opts ? opts.position : null;
+      let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+      let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+      let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+      let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+      let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+      let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+      let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+      position == null ? position = datum_legend$.DatumLegend.defaultBehaviorPosition : null;
+      outsideJustification == null ? outsideJustification = datum_legend$.DatumLegend.defaultOutsideJustification : null;
+      insideJustification == null ? insideJustification = datum_legend$.DatumLegend.defaultInsideJustification : null;
+      return new datum_legend$.DatumLegend._internal({contentBuilder: contentBuilder, selectionModelType: selection_model.SelectionModelType.info, position: position, outsideJustification: outsideJustification, insideJustification: insideJustification, showMeasures: (t0 = showMeasures, t0 == null ? false : t0), legendDefaultMeasure: (t0$ = legendDefaultMeasure, t0$ == null ? legend_entry_generator.LegendDefaultMeasure.none : t0$), measureFormatter: measureFormatter, secondaryMeasureFormatter: secondaryMeasureFormatter, entryTextStyle: entryTextStyle});
+    }
+    createCommonBehavior(D) {
+      return new (datum_legend$._FlutterDatumLegend$(dart.legacy(D))).new(this);
+    }
+    updateCommonBehavior(commonBehavior) {
+      T.DatumLegendL().as(commonBehavior);
+      T._FlutterDatumLegendL().as(commonBehavior).config = this;
+    }
+    get role() {
+      return "legend";
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.DatumLegendL$1().is(o) && this.selectionModelType == o.selectionModelType && dart.equals(this.contentBuilder, o.contentBuilder) && this.position == o.position && this.outsideJustification == o.outsideJustification && this.insideJustification == o.insideJustification && this.showMeasures == o.showMeasures && this.legendDefaultMeasure == o.legendDefaultMeasure && dart.equals(this.measureFormatter, o.measureFormatter) && dart.equals(this.secondaryMeasureFormatter, o.secondaryMeasureFormatter) && dart.equals(this.entryTextStyle, o.entryTextStyle);
+    }
+    get hashCode() {
+      return ui.hashValues(this.selectionModelType, this.contentBuilder, this.position, this.outsideJustification, this.insideJustification, this.showMeasures, this.legendDefaultMeasure, this.measureFormatter, this.secondaryMeasureFormatter, this.entryTextStyle);
+    }
+  };
+  (datum_legend$.DatumLegend._internal = function(opts) {
+    let contentBuilder = opts && 'contentBuilder' in opts ? opts.contentBuilder : null;
+    let selectionModelType = opts && 'selectionModelType' in opts ? opts.selectionModelType : null;
+    let position = opts && 'position' in opts ? opts.position : null;
+    let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+    let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+    let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+    let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+    let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+    let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+    let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+    this[desiredGestures] = new (T._HashSetOfGestureTypeL()).new();
+    this[contentBuilder$] = contentBuilder;
+    this[selectionModelType$] = selectionModelType;
+    this[position$] = position;
+    this[outsideJustification$] = outsideJustification;
+    this[insideJustification$] = insideJustification;
+    this[showMeasures$] = showMeasures;
+    this[legendDefaultMeasure$] = legendDefaultMeasure;
+    this[measureFormatter$] = measureFormatter;
+    this[secondaryMeasureFormatter$] = secondaryMeasureFormatter;
+    this[entryTextStyle$] = entryTextStyle;
+    ;
+  }).prototype = datum_legend$.DatumLegend.prototype;
+  dart.addTypeTests(datum_legend$.DatumLegend);
+  dart.addTypeCaches(datum_legend$.DatumLegend);
+  dart.setMethodSignature(datum_legend$.DatumLegend, () => ({
+    __proto__: dart.getMethods(datum_legend$.DatumLegend.__proto__),
+    createCommonBehavior: dart.gFnType(D => [dart.legacy(datum_legend.DatumLegend$(dart.legacy(D))), []]),
+    updateCommonBehavior: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(datum_legend$.DatumLegend, () => ({
+    __proto__: dart.getGetters(datum_legend$.DatumLegend.__proto__),
+    role: dart.legacy(core.String),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(datum_legend$.DatumLegend, I[0]);
+  dart.setFieldSignature(datum_legend$.DatumLegend, () => ({
+    __proto__: dart.getFields(datum_legend$.DatumLegend.__proto__),
+    desiredGestures: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(chart_behavior.GestureType)))),
+    selectionModelType: dart.finalFieldType(dart.legacy(selection_model.SelectionModelType)),
+    contentBuilder: dart.finalFieldType(dart.legacy(legend_content_builder.LegendContentBuilder)),
+    position: dart.finalFieldType(dart.legacy(chart_behavior$.BehaviorPosition)),
+    outsideJustification: dart.finalFieldType(dart.legacy(chart_behavior$.OutsideJustification)),
+    insideJustification: dart.finalFieldType(dart.legacy(chart_behavior$.InsideJustification)),
+    showMeasures: dart.finalFieldType(dart.legacy(core.bool)),
+    legendDefaultMeasure: dart.finalFieldType(dart.legacy(legend_entry_generator.LegendDefaultMeasure)),
+    measureFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+    secondaryMeasureFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+    entryTextStyle: dart.finalFieldType(dart.legacy(axis_spec.TextStyleSpec))
+  }));
+  dart.defineExtensionMethods(datum_legend$.DatumLegend, ['_equals']);
+  dart.defineExtensionAccessors(datum_legend$.DatumLegend, ['hashCode']);
+  dart.defineLazy(datum_legend$.DatumLegend, {
+    /*datum_legend$.DatumLegend.defaultBehaviorPosition*/get defaultBehaviorPosition() {
+      return C[0] || CT.C0;
+    },
+    /*datum_legend$.DatumLegend.defaultOutsideJustification*/get defaultOutsideJustification() {
+      return C[1] || CT.C1;
+    },
+    /*datum_legend$.DatumLegend.defaultInsideJustification*/get defaultInsideJustification() {
+      return C[2] || CT.C2;
+    },
+    /*datum_legend$.DatumLegend.defaultCellPadding*/get defaultCellPadding() {
+      return C[3] || CT.C3;
+    }
+  }, true);
+  const _is__FlutterDatumLegend_default = Symbol('_is__FlutterDatumLegend_default');
+  datum_legend$._FlutterDatumLegend$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var LegendEntryOfDL = () => (LegendEntryOfDL = dart.constFn(legend_entry.LegendEntry$(DL())))();
+    var LegendEntryLOfDL = () => (LegendEntryLOfDL = dart.constFn(dart.legacy(LegendEntryOfDL())))();
+    var LegendEntryLOfDLToboolL = () => (LegendEntryLOfDLToboolL = dart.constFn(dart.fnType(T.boolL(), [LegendEntryLOfDL()])))();
+    const entryTextStyle = Symbol("entryTextStyle");
+    class _FlutterDatumLegend extends datum_legend.DatumLegend$(dart.legacy(D)) {
+      updateLegend() {
+        T.ChartContainerRenderObjectL().as(this.chartContext).requestRebuild();
+      }
+      get position() {
+        return this.config.position;
+      }
+      get outsideJustification() {
+        return this.config.outsideJustification;
+      }
+      set outsideJustification(value) {
+        super.outsideJustification = value;
+      }
+      get insideJustification() {
+        return this.config.insideJustification;
+      }
+      set insideJustification(value) {
+        super.insideJustification = value;
+      }
+      build(context) {
+        let hasSelection = this.legendState.legendEntries[$any](dart.fn(entry => entry.isSelected, LegendEntryLOfDLToboolL()));
+        let showMeasures = dart.test(this.config.showMeasures) && (dart.test(hasSelection) || this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none);
+        return this.config.contentBuilder.build(context, this.legendState, this, {showMeasures: showMeasures});
+      }
+      onLegendEntryTapUp(detail) {
+      }
+      set [entryTextStyle](x) {
+        super.entryTextStyle = x;
+      }
+    }
+    (_FlutterDatumLegend.new = function(config) {
+      this.config = config;
+      _FlutterDatumLegend.__proto__.new.call(this, {selectionModelType: config.selectionModelType, measureFormatter: config.measureFormatter, secondaryMeasureFormatter: config.secondaryMeasureFormatter, legendDefaultMeasure: config.legendDefaultMeasure});
+      this[entryTextStyle] = this.config.entryTextStyle;
+    }).prototype = _FlutterDatumLegend.prototype;
+    dart.addTypeTests(_FlutterDatumLegend);
+    _FlutterDatumLegend.prototype[_is__FlutterDatumLegend_default] = true;
+    dart.addTypeCaches(_FlutterDatumLegend);
+    _FlutterDatumLegend[dart.implements] = () => [chart_behavior.BuildableBehavior$(dart.legacy(chart_behavior$.ChartBehavior)), legend.TappableLegend];
+    dart.setMethodSignature(_FlutterDatumLegend, () => ({
+      __proto__: dart.getMethods(_FlutterDatumLegend.__proto__),
+      build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+      onLegendEntryTapUp: dart.fnType(dart.dynamic, [dart.legacy(legend_entry.LegendEntry)])
+    }));
+    dart.setGetterSignature(_FlutterDatumLegend, () => ({
+      __proto__: dart.getGetters(_FlutterDatumLegend.__proto__),
+      position: dart.legacy(chart_behavior$.BehaviorPosition)
+    }));
+    dart.setLibraryUri(_FlutterDatumLegend, I[0]);
+    dart.setFieldSignature(_FlutterDatumLegend, () => ({
+      __proto__: dart.getFields(_FlutterDatumLegend.__proto__),
+      config: dart.fieldType(dart.legacy(datum_legend$.DatumLegend))
+    }));
+    return _FlutterDatumLegend;
+  });
+  datum_legend$._FlutterDatumLegend = datum_legend$._FlutterDatumLegend$();
+  dart.addTypeTests(datum_legend$._FlutterDatumLegend, _is__FlutterDatumLegend_default);
+  dart.trackLibraries("packages/charts_flutter/src/behaviors/legend/datum_legend.dart", {
+    "package:charts_flutter/src/behaviors/legend/datum_legend.dart": datum_legend$
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["datum_legend.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAgDQ;;;;;;IAE0B;;;;;;IAGL;;;;;;IAGG;;;;;;IAGI;;;;;;IACD;;;;;;IAWtB;;;;;;IAMuB;;;;;;IAGJ;;;;;;IAIA;;;;;;IAGH;;;;;;;;UA0CD;UACI;UACD;UACtB;UACD;UACA;UACO;UACN;UACuB;UACJ;UACA;UACH;AAGe,MAApC,AAAS,QAAD,WAAR,WAAa,oDAAJ;AAC2C,MAApD,AAAqB,oBAAD,WAApB,uBAAyB,wDAAJ;AAC6B,MAAlD,AAAoB,mBAAD,WAAnB,sBAAwB,uDAAJ;AACc,MAAlC,AAAY,WAAD,WAAX,cAAgB,+CAAJ;AAMmC,MAF/C,AAAgB,eAAD,WAAf,kBAAqB,AAAS,AACiB,QADlB,IAA4B,wCACrD,AAAS,QAAD,IAA4B,2CACpC,AAAS,QAAD,IAA4B,0CAFxB;AAGV,oCAAgB,eAAe,IAC3B,sEACiB,iBAAiB,eAAe,WAAW,KAC5D,iEACc,cAAc,eAAe,WAAW;AAEhE,YAAW,0DAEC,0EAA0C,aAAa,wBACjB,mDACpC,QAAQ,wBACI,oBAAoB,uBACrB,mBAAmB,iBACb,KAAb,YAAY,EAAZ,aAAgB,oCAEL,MAArB,oBAAoB,EAApB,cAAoD,2EACtC,gBAAgB,6BACP,yBAAyB,kBACpC,cAAc;IACpC;wBA8BuB;;UACG;UACI;UACD;UACtB;UACuB;UACJ;UACA;UACH;AAGe,MAApC,AAAS,QAAD,WAAR,WAAa,oDAAJ;AAC2C,MAApD,AAAqB,oBAAD,WAApB,uBAAyB,wDAAJ;AAC6B,MAAlD,AAAoB,mBAAD,WAAnB,sBAAwB,uDAAJ;AAEpB,YAAW,0DACO,cAAc,sBACgB,mDACpC,QAAQ,wBACI,oBAAoB,uBACrB,mBAAmB,iBACb,KAAb,YAAY,EAAZ,aAAgB,oCAEL,MAArB,oBAAoB,EAApB,cAAoD,2EACtC,gBAAgB,6BACP,yBAAyB,kBACpC,cAAc;IAElC;;AAiBI,YAAI,8DAAuB;IAAK;;0BAGS;AACU,MAArC,AAAwB,4BAAvC,cAAc,WAAkC;IACnD;;AAKmB;IAAQ;;UAGH;AACtB,YAAS,AASoD,uBATtD,CAAC,KACJ,AAAmB,2BAAG,AAAE,CAAD,uBACR,YAAf,qBAAkB,AAAE,CAAD,oBACnB,AAAS,iBAAG,AAAE,CAAD,aACb,AAAqB,6BAAG,AAAE,CAAD,yBACzB,AAAoB,4BAAG,AAAE,CAAD,wBACxB,AAAa,qBAAG,AAAE,CAAD,iBACjB,AAAqB,6BAAG,AAAE,CAAD,yBACR,YAAjB,uBAAoB,AAAE,CAAD,sBACK,YAA1B,gCAA6B,AAAE,CAAD,+BACf,YAAf,qBAAkB,AAAE,CAAD;IACzB;;AAIE,YAAO,eACH,yBACA,qBACA,eACA,2BACA,0BACA,mBACA,2BACA,uBACA,gCACA;IACN;;;QAtDO;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAlMD,wBAAsB;IAyLrB;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAxMW,iDAAuB;;;MACvB,qDAA2B;;;MAE3B,oDAA0B;;;MA2C1B,4CAAkB;;;;;;;;;;;;;AA0NgC,QAA/C,AAA+B,mCAA5C;MACH;;AAGwC,cAAA,AAAO;MAAQ;;AAInD,cAAA,AAAO;MAAoB;;;;;AAI3B,cAAA,AAAO;MAAmB;;;;YAGJ;AAClB,2BACF,AAAY,AAAc,qCAAI,QAAC,SAAU,AAAM,KAAD;AAI5C,2BAAmC,UAApB,AAAO,wCACvB,YAAY,KACT,6BAAoD;AAE5D,cAAO,AAAO,AACT,kCAAM,OAAO,EAAE,kBAAa,qBAAoB,YAAY;MACnE;yBAIsC;MAAS;;;;;;MA3CtB;AACnB,wEACsB,AAAO,MAAD,uCACR,AAAO,MAAD,8CACG,AAAO,MAAD,kDACX,AAAO,MAAD;AAEU,MAAtC,uBAAiB,AAAO;IAChC","file":"../../../../../../../../../../../D:/packages/charts_flutter/src/behaviors/legend/datum_legend.dart.lib.js"}');
+  // Exports:
+  return {
+    src__behaviors__legend__datum_legend: datum_legend$
+  };
+}));
+
+//# sourceMappingURL=datum_legend.dart.lib.js.map

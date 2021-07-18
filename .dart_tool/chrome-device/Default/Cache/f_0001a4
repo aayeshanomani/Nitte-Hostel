@@ -1,0 +1,429 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/pie/arc_renderer_decorator.dart', 'packages/charts_common/src/common/text_element.dart', 'packages/charts_common/src/common/color.dart', 'packages/charts_common/src/chart/common/canvas_shapes.dart', 'packages/charts_common/src/common/graphics_factory.dart', 'packages/charts_common/src/common/text_style.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart'], (function load__packages__charts_common__src__chart__pie__arc_label_decorator_dart(dart_sdk, packages__charts_common__src__chart__pie__arc_renderer_decorator$46dart, packages__charts_common__src__common__text_element$46dart, packages__charts_common__src__common__color$46dart, packages__charts_common__src__chart__common__canvas_shapes$46dart, packages__charts_common__src__common__graphics_factory$46dart, packages__charts_common__src__common__text_style$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const arc_renderer = packages__charts_common__src__chart__pie__arc_renderer_decorator$46dart.src__chart__pie__arc_renderer;
+  const arc_renderer_decorator = packages__charts_common__src__chart__pie__arc_renderer_decorator$46dart.src__chart__pie__arc_renderer_decorator;
+  const text_element = packages__charts_common__src__common__text_element$46dart.src__common__text_element;
+  const color = packages__charts_common__src__common__color$46dart.src__common__color;
+  const chart_canvas = packages__charts_common__src__chart__common__canvas_shapes$46dart.src__chart__common__chart_canvas;
+  const graphics_factory = packages__charts_common__src__common__graphics_factory$46dart.src__common__graphics_factory;
+  const text_style = packages__charts_common__src__common__text_style$46dart.src__common__text_style;
+  const axis_spec = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__spec__axis_spec;
+  const style_factory = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__common__style__style_factory;
+  var arc_label_decorator = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $round = dartx.round;
+  var $width = dartx.width;
+  var $_get = dartx._get;
+  var $modulo = dartx['%'];
+  var $abs = dartx.abs;
+  var $toString = dartx.toString;
+  var $hashCode = dartx.hashCode;
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    PointOfdoubleL: () => (T.PointOfdoubleL = dart.constFn(math.Point$(T.doubleL())))(),
+    RectangleOfdoubleL: () => (T.RectangleOfdoubleL = dart.constFn(math.Rectangle$(T.doubleL())))(),
+    numL: () => (T.numL = dart.constFn(dart.legacy(core.num)))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    PointOfnumL: () => (T.PointOfnumL = dart.constFn(math.Point$(T.numL())))(),
+    PointLOfnumL: () => (T.PointLOfnumL = dart.constFn(dart.legacy(T.PointOfnumL())))(),
+    JSArrayOfPointLOfnumL: () => (T.JSArrayOfPointLOfnumL = dart.constFn(_interceptors.JSArray$(T.PointLOfnumL())))(),
+    ArcLabelPositionL: () => (T.ArcLabelPositionL = dart.constFn(dart.legacy(arc_label_decorator.ArcLabelPosition)))(),
+    ArcLabelLeaderLineStyleSpecL: () => (T.ArcLabelLeaderLineStyleSpecL = dart.constFn(dart.legacy(arc_label_decorator.ArcLabelLeaderLineStyleSpec)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: arc_label_decorator.ArcLabelPosition.prototype,
+        [_name$]: "ArcLabelPosition.auto",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: arc_label_decorator.ArcLabelPosition.prototype,
+        [_name$]: "ArcLabelPosition.outside",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: arc_label_decorator.ArcLabelPosition.prototype,
+        [_name$]: "ArcLabelPosition.inside",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T.ArcLabelPositionL());
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = ["package:charts_common/src/chart/pie/arc_label_decorator.dart"];
+  var insideLabelStyleSpec$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.insideLabelStyleSpec");
+  var outsideLabelStyleSpec$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.outsideLabelStyleSpec");
+  var leaderLineStyleSpec$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.leaderLineStyleSpec");
+  var labelPosition$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.labelPosition");
+  var labelPadding$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.labelPadding");
+  var showLeaderLines$ = dart.privateName(arc_label_decorator, "ArcLabelDecorator.showLeaderLines");
+  var renderAbove = dart.privateName(arc_label_decorator, "ArcLabelDecorator.renderAbove");
+  var _name$ = dart.privateName(arc_label_decorator, "_name");
+  var _getTextStyle = dart.privateName(arc_label_decorator, "_getTextStyle");
+  var _getDatumStyle = dart.privateName(arc_label_decorator, "_getDatumStyle");
+  var _drawInsideLabel = dart.privateName(arc_label_decorator, "_drawInsideLabel");
+  var _drawOutsideLabel = dart.privateName(arc_label_decorator, "_drawOutsideLabel");
+  var _detectOutsideLabelCollision = dart.privateName(arc_label_decorator, "_detectOutsideLabelCollision");
+  var _drawLeaderLine = dart.privateName(arc_label_decorator, "_drawLeaderLine");
+  const _is_ArcLabelDecorator_default = Symbol('_is_ArcLabelDecorator_default');
+  arc_label_decorator.ArcLabelDecorator$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var ArcRendererElementListOfDL = () => (ArcRendererElementListOfDL = dart.constFn(arc_renderer.ArcRendererElementList$(DL())))();
+    var ArcRendererElementListLOfDL = () => (ArcRendererElementListLOfDL = dart.constFn(dart.legacy(ArcRendererElementListOfDL())))();
+    class ArcLabelDecorator extends arc_renderer_decorator.ArcRendererDecorator$(dart.legacy(D)) {
+      get insideLabelStyleSpec() {
+        return this[insideLabelStyleSpec$];
+      }
+      set insideLabelStyleSpec(value) {
+        super.insideLabelStyleSpec = value;
+      }
+      get outsideLabelStyleSpec() {
+        return this[outsideLabelStyleSpec$];
+      }
+      set outsideLabelStyleSpec(value) {
+        super.outsideLabelStyleSpec = value;
+      }
+      get leaderLineStyleSpec() {
+        return this[leaderLineStyleSpec$];
+      }
+      set leaderLineStyleSpec(value) {
+        super.leaderLineStyleSpec = value;
+      }
+      get labelPosition() {
+        return this[labelPosition$];
+      }
+      set labelPosition(value) {
+        super.labelPosition = value;
+      }
+      get labelPadding() {
+        return this[labelPadding$];
+      }
+      set labelPadding(value) {
+        super.labelPadding = value;
+      }
+      get showLeaderLines() {
+        return this[showLeaderLines$];
+      }
+      set showLeaderLines(value) {
+        super.showLeaderLines = value;
+      }
+      get renderAbove() {
+        return this[renderAbove];
+      }
+      set renderAbove(value) {
+        super.renderAbove = value;
+      }
+      decorate(arcElements, canvas, graphicsFactory, opts) {
+        let t0;
+        ArcRendererElementListLOfDL().as(arcElements);
+        let drawBounds = opts && 'drawBounds' in opts ? opts.drawBounds : null;
+        let animationPercent = opts && 'animationPercent' in opts ? opts.animationPercent : null;
+        let rtl = opts && 'rtl' in opts ? opts.rtl : false;
+        if (animationPercent !== 1.0) {
+          return;
+        }
+        let insideLabelStyle = this[_getTextStyle](graphicsFactory, this.insideLabelStyleSpec);
+        let outsideLabelStyle = this[_getTextStyle](graphicsFactory, this.outsideLabelStyleSpec);
+        let previousOutsideLabelY = null;
+        let previousLabelLeftOfChart = null;
+        for (let element of arcElements.arcs) {
+          let labelFn = element.series.labelAccessorFn;
+          let datumIndex = element.index;
+          let label = labelFn != null ? labelFn(datumIndex) : null;
+          let datumInsideLabelStyle = this[_getDatumStyle](element.series.insideLabelStyleAccessorFn, datumIndex, graphicsFactory, {defaultStyle: insideLabelStyle});
+          let datumOutsideLabelStyle = this[_getDatumStyle](element.series.outsideLabelStyleAccessorFn, datumIndex, graphicsFactory, {defaultStyle: outsideLabelStyle});
+          if (label == null || label[$isEmpty]) {
+            continue;
+          }
+          let arcAngle = dart.notNull(element.endAngle) - dart.notNull(element.startAngle);
+          let centerAngle = dart.notNull(element.startAngle) + arcAngle / 2;
+          let centerRadius = dart.notNull(arcElements.innerRadius) + (dart.notNull(arcElements.radius) - dart.notNull(arcElements.innerRadius)) / 2;
+          let innerPoint = new (T.PointOfdoubleL()).new(dart.notNull(arcElements.center.x) + dart.notNull(arcElements.innerRadius) * math.cos(centerAngle), dart.notNull(arcElements.center.y) + dart.notNull(arcElements.innerRadius) * math.sin(centerAngle));
+          let outerPoint = new (T.PointOfdoubleL()).new(dart.notNull(arcElements.center.x) + dart.notNull(arcElements.radius) * math.cos(centerAngle), dart.notNull(arcElements.center.y) + dart.notNull(arcElements.radius) * math.sin(centerAngle));
+          let bounds = T.RectangleOfdoubleL().fromPoints(innerPoint, outerPoint);
+          let totalPadding = dart.notNull(this.labelPadding) * 2;
+          let insideArcWidth = math.min(T.numL(), (arcAngle * 180 / 3.141592653589793 / 360 * (2 * 3.141592653589793 * centerRadius))[$round](), dart.notNull(arcElements.radius) - dart.notNull(arcElements.innerRadius) - dart.notNull(this.labelPadding))[$round]();
+          let leaderLineLength = dart.test(this.showLeaderLines) ? this.leaderLineStyleSpec.length : 0;
+          let outsideArcWidth = (dart.notNull(drawBounds[$width]) / 2 - dart.notNull(bounds[$width]) - totalPadding - dart.notNull(leaderLineLength))[$round]();
+          let labelElement = (t0 = graphicsFactory.createTextElement(label), (() => {
+            t0.maxWidthStrategy = text_element.MaxWidthStrategy.ellipsize;
+            return t0;
+          })());
+          let calculatedLabelPosition = this.labelPosition;
+          if (calculatedLabelPosition == arc_label_decorator.ArcLabelPosition.auto) {
+            labelElement.textStyle = datumInsideLabelStyle;
+            calculatedLabelPosition = insideArcWidth >= outsideArcWidth || dart.notNull(labelElement.measurement.horizontalSliceWidth) < insideArcWidth ? arc_label_decorator.ArcLabelPosition.inside : arc_label_decorator.ArcLabelPosition.outside;
+          }
+          if (calculatedLabelPosition == arc_label_decorator.ArcLabelPosition.inside) {
+            labelElement.textStyle = datumInsideLabelStyle;
+            labelElement.maxWidth = insideArcWidth;
+          } else {
+            labelElement.textStyle = datumOutsideLabelStyle;
+            labelElement.maxWidth = outsideArcWidth;
+          }
+          if (dart.notNull(labelElement.maxWidth) > 0) {
+            if (calculatedLabelPosition == arc_label_decorator.ArcLabelPosition.inside) {
+              this[_drawInsideLabel](canvas, arcElements, labelElement, centerAngle);
+            } else {
+              let l = this[_drawOutsideLabel](canvas, drawBounds, arcElements, labelElement, centerAngle, previousOutsideLabelY, previousLabelLeftOfChart);
+              if (l != null) {
+                previousLabelLeftOfChart = T.boolL().as(l[$_get](0));
+                previousOutsideLabelY = T.numL().as(l[$_get](1));
+              }
+            }
+          }
+        }
+      }
+      [_getTextStyle](graphicsFactory, labelSpec) {
+        let t1, t1$, t1$0, t1$1, t1$2, t1$3, t0;
+        t0 = graphicsFactory.createTextPaint();
+        return (() => {
+          t0.color = (t1$ = (t1 = labelSpec, t1 == null ? null : t1.color), t1$ == null ? color.Color.black : t1$);
+          t0.fontFamily = (t1$0 = labelSpec, t1$0 == null ? null : t1$0.fontFamily);
+          t0.fontSize = (t1$2 = (t1$1 = labelSpec, t1$1 == null ? null : t1$1.fontSize), t1$2 == null ? 12 : t1$2);
+          t0.lineHeight = (t1$3 = labelSpec, t1$3 == null ? null : t1$3.lineHeight);
+          return t0;
+        })();
+      }
+      [_getDatumStyle](labelFn, datumIndex, graphicsFactory, opts) {
+        let defaultStyle = opts && 'defaultStyle' in opts ? opts.defaultStyle : null;
+        let styleSpec = labelFn != null ? labelFn(datumIndex) : null;
+        return styleSpec != null ? this[_getTextStyle](graphicsFactory, styleSpec) : defaultStyle;
+      }
+      [_drawInsideLabel](canvas, arcElements, labelElement, centerAngle) {
+        let labelRadius = dart.notNull(arcElements.innerRadius) + (dart.notNull(arcElements.radius) - dart.notNull(arcElements.innerRadius)) / 2;
+        let labelX = (dart.notNull(arcElements.center.x) + labelRadius * math.cos(centerAngle))[$round]();
+        let labelY = (dart.notNull(arcElements.center.y) + labelRadius * math.sin(centerAngle) - dart.notNull(this.insideLabelStyleSpec.fontSize) / 2)[$round]();
+        labelElement.textDirection = text_element.TextDirection.center;
+        canvas.drawText(labelElement, labelX, labelY);
+      }
+      [_drawOutsideLabel](canvas, drawBounds, arcElements, labelElement, centerAngle, previousOutsideLabelY, previousLabelLeftOfChart) {
+        let labelRadius = dart.notNull(arcElements.radius) + dart.notNull(this.leaderLineStyleSpec.length) / 2;
+        let labelPoint = new (T.PointOfdoubleL()).new(dart.notNull(arcElements.center.x) + labelRadius * math.cos(centerAngle), dart.notNull(arcElements.center.y) + labelRadius * math.sin(centerAngle));
+        let centerAbs = centerAngle[$abs]()[$modulo](2 * 3.141592653589793);
+        let labelLeftOfChart = 3.141592653589793 / 2 < centerAbs && centerAbs < 3.141592653589793 * 3 / 2;
+        let labelX = labelLeftOfChart ? (dart.notNull(labelPoint.x) - dart.notNull(this.labelPadding))[$round]() : (dart.notNull(labelPoint.x) + dart.notNull(this.labelPadding))[$round]();
+        let labelY = (dart.notNull(labelPoint.y) - dart.notNull(this.outsideLabelStyleSpec.fontSize) / 2)[$round]();
+        labelElement.textDirection = labelLeftOfChart ? text_element.TextDirection.rtl : text_element.TextDirection.ltr;
+        if (dart.test(this[_detectOutsideLabelCollision](labelY, labelLeftOfChart, previousOutsideLabelY, previousLabelLeftOfChart))) {
+          return null;
+        }
+        if (dart.test(this.showLeaderLines)) {
+          let tailX = this[_drawLeaderLine](canvas, labelLeftOfChart, labelPoint, arcElements.radius, arcElements.center, centerAngle);
+          labelX = (labelX + dart.notNull(tailX))[$round]();
+          labelElement.maxWidth = (dart.notNull(labelElement.maxWidth) - dart.notNull(tailX))[$round]();
+        }
+        canvas.drawText(labelElement, labelX, labelY);
+        return [labelLeftOfChart, labelY];
+      }
+      [_detectOutsideLabelCollision](labelY, labelLeftOfChart, previousOutsideLabelY, previousLabelLeftOfChart) {
+        let collides = false;
+        if (previousOutsideLabelY != null && labelLeftOfChart == previousLabelLeftOfChart) {
+          if (dart.notNull(labelY) > dart.notNull(previousOutsideLabelY)) {
+            if (dart.notNull(labelY) - dart.notNull(this.outsideLabelStyleSpec.fontSize) <= dart.notNull(previousOutsideLabelY)) {
+              collides = true;
+            }
+          } else {
+            if (dart.notNull(labelY) + dart.notNull(this.outsideLabelStyleSpec.fontSize) >= dart.notNull(previousOutsideLabelY)) {
+              collides = true;
+            }
+          }
+        }
+        return collides;
+      }
+      [_drawLeaderLine](canvas, labelLeftOfChart, labelPoint, radius, arcCenterPoint, centerAngle) {
+        let tailX = (dart.test(labelLeftOfChart) ? -1 : 1) * dart.notNull(this.leaderLineStyleSpec.length);
+        let leaderLineTailPoint = new (T.PointOfdoubleL()).new(dart.notNull(labelPoint.x) + tailX, labelPoint.y);
+        let centerRadius = dart.notNull(radius) - dart.notNull(this.leaderLineStyleSpec.length) / 2;
+        let leaderLineStartPoint = new (T.PointOfdoubleL()).new(dart.notNull(arcCenterPoint.x) + centerRadius * math.cos(centerAngle), dart.notNull(arcCenterPoint.y) + centerRadius * math.sin(centerAngle));
+        canvas.drawLine({points: T.JSArrayOfPointLOfnumL().of([leaderLineStartPoint, labelPoint, leaderLineTailPoint]), stroke: this.leaderLineStyleSpec.color, strokeWidthPx: this.leaderLineStyleSpec.thickness});
+        return tailX;
+      }
+    }
+    (ArcLabelDecorator.new = function(opts) {
+      let t0, t0$, t0$0;
+      let insideLabelStyleSpec = opts && 'insideLabelStyleSpec' in opts ? opts.insideLabelStyleSpec : null;
+      let outsideLabelStyleSpec = opts && 'outsideLabelStyleSpec' in opts ? opts.outsideLabelStyleSpec : null;
+      let leaderLineStyleSpec = opts && 'leaderLineStyleSpec' in opts ? opts.leaderLineStyleSpec : null;
+      let labelPosition = opts && 'labelPosition' in opts ? opts.labelPosition : C[0] || CT.C0;
+      let labelPadding = opts && 'labelPadding' in opts ? opts.labelPadding : 5;
+      let showLeaderLines = opts && 'showLeaderLines' in opts ? opts.showLeaderLines : true;
+      let leaderLineColor = opts && 'leaderLineColor' in opts ? opts.leaderLineColor : null;
+      this[renderAbove] = true;
+      this[labelPosition$] = labelPosition;
+      this[labelPadding$] = labelPadding;
+      this[showLeaderLines$] = showLeaderLines;
+      this[insideLabelStyleSpec$] = (t0 = insideLabelStyleSpec, t0 == null ? arc_label_decorator.ArcLabelDecorator._defaultInsideLabelStyle : t0);
+      this[outsideLabelStyleSpec$] = (t0$ = outsideLabelStyleSpec, t0$ == null ? arc_label_decorator.ArcLabelDecorator._defaultOutsideLabelStyle : t0$);
+      this[leaderLineStyleSpec$] = (t0$0 = leaderLineStyleSpec, t0$0 == null ? arc_label_decorator.ArcLabelDecorator._defaultLeaderLineStyle : t0$0);
+      ArcLabelDecorator.__proto__.new.call(this);
+      ;
+    }).prototype = ArcLabelDecorator.prototype;
+    dart.addTypeTests(ArcLabelDecorator);
+    ArcLabelDecorator.prototype[_is_ArcLabelDecorator_default] = true;
+    dart.addTypeCaches(ArcLabelDecorator);
+    dart.setMethodSignature(ArcLabelDecorator, () => ({
+      __proto__: dart.getMethods(ArcLabelDecorator.__proto__),
+      decorate: dart.fnType(dart.void, [dart.legacy(core.Object), dart.legacy(chart_canvas.ChartCanvas), dart.legacy(graphics_factory.GraphicsFactory)], {animationPercent: dart.legacy(core.double), drawBounds: dart.legacy(math.Rectangle$(dart.legacy(core.num))), rtl: dart.legacy(core.bool)}, {}),
+      [_getTextStyle]: dart.fnType(dart.legacy(text_style.TextStyle), [dart.legacy(graphics_factory.GraphicsFactory), dart.legacy(axis_spec.TextStyleSpec)]),
+      [_getDatumStyle]: dart.fnType(dart.legacy(text_style.TextStyle), [dart.legacy(dart.fnType(dart.legacy(axis_spec.TextStyleSpec), [dart.legacy(core.int)])), dart.legacy(core.int), dart.legacy(graphics_factory.GraphicsFactory)], {defaultStyle: dart.legacy(text_style.TextStyle)}, {}),
+      [_drawInsideLabel]: dart.fnType(dart.void, [dart.legacy(chart_canvas.ChartCanvas), dart.legacy(arc_renderer.ArcRendererElementList$(dart.legacy(D))), dart.legacy(text_element.TextElement), dart.legacy(core.double)]),
+      [_drawOutsideLabel]: dart.fnType(dart.legacy(core.List), [dart.legacy(chart_canvas.ChartCanvas), dart.legacy(math.Rectangle$(dart.legacy(core.num))), dart.legacy(arc_renderer.ArcRendererElementList$(dart.legacy(D))), dart.legacy(text_element.TextElement), dart.legacy(core.double), dart.legacy(core.num), dart.legacy(core.bool)]),
+      [_detectOutsideLabelCollision]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.num), dart.legacy(core.bool), dart.legacy(core.num), dart.legacy(core.bool)]),
+      [_drawLeaderLine]: dart.fnType(dart.legacy(core.double), [dart.legacy(chart_canvas.ChartCanvas), dart.legacy(core.bool), dart.legacy(math.Point$(dart.legacy(core.num))), dart.legacy(core.double), dart.legacy(math.Point$(dart.legacy(core.double))), dart.legacy(core.double)])
+    }));
+    dart.setLibraryUri(ArcLabelDecorator, I[0]);
+    dart.setFieldSignature(ArcLabelDecorator, () => ({
+      __proto__: dart.getFields(ArcLabelDecorator.__proto__),
+      insideLabelStyleSpec: dart.finalFieldType(dart.legacy(axis_spec.TextStyleSpec)),
+      outsideLabelStyleSpec: dart.finalFieldType(dart.legacy(axis_spec.TextStyleSpec)),
+      leaderLineStyleSpec: dart.finalFieldType(dart.legacy(arc_label_decorator.ArcLabelLeaderLineStyleSpec)),
+      labelPosition: dart.finalFieldType(dart.legacy(arc_label_decorator.ArcLabelPosition)),
+      labelPadding: dart.finalFieldType(dart.legacy(core.int)),
+      showLeaderLines: dart.finalFieldType(dart.legacy(core.bool)),
+      renderAbove: dart.finalFieldType(dart.legacy(core.bool))
+    }));
+    return ArcLabelDecorator;
+  });
+  arc_label_decorator.ArcLabelDecorator = arc_label_decorator.ArcLabelDecorator$();
+  dart.defineLazy(arc_label_decorator.ArcLabelDecorator, {
+    /*arc_label_decorator.ArcLabelDecorator._defaultLabelPosition*/get _defaultLabelPosition() {
+      return C[0] || CT.C0;
+    },
+    /*arc_label_decorator.ArcLabelDecorator._defaultLabelPadding*/get _defaultLabelPadding() {
+      return 5;
+    },
+    /*arc_label_decorator.ArcLabelDecorator._defaultInsideLabelStyle*/get _defaultInsideLabelStyle() {
+      return new axis_spec.TextStyleSpec.new({fontSize: 12, color: color.Color.white});
+    },
+    /*arc_label_decorator.ArcLabelDecorator._defaultOutsideLabelStyle*/get _defaultOutsideLabelStyle() {
+      return new axis_spec.TextStyleSpec.new({fontSize: 12, color: color.Color.black});
+    },
+    /*arc_label_decorator.ArcLabelDecorator._defaultLeaderLineStyle*/get _defaultLeaderLineStyle() {
+      return new arc_label_decorator.ArcLabelLeaderLineStyleSpec.new({length: 20.0, thickness: 1.0, color: style_factory.StyleFactory.style.arcLabelOutsideLeaderLine});
+    },
+    /*arc_label_decorator.ArcLabelDecorator._defaultShowLeaderLines*/get _defaultShowLeaderLines() {
+      return true;
+    }
+  }, true);
+  dart.addTypeTests(arc_label_decorator.ArcLabelDecorator, _is_ArcLabelDecorator_default);
+  arc_label_decorator.ArcLabelPosition = class ArcLabelPosition extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (arc_label_decorator.ArcLabelPosition.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = arc_label_decorator.ArcLabelPosition.prototype;
+  dart.addTypeTests(arc_label_decorator.ArcLabelPosition);
+  dart.addTypeCaches(arc_label_decorator.ArcLabelPosition);
+  dart.setMethodSignature(arc_label_decorator.ArcLabelPosition, () => ({
+    __proto__: dart.getMethods(arc_label_decorator.ArcLabelPosition.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(arc_label_decorator.ArcLabelPosition, I[0]);
+  dart.setFieldSignature(arc_label_decorator.ArcLabelPosition, () => ({
+    __proto__: dart.getFields(arc_label_decorator.ArcLabelPosition.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(arc_label_decorator.ArcLabelPosition, ['toString']);
+  arc_label_decorator.ArcLabelPosition.auto = C[0] || CT.C0;
+  arc_label_decorator.ArcLabelPosition.outside = C[1] || CT.C1;
+  arc_label_decorator.ArcLabelPosition.inside = C[2] || CT.C2;
+  arc_label_decorator.ArcLabelPosition.values = C[3] || CT.C3;
+  var color$ = dart.privateName(arc_label_decorator, "ArcLabelLeaderLineStyleSpec.color");
+  var length$ = dart.privateName(arc_label_decorator, "ArcLabelLeaderLineStyleSpec.length");
+  var thickness$ = dart.privateName(arc_label_decorator, "ArcLabelLeaderLineStyleSpec.thickness");
+  arc_label_decorator.ArcLabelLeaderLineStyleSpec = class ArcLabelLeaderLineStyleSpec extends core.Object {
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get length() {
+      return this[length$];
+    }
+    set length(value) {
+      super.length = value;
+    }
+    get thickness() {
+      return this[thickness$];
+    }
+    set thickness(value) {
+      super.thickness = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return T.ArcLabelLeaderLineStyleSpecL().is(other) && dart.equals(this.color, other.color) && this.thickness == other.thickness && this.length == other.length;
+    }
+    get hashCode() {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3;
+      let hashcode = (t0$ = (t0 = this.color, t0 == null ? null : dart.hashCode(t0)), t0$ == null ? 0 : t0$);
+      hashcode = (t0$1 = dart.notNull(hashcode) * 37 + dart.notNull((t0$0 = this.thickness, t0$0 == null ? null : dart.hashCode(t0$0))), t0$1 === null ? 0 : t0$1);
+      hashcode = (t0$3 = dart.notNull(hashcode) * 37 + dart.notNull((t0$2 = this.length, t0$2 == null ? null : dart.hashCode(t0$2))), t0$3 === null ? 0 : t0$3);
+      return hashcode;
+    }
+  };
+  (arc_label_decorator.ArcLabelLeaderLineStyleSpec.new = function(opts) {
+    let color = opts && 'color' in opts ? opts.color : null;
+    let length = opts && 'length' in opts ? opts.length : null;
+    let thickness = opts && 'thickness' in opts ? opts.thickness : null;
+    this[color$] = color;
+    this[length$] = length;
+    this[thickness$] = thickness;
+    ;
+  }).prototype = arc_label_decorator.ArcLabelLeaderLineStyleSpec.prototype;
+  dart.addTypeTests(arc_label_decorator.ArcLabelLeaderLineStyleSpec);
+  dart.addTypeCaches(arc_label_decorator.ArcLabelLeaderLineStyleSpec);
+  dart.setMethodSignature(arc_label_decorator.ArcLabelLeaderLineStyleSpec, () => ({
+    __proto__: dart.getMethods(arc_label_decorator.ArcLabelLeaderLineStyleSpec.__proto__),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(arc_label_decorator.ArcLabelLeaderLineStyleSpec, () => ({
+    __proto__: dart.getGetters(arc_label_decorator.ArcLabelLeaderLineStyleSpec.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(arc_label_decorator.ArcLabelLeaderLineStyleSpec, I[0]);
+  dart.setFieldSignature(arc_label_decorator.ArcLabelLeaderLineStyleSpec, () => ({
+    __proto__: dart.getFields(arc_label_decorator.ArcLabelLeaderLineStyleSpec.__proto__),
+    color: dart.finalFieldType(dart.legacy(color.Color)),
+    length: dart.finalFieldType(dart.legacy(core.double)),
+    thickness: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  dart.defineExtensionMethods(arc_label_decorator.ArcLabelLeaderLineStyleSpec, ['_equals']);
+  dart.defineExtensionAccessors(arc_label_decorator.ArcLabelLeaderLineStyleSpec, ['hashCode']);
+  dart.trackLibraries("packages/charts_common/src/chart/pie/arc_label_decorator.dart", {
+    "package:charts_common/src/chart/pie/arc_label_decorator.dart": arc_label_decorator
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["arc_label_decorator.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../D:/packages/charts_common/src/chart/pie/arc_label_decorator.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__pie__arc_label_decorator: arc_label_decorator
+  };
+}));
+
+//# sourceMappingURL=arc_label_decorator.dart.lib.js.map

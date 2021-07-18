@@ -1,0 +1,1385 @@
+define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/material/constants.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/gestures/monodrag.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/drag_details.dart'], (function load__packages__flutter_range_slider__src__flutter_range_slider_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__material__constants$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__gestures__monodrag$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__drag_details$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const constants = packages__flutter__src__material__constants$46dart.src__material__constants;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const slider_theme = packages__flutter__src__material__icon_button$46dart.src__material__slider_theme;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
+  const monodrag = packages__flutter__src__gestures__monodrag$46dart.src__gestures__monodrag;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
+  var flutter_range_slider = Object.create(dart.library);
+  var $clamp = dartx.clamp;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $round = dartx.round;
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    doubleLAnddoubleLTodynamic: () => (T.doubleLAnddoubleLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.doubleL(), T.doubleL()])))(),
+    doubleLAnddoubleLToLdynamic: () => (T.doubleLAnddoubleLToLdynamic = dart.constFn(dart.legacy(T.doubleLAnddoubleLTodynamic())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    _RenderRangeSliderL: () => (T._RenderRangeSliderL = dart.constFn(dart.legacy(flutter_range_slider._RenderRangeSlider)))(),
+    PipelineOwnerL: () => (T.PipelineOwnerL = dart.constFn(dart.legacy(object.PipelineOwner)))(),
+    numL: () => (T.numL = dart.constFn(dart.legacy(core.num)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLAnddoubleLTodynamic: () => (T.intLAnddoubleLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.intL(), T.doubleL()])))(),
+    intLAnddoubleLToLdynamic: () => (T.intLAnddoubleLToLdynamic = dart.constFn(dart.legacy(T.intLAnddoubleLTodynamic())))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    BoxHitTestEntryL: () => (T.BoxHitTestEntryL = dart.constFn(dart.legacy(box.BoxHitTestEntry)))(),
+    PointerDownEventL: () => (T.PointerDownEventL = dart.constFn(dart.legacy(events.PointerDownEvent)))(),
+    TweenOfdoubleL: () => (T.TweenOfdoubleL = dart.constFn(tween.Tween$(T.doubleL())))(),
+    _ActiveThumbL: () => (T._ActiveThumbL = dart.constFn(dart.legacy(flutter_range_slider._ActiveThumb)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "lowerValue",
+        [_Location_column]: 7,
+        [_Location_line]: 478,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "upperValue",
+        [_Location_column]: 7,
+        [_Location_line]: 479,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "divisions",
+        [_Location_column]: 7,
+        [_Location_line]: 480,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 7,
+        [_Location_line]: 481,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChangeStart",
+        [_Location_column]: 7,
+        [_Location_line]: 482,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChangeEnd",
+        [_Location_column]: 7,
+        [_Location_line]: 483,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sliderTheme",
+        [_Location_column]: 7,
+        [_Location_line]: 484,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "state",
+        [_Location_column]: 7,
+        [_Location_line]: 485,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showValueIndicator",
+        [_Location_column]: 7,
+        [_Location_line]: 486,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "valueIndicatorMaxDecimals",
+        [_Location_column]: 7,
+        [_Location_line]: 487,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "touchRadiusExpansionRatio",
+        [_Location_column]: 7,
+        [_Location_line]: 488,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "valueIndicatorFormatter",
+        [_Location_column]: 7,
+        [_Location_line]: 489,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "allowThumbOverlap",
+        [_Location_column]: 7,
+        [_Location_line]: 490,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 477,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_range_slider-1.5.0/lib/src/flutter_range_slider.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 75000
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 100000
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: slider_theme.RectangularSliderTrackShape.prototype,
+        [RectangularSliderTrackShape_disabledThumbGapWidth]: 2
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: slider_theme.RoundSliderTickMarkShape.prototype,
+        [RoundSliderTickMarkShape_tickMarkRadius]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: slider_theme.RoundSliderOverlayShape.prototype,
+        [RoundSliderOverlayShape_overlayRadius]: 24
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: slider_theme.RoundSliderThumbShape.prototype,
+        [RoundSliderThumbShape_pressedElevation]: 6,
+        [RoundSliderThumbShape_elevation]: 1,
+        [RoundSliderThumbShape_disabledThumbRadius]: null,
+        [RoundSliderThumbShape_enabledThumbRadius]: 10
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: slider_theme.PaddleSliderValueIndicatorShape.prototype
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: slider_theme.ShowValueIndicator.prototype,
+        [_name]: "ShowValueIndicator.onlyForDiscrete",
+        index: 0
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: slider_theme.ShowValueIndicator.prototype,
+        [_name]: "ShowValueIndicator.onlyForContinuous",
+        index: 1
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: slider_theme.ShowValueIndicator.prototype,
+        [_name]: "ShowValueIndicator.always",
+        index: 2
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: slider_theme.ShowValueIndicator.prototype,
+        [_name]: "ShowValueIndicator.never",
+        index: 3
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: flutter_range_slider._ActiveThumb.prototype,
+        [_name$]: "_ActiveThumb.none",
+        index: 0
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: flutter_range_slider._ActiveThumb.prototype,
+        [_name$]: "_ActiveThumb.lowerThumb",
+        index: 1
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: flutter_range_slider._ActiveThumb.prototype,
+        [_name$]: "_ActiveThumb.upperThumb",
+        index: 2
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], T._ActiveThumbL());
+    }
+  }, false);
+  var C = Array(30).fill(void 0);
+  var I = [
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_range_slider-1.5.0/lib/src/flutter_range_slider.dart",
+    "package:flutter_range_slider/src/flutter_range_slider.dart"
+  ];
+  var min$ = dart.privateName(flutter_range_slider, "RangeSlider.min");
+  var max$ = dart.privateName(flutter_range_slider, "RangeSlider.max");
+  var lowerValue$ = dart.privateName(flutter_range_slider, "RangeSlider.lowerValue");
+  var upperValue$ = dart.privateName(flutter_range_slider, "RangeSlider.upperValue");
+  var divisions$ = dart.privateName(flutter_range_slider, "RangeSlider.divisions");
+  var showValueIndicator$ = dart.privateName(flutter_range_slider, "RangeSlider.showValueIndicator");
+  var touchRadiusExpansionRatio$ = dart.privateName(flutter_range_slider, "RangeSlider.touchRadiusExpansionRatio");
+  var valueIndicatorMaxDecimals$ = dart.privateName(flutter_range_slider, "RangeSlider.valueIndicatorMaxDecimals");
+  var valueIndicatorFormatter$ = dart.privateName(flutter_range_slider, "RangeSlider.valueIndicatorFormatter");
+  var onChanged$ = dart.privateName(flutter_range_slider, "RangeSlider.onChanged");
+  var onChangeStart$ = dart.privateName(flutter_range_slider, "RangeSlider.onChangeStart");
+  var onChangeEnd$ = dart.privateName(flutter_range_slider, "RangeSlider.onChangeEnd");
+  var allowThumbOverlap$ = dart.privateName(flutter_range_slider, "RangeSlider.allowThumbOverlap");
+  flutter_range_slider.RangeSlider = class RangeSlider extends framework.StatefulWidget {
+    get min() {
+      return this[min$];
+    }
+    set min(value) {
+      super.min = value;
+    }
+    get max() {
+      return this[max$];
+    }
+    set max(value) {
+      super.max = value;
+    }
+    get lowerValue() {
+      return this[lowerValue$];
+    }
+    set lowerValue(value) {
+      super.lowerValue = value;
+    }
+    get upperValue() {
+      return this[upperValue$];
+    }
+    set upperValue(value) {
+      super.upperValue = value;
+    }
+    get divisions() {
+      return this[divisions$];
+    }
+    set divisions(value) {
+      super.divisions = value;
+    }
+    get showValueIndicator() {
+      return this[showValueIndicator$];
+    }
+    set showValueIndicator(value) {
+      super.showValueIndicator = value;
+    }
+    get touchRadiusExpansionRatio() {
+      return this[touchRadiusExpansionRatio$];
+    }
+    set touchRadiusExpansionRatio(value) {
+      super.touchRadiusExpansionRatio = value;
+    }
+    get valueIndicatorMaxDecimals() {
+      return this[valueIndicatorMaxDecimals$];
+    }
+    set valueIndicatorMaxDecimals(value) {
+      super.valueIndicatorMaxDecimals = value;
+    }
+    get valueIndicatorFormatter() {
+      return this[valueIndicatorFormatter$];
+    }
+    set valueIndicatorFormatter(value) {
+      super.valueIndicatorFormatter = value;
+    }
+    get onChanged() {
+      return this[onChanged$];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get onChangeStart() {
+      return this[onChangeStart$];
+    }
+    set onChangeStart(value) {
+      super.onChangeStart = value;
+    }
+    get onChangeEnd() {
+      return this[onChangeEnd$];
+    }
+    set onChangeEnd(value) {
+      super.onChangeEnd = value;
+    }
+    get allowThumbOverlap() {
+      return this[allowThumbOverlap$];
+    }
+    set allowThumbOverlap(value) {
+      super.allowThumbOverlap = value;
+    }
+    createState() {
+      return new flutter_range_slider._RangeSliderState.new();
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.DoubleProperty.new("lowerValue", this.lowerValue));
+      properties.add(new diagnostics.DoubleProperty.new("upperValue", this.upperValue));
+      properties.add(new diagnostics.DoubleProperty.new("min", this.min));
+      properties.add(new diagnostics.DoubleProperty.new("max", this.max));
+      properties.add(new diagnostics.IntProperty.new("divisions", this.divisions));
+    }
+  };
+  (flutter_range_slider.RangeSlider.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let min = opts && 'min' in opts ? opts.min : 0;
+    let max = opts && 'max' in opts ? opts.max : 1;
+    let divisions = opts && 'divisions' in opts ? opts.divisions : null;
+    let lowerValue = opts && 'lowerValue' in opts ? opts.lowerValue : null;
+    let upperValue = opts && 'upperValue' in opts ? opts.upperValue : null;
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let onChangeStart = opts && 'onChangeStart' in opts ? opts.onChangeStart : null;
+    let onChangeEnd = opts && 'onChangeEnd' in opts ? opts.onChangeEnd : null;
+    let showValueIndicator = opts && 'showValueIndicator' in opts ? opts.showValueIndicator : false;
+    let touchRadiusExpansionRatio = opts && 'touchRadiusExpansionRatio' in opts ? opts.touchRadiusExpansionRatio : 3.33;
+    let valueIndicatorMaxDecimals = opts && 'valueIndicatorMaxDecimals' in opts ? opts.valueIndicatorMaxDecimals : 1;
+    let valueIndicatorFormatter = opts && 'valueIndicatorFormatter' in opts ? opts.valueIndicatorFormatter : null;
+    let allowThumbOverlap = opts && 'allowThumbOverlap' in opts ? opts.allowThumbOverlap : false;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[min$] = min;
+    this[max$] = max;
+    this[divisions$] = divisions;
+    this[lowerValue$] = lowerValue;
+    this[upperValue$] = upperValue;
+    this[onChanged$] = onChanged;
+    this[onChangeStart$] = onChangeStart;
+    this[onChangeEnd$] = onChangeEnd;
+    this[showValueIndicator$] = showValueIndicator;
+    this[touchRadiusExpansionRatio$] = touchRadiusExpansionRatio;
+    this[valueIndicatorMaxDecimals$] = valueIndicatorMaxDecimals;
+    this[valueIndicatorFormatter$] = valueIndicatorFormatter;
+    this[allowThumbOverlap$] = allowThumbOverlap;
+    if (!(min != null)) dart.assertFailed(null, I[0], 105, 16, "min != null");
+    if (!(max != null)) dart.assertFailed(null, I[0], 106, 16, "max != null");
+    if (!(dart.notNull(min) <= dart.notNull(max))) dart.assertFailed(null, I[0], 107, 16, "min <= max");
+    if (!(divisions == null || dart.notNull(divisions) > 0)) dart.assertFailed(null, I[0], 108, 16, "divisions == null || divisions > 0");
+    if (!(lowerValue != null)) dart.assertFailed(null, I[0], 109, 16, "lowerValue != null");
+    if (!(upperValue != null)) dart.assertFailed(null, I[0], 110, 16, "upperValue != null");
+    if (!(dart.notNull(lowerValue) >= dart.notNull(min) && dart.notNull(lowerValue) <= dart.notNull(max))) dart.assertFailed(null, I[0], 111, 16, "lowerValue >= min && lowerValue <= max");
+    if (!(dart.notNull(upperValue) >= dart.notNull(lowerValue) && dart.notNull(upperValue) <= dart.notNull(max))) dart.assertFailed(null, I[0], 112, 16, "upperValue >= lowerValue && upperValue <= max");
+    if (!(dart.notNull(valueIndicatorMaxDecimals) >= 0 && dart.notNull(valueIndicatorMaxDecimals) < 5)) dart.assertFailed(null, I[0], 113, 16, "valueIndicatorMaxDecimals >= 0 && valueIndicatorMaxDecimals < 5");
+    flutter_range_slider.RangeSlider.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = flutter_range_slider.RangeSlider.prototype;
+  dart.addTypeTests(flutter_range_slider.RangeSlider);
+  dart.addTypeCaches(flutter_range_slider.RangeSlider);
+  dart.setMethodSignature(flutter_range_slider.RangeSlider, () => ({
+    __proto__: dart.getMethods(flutter_range_slider.RangeSlider.__proto__),
+    createState: dart.fnType(dart.legacy(flutter_range_slider._RangeSliderState), []),
+    debugFillProperties: dart.fnType(dart.void, [dart.legacy(diagnostics.DiagnosticPropertiesBuilder)])
+  }));
+  dart.setLibraryUri(flutter_range_slider.RangeSlider, I[1]);
+  dart.setFieldSignature(flutter_range_slider.RangeSlider, () => ({
+    __proto__: dart.getFields(flutter_range_slider.RangeSlider.__proto__),
+    min: dart.finalFieldType(dart.legacy(core.double)),
+    max: dart.finalFieldType(dart.legacy(core.double)),
+    lowerValue: dart.finalFieldType(dart.legacy(core.double)),
+    upperValue: dart.finalFieldType(dart.legacy(core.double)),
+    divisions: dart.finalFieldType(dart.legacy(core.int)),
+    showValueIndicator: dart.finalFieldType(dart.legacy(core.bool)),
+    touchRadiusExpansionRatio: dart.finalFieldType(dart.legacy(core.double)),
+    valueIndicatorMaxDecimals: dart.finalFieldType(dart.legacy(core.int)),
+    valueIndicatorFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.int), dart.legacy(core.double)]))),
+    onChanged: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    onChangeStart: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    onChangeEnd: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    allowThumbOverlap: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var _unlerp = dart.privateName(flutter_range_slider, "_unlerp");
+  var _handleChanged = dart.privateName(flutter_range_slider, "_handleChanged");
+  var _handleChangeStart = dart.privateName(flutter_range_slider, "_handleChangeStart");
+  var _handleChangeEnd = dart.privateName(flutter_range_slider, "_handleChangeEnd");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var RectangularSliderTrackShape_disabledThumbGapWidth = dart.privateName(slider_theme, "RectangularSliderTrackShape.disabledThumbGapWidth");
+  var RoundSliderTickMarkShape_tickMarkRadius = dart.privateName(slider_theme, "RoundSliderTickMarkShape.tickMarkRadius");
+  var RoundSliderOverlayShape_overlayRadius = dart.privateName(slider_theme, "RoundSliderOverlayShape.overlayRadius");
+  var RoundSliderThumbShape_pressedElevation = dart.privateName(slider_theme, "RoundSliderThumbShape.pressedElevation");
+  var RoundSliderThumbShape_elevation = dart.privateName(slider_theme, "RoundSliderThumbShape.elevation");
+  var RoundSliderThumbShape_disabledThumbRadius = dart.privateName(slider_theme, "RoundSliderThumbShape.disabledThumbRadius");
+  var RoundSliderThumbShape_enabledThumbRadius = dart.privateName(slider_theme, "RoundSliderThumbShape.enabledThumbRadius");
+  var _name = dart.privateName(slider_theme, "_name");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(dart.legacy(flutter_range_slider.RangeSlider)) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(dart.legacy(flutter_range_slider.RangeSlider))[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(dart.legacy(flutter_range_slider.RangeSlider)));
+  flutter_range_slider._RangeSliderState = class _RangeSliderState extends State_TickerProviderStateMixin$36 {
+    initState() {
+      super.initState();
+      this.overlayController = new animation_controller.AnimationController.new({duration: constants.kRadialReactionDuration, vsync: this});
+      this.enableController = new animation_controller.AnimationController.new({duration: flutter_range_slider._RangeSliderState.kEnableAnimationDuration, vsync: this});
+      this.valueIndicatorController = new animation_controller.AnimationController.new({duration: flutter_range_slider._RangeSliderState.kValueIndicatorAnimationDuration, vsync: this});
+      this.enableController.value = this.widget.onChanged != null ? 1.0 : 0.0;
+    }
+    dispose() {
+      this.valueIndicatorController.dispose();
+      this.enableController.dispose();
+      this.overlayController.dispose();
+      super.dispose();
+    }
+    [_unlerp](value) {
+      if (!(dart.notNull(value) <= dart.notNull(this.widget.max))) dart.assertFailed(null, I[0], 374, 12, "value <= widget.max");
+      if (!(dart.notNull(value) >= dart.notNull(this.widget.min))) dart.assertFailed(null, I[0], 375, 12, "value >= widget.min");
+      return dart.notNull(this.widget.max) > dart.notNull(this.widget.min) ? (dart.notNull(value) - dart.notNull(this.widget.min)) / (dart.notNull(this.widget.max) - dart.notNull(this.widget.min)) : 0.0;
+    }
+    lerp(value) {
+      if (!(dart.notNull(value) >= 0.0)) dart.assertFailed(null, I[0], 387, 12, "value >= 0.0");
+      if (!(dart.notNull(value) <= 1.0)) dart.assertFailed(null, I[0], 388, 12, "value <= 1.0");
+      return dart.notNull(value) * (dart.notNull(this.widget.max) - dart.notNull(this.widget.min)) + dart.notNull(this.widget.min);
+    }
+    [_handleChanged](lowerValue, upperValue) {
+      let t2, t1, t0;
+      if (T.doubleLAnddoubleLToLdynamic().is(this.widget.onChanged)) {
+        t0 = this.widget;
+        t1 = this.lerp(lowerValue);
+        t2 = this.lerp(upperValue);
+        t0.onChanged(t1, t2);
+      }
+    }
+    [_handleChangeStart](lowerValue, upperValue) {
+      let t2, t1, t0;
+      if (T.doubleLAnddoubleLToLdynamic().is(this.widget.onChangeStart)) {
+        t0 = this.widget;
+        t1 = this.lerp(lowerValue);
+        t2 = this.lerp(upperValue);
+        t0.onChangeStart(t1, t2);
+      }
+    }
+    [_handleChangeEnd](lowerValue, upperValue) {
+      let t2, t1, t0;
+      if (T.doubleLAnddoubleLToLdynamic().is(this.widget.onChangeEnd)) {
+        t0 = this.widget;
+        t1 = this.lerp(lowerValue);
+        t2 = this.lerp(upperValue);
+        t0.onChangeEnd(t1, t2);
+      }
+    }
+    build(context) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9, t0$10, t0$11, t0$12, t0$13, t0$14, t0$15, t0$16, t0$17;
+      let theme = theme$.Theme.of(context);
+      let sliderTheme = slider_theme.SliderTheme.of(context);
+      sliderTheme = sliderTheme.copyWith({trackHeight: (t0 = sliderTheme.trackHeight, t0 == null ? 2 : t0), activeTrackColor: (t0$ = sliderTheme.activeTrackColor, t0$ == null ? theme.colorScheme.primary : t0$), inactiveTrackColor: (t0$0 = sliderTheme.inactiveTrackColor, t0$0 == null ? theme.colorScheme.primary.withOpacity(0.24) : t0$0), disabledActiveTrackColor: (t0$1 = sliderTheme.disabledActiveTrackColor, t0$1 == null ? theme.colorScheme.onSurface.withOpacity(0.32) : t0$1), disabledInactiveTrackColor: (t0$2 = sliderTheme.disabledInactiveTrackColor, t0$2 == null ? theme.colorScheme.onSurface.withOpacity(0.12) : t0$2), activeTickMarkColor: (t0$3 = sliderTheme.activeTickMarkColor, t0$3 == null ? theme.colorScheme.onPrimary.withOpacity(0.54) : t0$3), inactiveTickMarkColor: (t0$4 = sliderTheme.inactiveTickMarkColor, t0$4 == null ? theme.colorScheme.primary.withOpacity(0.54) : t0$4), disabledActiveTickMarkColor: (t0$5 = sliderTheme.disabledActiveTickMarkColor, t0$5 == null ? theme.colorScheme.onPrimary.withOpacity(0.12) : t0$5), disabledInactiveTickMarkColor: (t0$6 = sliderTheme.disabledInactiveTickMarkColor, t0$6 == null ? theme.colorScheme.onSurface.withOpacity(0.12) : t0$6), thumbColor: (t0$7 = sliderTheme.thumbColor, t0$7 == null ? theme.colorScheme.primary : t0$7), disabledThumbColor: (t0$8 = sliderTheme.disabledThumbColor, t0$8 == null ? theme.colorScheme.onSurface.withOpacity(0.38) : t0$8), overlayColor: (t0$9 = sliderTheme.overlayColor, t0$9 == null ? theme.colorScheme.primary.withOpacity(0.12) : t0$9), valueIndicatorColor: (t0$10 = sliderTheme.valueIndicatorColor, t0$10 == null ? theme.colorScheme.primary : t0$10), trackShape: (t0$11 = sliderTheme.trackShape, t0$11 == null ? flutter_range_slider._RangeSliderState._defaultTrackShape : t0$11), tickMarkShape: (t0$12 = sliderTheme.tickMarkShape, t0$12 == null ? flutter_range_slider._RangeSliderState._defaultTickMarkShape : t0$12), thumbShape: (t0$13 = sliderTheme.thumbShape, t0$13 == null ? flutter_range_slider._RangeSliderState._defaultThumbShape : t0$13), overlayShape: (t0$14 = sliderTheme.overlayShape, t0$14 == null ? flutter_range_slider._RangeSliderState._defaultOverlayShape : t0$14), valueIndicatorShape: (t0$15 = sliderTheme.valueIndicatorShape, t0$15 == null ? flutter_range_slider._RangeSliderState._defaultValueIndicatorShape : t0$15), showValueIndicator: (t0$16 = sliderTheme.showValueIndicator, t0$16 == null ? flutter_range_slider._RangeSliderState._defaultShowValueIndicator : t0$16), valueIndicatorTextStyle: (t0$17 = sliderTheme.valueIndicatorTextStyle, t0$17 == null ? theme.textTheme.body2.copyWith({color: theme.colorScheme.onPrimary}) : t0$17)});
+      return new flutter_range_slider._RangeSliderRenderObjectWidget.new({lowerValue: this[_unlerp](this.widget.lowerValue), upperValue: this[_unlerp](this.widget.upperValue), divisions: this.widget.divisions, onChanged: this.widget.onChanged != null ? dart.bind(this, _handleChanged) : null, onChangeStart: dart.bind(this, _handleChangeStart), onChangeEnd: dart.bind(this, _handleChangeEnd), sliderTheme: sliderTheme, state: this, showValueIndicator: this.widget.showValueIndicator, valueIndicatorMaxDecimals: this.widget.valueIndicatorMaxDecimals, touchRadiusExpansionRatio: this.widget.touchRadiusExpansionRatio, valueIndicatorFormatter: this.widget.valueIndicatorFormatter, allowThumbOverlap: this.widget.allowThumbOverlap, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+    }
+  };
+  (flutter_range_slider._RangeSliderState.new = function() {
+    this.overlayController = null;
+    this.enableController = null;
+    this.valueIndicatorController = null;
+    flutter_range_slider._RangeSliderState.__proto__.new.call(this);
+    ;
+  }).prototype = flutter_range_slider._RangeSliderState.prototype;
+  dart.addTypeTests(flutter_range_slider._RangeSliderState);
+  dart.addTypeCaches(flutter_range_slider._RangeSliderState);
+  dart.setMethodSignature(flutter_range_slider._RangeSliderState, () => ({
+    __proto__: dart.getMethods(flutter_range_slider._RangeSliderState.__proto__),
+    [_unlerp]: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    lerp: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    [_handleChanged]: dart.fnType(dart.void, [dart.legacy(core.double), dart.legacy(core.double)]),
+    [_handleChangeStart]: dart.fnType(dart.void, [dart.legacy(core.double), dart.legacy(core.double)]),
+    [_handleChangeEnd]: dart.fnType(dart.void, [dart.legacy(core.double), dart.legacy(core.double)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(flutter_range_slider._RangeSliderState, I[1]);
+  dart.setFieldSignature(flutter_range_slider._RangeSliderState, () => ({
+    __proto__: dart.getFields(flutter_range_slider._RangeSliderState.__proto__),
+    overlayController: dart.fieldType(dart.legacy(animation_controller.AnimationController)),
+    enableController: dart.fieldType(dart.legacy(animation_controller.AnimationController)),
+    valueIndicatorController: dart.fieldType(dart.legacy(animation_controller.AnimationController))
+  }));
+  dart.defineLazy(flutter_range_slider._RangeSliderState, {
+    /*flutter_range_slider._RangeSliderState.kEnableAnimationDuration*/get kEnableAnimationDuration() {
+      return C[15] || CT.C15;
+    },
+    /*flutter_range_slider._RangeSliderState.kValueIndicatorAnimationDuration*/get kValueIndicatorAnimationDuration() {
+      return C[16] || CT.C16;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultTrackHeight*/get _defaultTrackHeight() {
+      return 2;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultTrackShape*/get _defaultTrackShape() {
+      return C[17] || CT.C17;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultTickMarkShape*/get _defaultTickMarkShape() {
+      return C[18] || CT.C18;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultOverlayShape*/get _defaultOverlayShape() {
+      return C[19] || CT.C19;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultThumbShape*/get _defaultThumbShape() {
+      return C[20] || CT.C20;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultValueIndicatorShape*/get _defaultValueIndicatorShape() {
+      return C[21] || CT.C21;
+    },
+    /*flutter_range_slider._RangeSliderState._defaultShowValueIndicator*/get _defaultShowValueIndicator() {
+      return C[22] || CT.C22;
+    }
+  }, true);
+  var state$ = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.state");
+  var onChanged$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.onChanged");
+  var onChangeStart$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.onChangeStart");
+  var onChangeEnd$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.onChangeEnd");
+  var sliderTheme$ = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.sliderTheme");
+  var lowerValue$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.lowerValue");
+  var upperValue$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.upperValue");
+  var divisions$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.divisions");
+  var showValueIndicator$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.showValueIndicator");
+  var valueIndicatorMaxDecimals$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.valueIndicatorMaxDecimals");
+  var touchRadiusExpansionRatio$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.touchRadiusExpansionRatio");
+  var valueIndicatorFormatter$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.valueIndicatorFormatter");
+  var allowThumbOverlap$0 = dart.privateName(flutter_range_slider, "_RangeSliderRenderObjectWidget.allowThumbOverlap");
+  flutter_range_slider._RangeSliderRenderObjectWidget = class _RangeSliderRenderObjectWidget extends framework.LeafRenderObjectWidget {
+    get state() {
+      return this[state$];
+    }
+    set state(value) {
+      super.state = value;
+    }
+    get onChanged() {
+      return this[onChanged$0];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get onChangeStart() {
+      return this[onChangeStart$0];
+    }
+    set onChangeStart(value) {
+      super.onChangeStart = value;
+    }
+    get onChangeEnd() {
+      return this[onChangeEnd$0];
+    }
+    set onChangeEnd(value) {
+      super.onChangeEnd = value;
+    }
+    get sliderTheme() {
+      return this[sliderTheme$];
+    }
+    set sliderTheme(value) {
+      super.sliderTheme = value;
+    }
+    get lowerValue() {
+      return this[lowerValue$0];
+    }
+    set lowerValue(value) {
+      super.lowerValue = value;
+    }
+    get upperValue() {
+      return this[upperValue$0];
+    }
+    set upperValue(value) {
+      super.upperValue = value;
+    }
+    get divisions() {
+      return this[divisions$0];
+    }
+    set divisions(value) {
+      super.divisions = value;
+    }
+    get showValueIndicator() {
+      return this[showValueIndicator$0];
+    }
+    set showValueIndicator(value) {
+      super.showValueIndicator = value;
+    }
+    get valueIndicatorMaxDecimals() {
+      return this[valueIndicatorMaxDecimals$0];
+    }
+    set valueIndicatorMaxDecimals(value) {
+      super.valueIndicatorMaxDecimals = value;
+    }
+    get touchRadiusExpansionRatio() {
+      return this[touchRadiusExpansionRatio$0];
+    }
+    set touchRadiusExpansionRatio(value) {
+      super.touchRadiusExpansionRatio = value;
+    }
+    get valueIndicatorFormatter() {
+      return this[valueIndicatorFormatter$0];
+    }
+    set valueIndicatorFormatter(value) {
+      super.valueIndicatorFormatter = value;
+    }
+    get allowThumbOverlap() {
+      return this[allowThumbOverlap$0];
+    }
+    set allowThumbOverlap(value) {
+      super.allowThumbOverlap = value;
+    }
+    createRenderObject(context) {
+      return new flutter_range_slider._RenderRangeSlider.new({lowerValue: this.lowerValue, upperValue: this.upperValue, divisions: this.divisions, onChanged: this.onChanged, onChangeStart: this.onChangeStart, onChangeEnd: this.onChangeEnd, sliderTheme: this.sliderTheme, state: this.state, showValueIndicator: this.showValueIndicator, valueIndicatorMaxDecimals: this.valueIndicatorMaxDecimals, touchRadiusExpansionRatio: this.touchRadiusExpansionRatio, valueIndicatorFormatter: this.valueIndicatorFormatter, allowThumbOverlap: this.allowThumbOverlap, sizeWithOverflow: media_query.MediaQuery.of(context).size});
+    }
+    updateRenderObject(context, renderObject) {
+      let t0;
+      T._RenderRangeSliderL().as(renderObject);
+      t0 = renderObject;
+      (() => {
+        t0.lowerValue = this.lowerValue;
+        t0.upperValue = this.upperValue;
+        t0.divisions = this.divisions;
+        t0.onChanged = this.onChanged;
+        t0.onChangeStart = this.onChangeStart;
+        t0.onChangeEnd = this.onChangeEnd;
+        t0.sliderTheme = this.sliderTheme;
+        t0.showValueIndicator = this.showValueIndicator;
+        t0.valueIndicatorMaxDecimals = this.valueIndicatorMaxDecimals;
+        t0.touchRadiusExpansionRatio = this.touchRadiusExpansionRatio;
+        t0.valueIndicatorFormatter = this.valueIndicatorFormatter;
+        t0.allowThumbOverlap = this.allowThumbOverlap;
+        return t0;
+      })();
+    }
+  };
+  (flutter_range_slider._RangeSliderRenderObjectWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let lowerValue = opts && 'lowerValue' in opts ? opts.lowerValue : null;
+    let upperValue = opts && 'upperValue' in opts ? opts.upperValue : null;
+    let divisions = opts && 'divisions' in opts ? opts.divisions : null;
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let onChangeStart = opts && 'onChangeStart' in opts ? opts.onChangeStart : null;
+    let onChangeEnd = opts && 'onChangeEnd' in opts ? opts.onChangeEnd : null;
+    let sliderTheme = opts && 'sliderTheme' in opts ? opts.sliderTheme : null;
+    let state = opts && 'state' in opts ? opts.state : null;
+    let showValueIndicator = opts && 'showValueIndicator' in opts ? opts.showValueIndicator : null;
+    let valueIndicatorMaxDecimals = opts && 'valueIndicatorMaxDecimals' in opts ? opts.valueIndicatorMaxDecimals : null;
+    let touchRadiusExpansionRatio = opts && 'touchRadiusExpansionRatio' in opts ? opts.touchRadiusExpansionRatio : null;
+    let valueIndicatorFormatter = opts && 'valueIndicatorFormatter' in opts ? opts.valueIndicatorFormatter : null;
+    let allowThumbOverlap = opts && 'allowThumbOverlap' in opts ? opts.allowThumbOverlap : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[lowerValue$0] = lowerValue;
+    this[upperValue$0] = upperValue;
+    this[divisions$0] = divisions;
+    this[onChanged$0] = onChanged;
+    this[onChangeStart$0] = onChangeStart;
+    this[onChangeEnd$0] = onChangeEnd;
+    this[sliderTheme$] = sliderTheme;
+    this[state$] = state;
+    this[showValueIndicator$0] = showValueIndicator;
+    this[valueIndicatorMaxDecimals$0] = valueIndicatorMaxDecimals;
+    this[touchRadiusExpansionRatio$0] = touchRadiusExpansionRatio;
+    this[valueIndicatorFormatter$0] = valueIndicatorFormatter;
+    this[allowThumbOverlap$0] = allowThumbOverlap;
+    flutter_range_slider._RangeSliderRenderObjectWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = flutter_range_slider._RangeSliderRenderObjectWidget.prototype;
+  dart.addTypeTests(flutter_range_slider._RangeSliderRenderObjectWidget);
+  dart.addTypeCaches(flutter_range_slider._RangeSliderRenderObjectWidget);
+  dart.setMethodSignature(flutter_range_slider._RangeSliderRenderObjectWidget, () => ({
+    __proto__: dart.getMethods(flutter_range_slider._RangeSliderRenderObjectWidget.__proto__),
+    createRenderObject: dart.fnType(dart.legacy(object.RenderObject), [dart.legacy(framework.BuildContext)]),
+    updateRenderObject: dart.fnType(dart.void, [dart.legacy(framework.BuildContext), dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(flutter_range_slider._RangeSliderRenderObjectWidget, I[1]);
+  dart.setFieldSignature(flutter_range_slider._RangeSliderRenderObjectWidget, () => ({
+    __proto__: dart.getFields(flutter_range_slider._RangeSliderRenderObjectWidget.__proto__),
+    state: dart.finalFieldType(dart.legacy(flutter_range_slider._RangeSliderState)),
+    onChanged: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    onChangeStart: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    onChangeEnd: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    sliderTheme: dart.finalFieldType(dart.legacy(slider_theme.SliderThemeData)),
+    lowerValue: dart.finalFieldType(dart.legacy(core.double)),
+    upperValue: dart.finalFieldType(dart.legacy(core.double)),
+    divisions: dart.finalFieldType(dart.legacy(core.int)),
+    showValueIndicator: dart.finalFieldType(dart.legacy(core.bool)),
+    valueIndicatorMaxDecimals: dart.finalFieldType(dart.legacy(core.int)),
+    touchRadiusExpansionRatio: dart.finalFieldType(dart.legacy(core.double)),
+    valueIndicatorFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.int), dart.legacy(core.double)]))),
+    allowThumbOverlap: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var _onChanged = dart.privateName(flutter_range_slider, "_onChanged");
+  var _onChangeStart = dart.privateName(flutter_range_slider, "_onChangeStart");
+  var _onChangeEnd = dart.privateName(flutter_range_slider, "_onChangeEnd");
+  var _lowerValue = dart.privateName(flutter_range_slider, "_lowerValue");
+  var _upperValue = dart.privateName(flutter_range_slider, "_upperValue");
+  var _divisions = dart.privateName(flutter_range_slider, "_divisions");
+  var _overlayAnimation = dart.privateName(flutter_range_slider, "_overlayAnimation");
+  var _enableAnimation = dart.privateName(flutter_range_slider, "_enableAnimation");
+  var _valueIndicatorAnimation = dart.privateName(flutter_range_slider, "_valueIndicatorAnimation");
+  var _drag = dart.privateName(flutter_range_slider, "_drag");
+  var _sliderTheme = dart.privateName(flutter_range_slider, "_sliderTheme");
+  var _showValueIndicator = dart.privateName(flutter_range_slider, "_showValueIndicator");
+  var _touchRadiusExpansionRatio = dart.privateName(flutter_range_slider, "_touchRadiusExpansionRatio");
+  var _valueIndicatorMaxDecimals = dart.privateName(flutter_range_slider, "_valueIndicatorMaxDecimals");
+  var _valueIndicatorPainter = dart.privateName(flutter_range_slider, "_valueIndicatorPainter");
+  var _valueIndicatorFormatter = dart.privateName(flutter_range_slider, "_valueIndicatorFormatter");
+  var _allowThumbOverlap = dart.privateName(flutter_range_slider, "_allowThumbOverlap");
+  var _trackLength = dart.privateName(flutter_range_slider, "_trackLength");
+  var _trackVerticalCenter = dart.privateName(flutter_range_slider, "_trackVerticalCenter");
+  var _trackLeft = dart.privateName(flutter_range_slider, "_trackLeft");
+  var _trackTop = dart.privateName(flutter_range_slider, "_trackTop");
+  var _trackBottom = dart.privateName(flutter_range_slider, "_trackBottom");
+  var _trackRight = dart.privateName(flutter_range_slider, "_trackRight");
+  var _thumbLeftPosition = dart.privateName(flutter_range_slider, "_thumbLeftPosition");
+  var _thumbRightPosition = dart.privateName(flutter_range_slider, "_thumbRightPosition");
+  var _thumbLowerRect = dart.privateName(flutter_range_slider, "_thumbLowerRect");
+  var _thumbUpperRect = dart.privateName(flutter_range_slider, "_thumbUpperRect");
+  var _currentDragValue = dart.privateName(flutter_range_slider, "_currentDragValue");
+  var _minDragValue = dart.privateName(flutter_range_slider, "_minDragValue");
+  var _maxDragValue = dart.privateName(flutter_range_slider, "_maxDragValue");
+  var _activeThumb = dart.privateName(flutter_range_slider, "_activeThumb");
+  var _previousActiveThumb = dart.privateName(flutter_range_slider, "_previousActiveThumb");
+  var _handleDragStart = dart.privateName(flutter_range_slider, "_handleDragStart");
+  var _handleDragEnd = dart.privateName(flutter_range_slider, "_handleDragEnd");
+  var _handleDragUpdate = dart.privateName(flutter_range_slider, "_handleDragUpdate");
+  var _handleDragCancel = dart.privateName(flutter_range_slider, "_handleDragCancel");
+  var _discretize = dart.privateName(flutter_range_slider, "_discretize");
+  var _updateValueIndicatorPainter = dart.privateName(flutter_range_slider, "_updateValueIndicatorPainter");
+  var _thumbRadius = dart.privateName(flutter_range_slider, "_thumbRadius");
+  var _paintTrack = dart.privateName(flutter_range_slider, "_paintTrack");
+  var _paintOverlay = dart.privateName(flutter_range_slider, "_paintOverlay");
+  var _paintTickMarks = dart.privateName(flutter_range_slider, "_paintTickMarks");
+  var _paintValueIndicator = dart.privateName(flutter_range_slider, "_paintValueIndicator");
+  var _paintThumbs = dart.privateName(flutter_range_slider, "_paintThumbs");
+  var _getValueFromGlobalPosition = dart.privateName(flutter_range_slider, "_getValueFromGlobalPosition");
+  var _onRangeChanged = dart.privateName(flutter_range_slider, "_onRangeChanged");
+  var _validateActiveThumb = dart.privateName(flutter_range_slider, "_validateActiveThumb");
+  flutter_range_slider._RenderRangeSlider = class _RenderRangeSlider extends box.RenderBox {
+    set lowerValue(value) {
+      if (!(value != null && dart.notNull(value) >= 0.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, I[0], 673, 12, "value != null && value >= 0.0 && value <= 1.0");
+      this[_lowerValue] = this[_discretize](value);
+    }
+    set upperValue(value) {
+      if (!(value != null && dart.notNull(value) >= 0.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, I[0], 678, 12, "value != null && value >= 0.0 && value <= 1.0");
+      this[_upperValue] = this[_discretize](value);
+    }
+    set touchRadiusExpansionRatio(value) {
+      if (!(value != null && dart.notNull(value) >= 0.1)) dart.assertFailed(null, I[0], 683, 12, "value != null && value >= 0.1");
+      this[_touchRadiusExpansionRatio] = value;
+    }
+    set divisions(value) {
+      this[_divisions] = value;
+      this.markNeedsPaint();
+    }
+    set onChanged(value) {
+      if (dart.equals(this[_onChanged], value)) {
+        return;
+      }
+      let wasInteractive = this.isInteractive;
+      this[_onChanged] = value;
+      if (wasInteractive != this.isInteractive) {
+        if (dart.test(this.isInteractive)) {
+          this.state.enableController.forward();
+        } else {
+          this.state.enableController.reverse();
+        }
+        this.markNeedsPaint();
+      }
+    }
+    set onChangeStart(value) {
+      this[_onChangeStart] = value;
+    }
+    set onChangeEnd(value) {
+      this[_onChangeEnd] = value;
+    }
+    set sliderTheme(value) {
+      if (!(value != null)) dart.assertFailed(null, I[0], 728, 12, "value != null");
+      this[_sliderTheme] = value;
+      this.markNeedsPaint();
+    }
+    set showValueIndicator(value) {
+      if (value == this[_showValueIndicator]) {
+        return;
+      }
+      this[_showValueIndicator] = value;
+      this[_updateValueIndicatorPainter]();
+    }
+    set valueIndicatorMaxDecimals(value) {
+      if (value == this[_valueIndicatorMaxDecimals]) {
+        return;
+      }
+      this[_valueIndicatorMaxDecimals] = value;
+      this.markNeedsPaint();
+    }
+    set valueIndicatorFormatter(formatter) {
+      this[_valueIndicatorFormatter] = formatter;
+    }
+    set allowThumbOverlap(value) {
+      this[_allowThumbOverlap] = value;
+    }
+    get isInteractive() {
+      return this[_onChanged] != null;
+    }
+    get [_thumbRadius]() {
+      let preferredSize = this[_sliderTheme].thumbShape.getPreferredSize(this.isInteractive, this[_divisions] != null);
+      return math.max(T.doubleL(), preferredSize.width, preferredSize.height) / 2.0;
+    }
+    get showValueIndicator() {
+      let showValueIndicator = null;
+      switch (this[_sliderTheme].showValueIndicator) {
+        case C[22] || CT.C22:
+        {
+          showValueIndicator = this[_divisions] != null;
+          break;
+        }
+        case C[23] || CT.C23:
+        {
+          showValueIndicator = this[_divisions] == null;
+          break;
+        }
+        case C[24] || CT.C24:
+        {
+          showValueIndicator = true;
+          break;
+        }
+        case C[25] || CT.C25:
+        {
+          showValueIndicator = false;
+          break;
+        }
+      }
+      return dart.test(showValueIndicator) && dart.test(this[_showValueIndicator]);
+    }
+    [_updateValueIndicatorPainter]() {
+      let t0;
+      if (this[_showValueIndicator] !== false) {
+        t0 = this[_valueIndicatorPainter];
+        (() => {
+          t0.text = new text_span.TextSpan.new({style: this[_sliderTheme].valueIndicatorTextStyle, text: ""});
+          t0.textDirection = ui.TextDirection.ltr;
+          t0.layout();
+          return t0;
+        })();
+      } else {
+        this[_valueIndicatorPainter].text = null;
+      }
+      this.markNeedsLayout();
+    }
+    attach(owner) {
+      T.PipelineOwnerL().as(owner);
+      super.attach(owner);
+      this[_overlayAnimation].addListener(dart.bind(this, 'markNeedsPaint'));
+      this[_enableAnimation].addListener(dart.bind(this, 'markNeedsPaint'));
+      this[_valueIndicatorAnimation].addListener(dart.bind(this, 'markNeedsPaint'));
+    }
+    detach() {
+      this[_valueIndicatorAnimation].removeListener(dart.bind(this, 'markNeedsPaint'));
+      this[_enableAnimation].removeListener(dart.bind(this, 'markNeedsPaint'));
+      this[_overlayAnimation].removeListener(dart.bind(this, 'markNeedsPaint'));
+      super.detach();
+    }
+    get sizedByParent() {
+      return true;
+    }
+    performResize() {
+      this.size = new ui.Size.new(dart.test(this.constraints.hasBoundedWidth) ? this.constraints.maxWidth : 176, dart.test(this.constraints.hasBoundedHeight) ? this.constraints.maxHeight : 16 * 2.0);
+    }
+    hitTestSelf(position) {
+      return true;
+    }
+    computeMinIntrinsicWidth(height) {
+      return 2 * math.max(T.numL(), 16, this[_sliderTheme].thumbShape.getPreferredSize(true, this[_divisions] != null).width);
+    }
+    computeMaxIntrinsicWidth(height) {
+      return 176;
+    }
+    computeMinIntrinsicHeight(width) {
+      return math.max(T.doubleL(), 16, this[_sliderTheme].thumbShape.getPreferredSize(true, this[_divisions] != null).height);
+    }
+    computeMaxIntrinsicHeight(width) {
+      return math.max(T.doubleL(), 16, this[_sliderTheme].thumbShape.getPreferredSize(true, this[_divisions] != null).height);
+    }
+    paint(context, offset) {
+      let canvas = context.canvas;
+      this[_paintTrack](canvas, offset);
+      this[_paintOverlay](canvas);
+      if (this[_divisions] != null) {
+        this[_paintTickMarks](canvas, offset);
+      }
+      this[_paintValueIndicator](context);
+      this[_paintThumbs](context, offset);
+    }
+    [_paintTrack](canvas, offset) {
+      let t0, t0$;
+      let trackRadius = dart.notNull(this[_sliderTheme].trackHeight) / 2.0;
+      this[_trackLength] = dart.notNull(this.size.width) - 2 * 16;
+      this[_trackVerticalCenter] = dart.notNull(offset.dy) + dart.notNull(this.size.height) / 2.0;
+      this[_trackLeft] = dart.notNull(offset.dx) + 16;
+      this[_trackTop] = dart.notNull(this[_trackVerticalCenter]) - trackRadius;
+      this[_trackBottom] = dart.notNull(this[_trackVerticalCenter]) + trackRadius;
+      this[_trackRight] = dart.notNull(this[_trackLeft]) + dart.notNull(this[_trackLength]);
+      this[_thumbLeftPosition] = dart.notNull(this[_trackLeft]) + dart.notNull(this[_lowerValue]) * dart.notNull(this[_trackLength]);
+      this[_thumbRightPosition] = dart.notNull(this[_trackLeft]) + dart.notNull(this[_upperValue]) * dart.notNull(this[_trackLength]);
+      let unselectedTrackPaint = (t0 = ui.Paint.new(), (() => {
+        t0.color = dart.test(this.isInteractive) ? this[_sliderTheme].inactiveTrackColor : this[_sliderTheme].disabledInactiveTrackColor;
+        return t0;
+      })());
+      let selectedTrackPaint = (t0$ = ui.Paint.new(), (() => {
+        t0$.color = dart.test(this.isInteractive) ? this[_sliderTheme].activeTrackColor : this[_sliderTheme].disabledActiveTrackColor;
+        return t0$;
+      })());
+      if (dart.notNull(this[_lowerValue]) > 0.0) {
+        canvas.drawRect(new ui.Rect.fromLTRB(this[_trackLeft], this[_trackTop], this[_thumbLeftPosition], this[_trackBottom]), unselectedTrackPaint);
+      }
+      canvas.drawRect(new ui.Rect.fromLTRB(this[_thumbLeftPosition], this[_trackTop], this[_thumbRightPosition], this[_trackBottom]), selectedTrackPaint);
+      if (dart.notNull(this[_upperValue]) < 1.0) {
+        canvas.drawRect(new ui.Rect.fromLTRB(this[_thumbRightPosition], this[_trackTop], this[_trackRight], this[_trackBottom]), unselectedTrackPaint);
+      }
+    }
+    [_paintOverlay](canvas) {
+      let t0;
+      if (!dart.test(this[_overlayAnimation].isDismissed) && this[_previousActiveThumb] != flutter_range_slider._ActiveThumb.none) {
+        let overlayPaint = (t0 = ui.Paint.new(), (() => {
+          t0.color = this[_sliderTheme].overlayColor;
+          return t0;
+        })());
+        let radius = flutter_range_slider._RenderRangeSlider._overlayRadiusTween.evaluate(this[_overlayAnimation]);
+        let center = null;
+        if (this[_previousActiveThumb] == flutter_range_slider._ActiveThumb.lowerThumb) {
+          center = new ui.Offset.new(this[_thumbLeftPosition], this[_trackVerticalCenter]);
+        } else {
+          center = new ui.Offset.new(this[_thumbRightPosition], this[_trackVerticalCenter]);
+        }
+        canvas.drawCircle(center, radius, overlayPaint);
+      }
+    }
+    [_paintTickMarks](canvas, offset) {
+      let t0;
+      let trackWidth = dart.notNull(this[_trackRight]) - dart.notNull(this[_trackLeft]);
+      let dx = (trackWidth - dart.notNull(this[_sliderTheme].trackHeight)) / dart.notNull(this[_divisions]);
+      let _tickRadius = (dart.notNull(this[_sliderTheme].trackHeight) / 2.0)[$clamp](1.0, 2.0);
+      let _tickOffset = (dart.notNull(this[_sliderTheme].trackHeight) - _tickRadius) / 2.0;
+      for (let i = 0; i <= dart.notNull(this[_divisions]); i = i + 1) {
+        let left = dart.notNull(this[_trackLeft]) + i * dx;
+        let center = new ui.Offset.new(left + _tickOffset, dart.notNull(this[_trackTop]) + _tickOffset + (dart.notNull(this[_sliderTheme].trackHeight) > 2.0 ? 1.0 : 0.0));
+        canvas.drawCircle(center, _tickRadius, (t0 = ui.Paint.new(), (() => {
+          t0.color = dart.test(this.isInteractive) ? this[_sliderTheme].activeTickMarkColor : this[_sliderTheme].disabledActiveTickMarkColor;
+          return t0;
+        })()));
+      }
+    }
+    [_paintThumbs](context, offset) {
+      let thumbLowerCenter = new ui.Offset.new(this[_thumbLeftPosition], this[_trackVerticalCenter]);
+      let thumbUpperCenter = new ui.Offset.new(this[_thumbRightPosition], this[_trackVerticalCenter]);
+      let thumbRadius = this[_thumbRadius];
+      this[_thumbLowerRect] = new ui.Rect.fromCircle({center: thumbLowerCenter['-'](offset), radius: thumbRadius});
+      this[_thumbUpperRect] = new ui.Rect.fromCircle({center: thumbUpperCenter['-'](offset), radius: thumbRadius});
+      this[_sliderTheme].thumbShape.paint(context, thumbLowerCenter, {isDiscrete: this[_divisions] != null, parentBox: this, sliderTheme: this[_sliderTheme], value: this[_lowerValue], enableAnimation: this[_enableAnimation], activationAnimation: this[_valueIndicatorAnimation], labelPainter: this[_valueIndicatorPainter], textDirection: ui.TextDirection.ltr, sizeWithOverflow: this.sizeWithOverflow});
+      this[_sliderTheme].thumbShape.paint(context, thumbUpperCenter, {isDiscrete: this[_divisions] != null, parentBox: this, sliderTheme: this[_sliderTheme], value: this[_upperValue], enableAnimation: this[_enableAnimation], activationAnimation: this[_valueIndicatorAnimation], labelPainter: this[_valueIndicatorPainter], textDirection: ui.TextDirection.ltr, sizeWithOverflow: this.sizeWithOverflow});
+    }
+    [_paintValueIndicator](context) {
+      let t1, t0, t1$, t1$0;
+      if (dart.test(this.isInteractive) && dart.test(this[_showValueIndicator]) && this[_previousActiveThumb] != flutter_range_slider._ActiveThumb.none) {
+        if (this[_valueIndicatorAnimation].status != animation.AnimationStatus.dismissed && dart.test(this.showValueIndicator)) {
+          let thumbCenter = null;
+          let value = null;
+          let textValue = null;
+          let index = 0;
+          if (this[_previousActiveThumb] == flutter_range_slider._ActiveThumb.lowerThumb) {
+            thumbCenter = new ui.Offset.new(this[_thumbLeftPosition], this[_trackVerticalCenter]);
+            value = this[_lowerValue];
+          } else {
+            thumbCenter = new ui.Offset.new(this[_thumbRightPosition], this[_trackVerticalCenter]);
+            value = this[_upperValue];
+            index = 1;
+          }
+          value = this.state.lerp(value);
+          if (T.intLAnddoubleLToLdynamic().is(this[_valueIndicatorFormatter])) {
+            try {
+              textValue = T.StringL().as((t0 = index, t1 = value, this[_valueIndicatorFormatter](t0, t1)));
+            } catch (e) {
+              let _ = dart.getThrown(e);
+            }
+          }
+          textValue = (t1$ = textValue, t1$ == null ? value[$toStringAsFixed](this[_valueIndicatorMaxDecimals]) : t1$);
+          t1$0 = this[_valueIndicatorPainter];
+          (() => {
+            t1$0.text = new text_span.TextSpan.new({style: this[_sliderTheme].valueIndicatorTextStyle, text: textValue});
+            t1$0.layout();
+            return t1$0;
+          })();
+          this[_sliderTheme].valueIndicatorShape.paint(context, thumbCenter, {activationAnimation: this[_valueIndicatorAnimation], enableAnimation: this[_enableAnimation], isDiscrete: this[_divisions] != null, labelPainter: this[_valueIndicatorPainter], parentBox: this, sliderTheme: this[_sliderTheme], value: value, textDirection: ui.TextDirection.ltr, sizeWithOverflow: this.sizeWithOverflow, textScaleFactor: 1.0});
+        }
+      }
+    }
+    [_handleDragStart](details) {
+      let t2, t1;
+      this[_currentDragValue] = this[_getValueFromGlobalPosition](details.globalPosition);
+      t1 = this[_lowerValue];
+      t2 = this[_upperValue];
+      this[_onChangeStart](t1, t2);
+      this.state.overlayController.forward();
+      if (dart.test(this.showValueIndicator)) {
+        this.state.valueIndicatorController.forward();
+      }
+    }
+    [_handleDragUpdate](details) {
+      let valueDelta = dart.notNull(details.primaryDelta) / dart.notNull(this[_trackLength]);
+      this[_currentDragValue] = dart.notNull(this[_currentDragValue]) + valueDelta;
+      this[_onRangeChanged](this[_currentDragValue][$clamp](this[_minDragValue], this[_maxDragValue]));
+    }
+    [_handleDragEnd](details) {
+      this[_handleDragCancel]();
+    }
+    [_handleDragCancel]() {
+      let t2, t1;
+      this[_previousActiveThumb] = this[_activeThumb];
+      this[_activeThumb] = flutter_range_slider._ActiveThumb.none;
+      this[_currentDragValue] = 0.0;
+      t1 = this[_lowerValue];
+      t2 = this[_upperValue];
+      this[_onChangeEnd](t1, t2);
+      this.state.overlayController.reverse();
+      if (dart.test(this.showValueIndicator)) {
+        this.state.valueIndicatorController.reverse();
+      }
+    }
+    [_onRangeChanged](value) {
+      let t2, t1;
+      value = this[_discretize](value);
+      if (this[_activeThumb] == flutter_range_slider._ActiveThumb.lowerThumb) {
+        this[_lowerValue] = value;
+      } else {
+        this[_upperValue] = value;
+      }
+      t1 = this[_lowerValue];
+      t2 = this[_upperValue];
+      this[_onChanged](t1, t2);
+      this.markNeedsPaint();
+    }
+    [_discretize](value) {
+      if (this[_divisions] != null) {
+        value = (dart.notNull(value) * dart.notNull(this[_divisions]))[$round]() / dart.notNull(this[_divisions]);
+      }
+      return value;
+    }
+    [_getValueFromGlobalPosition](globalPosition) {
+      let visualPosition = (dart.notNull(this.globalToLocal(globalPosition).dx) - 16) / dart.notNull(this[_trackLength]);
+      return visualPosition;
+    }
+    handleEvent(event, entry) {
+      T.BoxHitTestEntryL().as(entry);
+      if (T.PointerDownEventL().is(event) && dart.test(this.isInteractive)) {
+        this[_validateActiveThumb](entry.localPosition);
+        if (this[_activeThumb] != flutter_range_slider._ActiveThumb.none) {
+          this[_drag].addPointer(event);
+          this[_handleDragStart](new drag_details.DragStartDetails.new({globalPosition: event.position}));
+        }
+      }
+    }
+    [_validateActiveThumb](position) {
+      let _thumbLowerExpandedRect = new ui.Rect.fromCircle({center: this[_thumbLowerRect].centerLeft, radius: dart.notNull(this[_thumbRadius]) * dart.notNull(this[_touchRadiusExpansionRatio])});
+      let _thumbUpperExpandedRect = new ui.Rect.fromCircle({center: this[_thumbUpperRect].centerRight, radius: dart.notNull(this[_thumbRadius]) * dart.notNull(this[_touchRadiusExpansionRatio])});
+      let calculatedDivisionOffset = this[_divisions] != null ? this[_discretize](1.0 / dart.notNull(this[_divisions])) : dart.notNull(this[_thumbRadius]) * 2.0 / dart.notNull(this[_trackLength]);
+      let divisionOffset = dart.test(this[_allowThumbOverlap]) ? 0.0 : calculatedDivisionOffset;
+      if (dart.test(_thumbLowerExpandedRect.contains(position))) {
+        this[_activeThumb] = flutter_range_slider._ActiveThumb.lowerThumb;
+        this[_minDragValue] = 0.0;
+        this[_maxDragValue] = this[_discretize](dart.notNull(this[_upperValue]) - dart.notNull(divisionOffset));
+      } else if (dart.test(_thumbUpperExpandedRect.contains(position))) {
+        this[_activeThumb] = flutter_range_slider._ActiveThumb.upperThumb;
+        this[_minDragValue] = this[_discretize](dart.notNull(this[_lowerValue]) + dart.notNull(divisionOffset));
+        this[_maxDragValue] = 1.0;
+      } else {
+        this[_activeThumb] = flutter_range_slider._ActiveThumb.none;
+      }
+      this[_previousActiveThumb] = this[_activeThumb];
+    }
+  };
+  (flutter_range_slider._RenderRangeSlider.new = function(opts) {
+    let t0;
+    let lowerValue = opts && 'lowerValue' in opts ? opts.lowerValue : null;
+    let upperValue = opts && 'upperValue' in opts ? opts.upperValue : null;
+    let divisions = opts && 'divisions' in opts ? opts.divisions : null;
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let onChangeStart = opts && 'onChangeStart' in opts ? opts.onChangeStart : null;
+    let onChangeEnd = opts && 'onChangeEnd' in opts ? opts.onChangeEnd : null;
+    let sliderTheme = opts && 'sliderTheme' in opts ? opts.sliderTheme : null;
+    let state = opts && 'state' in opts ? opts.state : null;
+    let showValueIndicator = opts && 'showValueIndicator' in opts ? opts.showValueIndicator : null;
+    let valueIndicatorMaxDecimals = opts && 'valueIndicatorMaxDecimals' in opts ? opts.valueIndicatorMaxDecimals : null;
+    let touchRadiusExpansionRatio = opts && 'touchRadiusExpansionRatio' in opts ? opts.touchRadiusExpansionRatio : null;
+    let valueIndicatorFormatter = opts && 'valueIndicatorFormatter' in opts ? opts.valueIndicatorFormatter : null;
+    let allowThumbOverlap = opts && 'allowThumbOverlap' in opts ? opts.allowThumbOverlap : null;
+    let sizeWithOverflow = opts && 'sizeWithOverflow' in opts ? opts.sizeWithOverflow : null;
+    this[_onChanged] = null;
+    this[_onChangeStart] = null;
+    this[_onChangeEnd] = null;
+    this[_lowerValue] = null;
+    this[_upperValue] = null;
+    this[_divisions] = null;
+    this[_overlayAnimation] = null;
+    this[_enableAnimation] = null;
+    this[_valueIndicatorAnimation] = null;
+    this[_drag] = null;
+    this[_sliderTheme] = null;
+    this[_showValueIndicator] = null;
+    this[_touchRadiusExpansionRatio] = null;
+    this[_valueIndicatorMaxDecimals] = null;
+    this[_valueIndicatorPainter] = new text_painter.TextPainter.new();
+    this[_valueIndicatorFormatter] = null;
+    this[_allowThumbOverlap] = null;
+    this.sizeWithOverflow = null;
+    this[_trackLength] = null;
+    this[_trackVerticalCenter] = null;
+    this[_trackLeft] = null;
+    this[_trackTop] = null;
+    this[_trackBottom] = null;
+    this[_trackRight] = null;
+    this[_thumbLeftPosition] = null;
+    this[_thumbRightPosition] = null;
+    this[_thumbLowerRect] = null;
+    this[_thumbUpperRect] = null;
+    this[_currentDragValue] = 0.0;
+    this[_minDragValue] = null;
+    this[_maxDragValue] = null;
+    this[_activeThumb] = flutter_range_slider._ActiveThumb.none;
+    this[_previousActiveThumb] = flutter_range_slider._ActiveThumb.none;
+    this.state = state;
+    flutter_range_slider._RenderRangeSlider.__proto__.new.call(this);
+    this.divisions = divisions;
+    this.lowerValue = lowerValue;
+    this.upperValue = upperValue;
+    this.onChanged = onChanged;
+    this.onChangeStart = onChangeStart;
+    this.onChangeEnd = onChangeEnd;
+    this.sliderTheme = sliderTheme;
+    this.showValueIndicator = showValueIndicator;
+    this.valueIndicatorMaxDecimals = valueIndicatorMaxDecimals;
+    this[_touchRadiusExpansionRatio] = touchRadiusExpansionRatio;
+    this.valueIndicatorFormatter = valueIndicatorFormatter;
+    this.allowThumbOverlap = allowThumbOverlap;
+    this.sizeWithOverflow = sizeWithOverflow;
+    this[_drag] = (t0 = new monodrag.HorizontalDragGestureRecognizer.new(), (() => {
+      t0.onStart = dart.bind(this, _handleDragStart);
+      t0.onEnd = dart.bind(this, _handleDragEnd);
+      t0.onUpdate = dart.bind(this, _handleDragUpdate);
+      t0.onCancel = dart.bind(this, _handleDragCancel);
+      return t0;
+    })());
+    this[_overlayAnimation] = new animations.CurvedAnimation.new({parent: this.state.overlayController, curve: curves.Curves.fastOutSlowIn});
+    this[_enableAnimation] = new animations.CurvedAnimation.new({parent: this.state.enableController, curve: curves.Curves.easeInOut});
+    this[_valueIndicatorAnimation] = new animations.CurvedAnimation.new({parent: this.state.valueIndicatorController, curve: curves.Curves.fastOutSlowIn});
+  }).prototype = flutter_range_slider._RenderRangeSlider.prototype;
+  dart.addTypeTests(flutter_range_slider._RenderRangeSlider);
+  dart.addTypeCaches(flutter_range_slider._RenderRangeSlider);
+  dart.setMethodSignature(flutter_range_slider._RenderRangeSlider, () => ({
+    __proto__: dart.getMethods(flutter_range_slider._RenderRangeSlider.__proto__),
+    [_updateValueIndicatorPainter]: dart.fnType(dart.void, []),
+    attach: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    hitTestSelf: dart.fnType(dart.legacy(core.bool), [dart.legacy(ui.Offset)]),
+    computeMinIntrinsicWidth: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    computeMaxIntrinsicWidth: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    computeMinIntrinsicHeight: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    computeMaxIntrinsicHeight: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    paint: dart.fnType(dart.void, [dart.legacy(object.PaintingContext), dart.legacy(ui.Offset)]),
+    [_paintTrack]: dart.fnType(dart.void, [dart.legacy(ui.Canvas), dart.legacy(ui.Offset)]),
+    [_paintOverlay]: dart.fnType(dart.void, [dart.legacy(ui.Canvas)]),
+    [_paintTickMarks]: dart.fnType(dart.void, [dart.legacy(ui.Canvas), dart.legacy(ui.Offset)]),
+    [_paintThumbs]: dart.fnType(dart.void, [dart.legacy(object.PaintingContext), dart.legacy(ui.Offset)]),
+    [_paintValueIndicator]: dart.fnType(dart.void, [dart.legacy(object.PaintingContext)]),
+    [_handleDragStart]: dart.fnType(dart.void, [dart.legacy(drag_details.DragStartDetails)]),
+    [_handleDragUpdate]: dart.fnType(dart.void, [dart.legacy(drag_details.DragUpdateDetails)]),
+    [_handleDragEnd]: dart.fnType(dart.void, [dart.legacy(drag_details.DragEndDetails)]),
+    [_handleDragCancel]: dart.fnType(dart.void, []),
+    [_onRangeChanged]: dart.fnType(dart.void, [dart.legacy(core.double)]),
+    [_discretize]: dart.fnType(dart.legacy(core.double), [dart.legacy(core.double)]),
+    [_getValueFromGlobalPosition]: dart.fnType(dart.legacy(core.double), [dart.legacy(ui.Offset)]),
+    handleEvent: dart.fnType(dart.void, [dart.legacy(events.PointerEvent), dart.legacy(core.Object)]),
+    [_validateActiveThumb]: dart.fnType(dart.dynamic, [dart.legacy(ui.Offset)])
+  }));
+  dart.setGetterSignature(flutter_range_slider._RenderRangeSlider, () => ({
+    __proto__: dart.getGetters(flutter_range_slider._RenderRangeSlider.__proto__),
+    isInteractive: dart.legacy(core.bool),
+    [_thumbRadius]: dart.legacy(core.double),
+    showValueIndicator: dart.legacy(core.bool),
+    sizedByParent: dart.legacy(core.bool)
+  }));
+  dart.setSetterSignature(flutter_range_slider._RenderRangeSlider, () => ({
+    __proto__: dart.getSetters(flutter_range_slider._RenderRangeSlider.__proto__),
+    lowerValue: dart.legacy(core.double),
+    upperValue: dart.legacy(core.double),
+    touchRadiusExpansionRatio: dart.legacy(core.double),
+    divisions: dart.legacy(core.int),
+    onChanged: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)])),
+    onChangeStart: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)])),
+    onChangeEnd: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)])),
+    sliderTheme: dart.legacy(slider_theme.SliderThemeData),
+    showValueIndicator: dart.legacy(core.bool),
+    valueIndicatorMaxDecimals: dart.legacy(core.int),
+    valueIndicatorFormatter: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.int), dart.legacy(core.double)])),
+    allowThumbOverlap: dart.legacy(core.bool)
+  }));
+  dart.setLibraryUri(flutter_range_slider._RenderRangeSlider, I[1]);
+  dart.setFieldSignature(flutter_range_slider._RenderRangeSlider, () => ({
+    __proto__: dart.getFields(flutter_range_slider._RenderRangeSlider.__proto__),
+    state: dart.fieldType(dart.legacy(flutter_range_slider._RangeSliderState)),
+    [_onChanged]: dart.fieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    [_onChangeStart]: dart.fieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    [_onChangeEnd]: dart.fieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.double), dart.legacy(core.double)]))),
+    [_lowerValue]: dart.fieldType(dart.legacy(core.double)),
+    [_upperValue]: dart.fieldType(dart.legacy(core.double)),
+    [_divisions]: dart.fieldType(dart.legacy(core.int)),
+    [_overlayAnimation]: dart.fieldType(dart.legacy(animation.Animation$(dart.legacy(core.double)))),
+    [_enableAnimation]: dart.fieldType(dart.legacy(animation.Animation$(dart.legacy(core.double)))),
+    [_valueIndicatorAnimation]: dart.fieldType(dart.legacy(animation.Animation$(dart.legacy(core.double)))),
+    [_drag]: dart.fieldType(dart.legacy(monodrag.HorizontalDragGestureRecognizer)),
+    [_sliderTheme]: dart.fieldType(dart.legacy(slider_theme.SliderThemeData)),
+    [_showValueIndicator]: dart.fieldType(dart.legacy(core.bool)),
+    [_touchRadiusExpansionRatio]: dart.fieldType(dart.legacy(core.double)),
+    [_valueIndicatorMaxDecimals]: dart.fieldType(dart.legacy(core.int)),
+    [_valueIndicatorPainter]: dart.finalFieldType(dart.legacy(text_painter.TextPainter)),
+    [_valueIndicatorFormatter]: dart.fieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.int), dart.legacy(core.double)]))),
+    [_allowThumbOverlap]: dart.fieldType(dart.legacy(core.bool)),
+    sizeWithOverflow: dart.fieldType(dart.legacy(ui.Size)),
+    [_trackLength]: dart.fieldType(dart.legacy(core.double)),
+    [_trackVerticalCenter]: dart.fieldType(dart.legacy(core.double)),
+    [_trackLeft]: dart.fieldType(dart.legacy(core.double)),
+    [_trackTop]: dart.fieldType(dart.legacy(core.double)),
+    [_trackBottom]: dart.fieldType(dart.legacy(core.double)),
+    [_trackRight]: dart.fieldType(dart.legacy(core.double)),
+    [_thumbLeftPosition]: dart.fieldType(dart.legacy(core.double)),
+    [_thumbRightPosition]: dart.fieldType(dart.legacy(core.double)),
+    [_thumbLowerRect]: dart.fieldType(dart.legacy(ui.Rect)),
+    [_thumbUpperRect]: dart.fieldType(dart.legacy(ui.Rect)),
+    [_currentDragValue]: dart.fieldType(dart.legacy(core.double)),
+    [_minDragValue]: dart.fieldType(dart.legacy(core.double)),
+    [_maxDragValue]: dart.fieldType(dart.legacy(core.double)),
+    [_activeThumb]: dart.fieldType(dart.legacy(flutter_range_slider._ActiveThumb)),
+    [_previousActiveThumb]: dart.fieldType(dart.legacy(flutter_range_slider._ActiveThumb))
+  }));
+  dart.defineLazy(flutter_range_slider._RenderRangeSlider, {
+    /*flutter_range_slider._RenderRangeSlider._overlayRadius*/get _overlayRadius() {
+      return 16;
+    },
+    /*flutter_range_slider._RenderRangeSlider._overlayDiameter*/get _overlayDiameter() {
+      return 16;
+    },
+    /*flutter_range_slider._RenderRangeSlider._preferredTrackWidth*/get _preferredTrackWidth() {
+      return 144;
+    },
+    /*flutter_range_slider._RenderRangeSlider._preferredTotalWidth*/get _preferredTotalWidth() {
+      return 176;
+    },
+    /*flutter_range_slider._RenderRangeSlider._overlayRadiusTween*/get _overlayRadiusTween() {
+      return new (T.TweenOfdoubleL()).new({begin: 0.0, end: 16});
+    }
+  }, true);
+  var _name$ = dart.privateName(flutter_range_slider, "_name");
+  flutter_range_slider._ActiveThumb = class _ActiveThumb extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (flutter_range_slider._ActiveThumb.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = flutter_range_slider._ActiveThumb.prototype;
+  dart.addTypeTests(flutter_range_slider._ActiveThumb);
+  dart.addTypeCaches(flutter_range_slider._ActiveThumb);
+  dart.setMethodSignature(flutter_range_slider._ActiveThumb, () => ({
+    __proto__: dart.getMethods(flutter_range_slider._ActiveThumb.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(flutter_range_slider._ActiveThumb, I[1]);
+  dart.setFieldSignature(flutter_range_slider._ActiveThumb, () => ({
+    __proto__: dart.getFields(flutter_range_slider._ActiveThumb.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(flutter_range_slider._ActiveThumb, ['toString']);
+  flutter_range_slider._ActiveThumb.none = C[26] || CT.C26;
+  flutter_range_slider._ActiveThumb.lowerThumb = C[27] || CT.C27;
+  flutter_range_slider._ActiveThumb.upperThumb = C[28] || CT.C28;
+  flutter_range_slider._ActiveThumb.values = C[29] || CT.C29;
+  dart.trackLibraries("packages/flutter_range_slider/src/flutter_range_slider.dart", {
+    "package:flutter_range_slider/src/flutter_range_slider.dart": flutter_range_slider
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["flutter_range_slider.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../D:/packages/flutter_range_slider/src/flutter_range_slider.dart.lib.js"}');
+  // Exports:
+  return {
+    src__flutter_range_slider: flutter_range_slider
+  };
+}));
+
+//# sourceMappingURL=flutter_range_slider.dart.lib.js.map

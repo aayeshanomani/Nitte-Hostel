@@ -26,7 +26,8 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="test_one" >
+        android:label="test_one"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.example.test_one.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -63,10 +64,6 @@
         </provider>
 
         <activity
-            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity
             android:name="com.razorpay.CheckoutActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Razorpay Checkout"
@@ -79,6 +76,10 @@
                     android:scheme="io.rzp" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <receiver android:name="com.razorpay.RzpTokenReceiver" >
             <intent-filter>

@@ -1,0 +1,683 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/common/behavior/chart_behavior.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/charts_common/src/chart/common/selection_model/selection_model.dart', 'packages/charts_common/src/chart/layout/layout_view.dart', 'packages/charts_common/src/chart/common/chart_context.dart', 'packages/charts_common/src/common/graphics_factory.dart', 'packages/charts_common/src/chart/common/canvas_shapes.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry_generator.dart', 'packages/intl/src/intl_helpers.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry.dart'], (function load__packages__charts_common__src__chart__common__behavior__legend__legend_dart(dart_sdk, packages__charts_common__src__chart__common__behavior__chart_behavior$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__charts_common__src__chart__common__selection_model__selection_model$46dart, packages__charts_common__src__chart__layout__layout_view$46dart, packages__charts_common__src__chart__common__chart_context$46dart, packages__charts_common__src__common__graphics_factory$46dart, packages__charts_common__src__chart__common__canvas_shapes$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart, packages__intl__src__intl_helpers$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const chart_behavior = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__behavior__chart_behavior;
+  const base_chart = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__base_chart;
+  const processed_series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__processed_series;
+  const axis_spec = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__spec__axis_spec;
+  const selection_model = packages__charts_common__src__chart__common__selection_model__selection_model$46dart.src__chart__common__selection_model__selection_model;
+  const layout_view = packages__charts_common__src__chart__layout__layout_view$46dart.src__chart__layout__layout_view;
+  const chart_context = packages__charts_common__src__chart__common__chart_context$46dart.src__chart__common__chart_context;
+  const graphics_factory = packages__charts_common__src__common__graphics_factory$46dart.src__common__graphics_factory;
+  const chart_canvas = packages__charts_common__src__chart__common__canvas_shapes$46dart.src__chart__common__chart_canvas;
+  const legend_entry_generator = packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart.src__chart__common__behavior__legend__legend_entry_generator;
+  const intl = packages__intl__src__intl_helpers$46dart.intl;
+  const legend_entry = packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart.src__chart__common__behavior__legend__legend_entry;
+  var legend = Object.create(dart.library);
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    MutableSeriesL: () => (T.MutableSeriesL = dart.constFn(dart.legacy(processed_series.MutableSeries)))(),
+    ListOfMutableSeriesL: () => (T.ListOfMutableSeriesL = dart.constFn(core.List$(T.MutableSeriesL())))(),
+    ListLOfMutableSeriesL: () => (T.ListLOfMutableSeriesL = dart.constFn(dart.legacy(T.ListOfMutableSeriesL())))(),
+    ListLOfMutableSeriesLTodynamic: () => (T.ListLOfMutableSeriesLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.ListLOfMutableSeriesL()])))(),
+    ListLOfMutableSeriesLToLdynamic: () => (T.ListLOfMutableSeriesLToLdynamic = dart.constFn(dart.legacy(T.ListLOfMutableSeriesLTodynamic())))(),
+    TextStyleSpecL: () => (T.TextStyleSpecL = dart.constFn(dart.legacy(axis_spec.TextStyleSpec)))(),
+    BaseChartL: () => (T.BaseChartL = dart.constFn(dart.legacy(base_chart.BaseChart)))(),
+    LegendTapHandlingL: () => (T.LegendTapHandlingL = dart.constFn(dart.legacy(legend.LegendTapHandling)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.bottom",
+        index: 1
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.end",
+        index: 3
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.inside",
+        index: 4
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.start",
+        index: 2
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: chart_behavior.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.top",
+        index: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: legend.LegendTapHandling.prototype,
+        [_name$]: "LegendTapHandling.none",
+        index: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: legend.LegendTapHandling.prototype,
+        [_name$]: "LegendTapHandling.hide",
+        index: 1
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], T.LegendTapHandlingL());
+    }
+  }, false);
+  var C = Array(8).fill(void 0);
+  var I = ["package:charts_common/src/chart/common/behavior/legend/legend.dart"];
+  var selectionModelType$ = dart.privateName(legend, "Legend.selectionModelType");
+  var legendState = dart.privateName(legend, "Legend.legendState");
+  var legendEntryGenerator$ = dart.privateName(legend, "Legend.legendEntryGenerator");
+  var _title = dart.privateName(legend, "_title");
+  var _chart = dart.privateName(legend, "_chart");
+  var _lifecycleListener = dart.privateName(legend, "_lifecycleListener");
+  var _componentBounds = dart.privateName(legend, "_componentBounds");
+  var _drawAreaBounds = dart.privateName(legend, "_drawAreaBounds");
+  var _graphicsFactory = dart.privateName(legend, "_graphicsFactory");
+  var _behaviorPosition = dart.privateName(legend, "_behaviorPosition");
+  var _outsideJustification = dart.privateName(legend, "_outsideJustification");
+  var _insideJustification = dart.privateName(legend, "_insideJustification");
+  var _cellPadding = dart.privateName(legend, "_cellPadding");
+  var _legendPadding = dart.privateName(legend, "_legendPadding");
+  var _titleTextStyle = dart.privateName(legend, "_titleTextStyle");
+  var _legendTapHandling = dart.privateName(legend, "_legendTapHandling");
+  var _currentSeriesList = dart.privateName(legend, "_currentSeriesList");
+  var _postProcessSeriesList = dart.privateName(legend, "_postProcessSeriesList");
+  var _postProcess = dart.privateName(legend, "_postProcess");
+  var _preProcess = dart.privateName(legend, "_preProcess");
+  var _selectionModel = dart.privateName(legend, "_selectionModel");
+  var _legendEntries = dart.privateName(legend, "_legendEntries");
+  var _updateLegendEntries = dart.privateName(legend, "_updateLegendEntries");
+  var _selectionChanged = dart.privateName(legend, "_selectionChanged");
+  var _layoutPosition = dart.privateName(legend, "_layoutPosition");
+  var _name = dart.privateName(chart_behavior, "_name");
+  const _is_Legend_default = Symbol('_is_Legend_default');
+  legend.Legend$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var LegendStateOfDL = () => (LegendStateOfDL = dart.constFn(legend.LegendState$(DL())))();
+    var LifecycleListenerOfDL = () => (LifecycleListenerOfDL = dart.constFn(base_chart.LifecycleListener$(DL())))();
+    var MutableSeriesOfDL = () => (MutableSeriesOfDL = dart.constFn(processed_series.MutableSeries$(DL())))();
+    var MutableSeriesLOfDL = () => (MutableSeriesLOfDL = dart.constFn(dart.legacy(MutableSeriesOfDL())))();
+    var ListOfMutableSeriesLOfDL = () => (ListOfMutableSeriesLOfDL = dart.constFn(core.List$(MutableSeriesLOfDL())))();
+    var ListLOfMutableSeriesLOfDL = () => (ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfMutableSeriesLOfDL())))();
+    var SelectionModelOfDL = () => (SelectionModelOfDL = dart.constFn(selection_model.SelectionModel$(DL())))();
+    var SelectionModelLOfDL = () => (SelectionModelLOfDL = dart.constFn(dart.legacy(SelectionModelOfDL())))();
+    var BaseChartOfDL = () => (BaseChartOfDL = dart.constFn(base_chart.BaseChart$(DL())))();
+    var BaseChartLOfDL = () => (BaseChartLOfDL = dart.constFn(dart.legacy(BaseChartOfDL())))();
+    class Legend extends core.Object {
+      get selectionModelType() {
+        return this[selectionModelType$];
+      }
+      set selectionModelType(value) {
+        super.selectionModelType = value;
+      }
+      get legendState() {
+        return this[legendState];
+      }
+      set legendState(value) {
+        super.legendState = value;
+      }
+      get legendEntryGenerator() {
+        return this[legendEntryGenerator$];
+      }
+      set legendEntryGenerator(value) {
+        super.legendEntryGenerator = value;
+      }
+      defaultLegendMeasureFormatter(value) {
+        return value == null ? "" : legend.Legend._decimalPattern.format(value);
+      }
+      get title() {
+        return this[_title];
+      }
+      set title(title) {
+        this[_title] = title;
+      }
+      get behaviorPosition() {
+        return this[_behaviorPosition];
+      }
+      set behaviorPosition(behaviorPosition) {
+        this[_behaviorPosition] = behaviorPosition;
+      }
+      get outsideJustification() {
+        return this[_outsideJustification];
+      }
+      set outsideJustification(outsideJustification) {
+        this[_outsideJustification] = outsideJustification;
+      }
+      get insideJustification() {
+        return this[_insideJustification];
+      }
+      set insideJustification(insideJustification) {
+        this[_insideJustification] = insideJustification;
+      }
+      get cellPadding() {
+        return this[_cellPadding];
+      }
+      set cellPadding(cellPadding) {
+        this[_cellPadding] = cellPadding;
+      }
+      get legendPadding() {
+        return this[_legendPadding];
+      }
+      set legendPadding(legendPadding) {
+        this[_legendPadding] = legendPadding;
+      }
+      get legendTapHandling() {
+        return this[_legendTapHandling];
+      }
+      get entryTextStyle() {
+        return this.legendEntryGenerator.entryTextStyle;
+      }
+      set entryTextStyle(entryTextStyle) {
+        this.legendEntryGenerator.entryTextStyle = entryTextStyle;
+      }
+      get titleTextStyle() {
+        return this[_titleTextStyle];
+      }
+      set titleTextStyle(titleTextStyle) {
+        this[_titleTextStyle] = titleTextStyle;
+      }
+      set legendTapHandling(legendTapHandling) {
+        this[_legendTapHandling] = legendTapHandling;
+      }
+      get showOverlaySeries() {
+        return this.legendEntryGenerator.showOverlaySeries;
+      }
+      set showOverlaySeries(showOverlaySeries) {
+        let t0;
+        this.legendEntryGenerator.showOverlaySeries = (t0 = showOverlaySeries, t0 == null ? false : t0);
+      }
+      onData(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      [_preProcess](seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        this[_currentSeriesList] = ListOfMutableSeriesLOfDL().from(seriesList);
+        this.preProcessSeriesList(seriesList);
+      }
+      preProcessSeriesList(seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+      }
+      [_postProcess](seriesList) {
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        let selectionModel = this.chart.getSelectionModel(this.selectionModelType);
+        if (!dart.equals(this.legendState[_selectionModel], selectionModel) || !dart.equals(this[_postProcessSeriesList], seriesList)) {
+          this.legendState[_legendEntries] = this.legendEntryGenerator.getLegendEntries(this[_currentSeriesList]);
+          this.legendState[_selectionModel] = selectionModel;
+          this[_postProcessSeriesList] = seriesList;
+          this[_updateLegendEntries]();
+        }
+      }
+      [_selectionChanged](selectionModel) {
+        this.legendState[_selectionModel] = selectionModel;
+        this[_updateLegendEntries]();
+      }
+      get chartContext() {
+        return this[_chart].context;
+      }
+      [_updateLegendEntries]() {
+        this.legendEntryGenerator.updateLegendEntries(this.legendState[_legendEntries], SelectionModelLOfDL().as(this.legendState[_selectionModel]), ListLOfMutableSeriesLOfDL().as(this.chart.currentSeriesList));
+        this.updateLegend();
+      }
+      updateLegend() {
+      }
+      attachTo(chart) {
+        BaseChartLOfDL().as(chart);
+        this[_chart] = chart;
+        chart.addLifecycleListener(this[_lifecycleListener]);
+        chart.getSelectionModel(this.selectionModelType).addSelectionChangedListener(dart.bind(this, _selectionChanged));
+        chart.addView(this);
+      }
+      removeFrom(chart) {
+        T.BaseChartL().as(chart);
+        chart.getSelectionModel(this.selectionModelType).removeSelectionChangedListener(dart.bind(this, _selectionChanged));
+        chart.removeLifecycleListener(this[_lifecycleListener]);
+        chart.removeView(this);
+      }
+      get chart() {
+        return this[_chart];
+      }
+      get role() {
+        return "legend-" + dart.str(dart.toString(this.selectionModelType));
+      }
+      get isRtl() {
+        return this[_chart].context.isRtl;
+      }
+      get graphicsFactory() {
+        return this[_graphicsFactory];
+      }
+      set graphicsFactory(value) {
+        this[_graphicsFactory] = value;
+      }
+      get layoutConfig() {
+        return new layout_view.LayoutViewConfig.new({position: this[_layoutPosition], positionOrder: 30, paintOrder: 100});
+      }
+      get [_layoutPosition]() {
+        let position = null;
+        switch (this[_behaviorPosition]) {
+          case C[0] || CT.C0:
+          {
+            position = layout_view.LayoutPosition.Bottom;
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            position = dart.test(this.isRtl) ? layout_view.LayoutPosition.Left : layout_view.LayoutPosition.Right;
+            break;
+          }
+          case C[2] || CT.C2:
+          {
+            position = layout_view.LayoutPosition.DrawArea;
+            break;
+          }
+          case C[3] || CT.C3:
+          {
+            position = dart.test(this.isRtl) ? layout_view.LayoutPosition.Right : layout_view.LayoutPosition.Left;
+            position = dart.test(this.isRtl) ? layout_view.LayoutPosition.Right : layout_view.LayoutPosition.Left;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            position = layout_view.LayoutPosition.Top;
+            break;
+          }
+        }
+        return position;
+      }
+      measure(maxWidth, maxHeight) {
+        return new layout_view.ViewMeasuredSizes.new({preferredWidth: 0, preferredHeight: 0});
+      }
+      layout(componentBounds, drawAreaBounds) {
+        this[_componentBounds] = componentBounds;
+        this[_drawAreaBounds] = drawAreaBounds;
+        this.updateLegend();
+      }
+      paint(canvas, animationPercent) {
+      }
+      get componentBounds() {
+        return this[_componentBounds];
+      }
+      get isSeriesRenderer() {
+        return false;
+      }
+      get drawAreaBounds() {
+        return this[_drawAreaBounds];
+      }
+    }
+    (Legend.new = function(opts) {
+      let selectionModelType = opts && 'selectionModelType' in opts ? opts.selectionModelType : null;
+      let legendEntryGenerator = opts && 'legendEntryGenerator' in opts ? opts.legendEntryGenerator : null;
+      let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+      this[legendState] = new (LegendStateOfDL()).new();
+      this[_title] = null;
+      this[_chart] = null;
+      this[_lifecycleListener] = null;
+      this[_componentBounds] = null;
+      this[_drawAreaBounds] = null;
+      this[_graphicsFactory] = null;
+      this[_behaviorPosition] = chart_behavior.BehaviorPosition.end;
+      this[_outsideJustification] = chart_behavior.OutsideJustification.startDrawArea;
+      this[_insideJustification] = chart_behavior.InsideJustification.topStart;
+      this[_cellPadding] = null;
+      this[_legendPadding] = null;
+      this[_titleTextStyle] = null;
+      this[_legendTapHandling] = legend.LegendTapHandling.hide;
+      this[_currentSeriesList] = null;
+      this[_postProcessSeriesList] = null;
+      this[selectionModelType$] = selectionModelType;
+      this[legendEntryGenerator$] = legendEntryGenerator;
+      this[_lifecycleListener] = new (LifecycleListenerOfDL()).new({onPostprocess: T.ListLOfMutableSeriesLToLdynamic().as(dart.bind(this, _postProcess)), onPreprocess: T.ListLOfMutableSeriesLToLdynamic().as(dart.bind(this, _preProcess)), onData: T.ListLOfMutableSeriesLToLdynamic().as(dart.bind(this, 'onData'))});
+      this.legendEntryGenerator.entryTextStyle = T.TextStyleSpecL().as(entryTextStyle);
+    }).prototype = Legend.prototype;
+    dart.addTypeTests(Legend);
+    Legend.prototype[_is_Legend_default] = true;
+    dart.addTypeCaches(Legend);
+    Legend[dart.implements] = () => [chart_behavior.ChartBehavior$(dart.legacy(D)), layout_view.LayoutView];
+    dart.setMethodSignature(Legend, () => ({
+      __proto__: dart.getMethods(Legend.__proto__),
+      defaultLegendMeasureFormatter: dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]),
+      onData: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      [_preProcess]: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      preProcessSeriesList: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      [_postProcess]: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      [_selectionChanged]: dart.fnType(dart.void, [dart.legacy(selection_model.SelectionModel)]),
+      [_updateLegendEntries]: dart.fnType(dart.void, []),
+      updateLegend: dart.fnType(dart.void, []),
+      attachTo: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      removeFrom: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+      measure: dart.fnType(dart.legacy(layout_view.ViewMeasuredSizes), [dart.legacy(core.int), dart.legacy(core.int)]),
+      layout: dart.fnType(dart.void, [dart.legacy(math.Rectangle$(dart.legacy(core.int))), dart.legacy(math.Rectangle$(dart.legacy(core.int)))]),
+      paint: dart.fnType(dart.void, [dart.legacy(chart_canvas.ChartCanvas), dart.legacy(core.double)])
+    }));
+    dart.setGetterSignature(Legend, () => ({
+      __proto__: dart.getGetters(Legend.__proto__),
+      title: dart.legacy(core.String),
+      behaviorPosition: dart.legacy(chart_behavior.BehaviorPosition),
+      outsideJustification: dart.legacy(chart_behavior.OutsideJustification),
+      insideJustification: dart.legacy(chart_behavior.InsideJustification),
+      cellPadding: dart.legacy(legend.LegendCellPadding),
+      legendPadding: dart.legacy(legend.LegendCellPadding),
+      legendTapHandling: dart.legacy(legend.LegendTapHandling),
+      entryTextStyle: dart.legacy(axis_spec.TextStyleSpec),
+      titleTextStyle: dart.legacy(axis_spec.TextStyleSpec),
+      showOverlaySeries: dart.legacy(core.bool),
+      chartContext: dart.legacy(chart_context.ChartContext),
+      chart: dart.legacy(base_chart.BaseChart),
+      role: dart.legacy(core.String),
+      isRtl: dart.legacy(core.bool),
+      graphicsFactory: dart.legacy(graphics_factory.GraphicsFactory),
+      layoutConfig: dart.legacy(layout_view.LayoutViewConfig),
+      [_layoutPosition]: dart.legacy(layout_view.LayoutPosition),
+      componentBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+      isSeriesRenderer: dart.legacy(core.bool),
+      drawAreaBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int)))
+    }));
+    dart.setSetterSignature(Legend, () => ({
+      __proto__: dart.getSetters(Legend.__proto__),
+      title: dart.legacy(core.String),
+      behaviorPosition: dart.legacy(chart_behavior.BehaviorPosition),
+      outsideJustification: dart.legacy(chart_behavior.OutsideJustification),
+      insideJustification: dart.legacy(chart_behavior.InsideJustification),
+      cellPadding: dart.legacy(legend.LegendCellPadding),
+      legendPadding: dart.legacy(legend.LegendCellPadding),
+      entryTextStyle: dart.legacy(axis_spec.TextStyleSpec),
+      titleTextStyle: dart.legacy(axis_spec.TextStyleSpec),
+      legendTapHandling: dart.legacy(legend.LegendTapHandling),
+      showOverlaySeries: dart.legacy(core.bool),
+      graphicsFactory: dart.legacy(graphics_factory.GraphicsFactory)
+    }));
+    dart.setLibraryUri(Legend, I[0]);
+    dart.setFieldSignature(Legend, () => ({
+      __proto__: dart.getFields(Legend.__proto__),
+      selectionModelType: dart.finalFieldType(dart.legacy(selection_model.SelectionModelType)),
+      legendState: dart.finalFieldType(dart.legacy(legend.LegendState$(dart.legacy(D)))),
+      legendEntryGenerator: dart.finalFieldType(dart.legacy(legend_entry_generator.LegendEntryGenerator$(dart.legacy(D)))),
+      [_title]: dart.fieldType(dart.legacy(core.String)),
+      [_chart]: dart.fieldType(dart.legacy(base_chart.BaseChart)),
+      [_lifecycleListener]: dart.fieldType(dart.legacy(base_chart.LifecycleListener$(dart.legacy(D)))),
+      [_componentBounds]: dart.fieldType(dart.legacy(math.Rectangle$(dart.legacy(core.int)))),
+      [_drawAreaBounds]: dart.fieldType(dart.legacy(math.Rectangle$(dart.legacy(core.int)))),
+      [_graphicsFactory]: dart.fieldType(dart.legacy(graphics_factory.GraphicsFactory)),
+      [_behaviorPosition]: dart.fieldType(dart.legacy(chart_behavior.BehaviorPosition)),
+      [_outsideJustification]: dart.fieldType(dart.legacy(chart_behavior.OutsideJustification)),
+      [_insideJustification]: dart.fieldType(dart.legacy(chart_behavior.InsideJustification)),
+      [_cellPadding]: dart.fieldType(dart.legacy(legend.LegendCellPadding)),
+      [_legendPadding]: dart.fieldType(dart.legacy(legend.LegendCellPadding)),
+      [_titleTextStyle]: dart.fieldType(dart.legacy(axis_spec.TextStyleSpec)),
+      [_legendTapHandling]: dart.fieldType(dart.legacy(legend.LegendTapHandling)),
+      [_currentSeriesList]: dart.fieldType(dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D)))))),
+      [_postProcessSeriesList]: dart.fieldType(dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D))))))
+    }));
+    return Legend;
+  });
+  legend.Legend = legend.Legend$();
+  dart.defineLazy(legend.Legend, {
+    /*legend.Legend._decimalPattern*/get _decimalPattern() {
+      return new intl.NumberFormat.decimalPattern();
+    }
+  }, true);
+  dart.addTypeTests(legend.Legend, _is_Legend_default);
+  var _legendEntries$ = dart.privateName(legend, "LegendState._legendEntries");
+  const _is_LegendState_default = Symbol('_is_LegendState_default');
+  legend.LegendState$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var LegendEntryOfDL = () => (LegendEntryOfDL = dart.constFn(legend_entry.LegendEntry$(DL())))();
+    var LegendEntryLOfDL = () => (LegendEntryLOfDL = dart.constFn(dart.legacy(LegendEntryOfDL())))();
+    var ListOfLegendEntryLOfDL = () => (ListOfLegendEntryLOfDL = dart.constFn(core.List$(LegendEntryLOfDL())))();
+    var ListLOfLegendEntryLOfDL = () => (ListLOfLegendEntryLOfDL = dart.constFn(dart.legacy(ListOfLegendEntryLOfDL())))();
+    class LegendState extends core.Object {
+      get [_legendEntries]() {
+        return this[_legendEntries$];
+      }
+      set [_legendEntries](value) {
+        this[_legendEntries$] = ListLOfLegendEntryLOfDL().as(value);
+      }
+      get legendEntries() {
+        return this[_legendEntries];
+      }
+      get selectionModel() {
+        return this[_selectionModel];
+      }
+    }
+    (LegendState.new = function() {
+      this[_legendEntries$] = null;
+      this[_selectionModel] = null;
+      ;
+    }).prototype = LegendState.prototype;
+    dart.addTypeTests(LegendState);
+    LegendState.prototype[_is_LegendState_default] = true;
+    dart.addTypeCaches(LegendState);
+    dart.setGetterSignature(LegendState, () => ({
+      __proto__: dart.getGetters(LegendState.__proto__),
+      legendEntries: dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D))))),
+      selectionModel: dart.legacy(selection_model.SelectionModel)
+    }));
+    dart.setLibraryUri(LegendState, I[0]);
+    dart.setFieldSignature(LegendState, () => ({
+      __proto__: dart.getFields(LegendState.__proto__),
+      [_legendEntries]: dart.fieldType(dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D)))))),
+      [_selectionModel]: dart.fieldType(dart.legacy(selection_model.SelectionModel))
+    }));
+    return LegendState;
+  });
+  legend.LegendState = legend.LegendState$();
+  dart.addTypeTests(legend.LegendState, _is_LegendState_default);
+  var bottomPct$ = dart.privateName(legend, "LegendCellPadding.bottomPct");
+  var bottomPx$ = dart.privateName(legend, "LegendCellPadding.bottomPx");
+  var leftPct$ = dart.privateName(legend, "LegendCellPadding.leftPct");
+  var leftPx$ = dart.privateName(legend, "LegendCellPadding.leftPx");
+  var rightPct$ = dart.privateName(legend, "LegendCellPadding.rightPct");
+  var rightPx$ = dart.privateName(legend, "LegendCellPadding.rightPx");
+  var topPct$ = dart.privateName(legend, "LegendCellPadding.topPct");
+  var topPx$ = dart.privateName(legend, "LegendCellPadding.topPx");
+  legend.LegendCellPadding = class LegendCellPadding extends core.Object {
+    get bottomPct() {
+      return this[bottomPct$];
+    }
+    set bottomPct(value) {
+      super.bottomPct = value;
+    }
+    get bottomPx() {
+      return this[bottomPx$];
+    }
+    set bottomPx(value) {
+      super.bottomPx = value;
+    }
+    get leftPct() {
+      return this[leftPct$];
+    }
+    set leftPct(value) {
+      super.leftPct = value;
+    }
+    get leftPx() {
+      return this[leftPx$];
+    }
+    set leftPx(value) {
+      super.leftPx = value;
+    }
+    get rightPct() {
+      return this[rightPct$];
+    }
+    set rightPct(value) {
+      super.rightPct = value;
+    }
+    get rightPx() {
+      return this[rightPx$];
+    }
+    set rightPx(value) {
+      super.rightPx = value;
+    }
+    get topPct() {
+      return this[topPct$];
+    }
+    set topPct(value) {
+      super.topPct = value;
+    }
+    get topPx() {
+      return this[topPx$];
+    }
+    set topPx(value) {
+      super.topPx = value;
+    }
+    bottom(height) {
+      return this.bottomPct != null ? dart.notNull(this.bottomPct) * dart.notNull(height) : this.bottomPx;
+    }
+    left(width) {
+      return this.leftPct != null ? dart.notNull(this.leftPct) * dart.notNull(width) : this.leftPx;
+    }
+    right(width) {
+      return this.rightPct != null ? dart.notNull(this.rightPct) * dart.notNull(width) : this.rightPx;
+    }
+    top(height) {
+      return this.topPct != null ? dart.notNull(this.topPct) * dart.notNull(height) : this.topPx;
+    }
+  };
+  (legend.LegendCellPadding.fromLTRBPct = function(leftPct, topPct, rightPct, bottomPct) {
+    this[leftPct$] = leftPct;
+    this[topPct$] = topPct;
+    this[rightPct$] = rightPct;
+    this[bottomPct$] = bottomPct;
+    this[leftPx$] = null;
+    this[topPx$] = null;
+    this[rightPx$] = null;
+    this[bottomPx$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  (legend.LegendCellPadding.fromLTRBPx = function(leftPx, topPx, rightPx, bottomPx) {
+    this[leftPx$] = leftPx;
+    this[topPx$] = topPx;
+    this[rightPx$] = rightPx;
+    this[bottomPx$] = bottomPx;
+    this[leftPct$] = null;
+    this[topPct$] = null;
+    this[rightPct$] = null;
+    this[bottomPct$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  (legend.LegendCellPadding.fromTRBLPct = function(topPct, rightPct, bottomPct, leftPct) {
+    this[topPct$] = topPct;
+    this[rightPct$] = rightPct;
+    this[bottomPct$] = bottomPct;
+    this[leftPct$] = leftPct;
+    this[topPx$] = null;
+    this[rightPx$] = null;
+    this[bottomPx$] = null;
+    this[leftPx$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  (legend.LegendCellPadding.fromTRBLPx = function(topPx, rightPx, bottomPx, leftPx) {
+    this[topPx$] = topPx;
+    this[rightPx$] = rightPx;
+    this[bottomPx$] = bottomPx;
+    this[leftPx$] = leftPx;
+    this[topPct$] = null;
+    this[rightPct$] = null;
+    this[bottomPct$] = null;
+    this[leftPct$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  (legend.LegendCellPadding.allPct = function(value) {
+    this[leftPct$] = value;
+    this[topPct$] = value;
+    this[rightPct$] = value;
+    this[bottomPct$] = value;
+    this[leftPx$] = null;
+    this[topPx$] = null;
+    this[rightPx$] = null;
+    this[bottomPx$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  (legend.LegendCellPadding.allPx = function(value) {
+    this[leftPx$] = value;
+    this[topPx$] = value;
+    this[rightPx$] = value;
+    this[bottomPx$] = value;
+    this[leftPct$] = null;
+    this[topPct$] = null;
+    this[rightPct$] = null;
+    this[bottomPct$] = null;
+    ;
+  }).prototype = legend.LegendCellPadding.prototype;
+  dart.addTypeTests(legend.LegendCellPadding);
+  dart.addTypeCaches(legend.LegendCellPadding);
+  dart.setMethodSignature(legend.LegendCellPadding, () => ({
+    __proto__: dart.getMethods(legend.LegendCellPadding.__proto__),
+    bottom: dart.fnType(dart.legacy(core.double), [dart.legacy(core.num)]),
+    left: dart.fnType(dart.legacy(core.double), [dart.legacy(core.num)]),
+    right: dart.fnType(dart.legacy(core.double), [dart.legacy(core.num)]),
+    top: dart.fnType(dart.legacy(core.double), [dart.legacy(core.num)])
+  }));
+  dart.setLibraryUri(legend.LegendCellPadding, I[0]);
+  dart.setFieldSignature(legend.LegendCellPadding, () => ({
+    __proto__: dart.getFields(legend.LegendCellPadding.__proto__),
+    bottomPct: dart.finalFieldType(dart.legacy(core.double)),
+    bottomPx: dart.finalFieldType(dart.legacy(core.double)),
+    leftPct: dart.finalFieldType(dart.legacy(core.double)),
+    leftPx: dart.finalFieldType(dart.legacy(core.double)),
+    rightPct: dart.finalFieldType(dart.legacy(core.double)),
+    rightPx: dart.finalFieldType(dart.legacy(core.double)),
+    topPct: dart.finalFieldType(dart.legacy(core.double)),
+    topPx: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  var _name$ = dart.privateName(legend, "_name");
+  legend.LegendTapHandling = class LegendTapHandling extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (legend.LegendTapHandling.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = legend.LegendTapHandling.prototype;
+  dart.addTypeTests(legend.LegendTapHandling);
+  dart.addTypeCaches(legend.LegendTapHandling);
+  dart.setMethodSignature(legend.LegendTapHandling, () => ({
+    __proto__: dart.getMethods(legend.LegendTapHandling.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(legend.LegendTapHandling, I[0]);
+  dart.setFieldSignature(legend.LegendTapHandling, () => ({
+    __proto__: dart.getFields(legend.LegendTapHandling.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(legend.LegendTapHandling, ['toString']);
+  legend.LegendTapHandling.none = C[5] || CT.C5;
+  legend.LegendTapHandling.hide = C[6] || CT.C6;
+  legend.LegendTapHandling.values = C[7] || CT.C7;
+  dart.trackLibraries("packages/charts_common/src/chart/common/behavior/legend/legend.dart", {
+    "package:charts_common/src/chart/common/behavior/legend/legend.dart": legend
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["legend.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../../D:/packages/charts_common/src/chart/common/behavior/legend/legend.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__common__behavior__legend__legend: legend
+  };
+}));
+
+//# sourceMappingURL=legend.dart.lib.js.map

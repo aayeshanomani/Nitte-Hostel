@@ -1,0 +1,308 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/table.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__charts_flutter__src__behaviors__legend__legend_layout_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__table$46dart, packages__flutter__src__painting__edge_insets$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const table = packages__flutter__src__widgets__widget_span$46dart.src__widgets__table;
+  const table$ = packages__flutter__src__rendering__table$46dart.src__rendering__table;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  var legend_layout = Object.create(dart.library);
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $length = dartx.length;
+  var $sublist = dartx.sublist;
+  var $add = dartx.add;
+  var $modulo = dartx['%'];
+  var $_get = dartx._get;
+  var $fold = dartx.fold;
+  var $addAll = dartx.addAll;
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    PaddingL: () => (T.PaddingL = dart.constFn(dart.legacy(basic.Padding)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    WidgetLToPaddingL: () => (T.WidgetLToPaddingL = dart.constFn(dart.fnType(T.PaddingL(), [T.WidgetL()])))(),
+    TabularLegendLayoutL: () => (T.TabularLegendLayoutL = dart.constFn(dart.legacy(legend_layout.TabularLegendLayout)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    TableRowL: () => (T.TableRowL = dart.constFn(dart.legacy(table.TableRow)))(),
+    JSArrayOfTableRowL: () => (T.JSArrayOfTableRowL = dart.constFn(_interceptors.JSArray$(T.TableRowL())))(),
+    ListOfTableRowL: () => (T.ListOfTableRowL = dart.constFn(core.List$(T.TableRowL())))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    intLToTableRowL: () => (T.intLToTableRowL = dart.constFn(dart.fnType(T.TableRowL(), [T.intL()])))(),
+    TableRowLTointL: () => (T.TableRowLTointL = dart.constFn(dart.fnType(T.intL(), [T.TableRowL()])))(),
+    numL: () => (T.numL = dart.constFn(dart.legacy(core.num)))(),
+    dynamicAndintLTodynamic: () => (T.dynamicAndintLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.dynamic, T.intL()])))(),
+    IterableOfPaddingL: () => (T.IterableOfPaddingL = dart.constFn(core.Iterable$(T.PaddingL())))(),
+    intLToPaddingL: () => (T.intLToPaddingL = dart.constFn(dart.fnType(T.PaddingL(), [T.intL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 41,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 63,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/charts_flutter-0.8.1/lib/src/behaviors/legend/legend_layout.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 31,
+        [_Location_line]: 138,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 138,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/charts_flutter-0.8.1/lib/src/behaviors/legend/legend_layout.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "defaultColumnWidth",
+        [_Location_column]: 25,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], T._LocationL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 159,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/charts_flutter-0.8.1/lib/src/behaviors/legend/legend_layout.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 8
+      });
+    }
+  }, false);
+  var C = Array(12).fill(void 0);
+  var I = ["package:charts_flutter/src/behaviors/legend/legend_layout.dart"];
+  legend_layout.LegendLayout = class LegendLayout extends core.Object {};
+  (legend_layout.LegendLayout.new = function() {
+    ;
+  }).prototype = legend_layout.LegendLayout.prototype;
+  dart.addTypeTests(legend_layout.LegendLayout);
+  dart.addTypeCaches(legend_layout.LegendLayout);
+  dart.setLibraryUri(legend_layout.LegendLayout, I[0]);
+  var isHorizontalFirst$ = dart.privateName(legend_layout, "TabularLegendLayout.isHorizontalFirst");
+  var desiredMaxRows$ = dart.privateName(legend_layout, "TabularLegendLayout.desiredMaxRows");
+  var desiredMaxColumns$ = dart.privateName(legend_layout, "TabularLegendLayout.desiredMaxColumns");
+  var cellPadding$ = dart.privateName(legend_layout, "TabularLegendLayout.cellPadding");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _buildHorizontalFirst = dart.privateName(legend_layout, "_buildHorizontalFirst");
+  var _buildVerticalFirst = dart.privateName(legend_layout, "_buildVerticalFirst");
+  var _buildTableFromRows = dart.privateName(legend_layout, "_buildTableFromRows");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  legend_layout.TabularLegendLayout = class TabularLegendLayout extends core.Object {
+    get isHorizontalFirst() {
+      return this[isHorizontalFirst$];
+    }
+    set isHorizontalFirst(value) {
+      super.isHorizontalFirst = value;
+    }
+    get desiredMaxRows() {
+      return this[desiredMaxRows$];
+    }
+    set desiredMaxRows(value) {
+      super.desiredMaxRows = value;
+    }
+    get desiredMaxColumns() {
+      return this[desiredMaxColumns$];
+    }
+    set desiredMaxColumns(value) {
+      super.desiredMaxColumns = value;
+    }
+    get cellPadding() {
+      return this[cellPadding$];
+    }
+    set cellPadding(value) {
+      super.cellPadding = value;
+    }
+    static horizontalFirst(opts) {
+      let t0;
+      let desiredMaxColumns = opts && 'desiredMaxColumns' in opts ? opts.desiredMaxColumns : null;
+      let cellPadding = opts && 'cellPadding' in opts ? opts.cellPadding : null;
+      return new legend_layout.TabularLegendLayout._internal({isHorizontalFirst: true, desiredMaxRows: -1, desiredMaxColumns: (t0 = desiredMaxColumns, t0 == null ? -1 : t0), cellPadding: cellPadding});
+    }
+    static verticalFirst(opts) {
+      let t0;
+      let desiredMaxRows = opts && 'desiredMaxRows' in opts ? opts.desiredMaxRows : null;
+      let cellPadding = opts && 'cellPadding' in opts ? opts.cellPadding : null;
+      return new legend_layout.TabularLegendLayout._internal({isHorizontalFirst: false, desiredMaxRows: (t0 = desiredMaxRows, t0 == null ? -1 : t0), desiredMaxColumns: -1, cellPadding: cellPadding});
+    }
+    build(context, legendEntries) {
+      let paddedLegendEntries = this.cellPadding == null ? legendEntries : legendEntries[$map](T.PaddingL(), dart.fn(entry => new basic.Padding.new({padding: this.cellPadding, child: entry, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), T.WidgetLToPaddingL()))[$toList]();
+      return dart.test(this.isHorizontalFirst) ? this[_buildHorizontalFirst](paddedLegendEntries) : this[_buildVerticalFirst](paddedLegendEntries);
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.TabularLegendLayoutL().is(o) && this.desiredMaxRows == o.desiredMaxRows && this.desiredMaxColumns == o.desiredMaxColumns && this.isHorizontalFirst == o.isHorizontalFirst && dart.equals(this.cellPadding, o.cellPadding);
+    }
+    get hashCode() {
+      return ui.hashValues(this.desiredMaxRows, this.desiredMaxColumns, this.isHorizontalFirst, this.cellPadding);
+    }
+    [_buildHorizontalFirst](legendEntries) {
+      let maxColumns = this.desiredMaxColumns === -1 ? legendEntries[$length] : math.min(T.intL(), legendEntries[$length], this.desiredMaxColumns);
+      let rows = T.JSArrayOfTableRowL().of([]);
+      for (let i = 0; i < dart.notNull(legendEntries[$length]); i = i + dart.notNull(maxColumns)) {
+        rows[$add](new table.TableRow.new({children: legendEntries[$sublist](i, math.min(T.intL(), i + dart.notNull(maxColumns), legendEntries[$length]))[$toList]()}));
+      }
+      return this[_buildTableFromRows](rows);
+    }
+    [_buildVerticalFirst](legendEntries) {
+      let maxRows = this.desiredMaxRows === -1 ? legendEntries[$length] : math.min(T.intL(), legendEntries[$length], this.desiredMaxRows);
+      let rows = T.ListOfTableRowL().generate(maxRows, dart.fn(_ => new table.TableRow.new({children: T.JSArrayOfWidgetL().of([])}), T.intLToTableRowL()));
+      for (let i = 0; i < dart.notNull(legendEntries[$length]); i = i + 1) {
+        rows[$_get](i[$modulo](maxRows)).children[$add](legendEntries[$_get](i));
+      }
+      return this[_buildTableFromRows](rows);
+    }
+    [_buildTableFromRows](rows) {
+      let t0;
+      let padWidget = new basic.Padding.new({padding: (t0 = this.cellPadding, t0 == null ? legend_layout.TabularLegendLayout.defaultCellPadding : t0), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+      let columnCount = rows[$map](T.intL(), dart.fn(r => r.children[$length], T.TableRowLTointL()))[$fold](dart.dynamic, 0, dart.fn((max, current) => dart.notNull(current) > dart.notNull(T.numL().as(max)) ? current : max, T.dynamicAndintLTodynamic()));
+      for (let i = 0; i < dart.notNull(rows[$length]); i = i + 1) {
+        let rowChildren = rows[$_get](i).children;
+        let padCount = dart.dsend(columnCount, '-', [rowChildren[$length]]);
+        if (dart.dtest(dart.dsend(padCount, '>', [0]))) {
+          rowChildren[$addAll](T.IterableOfPaddingL().generate(core.int.as(padCount), dart.fn(_ => padWidget, T.intLToPaddingL())));
+        }
+      }
+      return new table.Table.new({children: rows, defaultColumnWidth: new table$.IntrinsicColumnWidth.new(), $creationLocationd_0dea112b090073317d4: C[7] || CT.C7});
+    }
+  };
+  (legend_layout.TabularLegendLayout._internal = function(opts) {
+    let isHorizontalFirst = opts && 'isHorizontalFirst' in opts ? opts.isHorizontalFirst : null;
+    let desiredMaxRows = opts && 'desiredMaxRows' in opts ? opts.desiredMaxRows : null;
+    let desiredMaxColumns = opts && 'desiredMaxColumns' in opts ? opts.desiredMaxColumns : null;
+    let cellPadding = opts && 'cellPadding' in opts ? opts.cellPadding : null;
+    this[isHorizontalFirst$] = isHorizontalFirst;
+    this[desiredMaxRows$] = desiredMaxRows;
+    this[desiredMaxColumns$] = desiredMaxColumns;
+    this[cellPadding$] = cellPadding;
+    ;
+  }).prototype = legend_layout.TabularLegendLayout.prototype;
+  dart.addTypeTests(legend_layout.TabularLegendLayout);
+  dart.addTypeCaches(legend_layout.TabularLegendLayout);
+  legend_layout.TabularLegendLayout[dart.implements] = () => [legend_layout.LegendLayout];
+  dart.setMethodSignature(legend_layout.TabularLegendLayout, () => ({
+    __proto__: dart.getMethods(legend_layout.TabularLegendLayout.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(core.List$(dart.legacy(framework.Widget)))]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    [_buildHorizontalFirst]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(core.List$(dart.legacy(framework.Widget)))]),
+    [_buildVerticalFirst]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(core.List$(dart.legacy(framework.Widget)))]),
+    [_buildTableFromRows]: dart.fnType(dart.legacy(table.Table), [dart.legacy(core.List$(dart.legacy(table.TableRow)))])
+  }));
+  dart.setGetterSignature(legend_layout.TabularLegendLayout, () => ({
+    __proto__: dart.getGetters(legend_layout.TabularLegendLayout.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(legend_layout.TabularLegendLayout, I[0]);
+  dart.setFieldSignature(legend_layout.TabularLegendLayout, () => ({
+    __proto__: dart.getFields(legend_layout.TabularLegendLayout.__proto__),
+    isHorizontalFirst: dart.finalFieldType(dart.legacy(core.bool)),
+    desiredMaxRows: dart.finalFieldType(dart.legacy(core.int)),
+    desiredMaxColumns: dart.finalFieldType(dart.legacy(core.int)),
+    cellPadding: dart.finalFieldType(dart.legacy(edge_insets.EdgeInsets))
+  }));
+  dart.defineExtensionMethods(legend_layout.TabularLegendLayout, ['_equals']);
+  dart.defineExtensionAccessors(legend_layout.TabularLegendLayout, ['hashCode']);
+  dart.defineLazy(legend_layout.TabularLegendLayout, {
+    /*legend_layout.TabularLegendLayout._noLimit*/get _noLimit() {
+      return -1;
+    },
+    /*legend_layout.TabularLegendLayout.defaultCellPadding*/get defaultCellPadding() {
+      return C[11] || CT.C11;
+    }
+  }, true);
+  dart.trackLibraries("packages/charts_flutter/src/behaviors/legend/legend_layout.dart", {
+    "package:charts_flutter/src/behaviors/legend/legend_layout.dart": legend_layout
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["legend_layout.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAsBA;;;;;;;;;;;;;;;;;;;;;IAUa;;;;;;IACD;;;;;;IACA;;;;;;IACO;;;;;;;;UAgBX;UACO;AAEX,YAAW,qEACU,8CAEkB,KAAlB,iBAAiB,EAAjB,oCACN,WAAW;IAE5B;;;UAUM;UACO;AAEX,YAAW,qEACU,wBACY,KAAf,cAAc,EAAd,2DAEH,WAAW;IAE5B;UAG0B,SAAsB;AACxC,gCAAwB,AAAY,2BACpC,aAAa,GACb,AACG,AACA,aAFU,qBACN,QAAC,SAAc,gCAAiB,yBAAoB,KAAK;AAGtE,uBAAO,0BACD,4BAAsB,mBAAmB,IACzC,0BAAoB,mBAAmB;IAC/C;;UAGiB;AACb,YAAE,AAGuC,6BAHzC,CAAC,KACD,AAAe,uBAAG,AAAE,CAAD,mBACnB,AAAkB,0BAAG,AAAE,CAAD,sBACtB,AAAkB,0BAAG,AAAE,CAAD,sBACV,YAAZ,kBAAe,AAAE,CAAD;IAAY;;AAGZ,2BAChB,qBAAgB,wBAAmB,wBAAmB;IAAY;4BAE5B;AAClC,uBAAc,AAAkB,gCAChC,AAAc,aAAD,YACb,mBAAI,AAAc,aAAD,WAAS;AAE1B,iBAAiB;AACvB,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAc,aAAD,YAAS,IAAA,AAAE,CAAD,gBAAI,UAAU;AAIpC,QAHnB,AAAK,IAAD,OAAS,kCACC,AACL,AACA,aAFkB,WACV,CAAC,EAAE,mBAAI,AAAE,CAAD,gBAAG,UAAU,GAAE,AAAc,aAAD;;AAIvD,YAAO,2BAAoB,IAAI;IACjC;0BAEwC;AAChC,oBAAW,AAAe,6BAC1B,AAAc,aAAD,YACb,mBAAI,AAAc,aAAD,WAAS;AAE1B,iBACE,6BAAc,OAAO,EAAE,QAAC,KAAU,kCAA2B;AACrE,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAc,aAAD,YAAS,IAAA,AAAC,CAAA;AACO,QAAhD,AAAI,AAAc,AAAS,IAAvB,QAAC,AAAE,CAAD,UAAG,OAAO,kBAAe,AAAa,aAAA,QAAC,CAAC;;AAGhD,YAAO,2BAAoB,IAAI;IACjC;0BAEyC;;AACjC,sBAAY,iCAA6B,uBAAZ,aAAe;AAI5C,wBAAc,AACf,AACA,IAFmB,iBACf,QAAC,KAAM,AAAE,AAAS,CAAV,+DACP,GAAG,SAAC,KAAK,YAAqB,aAAR,OAAO,6BAAG,GAAG,KAAI,OAAO,GAAG,GAAG;AAE9D,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAK,IAAD,YAAS,IAAA,AAAC,CAAA;AAC1B,0BAAc,AAAI,AAAI,IAAJ,QAAC,CAAC;AACpB,uBAAuB,WAAZ,WAAW,QAAG,AAAY,WAAD;AAC1C,uBAAa,WAAT,QAAQ,QAAG;AAE0D,UADvE,AACK,WADM,UACK,4CAA2B,QAAQ,GAAE,QAAC,KAAM,SAAS;;;AAQzE,YAAW,gCACG,IAAI,sBAA0B;IAC9C;;;QA1HU;QACD;QACA;QACA;IAHC;IACD;IACA;IACA;;EAAa;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAdT,0CAAQ;;;MAGR,oDAAkB","file":"../../../../../../../../../../../D:/packages/charts_flutter/src/behaviors/legend/legend_layout.dart.lib.js"}');
+  // Exports:
+  return {
+    src__behaviors__legend__legend_layout: legend_layout
+  };
+}));
+
+//# sourceMappingURL=legend_layout.dart.lib.js.map

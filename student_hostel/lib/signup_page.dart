@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:test_one/information.dart';
+
+import 'networkHandler.dart';
 
 class SignupPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -7,7 +11,10 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  String _email, _password = "", _confirmpassword = "";
+  NetworkHandler networkHandler = NetworkHandler();
+
+  String _regno, _password = "", _confirmpassword = "";
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -19,7 +26,7 @@ class _SignupPageState extends State<SignupPage> {
       ),
     );
 
-    final email = Theme(
+    final regno = Theme(
         data: ThemeData(
           primaryColor: Color(0xff1B98E0),
           primaryColorDark: Color(0xffE7DFC6),
@@ -42,13 +49,13 @@ class _SignupPageState extends State<SignupPage> {
           ),
           onChanged: (value) {
             setState(() {
-              _email = value;
+              _regno = value;
             });
           },
         ));
 
     final password = Theme(
-        data:ThemeData(
+        data: ThemeData(
           primaryColor: Color(0xff1B98E0),
           primaryColorDark: Color(0xffE7DFC6),
         ),
@@ -106,10 +113,28 @@ class _SignupPageState extends State<SignupPage> {
     final forgotLabel = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: MaterialButton(
-        
         height: 47.0,
-        onPressed: () {
-          Navigator.of(context).popAndPushNamed('/information');
+        onPressed: () async {
+          EasyLoading.show(status: 'Loading..');
+          var response = await networkHandler.get("/checkreg_no/$_regno");
+          EasyLoading.dismiss();
+          if (response['Status']) {
+            EasyLoading.showInfo(
+                "Registration no. already exists \n Please go to login");
+          } else {
+            if (_password == _confirmpassword && _regno != null)
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Information(
+                            password: _password,
+                          )));
+            else if (_regno == null) {
+              EasyLoading.showInfo("Registration number cannot be empty");
+            } else {
+              EasyLoading.showInfo("Passwords should match");
+            }
+          }
         },
         splashColor: Color(0xff131B23),
         color: Color(0xff1B98E0),
@@ -136,7 +161,7 @@ class _SignupPageState extends State<SignupPage> {
               children: <Widget>[
                 logo,
                 SizedBox(height: 48.0),
-                email,
+                regno,
                 SizedBox(height: 8.0),
                 password,
                 SizedBox(height: 8.0),

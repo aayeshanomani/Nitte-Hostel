@@ -1,0 +1,420 @@
+define(['dart_sdk'], (function load__packages__charts_common__src__chart__layout__layout_view_dart(dart_sdk) {
+  'use strict';
+  const core = dart_sdk.core;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  var layout_view = Object.create(dart.library);
+  var $toString = dartx.toString;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    LayoutPositionL: () => (T.LayoutPositionL = dart.constFn(dart.legacy(layout_view.LayoutPosition)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.Bottom",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.FullBottom",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.Top",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.FullTop",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.Left",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.FullLeft",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.Right",
+        index: 6
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.FullRight",
+        index: 7
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: layout_view.LayoutPosition.prototype,
+        [_name$]: "LayoutPosition.DrawArea",
+        index: 8
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T.LayoutPositionL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: layout_view.ViewMargin.prototype,
+        [leftPx$]: 0,
+        [rightPx$]: 0,
+        [bottomPx$]: 0,
+        [topPx$]: 0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: layout_view.ViewMeasuredSizes.prototype,
+        [minHeight$]: 0,
+        [minWidth$]: 0,
+        [preferredHeight$]: 0,
+        [preferredWidth$]: 0
+      });
+    }
+  }, false);
+  var C = Array(12).fill(void 0);
+  var I = ["package:charts_common/src/chart/layout/layout_view.dart"];
+  var _name$ = dart.privateName(layout_view, "_name");
+  layout_view.LayoutPosition = class LayoutPosition extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (layout_view.LayoutPosition.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = layout_view.LayoutPosition.prototype;
+  dart.addTypeTests(layout_view.LayoutPosition);
+  dart.addTypeCaches(layout_view.LayoutPosition);
+  dart.setMethodSignature(layout_view.LayoutPosition, () => ({
+    __proto__: dart.getMethods(layout_view.LayoutPosition.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(layout_view.LayoutPosition, I[0]);
+  dart.setFieldSignature(layout_view.LayoutPosition, () => ({
+    __proto__: dart.getFields(layout_view.LayoutPosition.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(layout_view.LayoutPosition, ['toString']);
+  layout_view.LayoutPosition.Bottom = C[0] || CT.C0;
+  layout_view.LayoutPosition.FullBottom = C[1] || CT.C1;
+  layout_view.LayoutPosition.Top = C[2] || CT.C2;
+  layout_view.LayoutPosition.FullTop = C[3] || CT.C3;
+  layout_view.LayoutPosition.Left = C[4] || CT.C4;
+  layout_view.LayoutPosition.FullLeft = C[5] || CT.C5;
+  layout_view.LayoutPosition.Right = C[6] || CT.C6;
+  layout_view.LayoutPosition.FullRight = C[7] || CT.C7;
+  layout_view.LayoutPosition.DrawArea = C[8] || CT.C8;
+  layout_view.LayoutPosition.values = C[9] || CT.C9;
+  layout_view.LayoutViewPaintOrder = class LayoutViewPaintOrder extends core.Object {};
+  (layout_view.LayoutViewPaintOrder.new = function() {
+    ;
+  }).prototype = layout_view.LayoutViewPaintOrder.prototype;
+  dart.addTypeTests(layout_view.LayoutViewPaintOrder);
+  dart.addTypeCaches(layout_view.LayoutViewPaintOrder);
+  dart.setLibraryUri(layout_view.LayoutViewPaintOrder, I[0]);
+  dart.defineLazy(layout_view.LayoutViewPaintOrder, {
+    /*layout_view.LayoutViewPaintOrder.rangeAnnotation*/get rangeAnnotation() {
+      return -10;
+    },
+    /*layout_view.LayoutViewPaintOrder.measureAxis*/get measureAxis() {
+      return 0;
+    },
+    /*layout_view.LayoutViewPaintOrder.domainAxis*/get domainAxis() {
+      return 5;
+    },
+    /*layout_view.LayoutViewPaintOrder.arc*/get arc() {
+      return 10;
+    },
+    /*layout_view.LayoutViewPaintOrder.bar*/get bar() {
+      return 10;
+    },
+    /*layout_view.LayoutViewPaintOrder.treeMap*/get treeMap() {
+      return 10;
+    },
+    /*layout_view.LayoutViewPaintOrder.barTargetLine*/get barTargetLine() {
+      return 15;
+    },
+    /*layout_view.LayoutViewPaintOrder.line*/get line() {
+      return 20;
+    },
+    /*layout_view.LayoutViewPaintOrder.point*/get point() {
+      return 25;
+    },
+    /*layout_view.LayoutViewPaintOrder.legend*/get legend() {
+      return 100;
+    },
+    /*layout_view.LayoutViewPaintOrder.linePointHighlighter*/get linePointHighlighter() {
+      return 110;
+    },
+    /*layout_view.LayoutViewPaintOrder.slider*/get slider() {
+      return 150;
+    },
+    /*layout_view.LayoutViewPaintOrder.chartTitle*/get chartTitle() {
+      return 160;
+    }
+  }, true);
+  layout_view.LayoutViewPositionOrder = class LayoutViewPositionOrder extends core.Object {};
+  (layout_view.LayoutViewPositionOrder.new = function() {
+    ;
+  }).prototype = layout_view.LayoutViewPositionOrder.prototype;
+  dart.addTypeTests(layout_view.LayoutViewPositionOrder);
+  dart.addTypeCaches(layout_view.LayoutViewPositionOrder);
+  dart.setLibraryUri(layout_view.LayoutViewPositionOrder, I[0]);
+  dart.defineLazy(layout_view.LayoutViewPositionOrder, {
+    /*layout_view.LayoutViewPositionOrder.drawArea*/get drawArea() {
+      return 0;
+    },
+    /*layout_view.LayoutViewPositionOrder.symbolAnnotation*/get symbolAnnotation() {
+      return 10;
+    },
+    /*layout_view.LayoutViewPositionOrder.axis*/get axis() {
+      return 20;
+    },
+    /*layout_view.LayoutViewPositionOrder.legend*/get legend() {
+      return 30;
+    },
+    /*layout_view.LayoutViewPositionOrder.chartTitle*/get chartTitle() {
+      return 40;
+    }
+  }, true);
+  var topPx$ = dart.privateName(layout_view, "ViewMargin.topPx");
+  var bottomPx$ = dart.privateName(layout_view, "ViewMargin.bottomPx");
+  var rightPx$ = dart.privateName(layout_view, "ViewMargin.rightPx");
+  var leftPx$ = dart.privateName(layout_view, "ViewMargin.leftPx");
+  layout_view.ViewMargin = class ViewMargin extends core.Object {
+    get topPx() {
+      return this[topPx$];
+    }
+    set topPx(value) {
+      super.topPx = value;
+    }
+    get bottomPx() {
+      return this[bottomPx$];
+    }
+    set bottomPx(value) {
+      super.bottomPx = value;
+    }
+    get rightPx() {
+      return this[rightPx$];
+    }
+    set rightPx(value) {
+      super.rightPx = value;
+    }
+    get leftPx() {
+      return this[leftPx$];
+    }
+    set leftPx(value) {
+      super.leftPx = value;
+    }
+    get width() {
+      return dart.notNull(this.leftPx) + dart.notNull(this.rightPx);
+    }
+    get height() {
+      return dart.notNull(this.topPx) + dart.notNull(this.bottomPx);
+    }
+  };
+  (layout_view.ViewMargin.new = function(opts) {
+    let t0, t0$, t0$0, t0$1;
+    let topPx = opts && 'topPx' in opts ? opts.topPx : null;
+    let bottomPx = opts && 'bottomPx' in opts ? opts.bottomPx : null;
+    let rightPx = opts && 'rightPx' in opts ? opts.rightPx : null;
+    let leftPx = opts && 'leftPx' in opts ? opts.leftPx : null;
+    this[topPx$] = (t0 = topPx, t0 == null ? 0 : t0);
+    this[bottomPx$] = (t0$ = bottomPx, t0$ == null ? 0 : t0$);
+    this[rightPx$] = (t0$0 = rightPx, t0$0 == null ? 0 : t0$0);
+    this[leftPx$] = (t0$1 = leftPx, t0$1 == null ? 0 : t0$1);
+    ;
+  }).prototype = layout_view.ViewMargin.prototype;
+  dart.addTypeTests(layout_view.ViewMargin);
+  dart.addTypeCaches(layout_view.ViewMargin);
+  dart.setGetterSignature(layout_view.ViewMargin, () => ({
+    __proto__: dart.getGetters(layout_view.ViewMargin.__proto__),
+    width: dart.legacy(core.int),
+    height: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(layout_view.ViewMargin, I[0]);
+  dart.setFieldSignature(layout_view.ViewMargin, () => ({
+    __proto__: dart.getFields(layout_view.ViewMargin.__proto__),
+    topPx: dart.finalFieldType(dart.legacy(core.int)),
+    bottomPx: dart.finalFieldType(dart.legacy(core.int)),
+    rightPx: dart.finalFieldType(dart.legacy(core.int)),
+    leftPx: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  dart.defineLazy(layout_view.ViewMargin, {
+    /*layout_view.ViewMargin.empty*/get empty() {
+      return C[10] || CT.C10;
+    }
+  }, true);
+  var id = dart.privateName(layout_view, "LayoutViewConfig.id");
+  var paintOrder$ = dart.privateName(layout_view, "LayoutViewConfig.paintOrder");
+  var position$ = dart.privateName(layout_view, "LayoutViewConfig.position");
+  var positionOrder$ = dart.privateName(layout_view, "LayoutViewConfig.positionOrder");
+  var viewMargin$ = dart.privateName(layout_view, "LayoutViewConfig.viewMargin");
+  layout_view.LayoutViewConfig = class LayoutViewConfig extends core.Object {
+    get id() {
+      return this[id];
+    }
+    set id(value) {
+      this[id] = value;
+    }
+    get paintOrder() {
+      return this[paintOrder$];
+    }
+    set paintOrder(value) {
+      this[paintOrder$] = value;
+    }
+    get position() {
+      return this[position$];
+    }
+    set position(value) {
+      this[position$] = value;
+    }
+    get positionOrder() {
+      return this[positionOrder$];
+    }
+    set positionOrder(value) {
+      this[positionOrder$] = value;
+    }
+    get viewMargin() {
+      return this[viewMargin$];
+    }
+    set viewMargin(value) {
+      this[viewMargin$] = value;
+    }
+    get isFullPosition() {
+      return this.position == layout_view.LayoutPosition.FullBottom || this.position == layout_view.LayoutPosition.FullTop || this.position == layout_view.LayoutPosition.FullRight || this.position == layout_view.LayoutPosition.FullLeft;
+    }
+  };
+  (layout_view.LayoutViewConfig.new = function(opts) {
+    let t0;
+    let paintOrder = opts && 'paintOrder' in opts ? opts.paintOrder : null;
+    let position = opts && 'position' in opts ? opts.position : null;
+    let positionOrder = opts && 'positionOrder' in opts ? opts.positionOrder : null;
+    let viewMargin = opts && 'viewMargin' in opts ? opts.viewMargin : null;
+    this[id] = null;
+    this[paintOrder$] = paintOrder;
+    this[position$] = position;
+    this[positionOrder$] = positionOrder;
+    this[viewMargin$] = (t0 = viewMargin, t0 == null ? layout_view.ViewMargin.empty : t0);
+    ;
+  }).prototype = layout_view.LayoutViewConfig.prototype;
+  dart.addTypeTests(layout_view.LayoutViewConfig);
+  dart.addTypeCaches(layout_view.LayoutViewConfig);
+  dart.setGetterSignature(layout_view.LayoutViewConfig, () => ({
+    __proto__: dart.getGetters(layout_view.LayoutViewConfig.__proto__),
+    isFullPosition: dart.legacy(core.bool)
+  }));
+  dart.setLibraryUri(layout_view.LayoutViewConfig, I[0]);
+  dart.setFieldSignature(layout_view.LayoutViewConfig, () => ({
+    __proto__: dart.getFields(layout_view.LayoutViewConfig.__proto__),
+    id: dart.fieldType(dart.legacy(core.String)),
+    paintOrder: dart.fieldType(dart.legacy(core.int)),
+    position: dart.fieldType(dart.legacy(layout_view.LayoutPosition)),
+    positionOrder: dart.fieldType(dart.legacy(core.int)),
+    viewMargin: dart.fieldType(dart.legacy(layout_view.ViewMargin))
+  }));
+  var preferredWidth$ = dart.privateName(layout_view, "ViewMeasuredSizes.preferredWidth");
+  var preferredHeight$ = dart.privateName(layout_view, "ViewMeasuredSizes.preferredHeight");
+  var minWidth$ = dart.privateName(layout_view, "ViewMeasuredSizes.minWidth");
+  var minHeight$ = dart.privateName(layout_view, "ViewMeasuredSizes.minHeight");
+  layout_view.ViewMeasuredSizes = class ViewMeasuredSizes extends core.Object {
+    get preferredWidth() {
+      return this[preferredWidth$];
+    }
+    set preferredWidth(value) {
+      super.preferredWidth = value;
+    }
+    get preferredHeight() {
+      return this[preferredHeight$];
+    }
+    set preferredHeight(value) {
+      super.preferredHeight = value;
+    }
+    get minWidth() {
+      return this[minWidth$];
+    }
+    set minWidth(value) {
+      super.minWidth = value;
+    }
+    get minHeight() {
+      return this[minHeight$];
+    }
+    set minHeight(value) {
+      super.minHeight = value;
+    }
+  };
+  (layout_view.ViewMeasuredSizes.new = function(opts) {
+    let t0, t0$;
+    let preferredWidth = opts && 'preferredWidth' in opts ? opts.preferredWidth : null;
+    let preferredHeight = opts && 'preferredHeight' in opts ? opts.preferredHeight : null;
+    let minWidth = opts && 'minWidth' in opts ? opts.minWidth : null;
+    let minHeight = opts && 'minHeight' in opts ? opts.minHeight : null;
+    this[preferredWidth$] = preferredWidth;
+    this[preferredHeight$] = preferredHeight;
+    this[minWidth$] = (t0 = minWidth, t0 == null ? 0 : t0);
+    this[minHeight$] = (t0$ = minHeight, t0$ == null ? 0 : t0$);
+    ;
+  }).prototype = layout_view.ViewMeasuredSizes.prototype;
+  dart.addTypeTests(layout_view.ViewMeasuredSizes);
+  dart.addTypeCaches(layout_view.ViewMeasuredSizes);
+  dart.setLibraryUri(layout_view.ViewMeasuredSizes, I[0]);
+  dart.setFieldSignature(layout_view.ViewMeasuredSizes, () => ({
+    __proto__: dart.getFields(layout_view.ViewMeasuredSizes.__proto__),
+    preferredWidth: dart.finalFieldType(dart.legacy(core.int)),
+    preferredHeight: dart.finalFieldType(dart.legacy(core.int)),
+    minWidth: dart.finalFieldType(dart.legacy(core.int)),
+    minHeight: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  dart.defineLazy(layout_view.ViewMeasuredSizes, {
+    /*layout_view.ViewMeasuredSizes.zero*/get zero() {
+      return C[11] || CT.C11;
+    }
+  }, true);
+  layout_view.LayoutView = class LayoutView extends core.Object {};
+  (layout_view.LayoutView.new = function() {
+    ;
+  }).prototype = layout_view.LayoutView.prototype;
+  dart.addTypeTests(layout_view.LayoutView);
+  dart.addTypeCaches(layout_view.LayoutView);
+  dart.setLibraryUri(layout_view.LayoutView, I[0]);
+  dart.trackLibraries("packages/charts_common/src/chart/layout/layout_view.dart", {
+    "package:charts_common/src/chart/layout/layout_view.dart": layout_view
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["layout_view.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAoCA;;oDAdK;;;;EAcL;;;;;;;;;;;;;;;;;;;;;;;;;;;;EA4BA;;;;;MAlBe,gDAAe;;;MAIf,4CAAW;;;MACX,2CAAU;;;MAEV,oCAAG;;;MACH,oCAAG;;;MACH,wCAAO;;;MACP,8CAAa;;;MACb,qCAAI;;;MACJ,sCAAK;;;MAEL,uCAAM;;;MACN,qDAAoB;;;MACpB,uCAAM;;;MACN,2CAAU;;;;;;;EAezB;;;;;MALe,4CAAQ;;;MACR,oDAAgB;;;MAChB,wCAAI;;;MACJ,0CAAM;;;MACN,8CAAU;;;;;;;;;IASb;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;;AASO,YAAO,cAAP,4BAAS;IAAO;;AAGf,YAAM,cAAN,2BAAQ;IAAQ;;;;QAVZ;QAAW;QAAc;QAAa;IAChD,gBAAQ,KAAN,KAAK,EAAL,aAAS;IACR,mBAAW,MAAT,QAAQ,EAAR,cAAY;IACf,kBAAU,OAAR,OAAO,EAAP,eAAW;IACd,iBAAS,OAAP,MAAM,EAAN,eAAU;;EAAC;;;;;;;;;;;;;;;;;MAZb,4BAAK;;;;;;;;;;IAwBX;;;;;;IAKH;;;;;;IAGW;;;;;;IAUX;;;;;;IAGO;;;;;;;AAgBP,YAAA,AAAS,AAE4B,kBAFV,yCAC3B,AAAS,iBAAkB,sCAC3B,AAAS,iBAAkB,wCAC3B,AAAS,iBAAkB;IAAQ;;;;QAXnB;QACD;QACA;QACJ;IAhCR;IA6Ba;IACD;IACA;IAEF,qBAAa,KAAX,UAAU,EAAV,aAAyB;;EAAK;;;;;;;;;;;;;;;;;;;;;IAkBvC;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;;;;QASU;QACD;QACX;QACA;IAHY;IACD;IAGJ,mBAAW,KAAT,QAAQ,EAAR,aAAY;IACb,oBAAY,MAAV,SAAS,EAAT,cAAa;;EAAC;;;;;;;;;;;;MApBnB,kCAAI;;;;;;;EAqDnB","file":"../../../../../../../../../../../D:/packages/charts_common/src/chart/layout/layout_view.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__layout__layout_view: layout_view
+  };
+}));
+
+//# sourceMappingURL=layout_view.dart.lib.js.map

@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+import 'home_page.dart';
+import 'dart:convert';
+
+import 'networkHandler.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -7,7 +14,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String _email, _password;
+  NetworkHandler networkHandler = NetworkHandler();
+  bool validate = false;
+  String errorText;
+  bool circular = false;
+  final storage = new FlutterSecureStorage();
+  String _regno, _password;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -42,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           onChanged: (value) {
             setState(() {
-              _email = value;
+              _regno = value;
             });
           },
         ));
@@ -79,8 +91,37 @@ class _LoginPageState extends State<LoginPage> {
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: MaterialButton(
         height: 47.0,
-        onPressed: () {
-          Navigator.of(context).popAndPushNamed('/homePage');
+        onPressed: () async {
+          Map<String, String> data = {
+            "reg_no": _regno,
+            "password": _password,
+          };
+          EasyLoading.show(status: 'Loading..');
+          var response = await networkHandler.post("/login", data);
+          EasyLoading.dismiss();
+          print("response : $response");
+          if (response.statusCode == 200 || response.statusCode == 201) {
+            Map<String, dynamic> output = json.decode(response.body);
+            print(output["token"]);
+            await storage.write(key: "token", value: output["token"]);
+            setState(() {
+              validate = true;
+              circular = false;
+            });
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+                (route) => false);
+          } else {
+            String output = json.decode(response.body);
+            setState(() {
+              validate = false;
+              errorText = output;
+              circular = false;
+            });
+          }
         },
         splashColor: Color(0xff006494),
         color: Color(0xff247BA0),

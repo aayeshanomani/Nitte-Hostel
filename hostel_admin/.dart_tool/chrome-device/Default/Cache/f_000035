@@ -1,0 +1,1136 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/hostel_admin/utils/models.dart', 'packages/hostel_admin/utils/config.dart', 'packages/hostel_admin/utils/utils.dart', 'packages/hostel_admin/utils/api.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon_theme_data.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/modal_progress_hud/modal_progress_hud.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/rendering/paragraph.dart'], (function load__packages__hostel_admin__screens__invoices_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__hostel_admin__utils__models$46dart, packages__hostel_admin__utils__config$46dart, packages__hostel_admin__utils__utils$46dart, packages__hostel_admin__utils__api$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon_theme_data$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__strut_style$46dart, packages__modal_progress_hud__modal_progress_hud$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__rendering__paragraph$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const scroll_controller = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_controller;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const models = packages__hostel_admin__utils__models$46dart.utils__models;
+  const config = packages__hostel_admin__utils__config$46dart.utils__config;
+  const utils = packages__hostel_admin__utils__utils$46dart.utils__utils;
+  const api = packages__hostel_admin__utils__api$46dart.utils__api;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const icon_theme_data = packages__flutter__src__widgets__icon_theme_data$46dart.src__widgets__icon_theme_data;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const modal_progress_hud = packages__modal_progress_hud__modal_progress_hud$46dart.modal_progress_hud;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  var invoices = Object.create(dart.library);
+  var $_set = dartx._set;
+  var $length = dartx.length;
+  var $toString = dartx.toString;
+  var $addAll = dartx.addAll;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    LinkedMapOfStringL$StringL: () => (T.LinkedMapOfStringL$StringL = dart.constFn(_js_helper.LinkedMap$(T.StringL(), T.StringL())))(),
+    InvoiceL: () => (T.InvoiceL = dart.constFn(dart.legacy(models.Invoice)))(),
+    JSArrayOfInvoiceL: () => (T.JSArrayOfInvoiceL = dart.constFn(_interceptors.JSArray$(T.InvoiceL())))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    InvoicesL: () => (T.InvoicesL = dart.constFn(dart.legacy(models.Invoices)))(),
+    InvoicesLToNull: () => (T.InvoicesLToNull = dart.constFn(dart.fnType(core.Null, [T.InvoicesL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    boolLToNull: () => (T.boolLToNull = dart.constFn(dart.fnType(core.Null, [T.boolL()])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    ListTileL: () => (T.ListTileL = dart.constFn(dart.legacy(list_tile.ListTile)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    BuildContextLAndintLToListTileL: () => (T.BuildContextLAndintLToListTileL = dart.constFn(dart.fnType(T.ListTileL(), [T.BuildContextL(), T.intL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 115,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconTheme",
+        [_Location_column]: 9,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 110,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 41,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 123,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 39,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 33,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 147,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 31,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 31,
+        [_Location_line]: 145,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 31,
+        [_Location_line]: 146,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 143,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 59,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 41,
+        [_Location_line]: 164,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 41,
+        [_Location_line]: 165,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 41,
+        [_Location_line]: 166,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 50,
+        [_Location_line]: 161,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 39,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 160,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 43,
+        [_Location_line]: 172,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 39,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 39,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 171,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 35,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 35,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41, C[42] || CT.C42], T._LocationL());
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 156,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 48,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 43,
+        [_Location_line]: 187,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 43,
+        [_Location_line]: 188,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47], T._LocationL());
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 185,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 41,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 41,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50, C[51] || CT.C51], T._LocationL());
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 43,
+        [_Location_line]: 183,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([], T._LocationL());
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 43,
+        [_Location_line]: 194,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 37,
+        [_Location_line]: 199,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 37,
+        [_Location_line]: 200,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58], T._LocationL());
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 46,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 35,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62], T._LocationL());
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[60] || CT.C60,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 195,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 208,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 37,
+        [_Location_line]: 209,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 37,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67], T._LocationL());
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 46,
+        [_Location_line]: 207,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 35,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], T._LocationL());
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 31,
+        [_Location_line]: 153,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 31,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 31,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74, C[75] || CT.C75, C[76] || CT.C76], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 152,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79], T._LocationL());
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 151,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 142,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.constList([C[82] || CT.C82, C[83] || CT.C83], T._LocationL());
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[81] || CT.C81,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 23,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.constList([C[86] || CT.C86, C[87] || CT.C87], T._LocationL());
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[85] || CT.C85,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 138,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dense",
+        [_Location_column]: 21,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 21,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 21,
+        [_Location_line]: 138,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.constList([C[90] || CT.C90, C[91] || CT.C91, C[92] || CT.C92], T._LocationL());
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[89] || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 130,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 17,
+        [_Location_line]: 126,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 17,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 17,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96, C[97] || CT.C97], T._LocationL());
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inAsyncCall",
+        [_Location_column]: 9,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100, C[101] || CT.C101], T._LocationL());
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 110,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.constList([C[104] || CT.C104, C[105] || CT.C105], T._LocationL());
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[103] || CT.C103,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 109,
+        [_Location_file]: "file:///D:/Nitte-Hostel/hostel_admin/lib/screens/invoices.dart"
+      });
+    }
+  }, false);
+  var C = Array(106).fill(void 0);
+  var I = ["package:hostel_admin/screens/invoices.dart"];
+  invoices.InvoicesActivity = class InvoicesActivity extends framework.StatefulWidget {
+    createState() {
+      return new invoices.InvoicesActivityState.new();
+    }
+  };
+  (invoices.InvoicesActivity.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    invoices.InvoicesActivity.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = invoices.InvoicesActivity.prototype;
+  dart.addTypeTests(invoices.InvoicesActivity);
+  dart.addTypeCaches(invoices.InvoicesActivity);
+  dart.setMethodSignature(invoices.InvoicesActivity, () => ({
+    __proto__: dart.getMethods(invoices.InvoicesActivity.__proto__),
+    createState: dart.fnType(dart.legacy(invoices.InvoicesActivityState), [])
+  }));
+  dart.setLibraryUri(invoices.InvoicesActivity, I[0]);
+  var filter = dart.privateName(invoices, "InvoicesActivityState.filter");
+  var invoices$ = dart.privateName(invoices, "InvoicesActivityState.invoices");
+  var end = dart.privateName(invoices, "InvoicesActivityState.end");
+  var ongoing = dart.privateName(invoices, "InvoicesActivityState.ongoing");
+  var width = dart.privateName(invoices, "InvoicesActivityState.width");
+  var offset = dart.privateName(invoices, "InvoicesActivityState.offset");
+  var loading = dart.privateName(invoices, "InvoicesActivityState.loading");
+  var _controller = dart.privateName(invoices, "_controller");
+  var _scrollListener = dart.privateName(invoices, "_scrollListener");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  invoices.InvoicesActivityState = class InvoicesActivityState extends framework.State$(dart.legacy(invoices.InvoicesActivity)) {
+    get filter() {
+      return this[filter];
+    }
+    set filter(value) {
+      this[filter] = value;
+    }
+    get invoices() {
+      return this[invoices$];
+    }
+    set invoices(value) {
+      this[invoices$] = value;
+    }
+    get end() {
+      return this[end];
+    }
+    set end(value) {
+      this[end] = value;
+    }
+    get ongoing() {
+      return this[ongoing];
+    }
+    set ongoing(value) {
+      this[ongoing] = value;
+    }
+    get width() {
+      return this[width];
+    }
+    set width(value) {
+      this[width] = value;
+    }
+    get offset() {
+      return this[offset];
+    }
+    set offset(value) {
+      this[offset] = value;
+    }
+    get loading() {
+      return this[loading];
+    }
+    set loading(value) {
+      this[loading] = value;
+    }
+    initState() {
+      super.initState();
+      this.filter[$_set]("status", "1");
+      this.filter[$_set]("admin_id", config.adminID);
+      this.filter[$_set]("limit", "25");
+      this.filter[$_set]("offset", this.offset);
+      this.filter[$_set]("orderby", "created_date_time");
+      this.filter[$_set]("sortby", "desc");
+      this[_controller] = new scroll_controller.ScrollController.new();
+      this[_controller].addListener(dart.bind(this, _scrollListener));
+      this.fillData();
+    }
+    [_scrollListener]() {
+      if (dart.notNull(this[_controller].offset) >= dart.notNull(this[_controller].position.maxScrollExtent) && !dart.test(this[_controller].position.outOfRange)) {
+        if (!dart.test(this.end) && !dart.test(this.ongoing)) {
+          this.setState(dart.fn(() => {
+            this.loading = true;
+          }, T.VoidToNull()));
+          this.fillData();
+        }
+      }
+    }
+    fillData() {
+      utils.checkInternet().then(core.Null, dart.fn(internet => {
+        if (internet == null || !dart.test(internet)) {
+          utils.oneButtonDialog(this.context, "No Internet connection", "", true);
+          this.setState(dart.fn(() => {
+            this.ongoing = false;
+            this.loading = false;
+          }, T.VoidToNull()));
+        } else {
+          this.ongoing = true;
+          this.filter[$_set]("offset", this.offset);
+          let data = api.getInvoices(this.filter);
+          data.then(core.Null, dart.fn(response => {
+            if (response != null) {
+              if (response.invoices != null && dart.notNull(response.invoices[$length]) > 0) {
+                this.offset = (dart.notNull(core.int.parse(response.pagination.offset)) + dart.notNull(response.invoices[$length]))[$toString]();
+                this.invoices[$addAll](response.invoices);
+              } else {
+                this.end = true;
+              }
+              if (response.meta != null && response.meta.messageType === "1") {
+                utils.oneButtonDialog(this.context, "", response.meta.message, response.meta.status !== "403");
+              }
+              this.setState(dart.fn(() => {
+                this.ongoing = false;
+                this.loading = false;
+              }, T.VoidToNull()));
+            } else {
+              async.Timer.new(new core.Duration.new({milliseconds: dart.notNull(utils.random.nextInt(5)) * 1000}), dart.fn(() => {
+                this.setState(dart.fn(() => {
+                  this.fillData();
+                }, T.VoidToNull()));
+              }, T.VoidToNull()));
+            }
+          }, T.InvoicesLToNull()));
+        }
+      }, T.boolLToNull()));
+    }
+    build(context) {
+      this.width = media_query.MediaQuery.of(context).size.width;
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({iconTheme: new icon_theme_data.IconThemeData.new({color: colors.Colors.black}), backgroundColor: colors.Colors.white, title: new text.Text.new("Subscriptions", {style: new text_style.TextStyle.new({color: colors.Colors.black}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), body: new modal_progress_hud.ModalProgressHUD.new({child: this.invoices[$length] === 0 ? new basic.Center.new({child: new text.Text.new(dart.test(this.loading) ? "" : "No subscriptions", {$creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}) : new scroll_view.ListView.builder({controller: this[_controller], itemCount: this.invoices[$length], itemBuilder: dart.fn((context, i) => {
+              let item = this.invoices[$_get](i);
+              return new list_tile.ListTile.new({dense: true, onTap: dart.fn(() => {
+                }, T.VoidToNull()), title: new container.Container.new({margin: new edge_insets.EdgeInsets.only({top: i === 0 ? 10.0 : 0.0}), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidgetL().of([new container.Container.new({margin: new edge_insets.EdgeInsets.fromLTRB(0.0, 0.0, 12.0, 0.0), padding: new edge_insets.EdgeInsets.all(7.0), color: new utils.HexColor.new("#E1A1AD"), child: new icon.Icon.new(icons.Icons.receipt, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), new basic.Expanded.new({child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidgetL().of([new basic.Flexible.new({child: new text.Text.new(utils.headingDateFormat.format(core.DateTime.parse(item.createdDateTime)), {overflow: paragraph.TextOverflow.ellipsis, maxLines: 1, style: new text_style.TextStyle.new({fontSize: 20.0}), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25}), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), new text.Text.new("₹" + (dart.notNull(core.int.parse(item.amount)) / 100)[$toString](), {overflow: paragraph.TextOverflow.ellipsis, style: new text_style.TextStyle.new({fontSize: 15.0, fontWeight: ui.FontWeight.normal, color: colors.Colors.red}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34})]), $creationLocationd_0dea112b090073317d4: C[39] || CT.C39}), item.description.length > 0 ? new container.Container.new({width: dart.notNull(this.width) * 0.7, child: new text.Text.new(item.description, {overflow: paragraph.TextOverflow.clip, style: new text_style.TextStyle.new({fontSize: 12.0, fontWeight: ui.FontWeight.w100, color: colors.Colors.grey}), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), $creationLocationd_0dea112b090073317d4: C[48] || CT.C48}) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[52] || CT.C52}), new container.Container.new({width: dart.notNull(this.width) * 0.7, child: new text.Text.new("Invoice ID - " + dart.notNull(item.id), {overflow: paragraph.TextOverflow.clip, style: new text_style.TextStyle.new({fontSize: 12.0}), $creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), $creationLocationd_0dea112b090073317d4: C[59] || CT.C59}), new container.Container.new({width: dart.notNull(this.width) * 0.7, child: new text.Text.new("Payment ID - " + dart.notNull(item.paymentID), {overflow: paragraph.TextOverflow.clip, style: new text_style.TextStyle.new({fontSize: 12.0}), $creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68})]), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77})]), $creationLocationd_0dea112b090073317d4: C[80] || CT.C80}), $creationLocationd_0dea112b090073317d4: C[84] || CT.C84}), $creationLocationd_0dea112b090073317d4: C[88] || CT.C88});
+            }, T.BuildContextLAndintLToListTileL()), $creationLocationd_0dea112b090073317d4: C[93] || CT.C93}), inAsyncCall: this.loading, $creationLocationd_0dea112b090073317d4: C[98] || CT.C98}), $creationLocationd_0dea112b090073317d4: C[102] || CT.C102});
+    }
+  };
+  (invoices.InvoicesActivityState.new = function() {
+    this[filter] = new (T.LinkedMapOfStringL$StringL()).new();
+    this[invoices$] = T.JSArrayOfInvoiceL().of([]);
+    this[end] = false;
+    this[ongoing] = false;
+    this[width] = 0.0;
+    this[offset] = "0";
+    this[loading] = true;
+    this[_controller] = null;
+    invoices.InvoicesActivityState.__proto__.new.call(this);
+    ;
+  }).prototype = invoices.InvoicesActivityState.prototype;
+  dart.addTypeTests(invoices.InvoicesActivityState);
+  dart.addTypeCaches(invoices.InvoicesActivityState);
+  dart.setMethodSignature(invoices.InvoicesActivityState, () => ({
+    __proto__: dart.getMethods(invoices.InvoicesActivityState.__proto__),
+    [_scrollListener]: dart.fnType(dart.dynamic, []),
+    fillData: dart.fnType(dart.void, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(invoices.InvoicesActivityState, I[0]);
+  dart.setFieldSignature(invoices.InvoicesActivityState, () => ({
+    __proto__: dart.getFields(invoices.InvoicesActivityState.__proto__),
+    filter: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
+    invoices: dart.fieldType(dart.legacy(core.List$(dart.legacy(models.Invoice)))),
+    end: dart.fieldType(dart.legacy(core.bool)),
+    ongoing: dart.fieldType(dart.legacy(core.bool)),
+    width: dart.fieldType(dart.legacy(core.double)),
+    offset: dart.fieldType(dart.legacy(core.String)),
+    loading: dart.fieldType(dart.legacy(core.bool)),
+    [_controller]: dart.fieldType(dart.legacy(scroll_controller.ScrollController))
+  }));
+  dart.trackLibraries("packages/hostel_admin/screens/invoices.dart", {
+    "package:hostel_admin/screens/invoices.dart": invoices
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["invoices.dart"],"names":[],"mappings":"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","file":"../../../../packages/hostel_admin/screens/invoices.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__invoices: invoices
+  };
+}));
+
+//# sourceMappingURL=invoices.dart.lib.js.map

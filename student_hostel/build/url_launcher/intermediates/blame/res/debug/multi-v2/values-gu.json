@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/res/merged/debug/values-gu/values-gu.xml",
+            "outputFile": "D:\\Nitte-Hostel\\student_hostel\\build\\url_launcher\\intermediates\\res\\merged\\debug\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/values-gu/values-gu.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\acdd9847aaa1c6bb0c5e85043c3c44c5\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml",
+            "outputFile": "D:\\Nitte-Hostel\\student_hostel\\build\\url_launcher\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/values-gu/values-gu.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\acdd9847aaa1c6bb0c5e85043c3c44c5\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

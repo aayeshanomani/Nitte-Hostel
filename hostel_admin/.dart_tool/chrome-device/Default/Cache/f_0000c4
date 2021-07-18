@@ -1,0 +1,304 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/layout/layout_view.dart', 'packages/charts_common/src/chart/layout/layout_config.dart', 'packages/charts_common/src/chart/layout/layout_margin_strategy.dart', 'packages/charts_common/src/chart/layout/layout_manager.dart'], (function load__packages__charts_common__src__chart__layout__layout_manager_impl_dart(dart_sdk, packages__charts_common__src__chart__layout__layout_view$46dart, packages__charts_common__src__chart__layout__layout_config$46dart, packages__charts_common__src__chart__layout__layout_margin_strategy$46dart, packages__charts_common__src__chart__layout__layout_manager$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const layout_view = packages__charts_common__src__chart__layout__layout_view$46dart.src__chart__layout__layout_view;
+  const layout_config = packages__charts_common__src__chart__layout__layout_config$46dart.src__chart__layout__layout_config;
+  const layout_margin_strategy = packages__charts_common__src__chart__layout__layout_margin_strategy$46dart.src__chart__layout__layout_margin_strategy;
+  const layout_manager = packages__charts_common__src__chart__layout__layout_manager$46dart.src__chart__layout__layout_manager;
+  var layout_manager_impl = Object.create(dart.library);
+  var $add = dartx.add;
+  var $remove = dartx.remove;
+  var $contains = dartx.contains;
+  var $compareTo = dartx.compareTo;
+  var $sort = dartx.sort;
+  var $where = dartx.where;
+  var $first = dartx.first;
+  var $skip = dartx.skip;
+  var $boundingBox = dartx.boundingBox;
+  var $containsPoint = dartx.containsPoint;
+  var $forEach = dartx.forEach;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    LayoutViewL: () => (T.LayoutViewL = dart.constFn(dart.legacy(layout_view.LayoutView)))(),
+    JSArrayOfLayoutViewL: () => (T.JSArrayOfLayoutViewL = dart.constFn(_interceptors.JSArray$(T.LayoutViewL())))(),
+    ListOfLayoutViewL: () => (T.ListOfLayoutViewL = dart.constFn(core.List$(T.LayoutViewL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    LayoutViewLAndLayoutViewLTointL: () => (T.LayoutViewLAndLayoutViewLTointL = dart.constFn(dart.fnType(T.intL(), [T.LayoutViewL(), T.LayoutViewL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    LayoutViewLToboolL: () => (T.LayoutViewLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.LayoutViewL()])))(),
+    RectangleOfintL: () => (T.RectangleOfintL = dart.constFn(math.Rectangle$(T.intL())))(),
+    LayoutViewLTovoid: () => (T.LayoutViewLTovoid = dart.constFn(dart.fnType(dart.void, [T.LayoutViewL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = [
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/charts_common-0.8.1/lib/src/chart/layout/layout_manager_impl.dart",
+    "package:charts_common/src/chart/layout/layout_manager_impl.dart"
+  ];
+  var config$ = dart.privateName(layout_manager_impl, "LayoutManagerImpl.config");
+  var _views = dart.privateName(layout_manager_impl, "_views");
+  var _paintOrderedViews = dart.privateName(layout_manager_impl, "_paintOrderedViews");
+  var _positionOrderedViews = dart.privateName(layout_manager_impl, "_positionOrderedViews");
+  var _measurements = dart.privateName(layout_manager_impl, "_measurements");
+  var _drawAreaBounds = dart.privateName(layout_manager_impl, "_drawAreaBounds");
+  var _drawAreaBoundsOutdated = dart.privateName(layout_manager_impl, "_drawAreaBoundsOutdated");
+  var _viewsNeedPaintSort = dart.privateName(layout_manager_impl, "_viewsNeedPaintSort");
+  var _viewsNeedPositionSort = dart.privateName(layout_manager_impl, "_viewsNeedPositionSort");
+  var _viewsForPositions = dart.privateName(layout_manager_impl, "_viewsForPositions");
+  var _measure = dart.privateName(layout_manager_impl, "_measure");
+  layout_manager_impl.LayoutManagerImpl = class LayoutManagerImpl extends core.Object {
+    get config() {
+      return this[config$];
+    }
+    set config(value) {
+      this[config$] = value;
+    }
+    addView(view) {
+      this[_views][$add](view);
+      this[_drawAreaBoundsOutdated] = true;
+      this[_viewsNeedPositionSort] = true;
+      this[_viewsNeedPaintSort] = true;
+    }
+    removeView(view) {
+      if (dart.test(this[_views][$remove](view))) {
+        this[_drawAreaBoundsOutdated] = true;
+        this[_viewsNeedPositionSort] = true;
+        this[_viewsNeedPaintSort] = true;
+      }
+    }
+    isAttached(view) {
+      return this[_views][$contains](view);
+    }
+    get paintOrderedViews() {
+      if (dart.test(this[_viewsNeedPaintSort])) {
+        this[_paintOrderedViews] = T.ListOfLayoutViewL().from(this[_views]);
+        this[_paintOrderedViews][$sort](dart.fn((v1, v2) => v1.layoutConfig.paintOrder[$compareTo](v2.layoutConfig.paintOrder), T.LayoutViewLAndLayoutViewLTointL()));
+        this[_viewsNeedPaintSort] = false;
+      }
+      return this[_paintOrderedViews];
+    }
+    get positionOrderedViews() {
+      if (dart.test(this[_viewsNeedPositionSort])) {
+        this[_positionOrderedViews] = T.ListOfLayoutViewL().from(this[_views]);
+        this[_positionOrderedViews][$sort](dart.fn((v1, v2) => v1.layoutConfig.positionOrder[$compareTo](v2.layoutConfig.positionOrder), T.LayoutViewLAndLayoutViewLTointL()));
+        this[_viewsNeedPositionSort] = false;
+      }
+      return this[_positionOrderedViews];
+    }
+    get drawAreaBounds() {
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 109, 12, "_drawAreaBoundsOutdated == false");
+      return this[_drawAreaBounds];
+    }
+    get drawableLayoutAreaBounds() {
+      let t0, t0$;
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 115, 12, "_drawAreaBoundsOutdated == false");
+      let drawableViews = this[_views][$where](dart.fn(view => view.isSeriesRenderer, T.LayoutViewLToboolL()));
+      let componentBounds = (t0$ = (t0 = drawableViews, t0 == null ? null : t0[$first]), t0$ == null ? null : t0$.componentBounds);
+      if (componentBounds != null) {
+        for (let view of drawableViews[$skip](1)) {
+          if (view.componentBounds != null) {
+            componentBounds = componentBounds[$boundingBox](view.componentBounds);
+          }
+        }
+      } else {
+        componentBounds = new (T.RectangleOfintL()).new(0, 0, 0, 0);
+      }
+      return componentBounds;
+    }
+    get marginBottom() {
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 137, 12, "_drawAreaBoundsOutdated == false");
+      return this[_measurements].bottomHeight;
+    }
+    get marginLeft() {
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 143, 12, "_drawAreaBoundsOutdated == false");
+      return this[_measurements].leftWidth;
+    }
+    get marginRight() {
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 149, 12, "_drawAreaBoundsOutdated == false");
+      return this[_measurements].rightWidth;
+    }
+    get marginTop() {
+      if (!(this[_drawAreaBoundsOutdated] === false)) dart.assertFailed(null, I[0], 155, 12, "_drawAreaBoundsOutdated == false");
+      return this[_measurements].topHeight;
+    }
+    withinDrawArea(point) {
+      return this[_drawAreaBounds][$containsPoint](point);
+    }
+    measure(width, height) {
+      let topViews = this[_viewsForPositions](layout_view.LayoutPosition.Top, layout_view.LayoutPosition.FullTop);
+      let rightViews = this[_viewsForPositions](layout_view.LayoutPosition.Right, layout_view.LayoutPosition.FullRight);
+      let bottomViews = this[_viewsForPositions](layout_view.LayoutPosition.Bottom, layout_view.LayoutPosition.FullBottom);
+      let leftViews = this[_viewsForPositions](layout_view.LayoutPosition.Left, layout_view.LayoutPosition.FullLeft);
+      let measurements = this[_measure](width, height, {topViews: topViews, rightViews: rightViews, bottomViews: bottomViews, leftViews: leftViews, useMax: true});
+      let secondMeasurements = this[_measure](width, height, {topViews: topViews, rightViews: rightViews, bottomViews: bottomViews, leftViews: leftViews, previousMeasurements: measurements, useMax: true});
+      if (measurements.leftWidth != secondMeasurements.leftWidth || measurements.rightWidth != secondMeasurements.rightWidth || measurements.topHeight != secondMeasurements.topHeight || measurements.bottomHeight != secondMeasurements.bottomHeight) {
+        let thirdMeasurements = this[_measure](width, height, {topViews: topViews, rightViews: rightViews, bottomViews: bottomViews, leftViews: leftViews, previousMeasurements: secondMeasurements, useMax: false});
+        measurements = thirdMeasurements;
+      } else {
+        measurements = secondMeasurements;
+      }
+      this[_measurements] = measurements;
+      let drawAreaWidth = math.max(T.intL(), 20, dart.notNull(width) - dart.notNull(measurements.leftWidth) - dart.notNull(measurements.rightWidth));
+      let drawAreaHeight = math.max(T.intL(), 20, dart.notNull(height) - dart.notNull(measurements.bottomHeight) - dart.notNull(measurements.topHeight));
+      this[_drawAreaBounds] = new (T.RectangleOfintL()).new(measurements.leftWidth, measurements.topHeight, drawAreaWidth, drawAreaHeight);
+      this[_drawAreaBoundsOutdated] = false;
+    }
+    layout(width, height) {
+      let topViews = this[_viewsForPositions](layout_view.LayoutPosition.Top, layout_view.LayoutPosition.FullTop);
+      let rightViews = this[_viewsForPositions](layout_view.LayoutPosition.Right, layout_view.LayoutPosition.FullRight);
+      let bottomViews = this[_viewsForPositions](layout_view.LayoutPosition.Bottom, layout_view.LayoutPosition.FullBottom);
+      let leftViews = this[_viewsForPositions](layout_view.LayoutPosition.Left, layout_view.LayoutPosition.FullLeft);
+      let drawAreaViews = this[_viewsForPositions](layout_view.LayoutPosition.DrawArea);
+      let fullBounds = new (T.RectangleOfintL()).new(0, 0, width, height);
+      new layout_margin_strategy.LeftMarginLayoutStrategy.new().layout(leftViews, this[_measurements].leftSizes, fullBounds, this.drawAreaBounds);
+      new layout_margin_strategy.RightMarginLayoutStrategy.new().layout(rightViews, this[_measurements].rightSizes, fullBounds, this.drawAreaBounds);
+      new layout_margin_strategy.BottomMarginLayoutStrategy.new().layout(bottomViews, this[_measurements].bottomSizes, fullBounds, this.drawAreaBounds);
+      new layout_margin_strategy.TopMarginLayoutStrategy.new().layout(topViews, this[_measurements].topSizes, fullBounds, this.drawAreaBounds);
+      drawAreaViews[$forEach](dart.fn(view => view.layout(this[_drawAreaBounds], this[_drawAreaBounds]), T.LayoutViewLTovoid()));
+    }
+    [_viewsForPositions](p1, p2 = null) {
+      return this.positionOrderedViews[$where](dart.fn(view => view.layoutConfig.position == p1 || p2 != null && view.layoutConfig.position == p2, T.LayoutViewLToboolL()));
+    }
+    [_measure](width, height, opts) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5;
+      let topViews = opts && 'topViews' in opts ? opts.topViews : null;
+      let rightViews = opts && 'rightViews' in opts ? opts.rightViews : null;
+      let bottomViews = opts && 'bottomViews' in opts ? opts.bottomViews : null;
+      let leftViews = opts && 'leftViews' in opts ? opts.leftViews : null;
+      let previousMeasurements = opts && 'previousMeasurements' in opts ? opts.previousMeasurements : null;
+      let useMax = opts && 'useMax' in opts ? opts.useMax : null;
+      let maxLeftWidth = this.config.leftSpec.getMaxPixels(width);
+      let maxRightWidth = this.config.rightSpec.getMaxPixels(width);
+      let maxBottomHeight = this.config.bottomSpec.getMaxPixels(height);
+      let maxTopHeight = this.config.topSpec.getMaxPixels(height);
+      let leftWidth = (t0$ = (t0 = previousMeasurements, t0 == null ? null : t0.leftWidth), t0$ == null ? maxLeftWidth : t0$);
+      let rightWidth = (t0$1 = (t0$0 = previousMeasurements, t0$0 == null ? null : t0$0.rightWidth), t0$1 == null ? maxRightWidth : t0$1);
+      let bottomHeight = (t0$3 = (t0$2 = previousMeasurements, t0$2 == null ? null : t0$2.bottomHeight), t0$3 == null ? maxBottomHeight : t0$3);
+      let topHeight = (t0$5 = (t0$4 = previousMeasurements, t0$4 == null ? null : t0$4.topHeight), t0$5 == null ? maxTopHeight : t0$5);
+      let adjustedHeight = previousMeasurements != null ? dart.notNull(height) - dart.notNull(bottomHeight) - dart.notNull(topHeight) : height;
+      let leftSizes = new layout_margin_strategy.LeftMarginLayoutStrategy.new().measure(leftViews, {maxWidth: dart.test(useMax) ? maxLeftWidth : leftWidth, height: adjustedHeight, fullHeight: height});
+      leftWidth = math.max(T.intL(), leftSizes.total, this.config.leftSpec.getMinPixels(width));
+      let rightSizes = new layout_margin_strategy.RightMarginLayoutStrategy.new().measure(rightViews, {maxWidth: dart.test(useMax) ? maxRightWidth : rightWidth, height: adjustedHeight, fullHeight: height});
+      rightWidth = math.max(T.intL(), rightSizes.total, this.config.rightSpec.getMinPixels(width));
+      let adjustedWidth = dart.notNull(width) - dart.notNull(leftWidth) - dart.notNull(rightWidth);
+      let bottomSizes = new layout_margin_strategy.BottomMarginLayoutStrategy.new().measure(bottomViews, {maxHeight: dart.test(useMax) ? maxBottomHeight : bottomHeight, width: adjustedWidth, fullWidth: width});
+      bottomHeight = math.max(T.intL(), bottomSizes.total, this.config.bottomSpec.getMinPixels(height));
+      let topSizes = new layout_margin_strategy.TopMarginLayoutStrategy.new().measure(topViews, {maxHeight: dart.test(useMax) ? maxTopHeight : topHeight, width: adjustedWidth, fullWidth: width});
+      topHeight = math.max(T.intL(), topSizes.total, this.config.topSpec.getMinPixels(height));
+      return new layout_manager_impl._MeasuredSizes.new({leftWidth: leftWidth, leftSizes: leftSizes, rightWidth: rightWidth, rightSizes: rightSizes, topHeight: topHeight, topSizes: topSizes, bottomHeight: bottomHeight, bottomSizes: bottomSizes});
+    }
+    applyToViews(apply) {
+      this[_views][$forEach](dart.fn(view => apply(view), T.LayoutViewLTovoid()));
+    }
+  };
+  (layout_manager_impl.LayoutManagerImpl.new = function(opts) {
+    let t0;
+    let config = opts && 'config' in opts ? opts.config : null;
+    this[_views] = T.JSArrayOfLayoutViewL().of([]);
+    this[_paintOrderedViews] = null;
+    this[_positionOrderedViews] = null;
+    this[_measurements] = null;
+    this[_drawAreaBounds] = null;
+    this[_drawAreaBoundsOutdated] = true;
+    this[_viewsNeedPaintSort] = true;
+    this[_viewsNeedPositionSort] = true;
+    this[config$] = (t0 = config, t0 == null ? new layout_config.LayoutConfig.new() : t0);
+    ;
+  }).prototype = layout_manager_impl.LayoutManagerImpl.prototype;
+  dart.addTypeTests(layout_manager_impl.LayoutManagerImpl);
+  dart.addTypeCaches(layout_manager_impl.LayoutManagerImpl);
+  layout_manager_impl.LayoutManagerImpl[dart.implements] = () => [layout_manager.LayoutManager];
+  dart.setMethodSignature(layout_manager_impl.LayoutManagerImpl, () => ({
+    __proto__: dart.getMethods(layout_manager_impl.LayoutManagerImpl.__proto__),
+    addView: dart.fnType(dart.void, [dart.legacy(layout_view.LayoutView)]),
+    removeView: dart.fnType(dart.void, [dart.legacy(layout_view.LayoutView)]),
+    isAttached: dart.fnType(dart.legacy(core.bool), [dart.legacy(layout_view.LayoutView)]),
+    withinDrawArea: dart.fnType(dart.legacy(core.bool), [dart.legacy(math.Point$(dart.legacy(core.num)))]),
+    measure: dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]),
+    layout: dart.fnType(dart.void, [dart.legacy(core.int), dart.legacy(core.int)]),
+    [_viewsForPositions]: dart.fnType(dart.legacy(core.Iterable$(dart.legacy(layout_view.LayoutView))), [dart.legacy(layout_view.LayoutPosition)], [dart.legacy(layout_view.LayoutPosition)]),
+    [_measure]: dart.fnType(dart.legacy(layout_manager_impl._MeasuredSizes), [dart.legacy(core.int), dart.legacy(core.int)], {bottomViews: dart.legacy(core.Iterable$(dart.legacy(layout_view.LayoutView))), leftViews: dart.legacy(core.Iterable$(dart.legacy(layout_view.LayoutView))), previousMeasurements: dart.legacy(layout_manager_impl._MeasuredSizes), rightViews: dart.legacy(core.Iterable$(dart.legacy(layout_view.LayoutView))), topViews: dart.legacy(core.Iterable$(dart.legacy(layout_view.LayoutView))), useMax: dart.legacy(core.bool)}, {}),
+    applyToViews: dart.fnType(dart.void, [dart.legacy(dart.fnType(dart.void, [dart.legacy(layout_view.LayoutView)]))])
+  }));
+  dart.setGetterSignature(layout_manager_impl.LayoutManagerImpl, () => ({
+    __proto__: dart.getGetters(layout_manager_impl.LayoutManagerImpl.__proto__),
+    paintOrderedViews: dart.legacy(core.List$(dart.legacy(layout_view.LayoutView))),
+    positionOrderedViews: dart.legacy(core.List$(dart.legacy(layout_view.LayoutView))),
+    drawAreaBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+    drawableLayoutAreaBounds: dart.legacy(math.Rectangle$(dart.legacy(core.int))),
+    marginBottom: dart.legacy(core.int),
+    marginLeft: dart.legacy(core.int),
+    marginRight: dart.legacy(core.int),
+    marginTop: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(layout_manager_impl.LayoutManagerImpl, I[1]);
+  dart.setFieldSignature(layout_manager_impl.LayoutManagerImpl, () => ({
+    __proto__: dart.getFields(layout_manager_impl.LayoutManagerImpl.__proto__),
+    config: dart.fieldType(dart.legacy(layout_config.LayoutConfig)),
+    [_views]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(layout_view.LayoutView)))),
+    [_paintOrderedViews]: dart.fieldType(dart.legacy(core.List$(dart.legacy(layout_view.LayoutView)))),
+    [_positionOrderedViews]: dart.fieldType(dart.legacy(core.List$(dart.legacy(layout_view.LayoutView)))),
+    [_measurements]: dart.fieldType(dart.legacy(layout_manager_impl._MeasuredSizes)),
+    [_drawAreaBounds]: dart.fieldType(dart.legacy(math.Rectangle$(dart.legacy(core.int)))),
+    [_drawAreaBoundsOutdated]: dart.fieldType(dart.legacy(core.bool)),
+    [_viewsNeedPaintSort]: dart.fieldType(dart.legacy(core.bool)),
+    [_viewsNeedPositionSort]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  dart.defineLazy(layout_manager_impl.LayoutManagerImpl, {
+    /*layout_manager_impl.LayoutManagerImpl._minDrawWidth*/get _minDrawWidth() {
+      return 20;
+    },
+    /*layout_manager_impl.LayoutManagerImpl._minDrawHeight*/get _minDrawHeight() {
+      return 20;
+    }
+  }, true);
+  layout_manager_impl._MeasuredSizes = class _MeasuredSizes extends core.Object {};
+  (layout_manager_impl._MeasuredSizes.new = function(opts) {
+    let leftWidth = opts && 'leftWidth' in opts ? opts.leftWidth : null;
+    let leftSizes = opts && 'leftSizes' in opts ? opts.leftSizes : null;
+    let rightWidth = opts && 'rightWidth' in opts ? opts.rightWidth : null;
+    let rightSizes = opts && 'rightSizes' in opts ? opts.rightSizes : null;
+    let topHeight = opts && 'topHeight' in opts ? opts.topHeight : null;
+    let topSizes = opts && 'topSizes' in opts ? opts.topSizes : null;
+    let bottomHeight = opts && 'bottomHeight' in opts ? opts.bottomHeight : null;
+    let bottomSizes = opts && 'bottomSizes' in opts ? opts.bottomSizes : null;
+    this.leftWidth = leftWidth;
+    this.leftSizes = leftSizes;
+    this.rightWidth = rightWidth;
+    this.rightSizes = rightSizes;
+    this.topHeight = topHeight;
+    this.topSizes = topSizes;
+    this.bottomHeight = bottomHeight;
+    this.bottomSizes = bottomSizes;
+    ;
+  }).prototype = layout_manager_impl._MeasuredSizes.prototype;
+  dart.addTypeTests(layout_manager_impl._MeasuredSizes);
+  dart.addTypeCaches(layout_manager_impl._MeasuredSizes);
+  dart.setLibraryUri(layout_manager_impl._MeasuredSizes, I[1]);
+  dart.setFieldSignature(layout_manager_impl._MeasuredSizes, () => ({
+    __proto__: dart.getFields(layout_manager_impl._MeasuredSizes.__proto__),
+    leftWidth: dart.finalFieldType(dart.legacy(core.int)),
+    leftSizes: dart.finalFieldType(dart.legacy(layout_margin_strategy.SizeList)),
+    rightWidth: dart.finalFieldType(dart.legacy(core.int)),
+    rightSizes: dart.finalFieldType(dart.legacy(layout_margin_strategy.SizeList)),
+    topHeight: dart.finalFieldType(dart.legacy(core.int)),
+    topSizes: dart.finalFieldType(dart.legacy(layout_margin_strategy.SizeList)),
+    bottomHeight: dart.finalFieldType(dart.legacy(core.int)),
+    bottomSizes: dart.finalFieldType(dart.legacy(layout_margin_strategy.SizeList))
+  }));
+  dart.trackLibraries("packages/charts_common/src/chart/layout/layout_manager_impl.dart", {
+    "package:charts_common/src/chart/layout/layout_manager_impl.dart": layout_manager_impl
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["layout_manager_impl.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../D:/packages/charts_common/src/chart/layout/layout_manager_impl.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__layout__layout_manager_impl: layout_manager_impl
+  };
+}));
+
+//# sourceMappingURL=layout_manager_impl.dart.lib.js.map

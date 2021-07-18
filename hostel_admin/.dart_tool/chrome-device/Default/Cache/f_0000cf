@@ -1,0 +1,217 @@
+define(['dart_sdk', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry_generator.dart', 'packages/charts_common/src/chart/common/selection_model/selection_model.dart'], (function load__packages__charts_common__src__chart__common__behavior__legend__per_datum_legend_entry_generator_dart(dart_sdk, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart, packages__charts_common__src__chart__common__selection_model__selection_model$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const processed_series = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__common__processed_series;
+  const axis = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__axis;
+  const axis_spec = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__spec__axis_spec;
+  const legend_entry = packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart.src__chart__common__behavior__legend__legend_entry;
+  const legend_entry_generator = packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart.src__chart__common__behavior__legend__legend_entry_generator;
+  const selection_model = packages__charts_common__src__chart__common__selection_model__selection_model$46dart.src__chart__common__selection_model__selection_model;
+  var per_datum_legend_entry_generator = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $length = dartx.length;
+  var $toString = dartx.toString;
+  var $add = dartx.add;
+  var $toDouble = dartx.toDouble;
+  var $any = dartx.any;
+  var $hashCode = dartx.hashCode;
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    PerDatumLegendEntryGeneratorL: () => (T.PerDatumLegendEntryGeneratorL = dart.constFn(dart.legacy(per_datum_legend_entry_generator.PerDatumLegendEntryGenerator)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = ["package:charts_common/src/chart/common/behavior/legend/per_datum_legend_entry_generator.dart"];
+  var entryTextStyle = dart.privateName(per_datum_legend_entry_generator, "PerDatumLegendEntryGenerator.entryTextStyle");
+  var measureFormatter = dart.privateName(per_datum_legend_entry_generator, "PerDatumLegendEntryGenerator.measureFormatter");
+  var secondaryMeasureFormatter = dart.privateName(per_datum_legend_entry_generator, "PerDatumLegendEntryGenerator.secondaryMeasureFormatter");
+  var showOverlaySeries = dart.privateName(per_datum_legend_entry_generator, "PerDatumLegendEntryGenerator.showOverlaySeries");
+  var legendDefaultMeasure = dart.privateName(per_datum_legend_entry_generator, "PerDatumLegendEntryGenerator.legendDefaultMeasure");
+  var _updateFromSeriesList = dart.privateName(per_datum_legend_entry_generator, "_updateFromSeriesList");
+  var _updateFromSelection = dart.privateName(per_datum_legend_entry_generator, "_updateFromSelection");
+  var _resetLegendEntryMeasures = dart.privateName(per_datum_legend_entry_generator, "_resetLegendEntryMeasures");
+  var _getFormattedMeasureValue = dart.privateName(per_datum_legend_entry_generator, "_getFormattedMeasureValue");
+  const _is_PerDatumLegendEntryGenerator_default = Symbol('_is_PerDatumLegendEntryGenerator_default');
+  per_datum_legend_entry_generator.PerDatumLegendEntryGenerator$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var MutableSeriesOfDL = () => (MutableSeriesOfDL = dart.constFn(processed_series.MutableSeries$(DL())))();
+    var MutableSeriesLOfDL = () => (MutableSeriesLOfDL = dart.constFn(dart.legacy(MutableSeriesOfDL())))();
+    var ListOfMutableSeriesLOfDL = () => (ListOfMutableSeriesLOfDL = dart.constFn(core.List$(MutableSeriesLOfDL())))();
+    var ListLOfMutableSeriesLOfDL = () => (ListLOfMutableSeriesLOfDL = dart.constFn(dart.legacy(ListOfMutableSeriesLOfDL())))();
+    var LegendEntryOfDL = () => (LegendEntryOfDL = dart.constFn(legend_entry.LegendEntry$(DL())))();
+    var LegendEntryLOfDL = () => (LegendEntryLOfDL = dart.constFn(dart.legacy(LegendEntryOfDL())))();
+    var JSArrayOfLegendEntryLOfDL = () => (JSArrayOfLegendEntryLOfDL = dart.constFn(_interceptors.JSArray$(LegendEntryLOfDL())))();
+    var ListOfLegendEntryLOfDL = () => (ListOfLegendEntryLOfDL = dart.constFn(core.List$(LegendEntryLOfDL())))();
+    var ListLOfLegendEntryLOfDL = () => (ListLOfLegendEntryLOfDL = dart.constFn(dart.legacy(ListOfLegendEntryLOfDL())))();
+    var SelectionModelOfDL = () => (SelectionModelOfDL = dart.constFn(selection_model.SelectionModel$(DL())))();
+    var SelectionModelLOfDL = () => (SelectionModelLOfDL = dart.constFn(dart.legacy(SelectionModelOfDL())))();
+    var ImmutableSeriesOfDL = () => (ImmutableSeriesOfDL = dart.constFn(processed_series.ImmutableSeries$(DL())))();
+    var ImmutableSeriesLOfDL = () => (ImmutableSeriesLOfDL = dart.constFn(dart.legacy(ImmutableSeriesOfDL())))();
+    var ImmutableSeriesLOfDLToboolL = () => (ImmutableSeriesLOfDLToboolL = dart.constFn(dart.fnType(T.boolL(), [ImmutableSeriesLOfDL()])))();
+    class PerDatumLegendEntryGenerator extends core.Object {
+      get entryTextStyle() {
+        return this[entryTextStyle];
+      }
+      set entryTextStyle(value) {
+        this[entryTextStyle] = value;
+      }
+      get measureFormatter() {
+        return this[measureFormatter];
+      }
+      set measureFormatter(value) {
+        this[measureFormatter] = value;
+      }
+      get secondaryMeasureFormatter() {
+        return this[secondaryMeasureFormatter];
+      }
+      set secondaryMeasureFormatter(value) {
+        this[secondaryMeasureFormatter] = value;
+      }
+      get showOverlaySeries() {
+        return this[showOverlaySeries];
+      }
+      set showOverlaySeries(value) {
+        this[showOverlaySeries] = value;
+      }
+      get legendDefaultMeasure() {
+        return this[legendDefaultMeasure];
+      }
+      set legendDefaultMeasure(value) {
+        this[legendDefaultMeasure] = value;
+      }
+      getLegendEntries(seriesList) {
+        let t1, t0, t1$, t0$;
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        let legendEntries = JSArrayOfLegendEntryLOfDL().of([]);
+        let series = seriesList[$_get](0);
+        for (let i = 0; i < dart.notNull(series.data[$length]); i = i + 1) {
+          legendEntries[$add](new (LegendEntryOfDL()).new(series, dart.toString((t0 = series, t1 = i, t0.domainFn(t1))), {color: (t0$ = series, t1$ = i, t0$.colorFn(t1$)), datum: series.data[$_get](i), datumIndex: i, textStyle: this.entryTextStyle}));
+        }
+        if (this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none) {
+          this[_updateFromSeriesList](legendEntries, seriesList);
+        }
+        return legendEntries;
+      }
+      updateLegendEntries(legendEntries, selectionModel, seriesList) {
+        ListLOfLegendEntryLOfDL().as(legendEntries);
+        SelectionModelLOfDL().as(selectionModel);
+        ListLOfMutableSeriesLOfDL().as(seriesList);
+        if (dart.test(selectionModel.hasAnySelection)) {
+          this[_updateFromSelection](legendEntries, selectionModel);
+        } else {
+          if (this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none) {
+            this[_updateFromSeriesList](legendEntries, seriesList);
+          } else {
+            this[_resetLegendEntryMeasures](legendEntries);
+          }
+        }
+      }
+      [_updateFromSelection](legendEntries, selectionModel) {
+        let t1, t0;
+        if (this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none) {
+          for (let entry of legendEntries) {
+            let series = entry.series;
+            let measure = (t0 = series, t1 = entry.datumIndex, t0.measureFn(t1));
+            entry.value = measure[$toDouble]();
+            entry.formattedValue = this[_getFormattedMeasureValue](series, measure);
+            entry.isSelected = selectionModel.selectedSeries[$any](dart.fn(selectedSeries => series.id == selectedSeries.id, ImmutableSeriesLOfDLToboolL()));
+          }
+        }
+      }
+      [_resetLegendEntryMeasures](legendEntries) {
+        for (let entry of legendEntries) {
+          entry.value = null;
+          entry.formattedValue = null;
+          entry.isSelected = false;
+        }
+      }
+      [_updateFromSeriesList](legendEntries, seriesList) {
+        let t1, t0;
+        if (this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none) {
+          for (let entry of legendEntries) {
+            let series = entry.series;
+            let measure = (t0 = series, t1 = entry.datumIndex, t0.measureFn(t1));
+            entry.value = measure[$toDouble]();
+            entry.formattedValue = this[_getFormattedMeasureValue](series, measure);
+            entry.isSelected = false;
+          }
+        }
+      }
+      [_getFormattedMeasureValue](series, measure) {
+        let t0, t0$;
+        return series.getAttr(T.StringL(), axis.measureAxisIdKey) === "secondaryMeasureAxisId" ? (t0 = measure, this.secondaryMeasureFormatter(t0)) : (t0$ = measure, this.measureFormatter(t0$));
+      }
+      _equals(other) {
+        if (other == null) return false;
+        return T.PerDatumLegendEntryGeneratorL().is(other) && dart.equals(this.measureFormatter, other.measureFormatter) && dart.equals(this.secondaryMeasureFormatter, other.secondaryMeasureFormatter) && this.legendDefaultMeasure == other.legendDefaultMeasure && dart.equals(this.entryTextStyle, other.entryTextStyle);
+      }
+      get hashCode() {
+        let t0, t0$;
+        let hashcode = (t0$ = (t0 = this.measureFormatter, t0 == null ? null : dart.hashCode(t0)), t0$ == null ? 0 : t0$);
+        hashcode = dart.notNull(hashcode) * 37 + dart.notNull(dart.hashCode(this.secondaryMeasureFormatter));
+        hashcode = dart.notNull(hashcode) * 37 + dart.notNull(dart.hashCode(this.legendDefaultMeasure));
+        hashcode = dart.notNull(hashcode) * 37 + dart.notNull(dart.hashCode(this.entryTextStyle));
+        return hashcode;
+      }
+    }
+    (PerDatumLegendEntryGenerator.new = function() {
+      this[entryTextStyle] = null;
+      this[measureFormatter] = null;
+      this[secondaryMeasureFormatter] = null;
+      this[showOverlaySeries] = null;
+      this[legendDefaultMeasure] = null;
+      ;
+    }).prototype = PerDatumLegendEntryGenerator.prototype;
+    dart.addTypeTests(PerDatumLegendEntryGenerator);
+    PerDatumLegendEntryGenerator.prototype[_is_PerDatumLegendEntryGenerator_default] = true;
+    dart.addTypeCaches(PerDatumLegendEntryGenerator);
+    PerDatumLegendEntryGenerator[dart.implements] = () => [legend_entry_generator.LegendEntryGenerator$(dart.legacy(D))];
+    dart.setMethodSignature(PerDatumLegendEntryGenerator, () => ({
+      __proto__: dart.getMethods(PerDatumLegendEntryGenerator.__proto__),
+      getLegendEntries: dart.fnType(dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D))))), [dart.legacy(core.Object)]),
+      updateLegendEntries: dart.fnType(dart.void, [dart.legacy(core.Object), dart.legacy(core.Object), dart.legacy(core.Object)]),
+      [_updateFromSelection]: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D))))), dart.legacy(selection_model.SelectionModel$(dart.legacy(D)))]),
+      [_resetLegendEntryMeasures]: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D)))))]),
+      [_updateFromSeriesList]: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(legend_entry.LegendEntry$(dart.legacy(D))))), dart.legacy(core.List$(dart.legacy(processed_series.MutableSeries$(dart.legacy(D)))))]),
+      [_getFormattedMeasureValue]: dart.fnType(dart.legacy(core.String), [dart.legacy(processed_series.ImmutableSeries), dart.legacy(core.num)]),
+      _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+      [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+    }));
+    dart.setGetterSignature(PerDatumLegendEntryGenerator, () => ({
+      __proto__: dart.getGetters(PerDatumLegendEntryGenerator.__proto__),
+      hashCode: dart.legacy(core.int),
+      [$hashCode]: dart.legacy(core.int)
+    }));
+    dart.setLibraryUri(PerDatumLegendEntryGenerator, I[0]);
+    dart.setFieldSignature(PerDatumLegendEntryGenerator, () => ({
+      __proto__: dart.getFields(PerDatumLegendEntryGenerator.__proto__),
+      entryTextStyle: dart.fieldType(dart.legacy(axis_spec.TextStyleSpec)),
+      measureFormatter: dart.fieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+      secondaryMeasureFormatter: dart.fieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+      showOverlaySeries: dart.fieldType(dart.legacy(core.bool)),
+      legendDefaultMeasure: dart.fieldType(dart.legacy(legend_entry_generator.LegendDefaultMeasure))
+    }));
+    dart.defineExtensionMethods(PerDatumLegendEntryGenerator, ['_equals']);
+    dart.defineExtensionAccessors(PerDatumLegendEntryGenerator, ['hashCode']);
+    return PerDatumLegendEntryGenerator;
+  });
+  per_datum_legend_entry_generator.PerDatumLegendEntryGenerator = per_datum_legend_entry_generator.PerDatumLegendEntryGenerator$();
+  dart.addTypeTests(per_datum_legend_entry_generator.PerDatumLegendEntryGenerator, _is_PerDatumLegendEntryGenerator_default);
+  dart.trackLibraries("packages/charts_common/src/chart/common/behavior/legend/per_datum_legend_entry_generator.dart", {
+    "package:charts_common/src/chart/common/behavior/legend/per_datum_legend_entry_generator.dart": per_datum_legend_entry_generator
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["per_datum_legend_entry_generator.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MA4BgB;;;;;;MACG;;;;;;MACA;;;;;;MACZ;;;;;;MAGgB;;;;;;uBAGwC;;;AACrD,4BAAgC;AAEhC,qBAAS,AAAU,UAAA,QAAC;AAC1B,iBAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAO,AAAK,MAAN,iBAAc,IAAA,AAAC,CAAA;AAMR,UAL/B,AAAc,aAAD,OAAS,4BAClB,MAAM,EAAqB,oBAAnB,MAAM,OAAU,CAAC,EAAF,kCAChB,MAAM,QAAS,CAAC,EAAF,0BACd,AAAO,AAAI,MAAL,aAAM,CAAC,eACR,CAAC,aACF;;AAIjB,YAAI,6BAA6C;AACC,UAAhD,4BAAsB,aAAa,EAAE,UAAU;;AAGjD,cAAO,cAAa;MACtB;0BAG8C,eACxB,gBAAuC;qCADf;iCACxB;uCAAuC;AAC3D,sBAAI,AAAe,cAAD;AACmC,UAAnD,2BAAqB,aAAa,EAAE,cAAc;;AAGlD,cAAI,6BAA6C;AACC,YAAhD,4BAAsB,aAAa,EAAE,UAAU;;AAEP,YAAxC,gCAA0B,aAAa;;;MAG7C;6BAIyB,eAAiC;;AAIxD,YAAI,6BAA6C;AAC/C,mBAAS,QAAS,cAAa;AACvB,yBAAS,AAAM,KAAD;AACd,gCAAU,MAAM,OAAW,AAAM,KAAD,aAAN;AACA,YAAhC,AAAM,KAAD,SAAS,AAAQ,OAAD;AAC4C,YAAjE,AAAM,KAAD,kBAAkB,gCAA0B,MAAM,EAAE,OAAO;AAGJ,YAD5D,AAAM,KAAD,cAAc,AAAe,AAC7B,cAD4B,sBACxB,QAAC,kBAAmB,AAAO,AAAG,MAAJ,OAAO,AAAe,cAAD;;;MAG9D;kCAEoD;AAClD,iBAAoB,QAAS,cAAa;AACtB,UAAlB,AAAM,KAAD,SAAS;AACa,UAA3B,AAAM,KAAD,kBAAkB;AACC,UAAxB,AAAM,KAAD,cAAc;;MAEvB;8BAQyB,eAAsC;;AAI7D,YAAI,6BAA6C;AAC/C,mBAAS,QAAS,cAAa;AACvB,yBAAS,AAAM,KAAD;AACd,gCAAU,MAAM,OAAW,AAAM,KAAD,aAAN;AACA,YAAhC,AAAM,KAAD,SAAS,AAAQ,OAAD;AAC4C,YAAjE,AAAM,KAAD,kBAAkB,gCAA0B,MAAM,EAAE,OAAO;AACxC,YAAxB,AAAM,KAAD,cAAc;;;MAGzB;kCAIiD,QAAY;;AAC3D,cAAQ,AAAO,AAA0B,OAA3B,sBAAS,4DACS,OAAO,EAAjC,AAAyB,6CACR,OAAO,EAAxB,AAAgB;MACxB;;YAGwB;AACtB,cAAa,AAG0C,sCAHhD,KAAK,KACS,YAAjB,uBAAoB,AAAM,KAAD,sBACC,YAA1B,gCAA6B,AAAM,KAAD,+BAClC,AAAqB,6BAAG,AAAM,KAAD,yBACd,YAAf,qBAAkB,AAAM,KAAD;MAC7B;;;AAIM,wBAAsC,gDAA3B,OAAkB,oBAAlB,cAA8B;AACkB,QAA/D,WAAqB,AAAM,aAAf,QAAQ,IAAG,kBAAgC,cAA1B;AAC6B,QAA1D,WAAqB,AAAM,aAAf,QAAQ,IAAG,kBAA2B,cAArB;AACuB,QAApD,WAAqB,AAAM,aAAf,QAAQ,IAAG,kBAAqB,cAAf;AAC7B,cAAO,SAAQ;MACjB;;;MArHc;MACG;MACA;MACZ;MAGgB;;IAgHvB","file":"../../../../../../../../../../../../../D:/packages/charts_common/src/chart/common/behavior/legend/per_datum_legend_entry_generator.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__common__behavior__legend__per_datum_legend_entry_generator: per_datum_legend_entry_generator
+  };
+}));
+
+//# sourceMappingURL=per_datum_legend_entry_generator.dart.lib.js.map

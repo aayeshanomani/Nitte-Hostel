@@ -1,0 +1,411 @@
+define(['dart_sdk', 'packages/charts_flutter/src/widget_layout_delegate.dart', 'packages/charts_common/src/chart/common/behavior/chart_behavior.dart', 'packages/charts_flutter/src/behaviors/legend/legend_layout.dart', 'packages/charts_flutter/src/behaviors/legend/legend_content_builder.dart', 'packages/charts_common/src/chart/common/selection_model/selection_model.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry_generator.dart', 'packages/charts_common/src/chart/common/behavior/legend/series_legend.dart', 'packages/collection/src/equality.dart', 'packages/charts_common/src/chart/cartesian/axis/simple_ordinal_scale.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend_entry.dart', 'packages/charts_common/src/chart/common/behavior/legend/legend.dart', 'packages/charts_flutter/src/behaviors/legend/legend.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__charts_flutter__src__behaviors__legend__series_legend_dart(dart_sdk, packages__charts_flutter__src__widget_layout_delegate$46dart, packages__charts_common__src__chart__common__behavior__chart_behavior$46dart, packages__charts_flutter__src__behaviors__legend__legend_layout$46dart, packages__charts_flutter__src__behaviors__legend__legend_content_builder$46dart, packages__charts_common__src__chart__common__selection_model__selection_model$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart, packages__charts_common__src__chart__common__behavior__legend__series_legend$46dart, packages__collection__src__equality$46dart, packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart, packages__charts_common__src__chart__common__behavior__legend__legend$46dart, packages__charts_flutter__src__behaviors__legend__legend$46dart, packages__flutter__src__widgets__widget_span$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const collection = dart_sdk.collection;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const chart_behavior = packages__charts_flutter__src__widget_layout_delegate$46dart.src__behaviors__chart_behavior;
+  const chart_container = packages__charts_flutter__src__widget_layout_delegate$46dart.src__chart_container;
+  const chart_behavior$ = packages__charts_common__src__chart__common__behavior__chart_behavior$46dart.src__chart__common__behavior__chart_behavior;
+  const legend_layout = packages__charts_flutter__src__behaviors__legend__legend_layout$46dart.src__behaviors__legend__legend_layout;
+  const legend_content_builder = packages__charts_flutter__src__behaviors__legend__legend_content_builder$46dart.src__behaviors__legend__legend_content_builder;
+  const selection_model = packages__charts_common__src__chart__common__selection_model__selection_model$46dart.src__chart__common__selection_model__selection_model;
+  const legend_entry_generator = packages__charts_common__src__chart__common__behavior__legend__legend_entry_generator$46dart.src__chart__common__behavior__legend__legend_entry_generator;
+  const series_legend = packages__charts_common__src__chart__common__behavior__legend__series_legend$46dart.src__chart__common__behavior__legend__series_legend;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  const axis_spec = packages__charts_common__src__chart__cartesian__axis__simple_ordinal_scale$46dart.src__chart__cartesian__axis__spec__axis_spec;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const legend_entry = packages__charts_common__src__chart__common__behavior__legend__legend_entry$46dart.src__chart__common__behavior__legend__legend_entry;
+  const legend = packages__charts_common__src__chart__common__behavior__legend__legend$46dart.src__chart__common__behavior__legend__legend;
+  const legend$ = packages__charts_flutter__src__behaviors__legend__legend$46dart.src__behaviors__legend__legend;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  var series_legend$ = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  var $any = dartx.any;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    GestureTypeL: () => (T.GestureTypeL = dart.constFn(dart.legacy(chart_behavior.GestureType)))(),
+    _HashSetOfGestureTypeL: () => (T._HashSetOfGestureTypeL = dart.constFn(collection._HashSet$(T.GestureTypeL())))(),
+    SeriesLegendL: () => (T.SeriesLegendL = dart.constFn(dart.legacy(series_legend.SeriesLegend)))(),
+    _FlutterSeriesLegendL: () => (T._FlutterSeriesLegendL = dart.constFn(dart.legacy(series_legend$._FlutterSeriesLegend)))(),
+    SeriesLegendL$1: () => (T.SeriesLegendL$1 = dart.constFn(dart.legacy(series_legend$.SeriesLegend)))(),
+    ChartContainerRenderObjectL: () => (T.ChartContainerRenderObjectL = dart.constFn(dart.legacy(chart_container.ChartContainerRenderObject)))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: chart_behavior$.BehaviorPosition.prototype,
+        [_name]: "BehaviorPosition.top",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: chart_behavior$.OutsideJustification.prototype,
+        [_name]: "OutsideJustification.startDrawArea",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: chart_behavior$.InsideJustification.prototype,
+        [_name]: "InsideJustification.topStart",
+        index: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: legend.LegendTapHandling.prototype,
+        [_name$]: "LegendTapHandling.hide",
+        index: 1
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: legend.LegendTapHandling.prototype,
+        [_name$]: "LegendTapHandling.none",
+        index: 0
+      });
+    }
+  }, false);
+  var C = Array(6).fill(void 0);
+  var I = ["package:charts_flutter/src/behaviors/legend/series_legend.dart"];
+  var desiredGestures = dart.privateName(series_legend$, "SeriesLegend.desiredGestures");
+  var selectionModelType$ = dart.privateName(series_legend$, "SeriesLegend.selectionModelType");
+  var contentBuilder$ = dart.privateName(series_legend$, "SeriesLegend.contentBuilder");
+  var position$ = dart.privateName(series_legend$, "SeriesLegend.position");
+  var outsideJustification$ = dart.privateName(series_legend$, "SeriesLegend.outsideJustification");
+  var insideJustification$ = dart.privateName(series_legend$, "SeriesLegend.insideJustification");
+  var showMeasures$ = dart.privateName(series_legend$, "SeriesLegend.showMeasures");
+  var legendDefaultMeasure$ = dart.privateName(series_legend$, "SeriesLegend.legendDefaultMeasure");
+  var measureFormatter$ = dart.privateName(series_legend$, "SeriesLegend.measureFormatter");
+  var secondaryMeasureFormatter$ = dart.privateName(series_legend$, "SeriesLegend.secondaryMeasureFormatter");
+  var entryTextStyle$ = dart.privateName(series_legend$, "SeriesLegend.entryTextStyle");
+  var defaultHiddenSeries$ = dart.privateName(series_legend$, "SeriesLegend.defaultHiddenSeries");
+  var _name = dart.privateName(chart_behavior$, "_name");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  series_legend$.SeriesLegend = class SeriesLegend extends chart_behavior.ChartBehavior$(dart.legacy(series_legend.SeriesLegend)) {
+    get desiredGestures() {
+      return this[desiredGestures];
+    }
+    set desiredGestures(value) {
+      super.desiredGestures = value;
+    }
+    get selectionModelType() {
+      return this[selectionModelType$];
+    }
+    set selectionModelType(value) {
+      super.selectionModelType = value;
+    }
+    get contentBuilder() {
+      return this[contentBuilder$];
+    }
+    set contentBuilder(value) {
+      super.contentBuilder = value;
+    }
+    get position() {
+      return this[position$];
+    }
+    set position(value) {
+      super.position = value;
+    }
+    get outsideJustification() {
+      return this[outsideJustification$];
+    }
+    set outsideJustification(value) {
+      super.outsideJustification = value;
+    }
+    get insideJustification() {
+      return this[insideJustification$];
+    }
+    set insideJustification(value) {
+      super.insideJustification = value;
+    }
+    get showMeasures() {
+      return this[showMeasures$];
+    }
+    set showMeasures(value) {
+      super.showMeasures = value;
+    }
+    get legendDefaultMeasure() {
+      return this[legendDefaultMeasure$];
+    }
+    set legendDefaultMeasure(value) {
+      super.legendDefaultMeasure = value;
+    }
+    get measureFormatter() {
+      return this[measureFormatter$];
+    }
+    set measureFormatter(value) {
+      super.measureFormatter = value;
+    }
+    get secondaryMeasureFormatter() {
+      return this[secondaryMeasureFormatter$];
+    }
+    set secondaryMeasureFormatter(value) {
+      super.secondaryMeasureFormatter = value;
+    }
+    get entryTextStyle() {
+      return this[entryTextStyle$];
+    }
+    set entryTextStyle(value) {
+      super.entryTextStyle = value;
+    }
+    get defaultHiddenSeries() {
+      return this[defaultHiddenSeries$];
+    }
+    set defaultHiddenSeries(value) {
+      super.defaultHiddenSeries = value;
+    }
+    static new(opts) {
+      let t0, t0$;
+      let position = opts && 'position' in opts ? opts.position : null;
+      let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+      let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+      let horizontalFirst = opts && 'horizontalFirst' in opts ? opts.horizontalFirst : null;
+      let desiredMaxRows = opts && 'desiredMaxRows' in opts ? opts.desiredMaxRows : null;
+      let desiredMaxColumns = opts && 'desiredMaxColumns' in opts ? opts.desiredMaxColumns : null;
+      let cellPadding = opts && 'cellPadding' in opts ? opts.cellPadding : null;
+      let defaultHiddenSeries = opts && 'defaultHiddenSeries' in opts ? opts.defaultHiddenSeries : null;
+      let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+      let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+      let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+      let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+      let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+      position == null ? position = series_legend$.SeriesLegend.defaultBehaviorPosition : null;
+      outsideJustification == null ? outsideJustification = series_legend$.SeriesLegend.defaultOutsideJustification : null;
+      insideJustification == null ? insideJustification = series_legend$.SeriesLegend.defaultInsideJustification : null;
+      cellPadding == null ? cellPadding = series_legend$.SeriesLegend.defaultCellPadding : null;
+      horizontalFirst == null ? horizontalFirst = position == chart_behavior$.BehaviorPosition.top || position == chart_behavior$.BehaviorPosition.bottom || position == chart_behavior$.BehaviorPosition.inside : null;
+      let layoutBuilder = dart.test(horizontalFirst) ? legend_layout.TabularLegendLayout.horizontalFirst({desiredMaxColumns: desiredMaxColumns, cellPadding: cellPadding}) : legend_layout.TabularLegendLayout.verticalFirst({desiredMaxRows: desiredMaxRows, cellPadding: cellPadding});
+      return new series_legend$.SeriesLegend._internal({contentBuilder: new legend_content_builder.TabularLegendContentBuilder.new({legendLayout: layoutBuilder}), selectionModelType: selection_model.SelectionModelType.info, position: position, outsideJustification: outsideJustification, insideJustification: insideJustification, defaultHiddenSeries: defaultHiddenSeries, showMeasures: (t0 = showMeasures, t0 == null ? false : t0), legendDefaultMeasure: (t0$ = legendDefaultMeasure, t0$ == null ? legend_entry_generator.LegendDefaultMeasure.none : t0$), measureFormatter: measureFormatter, secondaryMeasureFormatter: secondaryMeasureFormatter, entryTextStyle: entryTextStyle});
+    }
+    static customLayout(contentBuilder, opts) {
+      let t0, t0$;
+      let position = opts && 'position' in opts ? opts.position : null;
+      let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+      let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+      let defaultHiddenSeries = opts && 'defaultHiddenSeries' in opts ? opts.defaultHiddenSeries : null;
+      let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+      let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+      let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+      let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+      let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+      position == null ? position = series_legend$.SeriesLegend.defaultBehaviorPosition : null;
+      outsideJustification == null ? outsideJustification = series_legend$.SeriesLegend.defaultOutsideJustification : null;
+      insideJustification == null ? insideJustification = series_legend$.SeriesLegend.defaultInsideJustification : null;
+      return new series_legend$.SeriesLegend._internal({contentBuilder: contentBuilder, selectionModelType: selection_model.SelectionModelType.info, position: position, outsideJustification: outsideJustification, insideJustification: insideJustification, defaultHiddenSeries: defaultHiddenSeries, showMeasures: (t0 = showMeasures, t0 == null ? false : t0), legendDefaultMeasure: (t0$ = legendDefaultMeasure, t0$ == null ? legend_entry_generator.LegendDefaultMeasure.none : t0$), measureFormatter: measureFormatter, secondaryMeasureFormatter: secondaryMeasureFormatter, entryTextStyle: entryTextStyle});
+    }
+    createCommonBehavior(D) {
+      return new (series_legend$._FlutterSeriesLegend$(dart.legacy(D))).new(this);
+    }
+    updateCommonBehavior(commonBehavior) {
+      T.SeriesLegendL().as(commonBehavior);
+      T._FlutterSeriesLegendL().as(commonBehavior).config = this;
+    }
+    get role() {
+      return "legend";
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.SeriesLegendL$1().is(o) && this.selectionModelType == o.selectionModelType && dart.equals(this.contentBuilder, o.contentBuilder) && this.position == o.position && this.outsideJustification == o.outsideJustification && this.insideJustification == o.insideJustification && dart.test(new equality.ListEquality.new().equals(this.defaultHiddenSeries, o.defaultHiddenSeries)) && this.showMeasures == o.showMeasures && this.legendDefaultMeasure == o.legendDefaultMeasure && dart.equals(this.measureFormatter, o.measureFormatter) && dart.equals(this.secondaryMeasureFormatter, o.secondaryMeasureFormatter) && dart.equals(this.entryTextStyle, o.entryTextStyle);
+    }
+    get hashCode() {
+      return ui.hashValues(this.selectionModelType, this.contentBuilder, this.position, this.outsideJustification, this.insideJustification, this.defaultHiddenSeries, this.showMeasures, this.legendDefaultMeasure, this.measureFormatter, this.secondaryMeasureFormatter, this.entryTextStyle);
+    }
+  };
+  (series_legend$.SeriesLegend._internal = function(opts) {
+    let contentBuilder = opts && 'contentBuilder' in opts ? opts.contentBuilder : null;
+    let selectionModelType = opts && 'selectionModelType' in opts ? opts.selectionModelType : null;
+    let position = opts && 'position' in opts ? opts.position : null;
+    let outsideJustification = opts && 'outsideJustification' in opts ? opts.outsideJustification : null;
+    let insideJustification = opts && 'insideJustification' in opts ? opts.insideJustification : null;
+    let defaultHiddenSeries = opts && 'defaultHiddenSeries' in opts ? opts.defaultHiddenSeries : null;
+    let showMeasures = opts && 'showMeasures' in opts ? opts.showMeasures : null;
+    let legendDefaultMeasure = opts && 'legendDefaultMeasure' in opts ? opts.legendDefaultMeasure : null;
+    let measureFormatter = opts && 'measureFormatter' in opts ? opts.measureFormatter : null;
+    let secondaryMeasureFormatter = opts && 'secondaryMeasureFormatter' in opts ? opts.secondaryMeasureFormatter : null;
+    let entryTextStyle = opts && 'entryTextStyle' in opts ? opts.entryTextStyle : null;
+    this[desiredGestures] = new (T._HashSetOfGestureTypeL()).new();
+    this[contentBuilder$] = contentBuilder;
+    this[selectionModelType$] = selectionModelType;
+    this[position$] = position;
+    this[outsideJustification$] = outsideJustification;
+    this[insideJustification$] = insideJustification;
+    this[defaultHiddenSeries$] = defaultHiddenSeries;
+    this[showMeasures$] = showMeasures;
+    this[legendDefaultMeasure$] = legendDefaultMeasure;
+    this[measureFormatter$] = measureFormatter;
+    this[secondaryMeasureFormatter$] = secondaryMeasureFormatter;
+    this[entryTextStyle$] = entryTextStyle;
+    ;
+  }).prototype = series_legend$.SeriesLegend.prototype;
+  dart.addTypeTests(series_legend$.SeriesLegend);
+  dart.addTypeCaches(series_legend$.SeriesLegend);
+  dart.setMethodSignature(series_legend$.SeriesLegend, () => ({
+    __proto__: dart.getMethods(series_legend$.SeriesLegend.__proto__),
+    createCommonBehavior: dart.gFnType(D => [dart.legacy(series_legend.SeriesLegend$(dart.legacy(D))), []]),
+    updateCommonBehavior: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(series_legend$.SeriesLegend, () => ({
+    __proto__: dart.getGetters(series_legend$.SeriesLegend.__proto__),
+    role: dart.legacy(core.String),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(series_legend$.SeriesLegend, I[0]);
+  dart.setFieldSignature(series_legend$.SeriesLegend, () => ({
+    __proto__: dart.getFields(series_legend$.SeriesLegend.__proto__),
+    desiredGestures: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(chart_behavior.GestureType)))),
+    selectionModelType: dart.finalFieldType(dart.legacy(selection_model.SelectionModelType)),
+    contentBuilder: dart.finalFieldType(dart.legacy(legend_content_builder.LegendContentBuilder)),
+    position: dart.finalFieldType(dart.legacy(chart_behavior$.BehaviorPosition)),
+    outsideJustification: dart.finalFieldType(dart.legacy(chart_behavior$.OutsideJustification)),
+    insideJustification: dart.finalFieldType(dart.legacy(chart_behavior$.InsideJustification)),
+    showMeasures: dart.finalFieldType(dart.legacy(core.bool)),
+    legendDefaultMeasure: dart.finalFieldType(dart.legacy(legend_entry_generator.LegendDefaultMeasure)),
+    measureFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+    secondaryMeasureFormatter: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.num)]))),
+    entryTextStyle: dart.finalFieldType(dart.legacy(axis_spec.TextStyleSpec)),
+    defaultHiddenSeries: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
+  }));
+  dart.defineExtensionMethods(series_legend$.SeriesLegend, ['_equals']);
+  dart.defineExtensionAccessors(series_legend$.SeriesLegend, ['hashCode']);
+  dart.defineLazy(series_legend$.SeriesLegend, {
+    /*series_legend$.SeriesLegend.defaultBehaviorPosition*/get defaultBehaviorPosition() {
+      return C[0] || CT.C0;
+    },
+    /*series_legend$.SeriesLegend.defaultOutsideJustification*/get defaultOutsideJustification() {
+      return C[1] || CT.C1;
+    },
+    /*series_legend$.SeriesLegend.defaultInsideJustification*/get defaultInsideJustification() {
+      return C[2] || CT.C2;
+    },
+    /*series_legend$.SeriesLegend.defaultCellPadding*/get defaultCellPadding() {
+      return C[3] || CT.C3;
+    }
+  }, true);
+  var _hideSeries = dart.privateName(series_legend$, "_hideSeries");
+  var _name$ = dart.privateName(legend, "_name");
+  const _is__FlutterSeriesLegend_default = Symbol('_is__FlutterSeriesLegend_default');
+  series_legend$._FlutterSeriesLegend$ = dart.generic(D => {
+    var DL = () => (DL = dart.constFn(dart.legacy(D)))();
+    var LegendEntryOfDL = () => (LegendEntryOfDL = dart.constFn(legend_entry.LegendEntry$(DL())))();
+    var LegendEntryLOfDL = () => (LegendEntryLOfDL = dart.constFn(dart.legacy(LegendEntryOfDL())))();
+    var LegendEntryLOfDLToboolL = () => (LegendEntryLOfDLToboolL = dart.constFn(dart.fnType(T.boolL(), [LegendEntryLOfDL()])))();
+    const defaultHiddenSeries = Symbol("defaultHiddenSeries");
+    const entryTextStyle = Symbol("entryTextStyle");
+    class _FlutterSeriesLegend extends series_legend.SeriesLegend$(dart.legacy(D)) {
+      updateLegend() {
+        T.ChartContainerRenderObjectL().as(this.chartContext).requestRebuild();
+      }
+      get position() {
+        return this.config.position;
+      }
+      get outsideJustification() {
+        return this.config.outsideJustification;
+      }
+      set outsideJustification(value) {
+        super.outsideJustification = value;
+      }
+      get insideJustification() {
+        return this.config.insideJustification;
+      }
+      set insideJustification(value) {
+        super.insideJustification = value;
+      }
+      build(context) {
+        let hasSelection = this.legendState.legendEntries[$any](dart.fn(entry => entry.isSelected, LegendEntryLOfDLToboolL()));
+        let showMeasures = dart.test(this.config.showMeasures) && (dart.test(hasSelection) || this.legendDefaultMeasure != legend_entry_generator.LegendDefaultMeasure.none);
+        return this.config.contentBuilder.build(context, this.legendState, this, {showMeasures: showMeasures});
+      }
+      onLegendEntryTapUp(detail) {
+        switch (this.legendTapHandling) {
+          case C[4] || CT.C4:
+          {
+            this[_hideSeries](detail);
+            break;
+          }
+          case C[5] || CT.C5:
+          default:
+          {
+            break;
+          }
+        }
+      }
+      [_hideSeries](detail) {
+        let seriesId = detail.series.id;
+        if (dart.test(this.isSeriesHidden(seriesId))) {
+          this.showSeries(seriesId);
+        } else {
+          this.hideSeries(seriesId);
+        }
+        this.chart.redraw({skipLayout: true, skipAnimation: false});
+      }
+      set [defaultHiddenSeries](x) {
+        super.defaultHiddenSeries = x;
+      }
+      set [entryTextStyle](x) {
+        super.entryTextStyle = x;
+      }
+    }
+    (_FlutterSeriesLegend.new = function(config) {
+      this.config = config;
+      _FlutterSeriesLegend.__proto__.new.call(this, {selectionModelType: config.selectionModelType, measureFormatter: config.measureFormatter, secondaryMeasureFormatter: config.secondaryMeasureFormatter, legendDefaultMeasure: config.legendDefaultMeasure});
+      this[defaultHiddenSeries] = this.config.defaultHiddenSeries;
+      this[entryTextStyle] = this.config.entryTextStyle;
+    }).prototype = _FlutterSeriesLegend.prototype;
+    dart.addTypeTests(_FlutterSeriesLegend);
+    _FlutterSeriesLegend.prototype[_is__FlutterSeriesLegend_default] = true;
+    dart.addTypeCaches(_FlutterSeriesLegend);
+    _FlutterSeriesLegend[dart.implements] = () => [chart_behavior.BuildableBehavior$(dart.legacy(chart_behavior$.ChartBehavior)), legend$.TappableLegend];
+    dart.setMethodSignature(_FlutterSeriesLegend, () => ({
+      __proto__: dart.getMethods(_FlutterSeriesLegend.__proto__),
+      build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+      onLegendEntryTapUp: dart.fnType(dart.dynamic, [dart.legacy(legend_entry.LegendEntry)]),
+      [_hideSeries]: dart.fnType(dart.void, [dart.legacy(legend_entry.LegendEntry)])
+    }));
+    dart.setGetterSignature(_FlutterSeriesLegend, () => ({
+      __proto__: dart.getGetters(_FlutterSeriesLegend.__proto__),
+      position: dart.legacy(chart_behavior$.BehaviorPosition)
+    }));
+    dart.setLibraryUri(_FlutterSeriesLegend, I[0]);
+    dart.setFieldSignature(_FlutterSeriesLegend, () => ({
+      __proto__: dart.getFields(_FlutterSeriesLegend.__proto__),
+      config: dart.fieldType(dart.legacy(series_legend$.SeriesLegend))
+    }));
+    return _FlutterSeriesLegend;
+  });
+  series_legend$._FlutterSeriesLegend = series_legend$._FlutterSeriesLegend$();
+  dart.addTypeTests(series_legend$._FlutterSeriesLegend, _is__FlutterSeriesLegend_default);
+  dart.trackLibraries("packages/charts_flutter/src/behaviors/legend/series_legend.dart", {
+    "package:charts_flutter/src/behaviors/legend/series_legend.dart": series_legend$
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["series_legend.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../D:/packages/charts_flutter/src/behaviors/legend/series_legend.dart.lib.js"}');
+  // Exports:
+  return {
+    src__behaviors__legend__series_legend: series_legend$
+  };
+}));
+
+//# sourceMappingURL=series_legend.dart.lib.js.map

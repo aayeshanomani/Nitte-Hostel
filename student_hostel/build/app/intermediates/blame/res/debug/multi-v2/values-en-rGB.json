@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "D:\\Nitte-Hostel\\student_hostel\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/res/values-en-rGB/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "196",
-                        "endOffsets": "447"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1245",
-                        "endColumns": "196",
-                        "endOffsets": "1437"
-                    }
-                },
-                {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\acdd9847aaa1c6bb0c5e85043c3c44c5\\res\\values-en-rGB\\values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/res/values-en-rGB/values.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\0b0529ba7dd6626bc8b1d52b7cfb0d3a\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +35,23 @@
                         "startOffsets": "105,212,396,523,632,842,967,1113,1442,1660,1767,1950,2077,2282,2460,2553,2645",
                         "endColumns": "106,183,126,108,209,124,145,131,217,106,182,126,204,177,92,91,107",
                         "endOffsets": "207,391,518,627,837,962,1108,1240,1655,1762,1945,2072,2277,2455,2548,2640,2748"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-basement-17.0.0.aar\\b4328a3f3399832dc36b262dbc4f9fff\\res\\values-en-rGB\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "196",
+                        "endOffsets": "447"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1245",
+                        "endColumns": "196",
+                        "endOffsets": "1437"
                     }
                 }
             ]

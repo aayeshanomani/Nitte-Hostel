@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aayesha/codes/College/Projects/WT Project/Hostel-Management/student_hostel/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
+            "outputFile": "D:\\Nitte-Hostel\\student_hostel\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
             "map": [
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/4c0054692ea57b69194b10888ffec073/res/values-kk/values.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\acdd9847aaa1c6bb0c5e85043c3c44c5\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2811",
+                        "endColumns": "100",
+                        "endOffsets": "2907"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\0b0529ba7dd6626bc8b1d52b7cfb0d3a\\res\\values-kk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/15ed87ca7c2ddffc13ca9715b34b99a3/res/values-kk/values.xml",
+                    "source": "C:\\Users\\Avani Bhardwaj\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-basement-17.0.0.aar\\b4328a3f3399832dc36b262dbc4f9fff\\res\\values-kk\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -35,23 +52,6 @@
                         "startOffsets": "1249",
                         "endColumns": "222",
                         "endOffsets": "1467"
-                    }
-                },
-                {
-                    "source": "/home/aayesha/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/72aee4530732ba8026cac0a89359217e/res/values-kk/values-kk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2811",
-                        "endColumns": "100",
-                        "endOffsets": "2907"
                     }
                 }
             ]
