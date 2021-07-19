@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import '../myOutpass.dart';
-
 
 class ComplainPage extends StatefulWidget {
   @override
@@ -9,23 +7,20 @@ class ComplainPage extends StatefulWidget {
 }
 
 class _ComplainPageState extends State<ComplainPage> {
-
   List<myComplain> allData = [];
 
   @override
-  void initState() {
-   
-    
-  }
-
+  void initState() {}
 
   @override
   Widget build(BuildContext context) {
-     return new Scaffold(
+    return new Scaffold(
       body: new Container(
-        
           child: allData.length == 0
-              ? new Center(child:Text(' No Data Available',))
+              ? new Center(
+                  child: Text(
+                  ' ',
+                ))
               : new ListView.builder(
                   itemCount: allData.length,
                   itemBuilder: (_, index) {
@@ -34,7 +29,8 @@ class _ComplainPageState extends State<ComplainPage> {
                       allData[index].message,
                     );
                   },
-                )),);
+                )),
+    );
   }
 
   Widget uI(String complain_type, String message) {
@@ -45,7 +41,10 @@ class _ComplainPageState extends State<ComplainPage> {
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Text('ComplainType : $complain_type',style: Theme.of(context).textTheme.title,),
+            new Text(
+              'ComplainType : $complain_type',
+              style: Theme.of(context).textTheme.title,
+            ),
             new Text('message : $message'),
           ],
         ),

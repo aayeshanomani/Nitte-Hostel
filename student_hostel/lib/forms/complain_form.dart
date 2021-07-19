@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import '../home_page.dart';
+import '../networkHandler.dart';
+import 'dart:convert';
 
 class ComplainForm extends StatefulWidget {
   @override
@@ -7,27 +10,20 @@ class ComplainForm extends StatefulWidget {
 }
 
 class _ComplainFormState extends State<ComplainForm> {
+  NetworkHandler networkHandler = NetworkHandler();
   GlobalKey<FormState> _key = new GlobalKey();
   bool _autovalidate = false;
-  String complain_type,message;
-  List<DropdownMenuItem<String>> items = [
-    new DropdownMenuItem(
-      child: new Text('Electricity'),
-      value: 'Electricity',
-    ),
-    new DropdownMenuItem(
-      child: new Text('Furniture'),
-      value: 'Furniture',
-    ),
-    new DropdownMenuItem(
-      child: new Text('Network'),
-      value: 'Network',
-    ),
-    new DropdownMenuItem(
-      child: new Text('Water'),
-      value: 'Water',
-    ),
-  ];
+  String message;
+  Map<String, String> data = {
+    "reg_no": "21331",
+    "name": "Avani Bhardwaj",
+    "usn": "1NT18IS036",
+    "email": "avanibhardwaj.100@gmail.com",
+    "phoneNumber": "8867571643",
+    "room_no": "121",
+    "hostel": "Kumardhara",
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,40 +31,25 @@ class _ComplainFormState extends State<ComplainForm> {
         title: new Text('Complain Form'),
       ),
       body: new SingleChildScrollView(
-          child: new Container(
-            padding: new EdgeInsets.all(15.0),
-            child: new Form(
-              key: _key,
-              autovalidate: _autovalidate,
-              child: FormUI(),
-            ),
+        child: new Container(
+          padding: new EdgeInsets.all(15.0),
+          child: new Form(
+            key: _key,
+            autovalidate: _autovalidate,
+            child: FormUI(),
           ),
         ),
-
+      ),
     );
   }
+
   Widget FormUI() {
     return new Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        new Row(
-          children: <Widget>[
-            new DropdownButtonHideUnderline(
-                child: new DropdownButton(
-              items: items,
-              hint: new Text('Select thpe of complain.'),
-              value: complain_type,
-              onChanged: (String val) {
-                setState(() {
-                  complain_type = val;
-                });
-              },
-            ))
-          ],
-        ),
         new TextFormField(
           decoration: new InputDecoration(hintText: 'Message'),
-          onSaved: (val) {
+          onChanged: (val) {
             message = val;
           },
           validator: validateMessage,
@@ -83,10 +64,25 @@ class _ComplainFormState extends State<ComplainForm> {
     );
   }
 
-  _sendToServer() {
-    
-    Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new HomePage()));
+  _sendToServer() async {
+    if (message == null) {
+      EasyLoading.showInfo("Please type your complaint");
+    } else {
+      data["complaint"] = "${message}";
+      print(data);
+      EasyLoading.show(status: 'Loading..');
+      var response = await networkHandler.post("/student/complaint", data);
+      EasyLoading.dismiss();
+      print(response.body);
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        print("complaint filed");
+        EasyLoading.showInfo("Complaint filed!");
+        Navigator.of(context).push(new MaterialPageRoute(
+            builder: (BuildContext context) => new HomePage()));
+      }
+    }
   }
+
   String validateMessage(String val) {
     return val.length == 0 ? "Write Something" : null;
   }

@@ -99,7 +99,6 @@ class _LoginPageState extends State<LoginPage> {
           EasyLoading.show(status: 'Loading..');
           var response = await networkHandler.post("/login", data);
           EasyLoading.dismiss();
-          print("response : $response");
           if (response.statusCode == 200 || response.statusCode == 201) {
             Map<String, dynamic> output = json.decode(response.body);
             print(output["token"]);
